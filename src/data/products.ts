@@ -38,6 +38,7 @@ export interface Product {
     answer: string;
   }[];
   shopeeUrl: string;
+  lazadaUrl: string;
   waText: string;
 }
 
@@ -132,6 +133,7 @@ export const products: Product[] = [
       },
     ],
     shopeeUrl: "https://s.shopee.co.id/9zx2C9Pfba",
+    lazadaUrl: "https://share.google/nJK2B7iDNKitHambl",
     waText: "Halo Concierge PINCK SMILE, saya ingin memesan Gentle Intimate Wash (150ml). Mohon info ketersediaan dan promo pengiriman privat.",
   },
   {
@@ -219,6 +221,7 @@ export const products: Product[] = [
       },
     ],
     shopeeUrl: "https://s.shopee.co.id/9zx2C9Pfba",
+    lazadaUrl: "https://share.google/nJK2B7iDNKitHambl",
     waText: "Halo Concierge PINCK SMILE, saya ingin memesan Soothing Hydrating Mist (60ml). Mohon dibantu untuk proses pemesanannya.",
   },
   {
@@ -310,6 +313,7 @@ export const products: Product[] = [
       },
     ],
     shopeeUrl: "https://s.shopee.co.id/9zx2C9Pfba",
+    lazadaUrl: "https://share.google/nJK2B7iDNKitHambl",
     waText: "Halo Concierge PINCK SMILE, saya ingin memesan Aura Intimate Device secara privat. Mohon panduan ketersediaan dan garansi resminya.",
   },
   {
@@ -384,6 +388,7 @@ export const products: Product[] = [
       },
     ],
     shopeeUrl: "https://s.shopee.co.id/9zx2C9Pfba",
+    lazadaUrl: "https://share.google/nJK2B7iDNKitHambl",
     waText: "Halo Concierge PINCK SMILE, saya ingin memesan Complete Comfort Set (Rp 259.000). Mohon bantu proses pengiriman privatnya ya.",
   },
   {
@@ -464,6 +469,7 @@ export const products: Product[] = [
       },
     ],
     shopeeUrl: "https://s.shopee.co.id/9zx2C9Pfba",
+    lazadaUrl: "https://share.google/nJK2B7iDNKitHambl",
     waText: "Halo Concierge PINCK SMILE, saya ingin memesan Ultimate Wellness Ritual (Rp 699.000). Mohon info nomor rekening / tautan pembayaran privat.",
   },
 ];

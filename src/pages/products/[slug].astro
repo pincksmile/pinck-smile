@@ -264,22 +264,30 @@ const breadcrumbSchema = {
             <span>+ Tambahkan ke Tas Belanja</span>
           </button>
 
-          <!-- Shopee Official & WhatsApp Buttons -->
-          <div class="grid sm:grid-cols-2 gap-3">
+          <!-- Marketplace Official & WhatsApp Buttons -->
+          <div class="grid sm:grid-cols-3 gap-2.5">
             <a
               href={product.shopeeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full py-3.5 px-4 rounded-full bg-[#EE4D2D] text-white text-xs font-semibold hover:bg-[#D43D1F] transition-colors flex items-center justify-center gap-2 text-center shadow-xs">
-              <span>Beli di Shopee Mall ↗</span>
+              class="w-full py-3 px-3 rounded-full bg-[#EE4D2D] text-white text-xs font-semibold hover:bg-[#D43D1F] transition-colors flex items-center justify-center gap-1.5 text-center shadow-xs">
+              <span>Shopee Mall ↗</span>
+            </a>
+
+            <a
+              href={product.lazadaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full py-3 px-3 rounded-full bg-[#0F146D] text-white text-xs font-semibold hover:bg-[#090C49] transition-colors flex items-center justify-center gap-1.5 text-center shadow-xs">
+              <span>Lazada Official ↗</span>
             </a>
 
             <a
               href={`https://wa.me/6288980874055?text=${encodeURIComponent(product.waText)}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full py-3.5 px-4 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold hover:bg-emerald-100 transition-colors flex items-center justify-center gap-2 text-center">
-              <span>Pesan via WhatsApp 💬</span>
+              class="w-full py-3 px-3 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold hover:bg-emerald-100 transition-colors flex items-center justify-center gap-1.5 text-center">
+              <span>WhatsApp 💬</span>
             </a>
           </div>
         </div>
