@@ -96,11 +96,15 @@ const products = [
 
               <!-- Product Visual Illustration Container -->
               <div class={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-br ${product.accentGradient} border border-[#F0D5E4]/60 flex items-center justify-center p-6 mb-6 relative overflow-hidden group-hover:scale-[1.01] transition-transform duration-300`}>
-                <div class="w-20 h-28 rounded-xl bg-white shadow-md border border-[#F5E6EF] flex flex-col items-center justify-between p-2.5 text-center">
-                  <div class="w-6 h-2 rounded-full bg-[#D98AAF]/70"></div>
-                  <div class="space-y-0.5">
-                    <div class="text-[9px] font-bold tracking-wider text-[#29242A] uppercase">PINCK SMILE</div>
-                    <div class="text-[7px] text-[#756B72] leading-tight line-clamp-1">{product.tagline}</div>
+                <div class="w-24 h-32 rounded-xl bg-white shadow-md border border-[#F5E6EF] flex flex-col items-center justify-between p-2.5 text-center">
+                  <div class="w-8 h-2 rounded-full bg-[#D98AAF]/70"></div>
+                  <div class="space-y-0.5 flex flex-col items-center">
+                    <img 
+                      src="/pinck-smile-logo.svg" 
+                      alt="PINCK SMILE" 
+                      class="h-8 w-auto object-contain"
+                    />
+                    <div class="text-[7px] text-[#756B72] leading-tight line-clamp-1 mt-0.5">{product.tagline}</div>
                   </div>
                   <div class="text-[7px] text-[#D98AAF] font-medium">Safe & Pure</div>
                 </div>

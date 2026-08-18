@@ -24,18 +24,17 @@ const menuitems = [
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#F5E6EF]/80 transition-all duration-200">
   <Container>
-    <div class="flex flex-col lg:flex-row justify-between items-center py-4">
+    <div class="flex flex-col lg:flex-row justify-between items-center py-3">
       <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between">
-          <a href="/" class="flex items-center gap-2 group text-decoration-none">
-            <span class="w-8 h-8 rounded-full bg-[#FFE5F7] border border-[#D98AAF]/40 flex items-center justify-center text-[#D98AAF] group-hover:bg-[#D98AAF] group-hover:text-white transition-colors duration-200">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </span>
-            <span class="text-xl tracking-[0.18em] font-semibold text-[#29242A] font-sans">
-              PINCK <span class="text-[#D98AAF] font-normal">SMILE</span>
-            </span>
+          <a href="/" class="flex items-center gap-3 group text-decoration-none py-1">
+            <img 
+              src="/pinck-smile-logo.svg" 
+              alt="PINCK SMILE - Female Mood Booster" 
+              class="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              width="150"
+              height="48"
+            />
           </a>
           <div class="block lg:hidden">
             <MenuIcon class="w-6 h-6 text-[#29242A] cursor-pointer" />

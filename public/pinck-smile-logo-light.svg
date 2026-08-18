@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="100%" height="100%" fill="none">
+  <g transform="translate(10, 20)">
+    <!-- 1. "Pinck" in Cursive Script for Dark Background -->
+    <g transform="rotate(-7 130 90)">
+      <text x="35" y="105" 
+            font-family="'Brush Script MT', 'Dancing Script', 'Playfair Display', cursive, sans-serif" 
+            font-size="96" 
+            font-weight="bold"
+            font-style="italic" 
+            letter-spacing="2"
+            stroke="#FFE5F7" 
+            stroke-width="8" 
+            stroke-linejoin="round"
+            fill="#FFE5F7">
+        Pinck
+      </text>
+      <text x="35" y="105" 
+            font-family="'Brush Script MT', 'Dancing Script', 'Playfair Display', cursive, sans-serif" 
+            font-size="96" 
+            font-weight="bold"
+            font-style="italic" 
+            letter-spacing="2"
+            stroke="#D98AAF" 
+            stroke-width="3" 
+            fill="#FFE5F7">
+        Pinck
+      </text>
+    </g>
+
+    <!-- 2. Tagline "Female Mood Booster" -->
+    <text x="285" y="86" 
+          font-family="'Plus Jakarta Sans', 'Inter', sans-serif" 
+          font-size="16" 
+          font-weight="600" 
+          letter-spacing="0.5" 
+          fill="#FFE5F7">
+      Female Mood Booster
+    </text>
+
+    <!-- 3. "SMILE" Bubble Typography -->
+    <text x="180" y="172" 
+          font-family="'Arial Rounded MT Bold', 'Nunito', 'Fredoka', sans-serif" 
+          font-size="82" 
+          font-weight="900" 
+          letter-spacing="6" 
+          stroke="#FFE5F7" 
+          stroke-width="6" 
+          stroke-linejoin="round"
+          fill="#FFE5F7">
+      SMILE
+    </text>
+    <text x="180" y="172" 
+          font-family="'Arial Rounded MT Bold', 'Nunito', 'Fredoka', sans-serif" 
+          font-size="82" 
+          font-weight="900" 
+          letter-spacing="6" 
+          fill="#D98AAF">
+      SMILE
+    </text>
+
+    <!-- 4. Smile Arc & Dimples -->
+    <path d="M 232 196 C 228 190 223 189 220 194" 
+          stroke="#FFE5F7" 
+          stroke-width="5.5" 
+          stroke-linecap="round" 
+          fill="none" />
+    
+    <path d="M 226 200 Q 320 252 410 200" 
+          stroke="#FFE5F7" 
+          stroke-width="5.5" 
+          stroke-linecap="round" 
+          fill="none" />
+
+    <path d="M 404 200 C 408 190 415 189 418 194" 
+          stroke="#FFE5F7" 
+          stroke-width="5.5" 
+          stroke-linecap="round" 
+          fill="none" />
+  </g>
+</svg>
