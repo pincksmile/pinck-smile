@@ -1,0 +1,219 @@
+---
+interface Props {
+  id: string;
+  slug?: string;
+  size?: "sm" | "md" | "lg";
+  accentGradient?: string;
+}
+
+const { id, size = "md", accentGradient = "from-[#FFE5F7] to-[#FFF7FB]" } = Astro.props;
+
+const isWash = id === "gentle-wash" || id.includes("wash");
+const isMist = id === "soothing-mist" || id.includes("mist");
+const isDevice = id === "wellness-device" || id.includes("aura") || id.includes("device");
+const isBundleComfort = id === "bundle-complete" || id.includes("comfort");
+const isBundleUltimate = id === "bundle-ultimate" || id.includes("ultimate");
+---
+
+<div class="relative w-full h-full flex items-center justify-center p-4 select-none">
+  
+  {/* Ambient Soft Studio Glow */}
+  <div class="absolute inset-0 bg-radial from-white/70 via-transparent to-transparent opacity-80 pointer-events-none"></div>
+
+  {/* 1. GENTLE INTIMATE WASH BOTTLE */}
+  {isWash && (
+    <div class="relative flex flex-col items-center group/bottle">
+      <!-- Shadow Under Bottle -->
+      <div class="absolute -bottom-3 w-28 h-5 bg-[#29242A]/10 rounded-full blur-md"></div>
+      
+      <!-- Dispenser Pump Head -->
+      <div class="w-12 h-14 relative flex flex-col items-center z-10">
+        <!-- Spout -->
+        <div class="w-10 h-3 bg-gradient-to-r from-[#D98AAF] to-[#E8A5C4] rounded-t-md shadow-xs relative">
+          <div class="absolute -left-2 top-0.5 w-3 h-2 bg-[#D98AAF] rounded-l-full"></div>
+        </div>
+        <!-- Neck Collar -->
+        <div class="w-6 h-5 bg-gradient-to-b from-[#FFF0F8] to-[#E0CBD7] border border-[#D98AAF]/30 rounded-xs"></div>
+        <!-- Screw Ring -->
+        <div class="w-8 h-3.5 bg-gradient-to-r from-[#F0D5E4] via-white to-[#F0D5E4] rounded-xs border-y border-[#D98AAF]/40 shadow-2xs"></div>
+      </div>
+
+      <!-- Bottle Body -->
+      <div class="w-28 sm:w-32 h-44 sm:h-52 rounded-[28px] bg-gradient-to-b from-white via-[#FFF7FB] to-[#FFE5F7] border border-[#F0D5E4] shadow-lg flex flex-col items-center justify-between p-3.5 relative overflow-hidden">
+        <!-- Bottle Glass Reflection Highlight -->
+        <div class="absolute top-2 left-2.5 w-3 h-36 bg-gradient-to-b from-white/90 to-transparent rounded-full opacity-60 pointer-events-none"></div>
+        <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#D98AAF]/10 to-transparent pointer-events-none"></div>
+
+        <!-- Top Formula Badge -->
+        <div class="z-10 flex items-center gap-1 bg-[#FFF0F8] border border-[#F0D5E4] px-2 py-0.5 rounded-full text-[8px] font-semibold text-[#D98AAF] tracking-wider uppercase shadow-2xs">
+          <span>pH 4.0</span>
+          <span>•</span>
+          <span>Balancing</span>
+        </div>
+
+        <!-- Center Brand Typography -->
+        <div class="z-10 flex flex-col items-center text-center space-y-1 my-auto">
+          <img 
+            src="/pinck-smile-logo.svg" 
+            alt="PINCK SMILE" 
+            class="h-8 sm:h-9 w-auto object-contain drop-shadow-2xs"
+          />
+          <div class="text-[9px] font-serif font-semibold text-[#29242A] tracking-wide">
+            GENTLE WASH
+          </div>
+          <div class="text-[7px] text-[#756B72] tracking-wider uppercase">
+            Organic Chamomile & Prebiotics
+          </div>
+        </div>
+
+        <!-- Bottom Volume & Pure Seal -->
+        <div class="z-10 w-full flex items-center justify-between px-1 text-[8px] text-[#8E828B] border-t border-[#F5E6EF] pt-1.5">
+          <span class="font-medium text-[#D98AAF]">150 ml</span>
+          <span class="text-[7px] bg-white px-1.5 py-0.5 rounded-full border border-[#F0D5E4]">Micro-Foam</span>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {/* 2. SOOTHING HYDRATING MIST */}
+  {isMist && (
+    <div class="relative flex flex-col items-center group/bottle">
+      <!-- Shadow Under Bottle -->
+      <div class="absolute -bottom-3 w-24 h-4 bg-[#29242A]/10 rounded-full blur-md"></div>
+      
+      <!-- Mist Atomizer Cap & Nozzle -->
+      <div class="w-10 h-14 relative flex flex-col items-center z-10">
+        <!-- Translucent Cap -->
+        <div class="w-8 h-8 rounded-t-lg bg-white/80 backdrop-blur-xs border border-[#F0D5E4] shadow-xs flex items-center justify-center relative">
+          <div class="w-1.5 h-1.5 rounded-full bg-[#D98AAF]/70 animate-pulse"></div>
+        </div>
+        <!-- Metallic Rose Gold Collar -->
+        <div class="w-7 h-5 bg-gradient-to-r from-[#D98AAF] via-[#FFE5F7] to-[#C6759B] rounded-xs border-y border-[#B56087] shadow-2xs"></div>
+      </div>
+
+      <!-- Slim Aluminum Mist Bottle -->
+      <div class="w-22 sm:w-26 h-44 sm:h-50 rounded-[22px] bg-gradient-to-b from-white via-[#FFF7FB] to-[#FFE8F5] border border-[#F0D5E4] shadow-lg flex flex-col items-center justify-between p-3 relative overflow-hidden">
+        <!-- Metallic Sheen Highlight -->
+        <div class="absolute top-2 left-2 w-2.5 h-36 bg-gradient-to-b from-white/90 to-transparent rounded-full opacity-70 pointer-events-none"></div>
+
+        <!-- Top Badge -->
+        <div class="z-10 bg-[#FFE5F7] text-[#D98AAF] border border-[#F0D5E4] px-2 py-0.5 rounded-full text-[7.5px] font-semibold uppercase tracking-wider">
+          360° Mist
+        </div>
+
+        <!-- Center Brand & Label -->
+        <div class="z-10 flex flex-col items-center text-center space-y-1 my-auto">
+          <img 
+            src="/pinck-smile-logo.svg" 
+            alt="PINCK SMILE" 
+            class="h-7 sm:h-8 w-auto object-contain drop-shadow-2xs"
+          />
+          <div class="text-[8.5px] font-serif font-semibold text-[#29242A]">
+            HYDRATING MIST
+          </div>
+          <div class="text-[7px] text-[#756B72] tracking-tight">
+            Rosewater & Niacinamide
+          </div>
+        </div>
+
+        <!-- Bottom Volume -->
+        <div class="z-10 w-full flex items-center justify-between px-1 text-[7.5px] text-[#8E828B] border-t border-[#F5E6EF] pt-1">
+          <span class="font-medium text-[#D98AAF]">60 ml</span>
+          <span class="text-[7px] bg-white px-1.5 py-0.5 rounded-full border border-[#F0D5E4]">On-The-Go</span>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {/* 3. AURA INTIMATE DEVICE */}
+  {isDevice && (
+    <div class="relative flex flex-col items-center group/device">
+      <!-- Shadow Under Device -->
+      <div class="absolute -bottom-4 w-32 h-6 bg-[#29242A]/12 rounded-full blur-lg"></div>
+
+      <!-- Velvet Medical Silicone Body Silhouette -->
+      <div class="w-28 sm:w-34 h-48 sm:h-54 rounded-[36px] bg-gradient-to-tr from-[#D98AAF] via-[#ECA3C3] to-[#FCDCEB] border-2 border-white shadow-xl flex flex-col items-center justify-between p-4 relative overflow-hidden transform hover:rotate-1 transition-transform duration-300">
+        
+        <!-- Subtle Velvet Silicone Matte Highlights -->
+        <div class="absolute inset-0 bg-radial from-white/30 via-transparent to-black/5 pointer-events-none"></div>
+        <div class="absolute top-3 right-3 w-12 h-12 bg-white/20 rounded-full blur-md"></div>
+
+        <!-- Top Ergonomic Tip Indicator -->
+        <div class="z-10 flex items-center gap-1 bg-white/80 backdrop-blur-xs px-2.5 py-0.5 rounded-full text-[7.5px] font-semibold text-[#756B72] border border-white/60 shadow-2xs">
+          <span>IPX7 Waterproof</span>
+        </div>
+
+        <!-- Center Soft Touch Control Ring -->
+        <div class="z-10 flex flex-col items-center space-y-2 my-auto">
+          <!-- Metallic Touch Ring -->
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-white via-[#FFF0F8] to-[#E8BACF] shadow-inner border border-white flex items-center justify-center relative">
+            <div class="w-4 h-4 rounded-full bg-[#D98AAF] shadow-xs flex items-center justify-center text-[8px] text-white font-bold">
+              ✦
+            </div>
+          </div>
+          <div class="text-[8px] font-bold text-white tracking-widest uppercase drop-shadow-xs">
+            AURA
+          </div>
+          <div class="text-[6.5px] text-white/90 font-medium tracking-wider">
+            8 Micro-Sonic Modes
+          </div>
+        </div>
+
+        <!-- Bottom Magnetic Charge Connector -->
+        <div class="z-10 flex items-center justify-center gap-1.5 pt-1">
+          <div class="w-1.5 h-1.5 rounded-full bg-amber-200 border border-amber-300 shadow-2xs"></div>
+          <div class="w-1.5 h-1.5 rounded-full bg-amber-200 border border-amber-300 shadow-2xs"></div>
+          <span class="text-[6.5px] text-white/80 font-medium ml-1">Magnetic Pin</span>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {/* 4. COMPLETE COMFORT SET DUO */}
+  {isBundleComfort && (
+    <div class="relative flex items-center justify-center gap-3">
+      <!-- Shadow -->
+      <div class="absolute -bottom-4 w-44 h-5 bg-[#29242A]/10 rounded-full blur-md"></div>
+
+      <!-- Wash Miniature -->
+      <div class="w-20 h-36 rounded-2xl bg-white border border-[#F0D5E4] shadow-md p-2 flex flex-col justify-between items-center text-center relative transform -rotate-3 hover:rotate-0 transition-transform">
+        <div class="w-5 h-2 bg-[#D98AAF] rounded-full"></div>
+        <img src="/pinck-smile-logo.svg" alt="PINCK" class="h-5 w-auto" />
+        <div class="text-[6.5px] font-bold text-[#D98AAF]">Wash 150ml</div>
+      </div>
+
+      <!-- Mist Miniature -->
+      <div class="w-16 h-32 rounded-xl bg-gradient-to-b from-white to-[#FFE5F7] border border-[#F0D5E4] shadow-md p-1.5 flex flex-col justify-between items-center text-center relative transform rotate-3 hover:rotate-0 transition-transform">
+        <div class="w-4 h-1.5 bg-[#C6759B] rounded-full"></div>
+        <div class="text-[7px] font-serif font-bold text-[#29242A]">MIST</div>
+        <div class="text-[6px] font-medium text-[#756B72]">60ml</div>
+      </div>
+    </div>
+  )}
+
+  {/* 5. ULTIMATE WELLNESS RITUAL TRIO */}
+  {isBundleUltimate && (
+    <div class="relative flex items-center justify-center gap-2">
+      <!-- Shadow -->
+      <div class="absolute -bottom-4 w-48 h-6 bg-[#29242A]/12 rounded-full blur-md"></div>
+
+      <!-- Trio Composition -->
+      <div class="w-16 h-32 rounded-xl bg-white border border-[#F0D5E4] shadow-sm p-1.5 flex flex-col justify-between items-center text-center transform -rotate-6">
+        <div class="w-4 h-1.5 bg-[#D98AAF] rounded-full"></div>
+        <div class="text-[6px] font-bold text-[#D98AAF]">Wash</div>
+      </div>
+
+      <div class="w-20 h-38 rounded-2xl bg-gradient-to-tr from-[#D98AAF] to-[#FCDCEB] border border-white shadow-md p-2 flex flex-col justify-between items-center text-center z-10">
+        <div class="w-3 h-3 rounded-full bg-white text-[6px] flex items-center justify-center text-[#D98AAF]">✦</div>
+        <div class="text-[7px] font-bold text-white tracking-wider">AURA</div>
+        <div class="text-[6px] text-white/90">Device</div>
+      </div>
+
+      <div class="w-14 h-28 rounded-lg bg-gradient-to-b from-white to-[#FFE5F7] border border-[#F0D5E4] shadow-sm p-1 flex flex-col justify-between items-center text-center transform rotate-6">
+        <div class="w-3 h-1 bg-[#C6759B] rounded-full"></div>
+        <div class="text-[6px] font-bold text-[#29242A]">Mist</div>
+      </div>
+    </div>
+  )}
+
+</div>

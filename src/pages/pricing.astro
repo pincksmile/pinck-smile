@@ -5,6 +5,7 @@ import Container from "@/components/container.astro";
 const bundles = [
   {
     id: "bundle-essential",
+    slug: "gentle-intimate-wash",
     name: "Essential Daily Care",
     tagline: "Perawatan Harian Dasar",
     price: "Rp 149.000",
@@ -22,6 +23,7 @@ const bundles = [
   },
   {
     id: "bundle-complete",
+    slug: "complete-comfort-set",
     name: "Complete Comfort Set",
     tagline: "Perawatan Lengkap & On-The-Go",
     price: "Rp 259.000",
@@ -40,6 +42,7 @@ const bundles = [
   },
   {
     id: "bundle-ultimate",
+    slug: "ultimate-wellness-ritual",
     name: "Ultimate Wellness Ritual",
     tagline: "Koleksi Lengkap & Intimate Device",
     price: "Rp 699.000",
@@ -90,8 +93,10 @@ const bundles = [
               <span class="text-xs font-semibold text-[#D98AAF] block uppercase tracking-wider mb-1">
                 {bundle.badge}
               </span>
-              <h2 class="text-2xl font-serif font-semibold text-[#29242A]">
-                {bundle.name}
+              <h2 class="text-2xl font-serif font-semibold text-[#29242A] hover:text-[#D98AAF] transition-colors">
+                <a href={`/products/${bundle.slug}`}>
+                  {bundle.name}
+                </a>
               </h2>
               <p class="text-xs text-[#756B72] mt-1 mb-4">
                 {bundle.tagline}
@@ -117,13 +122,21 @@ const bundles = [
               </ul>
             </div>
 
-            <div>
+            <div class="space-y-2">
               <button
                 type="button"
-                onclick={`window.addToCart('${bundle.id}', '${bundle.name}', ${bundle.priceNum})`}
-                class={`w-full block text-center py-3.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${bundle.popular ? 'bg-[#D98AAF] text-white hover:bg-[#C6759B] shadow-sm' : 'bg-[#29242A] text-white hover:bg-[#D98AAF]'}`}>
+                data-id={bundle.id}
+                data-name={bundle.name}
+                data-price={bundle.priceNum}
+                class={`add-to-cart-btn w-full block text-center py-3.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${bundle.popular ? 'bg-[#D98AAF] text-white hover:bg-[#C6759B] shadow-sm' : 'bg-[#29242A] text-white hover:bg-[#D98AAF]'}`}>
                 {bundle.buttonText}
               </button>
+
+              <a
+                href={`/products/${bundle.slug}`}
+                class="w-full block text-center py-2 text-[11px] font-semibold text-[#756B72] hover:text-[#D98AAF] transition-colors">
+                Lihat Spesifikasi & Panduan Detail →
+              </a>
             </div>
           </div>
         ))

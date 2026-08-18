@@ -1,0 +1,211 @@
+---
+import { products } from "@/data/products";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import ProductVisual from "@/components/product-visual.astro";
+---
+
+<Layout
+  title="Koleksi Produk & Perawatan Intim - PINCK SMILE"
+  description="Katalog resmi produk perawatan kesehatan intim wanita PINCK SMILE. Formula seimbang pH 4.0, silikon medis, BPOM, dan kemasan pengiriman rahasia 100%.">
+  
+  <Container class="py-14 sm:py-16">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3 shadow-2xs">
+        ✦ Katalog Resmi
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif font-semibold text-[#29242A] tracking-tight">
+        Koleksi Signature PINCK SMILE
+      </h1>
+      <p class="text-base text-[#756B72] mt-4 leading-relaxed">
+        Setiap produk dirancang secara dermatologis dengan standar medis untuk memelihara keseimbangan mikrobiom, relaksasi otot panggul, dan keharmonisan diri.
+      </p>
+    </div>
+
+    <!-- Category Filter Bar (Client-side interactive pills) -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-12" id="filter-container">
+      <button
+        type="button"
+        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-[#29242A] text-white border border-[#29242A] transition-all cursor-pointer shadow-xs"
+        data-filter="all">
+        Semua Koleksi ({products.length})
+      </button>
+      <button
+        type="button"
+        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-[#756B72] border border-[#F0D5E4] hover:bg-[#FFF7FB] hover:text-[#29242A] transition-all cursor-pointer"
+        data-filter="Daily Care">
+        Daily Care
+      </button>
+      <button
+        type="button"
+        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-[#756B72] border border-[#F0D5E4] hover:bg-[#FFF7FB] hover:text-[#29242A] transition-all cursor-pointer"
+        data-filter="On-the-go Care">
+        On-The-Go
+      </button>
+      <button
+        type="button"
+        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-[#756B72] border border-[#F0D5E4] hover:bg-[#FFF7FB] hover:text-[#29242A] transition-all cursor-pointer"
+        data-filter="Wellness & Sensual Care">
+        Device & Wellness
+      </button>
+      <button
+        type="button"
+        class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-[#756B72] border border-[#F0D5E4] hover:bg-[#FFF7FB] hover:text-[#29242A] transition-all cursor-pointer"
+        data-filter="Bundle Set">
+        Paket Hemat
+      </button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20" id="products-grid">
+      {
+        products.map((product) => (
+          <div 
+            class="product-card bg-white rounded-3xl p-6 sm:p-7 border border-[#F0D5E4] shadow-xs brand-card-hover flex flex-col justify-between group transition-all duration-300"
+            data-category={product.category}>
+            <div>
+              <!-- Top Category & Badge -->
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="text-[11px] font-semibold text-[#756B72] uppercase tracking-wider bg-[#FFF7FB] px-2.5 py-1 rounded-full border border-[#F0D5E4]">
+                  {product.category}
+                </span>
+                <span class="text-[11px] font-medium text-[#D98AAF] bg-[#FFE5F7] px-2.5 py-1 rounded-full border border-[#F0D5E4]/60">
+                  {product.badge}
+                </span>
+              </div>
+
+              <!-- Product Visual Container -->
+              <a href={`/products/${product.slug}`} class="block mb-6 relative group-hover:scale-[1.02] transition-transform duration-300">
+                <div class={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-br ${product.accentGradient} border border-[#F0D5E4]/70 flex items-center justify-center relative overflow-hidden shadow-inner`}>
+                  <ProductVisual id={product.id} size="md" />
+
+                  <div class="absolute bottom-3 right-3 text-[10px] font-medium text-[#756B72] bg-white/95 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-[#F0D5E4] shadow-2xs">
+                    {product.volume}
+                  </div>
+                </div>
+              </a>
+
+              <!-- Name & Tagline -->
+              <h2 class="text-lg sm:text-xl font-serif font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors leading-snug mb-2">
+                <a href={`/products/${product.slug}`}>
+                  {product.name}
+                </a>
+              </h2>
+
+              <p class="text-xs text-[#756B72] leading-relaxed line-clamp-2 mb-4">
+                {product.shortDescription}
+              </p>
+
+              <!-- Feature Pills -->
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                {product.benefits.slice(0, 2).map((b) => (
+                  <span class="text-[10px] font-medium text-[#29242A]/80 bg-[#FFF7FB] px-2.5 py-1 rounded-full border border-[#F0D5E4]">
+                    ✓ {b.title}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Pricing & Action Buttons -->
+            <div class="pt-4 border-t border-[#F5E6EF] space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-serif font-bold text-[#29242A]">{product.price}</span>
+                  {product.originalPrice && (
+                    <span class="text-xs text-[#8E828B] line-through ml-2">{product.originalPrice}</span>
+                  )}
+                </div>
+                <div class="flex items-center text-amber-400 text-xs">
+                  <span>★</span>
+                  <span class="font-bold text-[#29242A] ml-1">{product.rating}</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 pt-1">
+                <a
+                  href={`/products/${product.slug}`}
+                  class="py-2.5 px-3 rounded-full bg-white border border-[#F0D5E4] text-[#29242A] text-xs font-semibold hover:bg-[#FFE5F7] hover:border-[#D98AAF] transition-colors text-center">
+                  Lihat Detail
+                </a>
+
+                <button
+                  type="button"
+                  data-id={product.id}
+                  data-name={product.name}
+                  data-price={product.priceNum}
+                  data-category={product.category}
+                  class="add-to-cart-btn py-2.5 px-3 rounded-full bg-[#29242A] text-white text-xs font-semibold hover:bg-[#D98AAF] transition-colors flex items-center justify-center gap-1 cursor-pointer">
+                  <span>+ Tas</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Discreet Packaging Guarantee Banner -->
+    <div class="bg-[#FFF7FB] rounded-3xl p-8 border border-[#F0D5E4] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
+      <div class="flex items-center gap-4 text-left">
+        <div class="w-12 h-12 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center text-xl shrink-0">
+          🔒
+        </div>
+        <div>
+          <h3 class="text-base font-serif font-semibold text-[#29242A]">
+            100% Discreet Packaging & Pengiriman Terjaga
+          </h3>
+          <p class="text-xs text-[#756B72] mt-0.5 max-w-xl">
+            Seluruh pesanan Anda dikirim menggunakan kardus cokelat polos tanpa deskripsi nama produk di label kurir demi menjamin kerahasiaan penuh.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 shrink-0">
+        <a
+          href="https://s.shopee.co.id/9zx2C9Pfba"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#EE4D2D] text-white text-xs font-semibold hover:bg-[#D43D1F] transition-colors shadow-xs">
+          <span>Beli di Shopee Mall ↗</span>
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-[#F0D5E4] text-[#29242A] text-xs font-semibold hover:bg-[#FFE5F7] transition-colors">
+          <span>Konsultasi Privat</span>
+        </a>
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update active button styling
+        buttons.forEach((b) => {
+          b.classList.remove('bg-[#29242A]', 'text-white', 'border-[#29242A]', 'shadow-xs');
+          b.classList.add('bg-white', 'text-[#756B72]', 'border-[#F0D5E4]');
+        });
+        btn.classList.add('bg-[#29242A]', 'text-white', 'border-[#29242A]', 'shadow-xs');
+        btn.classList.remove('bg-white', 'text-[#756B72]', 'border-[#F0D5E4]');
+
+        // Filter cards
+        cards.forEach((card) => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category.toLowerCase().includes(filter.toLowerCase())) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

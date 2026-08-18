@@ -1,158 +1,124 @@
 ---
 import Container from "@/components/container.astro";
+import ProductVisual from "@/components/product-visual.astro";
+import { products } from "@/data/products";
 
-const products = [
-  {
-    id: "gentle-wash",
-    name: "Pinck Smile Gentle Intimate Wash",
-    tagline: "pH 4.0 Daily Balance Cleanser",
-    category: "Daily Care",
-    badge: "Best Seller",
-    price: "Rp 149.000",
-    volume: "150 ml",
-    description:
-      "Pembersih area kewanitaan dengan formula ultra-lembut diperkaya Chamomile Organik, Ekstrak Daun Sirih, dan Prebiotic Complex untuk menjaga keseimbangan flora alami tanpa rasa kering.",
-    features: [
-      "pH 4.0 seimbang sesuai mikrobiom wanita",
-      "Bebas SLS, Paraben, dan Pewangi Buatan",
-      "Dermatologically & Gynaecologically Tested",
-      "Aroma alami yang menenangkan dan segar",
-    ],
-    accentGradient: "from-[#FFE5F7] to-[#FFF7FB]",
-  },
-  {
-    id: "soothing-mist",
-    name: "Pinck Smile Soothing Hydrating Mist",
-    tagline: "Instant Refresh & Barrier Defense",
-    category: "On-the-go Care",
-    badge: "Staff Pick",
-    price: "Rp 129.000",
-    volume: "60 ml",
-    description:
-      "Mist praktis tanpa bilas dengan Rosewater murni, Niacinamide, dan Asam Hialuronat. Memberikan hidrasi instan, meredakan rasa tidak nyaman setelah berolahraga atau beraktivitas seharian.",
-    features: [
-      "Travel-friendly 60ml aman di dalam tas",
-      "360° spray nozzle untuk kemudahan aplikasi",
-      "Cepat meresap, tanpa rasa lengket",
-      "Menenangkan kulit sensitif & pasca-cukur",
-    ],
-    accentGradient: "from-[#FFF7FB] to-[#FFE5F7]",
-  },
-  {
-    id: "wellness-device",
-    name: "Pinck Smile Aura Intimate Device",
-    tagline: "Ergonomic & Whisper-Quiet Wellness",
-    category: "Wellness & Confidence",
-    badge: "Premium Edition",
-    price: "Rp 489.000",
-    volume: "Medical Silicone",
-    description:
-      "Dirancang khusus untuk mendukung relaksasi otot panggul, eksplorasi tubuh yang sehat, serta meningkatkan kenyamanan intim dengan motor ultra-senyap dan silikon selembut sutra.",
-    features: [
-      "100% Medical-Grade Body-Safe Silicone",
-      "IPX7 Waterproof (Mudah dibersihkan)",
-      "Magnetic USB Fast Rechargeable",
-      "8 Mode getaran halus & whisper-quiet (<40dB)",
-    ],
-    accentGradient: "from-[#FFE5F7] via-[#FFF7FB] to-white",
-  },
-];
+// Get the 3 core products for homepage highlight
+const coreProducts = products.filter(p => !p.slug.includes("bundle") && !p.slug.includes("set") && !p.slug.includes("ritual")).slice(0, 3);
 ---
 
-<section id="produk" class="py-24 bg-[#FFF7FB]/70 relative">
-  <!-- Subtle background glow -->
-  <div class="absolute inset-0 bg-[radial-gradient(#FFE5F7_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+<section id="produk" class="py-24 bg-gradient-to-b from-[#FFF7FB]/80 via-white to-[#FFF7FB]/50 relative overflow-hidden">
+  <!-- Subtle background glow & organic curves -->
+  <div class="absolute inset-0 bg-[radial-gradient(#FFE5F7_1px,transparent_1px)] [background-size:28px_28px] opacity-40 pointer-events-none"></div>
 
   <Container>
     <!-- Section Heading -->
     <div class="relative text-center max-w-2xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3 shadow-xs">
-        Koleksi Pilihan
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3 shadow-2xs">
+        ✦ Koleksi Pilihan
       </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#29242A]">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#29242A] tracking-tight">
         MEET PINCK SMILE
       </h2>
       <p class="text-base text-[#756B72] mt-3 leading-relaxed">
-        Setiap produk dirancang untuk memberikan perawatan terbaik, memelihara kesehatan alami, serta menumbuhkan kenyamanan diri yang sesungguhnya.
+        Setiap produk dirancang khusus untuk memelihara ekosistem alami vulva, meredakan ketegangan otot dasar panggul, serta menumbuhkan rasa percaya diri yang utuh.
       </p>
     </div>
 
     <!-- Product Grid Showcase -->
-    <div class="relative grid md:grid-cols-3 gap-8 mb-16">
+    <div class="relative grid md:grid-cols-3 gap-8 mb-14">
       {
-        products.map((product) => (
+        coreProducts.map((product) => (
           <div class="bg-white rounded-3xl p-6 sm:p-7 border border-[#F0D5E4] shadow-xs brand-card-hover flex flex-col justify-between relative overflow-hidden group">
             
-            <!-- Top tag & Category -->
+            <!-- Top Tag & Category -->
             <div>
               <div class="flex items-center justify-between gap-2 mb-4">
-                <span class="text-[11px] font-semibold text-[#756B72] uppercase tracking-wider bg-[#FFF7FB] px-2.5 py-1 rounded-full border border-[#F0D5E4]">
+                <span class="text-[11px] font-semibold text-[#756B72] uppercase tracking-wider bg-[#FFF7FB] px-3 py-1 rounded-full border border-[#F0D5E4]">
                   {product.category}
                 </span>
-                <span class="text-[11px] font-medium text-[#D98AAF] bg-[#FFE5F7] px-2.5 py-1 rounded-full">
+                <span class="text-[11px] font-medium text-[#D98AAF] bg-[#FFE5F7] px-3 py-1 rounded-full border border-[#F0D5E4]/60">
                   {product.badge}
                 </span>
               </div>
 
-              <!-- Product Visual Illustration Container -->
-              <div class={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-br ${product.accentGradient} border border-[#F0D5E4]/60 flex items-center justify-center p-6 mb-6 relative overflow-hidden group-hover:scale-[1.01] transition-transform duration-300`}>
-                <div class="w-24 h-32 rounded-xl bg-white shadow-md border border-[#F5E6EF] flex flex-col items-center justify-between p-2.5 text-center">
-                  <div class="w-8 h-2 rounded-full bg-[#D98AAF]/70"></div>
-                  <div class="space-y-0.5 flex flex-col items-center">
-                    <img 
-                      src="/pinck-smile-logo.svg" 
-                      alt="PINCK SMILE" 
-                      class="h-8 w-auto object-contain"
-                    />
-                    <div class="text-[7px] text-[#756B72] leading-tight line-clamp-1 mt-0.5">{product.tagline}</div>
-                  </div>
-                  <div class="text-[7px] text-[#D98AAF] font-medium">Safe & Pure</div>
-                </div>
+              <!-- Product Visual Container -->
+              <a href={`/products/${product.slug}`} class="block mb-6 relative group-hover:scale-[1.02] transition-transform duration-300">
+                <div class={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-br ${product.accentGradient} border border-[#F0D5E4]/80 flex items-center justify-center relative overflow-hidden shadow-inner`}>
+                  <ProductVisual id={product.id} size="md" />
 
-                <div class="absolute bottom-3 right-3 text-[10px] font-medium text-[#756B72] bg-white/90 backdrop-blur-xs px-2 py-0.5 rounded-full border border-[#F0D5E4]">
-                  {product.volume}
+                  <div class="absolute bottom-3 right-3 text-[10px] font-medium text-[#756B72] bg-white/95 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-[#F0D5E4] shadow-2xs">
+                    {product.volume}
+                  </div>
                 </div>
-              </div>
+              </a>
 
               <!-- Title & Tagline -->
-              <h3 class="text-xl font-serif font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors">
-                {product.name}
+              <h3 class="text-xl font-serif font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors leading-snug">
+                <a href={`/products/${product.slug}`}>
+                  {product.name}
+                </a>
               </h3>
-              <p class="text-xs font-medium text-[#D98AAF] mt-1 mb-3">
+              <p class="text-xs font-medium text-[#D98AAF] mt-1 mb-3 line-clamp-1">
                 {product.tagline}
               </p>
 
               <!-- Description -->
-              <p class="text-xs text-[#756B72] leading-relaxed mb-5">
-                {product.description}
+              <p class="text-xs text-[#756B72] leading-relaxed mb-5 line-clamp-2">
+                {product.shortDescription}
               </p>
 
-              <!-- Feature Checklist -->
+              <!-- Key Benefits Checklist -->
               <ul class="space-y-2 mb-6">
-                {product.features.map((feat) => (
+                {product.benefits.slice(0, 3).map((b) => (
                   <li class="flex items-start gap-2 text-xs text-[#29242A]/85">
-                    <span class="w-3.5 h-3.5 mt-0.5 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center shrink-0">
-                      <svg class="w-2 h-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="w-3.5 h-3.5 mt-0.5 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center shrink-0 text-[10px] font-bold">
+                      ✓
                     </span>
-                    <span class="leading-tight">{feat}</span>
+                    <span class="leading-tight">{b.title}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <!-- Price & Button -->
-            <div class="pt-4 border-t border-[#F5E6EF] flex items-center justify-between gap-3">
-              <div>
-                <span class="text-[10px] text-[#756B72] block">Harga Resmi</span>
-                <span class="text-base font-semibold text-[#29242A]">{product.price}</span>
+            <!-- Price & Action Area -->
+            <div class="pt-4 border-t border-[#F5E6EF] space-y-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-[#756B72] block">Harga Resmi</span>
+                  <div class="flex items-baseline gap-1.5">
+                    <span class="text-base font-serif font-bold text-[#29242A]">{product.price}</span>
+                    {product.originalPrice && (
+                      <span class="text-[11px] text-[#8E828B] line-through">{product.originalPrice}</span>
+                    )}
+                  </div>
+                </div>
+
+                <a
+                  href={`/products/${product.slug}`}
+                  class="text-xs font-semibold text-[#D98AAF] hover:text-[#29242A] transition-colors flex items-center gap-1">
+                  <span>Lihat Detail</span>
+                  <span>→</span>
+                </a>
               </div>
 
-              <button
-                type="button"
-                onclick={`window.addToCart('${product.id}', '${product.name}', ${product.id === 'gentle-wash' ? 149000 : product.id === 'soothing-mist' ? 129000 : 489000})`}
-                class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#FFE5F7] text-[#29242A] hover:bg-[#D98AAF] hover:text-white text-xs font-semibold transition-all duration-200 border border-[#F0D5E4] cursor-pointer">
-                + Tambah ke Tas
-              </button>
+              <div class="grid grid-cols-2 gap-2 pt-1">
+                <a
+                  href={`/products/${product.slug}`}
+                  class="py-2.5 px-3 rounded-full bg-white border border-[#F0D5E4] text-[#29242A] hover:bg-[#FFE5F7] text-xs font-semibold transition-colors text-center">
+                  Rincian
+                </a>
+
+                <button
+                  type="button"
+                  data-id={product.id}
+                  data-name={product.name}
+                  data-price={product.priceNum}
+                  data-category={product.category}
+                  class="add-to-cart-btn py-2.5 px-3 rounded-full bg-[#29242A] text-white hover:bg-[#D98AAF] text-xs font-semibold transition-all duration-200 shadow-xs flex items-center justify-center gap-1 cursor-pointer">
+                  <span>+ Ke Tas</span>
+                </button>
+              </div>
             </div>
 
           </div>
@@ -160,16 +126,48 @@ const products = [
       }
     </div>
 
-    <!-- Center Section Action Button [ Learn More ] -->
-    <div class="text-center">
+    <!-- Trust & Quality Strip -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mb-14 text-center">
+      <div class="bg-white/80 backdrop-blur-xs p-3.5 rounded-2xl border border-[#F0D5E4]">
+        <div class="text-base mb-1">🌿</div>
+        <div class="text-xs font-semibold text-[#29242A]">pH 4.0 Seimbang</div>
+        <div class="text-[10px] text-[#756B72]">Mikrobiom Alami</div>
+      </div>
+      <div class="bg-white/80 backdrop-blur-xs p-3.5 rounded-2xl border border-[#F0D5E4]">
+        <div class="text-base mb-1">🧪</div>
+        <div class="text-xs font-semibold text-[#29242A]">Dermatologist Tested</div>
+        <div class="text-[10px] text-[#756B72]">Aman & Non-Iritatif</div>
+      </div>
+      <div class="bg-white/80 backdrop-blur-xs p-3.5 rounded-2xl border border-[#F0D5E4]">
+        <div class="text-base mb-1">🔒</div>
+        <div class="text-xs font-semibold text-[#29242A]">100% Discreet Box</div>
+        <div class="text-[10px] text-[#756B72]">Privasi Terjamin</div>
+      </div>
+      <div class="bg-white/80 backdrop-blur-xs p-3.5 rounded-2xl border border-[#F0D5E4]">
+        <div class="text-base mb-1">⚡</div>
+        <div class="text-xs font-semibold text-[#29242A]">Shopee Mall & COD</div>
+        <div class="text-[10px] text-[#756B72]">Pengiriman Cepat</div>
+      </div>
+    </div>
+
+    <!-- Center Section Action Buttons -->
+    <div class="flex flex-wrap items-center justify-center gap-4">
       <a
-        href="#intimate-wellness"
-        class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#29242A] text-white hover:bg-[#D98AAF] text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 group">
-        <span>Learn More</span>
+        href="/products"
+        class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#29242A] text-white hover:bg-[#D98AAF] text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 group">
+        <span>Lihat Semua Produk & Paket</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
+      </a>
+
+      <a
+        href="https://s.shopee.co.id/9zx2C9Pfba"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#EE4D2D] text-white hover:bg-[#D43D1F] text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+        <span>Shopee Official Store ↗</span>
       </a>
     </div>
 

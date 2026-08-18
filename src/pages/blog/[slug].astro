@@ -38,6 +38,7 @@ const relatedPosts = allPosts
 const featuredProducts = [
   {
     id: "gentle-wash",
+    slug: "gentle-intimate-wash",
     name: "Pinck Smile Gentle Intimate Wash",
     category: "Daily Balance Cleanser (pH 4.0)",
     priceNum: 149000,
@@ -48,6 +49,7 @@ const featuredProducts = [
   },
   {
     id: "soothing-mist",
+    slug: "soothing-hydrating-mist",
     name: "Pinck Smile Soothing Hydrating Mist",
     category: "Instant Refresh & Barrier Defense",
     priceNum: 129000,
@@ -58,6 +60,7 @@ const featuredProducts = [
   },
   {
     id: "wellness-device",
+    slug: "aura-intimate-device",
     name: "Pinck Smile Aura Intimate Device",
     category: "Wellness & Sensual Relaxation",
     priceNum: 489000,
@@ -241,8 +244,10 @@ const breadcrumbSchema = {
                   <span class="text-[10px] text-[#756B72]">{p.volume}</span>
                 </div>
 
-                <h4 class="font-serif font-semibold text-sm text-[#29242A] leading-snug mb-1">
-                  {p.name}
+                <h4 class="font-serif font-semibold text-sm text-[#29242A] hover:text-[#D98AAF] transition-colors leading-snug mb-1">
+                  <a href={`/products/${p.slug}`}>
+                    {p.name}
+                  </a>
                 </h4>
                 
                 <p class="text-[11px] text-[#756B72] leading-relaxed mb-3 line-clamp-2">
@@ -251,8 +256,15 @@ const breadcrumbSchema = {
               </div>
 
               <div class="pt-3 border-t border-[#F5E6EF] space-y-2">
-                <div class="text-xs font-serif font-bold text-[#D98AAF]">
-                  {p.priceStr}
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-serif font-bold text-[#D98AAF]">
+                    {p.priceStr}
+                  </span>
+                  <a
+                    href={`/products/${p.slug}`}
+                    class="text-[10px] font-semibold text-[#756B72] hover:text-[#D98AAF] transition-colors">
+                    Detail →
+                  </a>
                 </div>
 
                 <button
