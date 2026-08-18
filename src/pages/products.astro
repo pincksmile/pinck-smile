@@ -3,11 +3,62 @@ import { products } from "@/data/products";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import ProductVisual from "@/components/product-visual.astro";
+
+const siteUrl = "https://pinck-smile.netlify.app";
+
+const productCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Katalog Produk PINCK SMILE (Pink Smile)",
+  "description": "Daftar lengkap produk perawatan intim wanita PINCK SMILE / Pink Smile bersertifikasi BPOM.",
+  "itemListElement": products.map((prod, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "item": {
+      "@type": "Product",
+      "name": prod.name,
+      "alternateName": prod.name.replace(/Pinck Smile/i, "Pink Smile"),
+      "description": prod.shortDescription,
+      "url": `${siteUrl}/products/${prod.slug}`,
+      "brand": {
+        "@type": "Brand",
+        "name": "PINCK SMILE",
+        "alternateName": "Pink Smile"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "IDR",
+        "price": prod.priceNum,
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Katalog Produk",
+      "item": `${siteUrl}/products`
+    }
+  ]
+};
 ---
 
 <Layout
-  title="Koleksi Produk & Perawatan Intim - PINCK SMILE"
-  description="Katalog resmi produk perawatan kesehatan intim wanita PINCK SMILE. Formula seimbang pH 4.0, silikon medis, BPOM, dan kemasan pengiriman rahasia 100%.">
+  title="Koleksi Produk & Perawatan Intim - PINCK SMILE (Pink Smile)"
+  description="Katalog resmi produk perawatan kesehatan intim wanita PINCK SMILE (Pink Smile). Formula seimbang pH 4.0, silikon medis, BPOM, dan kemasan pengiriman rahasia 100%."
+  jsonLd={[productCatalogSchema, breadcrumbSchema]}>
   
   <Container class="py-14 sm:py-16">
     <!-- Header -->

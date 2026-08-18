@@ -1,11 +1,33 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
+
+const siteUrl = "https://pinck-smile.netlify.app";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tentang Kami",
+      "item": `${siteUrl}/about`
+    }
+  ]
+};
 ---
 
 <Layout 
-  title="Tentang Kami - Female Intimate Wellness, Thoughtfully"
-  description="Mengenal PINCK SMILE: Misi, standar keamanan medis, komitmen pengiriman 100% rahasia, serta komitmen kami dalam memberdayakan literasi kesehatan intim wanita.">
+  title="Tentang Kami - PINCK SMILE (Pink Smile) Indonesia"
+  description="Mengenal PINCK SMILE (Pink Smile): Misi, standar keamanan medis, komitmen pengiriman 100% rahasia, serta komitmen kami dalam memberdayakan literasi kesehatan intim wanita."
+  jsonLd={[breadcrumbSchema]}>
   <Container class="py-16">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
@@ -22,13 +44,13 @@ import Container from "@/components/container.astro";
     <div class="max-w-3xl mx-auto space-y-12 text-[#756B72] leading-relaxed">
       <div class="bg-[#FFF7FB] rounded-3xl p-8 sm:p-10 border border-[#F0D5E4]">
         <h2 class="text-2xl font-serif font-semibold text-[#29242A] mb-4">
-          Misi & Nilai Kami
+          Misi & Nilai PINCK SMILE (Pink Smile)
         </h2>
         <p class="mb-4 text-sm sm:text-base leading-relaxed">
-          Kami percaya bahwa setiap wanita berhak atas akses perawatan intim berkualitas tinggi tanpa rasa canggung, tabu, atau kompromi terhadap keamanan bahan. 
+          Kami percaya bahwa setiap wanita berhak atas akses perawatan intim berkualitas tinggi tanpa rasa canggung, tabu, atau kompromi terhadap keamanan bahan.
         </p>
         <p class="text-sm sm:text-base leading-relaxed">
-          Dengan memadukan formulasi botani yang lembut, standar kebersihan medis, dan nilai edukasi terbuka seputar literasi tubuh, PINCK SMILE hadir sebagai ruang yang aman bagi perempuan untuk merawat diri mereka dengan rasa percaya diri.
+          Dengan memadukan formulasi botani yang lembut, standar kebersihan medis, dan nilai edukasi terbuka seputar literasi tubuh, PINCK SMILE (dikenal juga dengan pencarian Pink Smile) hadir sebagai ruang yang aman bagi perempuan untuk merawat diri mereka dengan rasa percaya diri.
         </p>
       </div>
 

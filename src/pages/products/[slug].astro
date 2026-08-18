@@ -63,20 +63,25 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": product.name,
+  "alternateName": product.name.replace(/Pinck Smile/i, "Pink Smile"),
   "description": product.shortDescription,
+  "category": product.category,
   "brand": {
     "@type": "Brand",
-    "name": "PINCK SMILE"
+    "name": "PINCK SMILE",
+    "alternateName": "Pink Smile"
   },
   "offers": {
     "@type": "Offer",
     "url": pageUrl,
     "priceCurrency": "IDR",
     "price": product.priceNum,
+    "itemCondition": "https://schema.org/NewCondition",
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
-      "name": "PINCK SMILE"
+      "name": "PINCK SMILE",
+      "alternateName": "Pink Smile"
     }
   },
   "aggregateRating": {
@@ -86,6 +91,20 @@ const productSchema = {
     "bestRating": "5",
     "worstRating": "1"
   }
+};
+
+// FAQ Schema for product questions
+const productFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": product.faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
 };
 
 // Breadcrumb Schema JSON-LD
@@ -116,9 +135,9 @@ const breadcrumbSchema = {
 ---
 
 <Layout
-  title={`${product.name} - PINCK SMILE Intimate Wellness`}
-  description={product.shortDescription}
-  jsonLd={[productSchema, breadcrumbSchema]}>
+  title={`${product.name} (Pink Smile) - Perawatan Intim Wanita BPOM`}
+  description={`${product.shortDescription} Dapatkan produk original PINCK SMILE (Pink Smile) dengan garansi 100% privasi kemasan.`}
+  jsonLd={[productSchema, productFaqSchema, breadcrumbSchema]}>
   
   <Container class="py-8 sm:py-12">
     <!-- Breadcrumb Navigation -->

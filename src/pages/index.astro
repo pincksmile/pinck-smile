@@ -16,10 +16,18 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Apakah PINCK SMILE sama dengan Pink Smile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, PINCK SMILE (sering dicari atau dieja sebagai Pink Smile / PinkSmile) adalah brand resmi perawatan kesehatan intim wanita di Indonesia dengan formula pH 4.0 seimbang, bahan body-safe medis, dan jaminan pengiriman kemasan 100% privat (discreet)."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Apakah kemasan pengiriman dijamin 100% aman dan privasi (discreet)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Semua pesanan PINCK SMILE dikemas dalam kotak/amplop polos cokelat atau hitam tanpa logo, tanpa stempel nama produk, dan resi ekspedisi hanya mencantumkan informasi pengirim berupa inisial logistik umum untuk menjamin kerahasiaan penuh Anda."
+        "text": "Semua pesanan PINCK SMILE dikemas dalam kotak/amplop polos tanpa logo, tanpa stempel nama produk, dan resi ekspedisi hanya mencantumkan informasi pengirim berupa logistik umum untuk menjamin kerahasiaan penuh Anda."
       }
     },
     {
@@ -51,7 +59,7 @@ const faqSchema = {
       "name": "Di mana saya bisa membeli produk resmi PINCK SMILE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Anda dapat membeli secara langsung melalui Official Store kami di marketplace terkemuka (Shopee, Tokopedia, TikTok Shop) atau melalui layanan WhatsApp Concierge privat kami untuk jaminan produk original dan garansi resmi."
+        "text": "Anda dapat membeli secara langsung melalui Official Store kami di Shopee Mall, Lazada Official Store, Tokopedia, TikTok Shop, atau melalui layanan WhatsApp Concierge privat kami untuk jaminan produk original dan garansi resmi."
       }
     }
   ]
@@ -61,8 +69,8 @@ const faqSchema = {
 const productListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Koleksi Perawatan Intim PINCK SMILE",
-  "description": "Koleksi produk kesehatan intim wanita teruji klinis dan berbahan aman.",
+  "name": "Koleksi Perawatan Intim PINCK SMILE (Pink Smile)",
+  "description": "Koleksi produk kesehatan intim wanita teruji klinis, pH seimbang, dan berbahan aman bersertifikasi.",
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -70,10 +78,12 @@ const productListSchema = {
       "item": {
         "@type": "Product",
         "name": "Pinck Smile Gentle Intimate Wash",
+        "alternateName": "Pink Smile Gentle Intimate Wash",
         "description": "Pembersih area kewanitaan dengan formula pH 4.0 seimbang, Chamomile Organik, dan Prebiotic Complex.",
         "brand": {
           "@type": "Brand",
-          "name": "PINCK SMILE"
+          "name": "PINCK SMILE",
+          "alternateName": "Pink Smile"
         },
         "offers": {
           "@type": "Offer",
@@ -90,10 +100,12 @@ const productListSchema = {
       "item": {
         "@type": "Product",
         "name": "Pinck Smile Soothing Hydrating Mist",
+        "alternateName": "Pink Smile Soothing Hydrating Mist",
         "description": "Mist penyegar area intim tanpa bilas dengan Rosewater, Niacinamide, dan Hyaluronic Acid.",
         "brand": {
           "@type": "Brand",
-          "name": "PINCK SMILE"
+          "name": "PINCK SMILE",
+          "alternateName": "Pink Smile"
         },
         "offers": {
           "@type": "Offer",
@@ -110,10 +122,12 @@ const productListSchema = {
       "item": {
         "@type": "Product",
         "name": "Pinck Smile Aura Intimate Device",
+        "alternateName": "Pink Smile Aura Intimate Device",
         "description": "Perangkat relaksasi otot panggul dan kesehatan intim berbahan silikon medis 100% tahan air.",
         "brand": {
           "@type": "Brand",
-          "name": "PINCK SMILE"
+          "name": "PINCK SMILE",
+          "alternateName": "Pink Smile"
         },
         "offers": {
           "@type": "Offer",
@@ -129,8 +143,8 @@ const productListSchema = {
 ---
 
 <Layout 
-  title="Female Intimate Wellness, Thoughtfully"
-  description="PINCK SMILE - Solusi perawatan kesehatan intim wanita Indonesia. Formula pH seimbang, bahan body-safe medis, edukasi tanpa tabu, dan garansi 100% kemasan rahasia (discreet delivery)."
+  title="PINCK SMILE (Pink Smile) - Female Intimate Wellness Indonesia"
+  description="PINCK SMILE (Pink Smile) - Solusi perawatan kesehatan intim wanita Indonesia. Formula pH 4.0 seimbang, bahan body-safe medis, edukasi tanpa tabu, dan garansi 100% kemasan rahasia (discreet delivery)."
   jsonLd={[faqSchema, productListSchema]}>
   
   <!-- 1. HERO -->
