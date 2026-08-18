@@ -6,7 +6,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://pincksmile.com",
   server: {
     host: "0.0.0.0",
     port: 3000,
@@ -16,3 +16,4 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 });
+

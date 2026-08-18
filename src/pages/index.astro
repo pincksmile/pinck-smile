@@ -7,9 +7,131 @@ import IntimateWellness from "@/components/intimate-wellness.astro";
 import LatestArticles from "@/components/latest-articles.astro";
 import Faq from "@/components/faq.astro";
 import FinalCta from "@/components/final-cta.astro";
+
+// FAQ Schema for Google Search Rich Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah kemasan pengiriman dijamin 100% aman dan privasi (discreet)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Semua pesanan PINCK SMILE dikemas dalam kotak/amplop polos cokelat atau hitam tanpa logo, tanpa stempel nama produk, dan resi ekspedisi hanya mencantumkan informasi pengirim berupa inisial logistik umum untuk menjamin kerahasiaan penuh Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah produk Pinck Smile aman untuk kulit sensitif dan ibu hamil/menyusui?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Semua formula Pinck Smile diformulasikan dengan pH 3.8 – 4.5 seimbang, bebas sulfat, paraben, alkohol keras, dan pewarna sintetis. Seluruh produk telah lolos uji dermatologis. Namun untuk kondisi kehamilan khusus, kami selalu menyarankan untuk berkonsultasi dengan dokter kandungan Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara membersihkan dan merawat perangkat Pinck Smile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perangkat Pinck Smile dibuat dari 100% silikon medis bersertifikat yang tahan air (IPX7). Cukup bersihkan dengan air hangat dan sabun berbusa lembut bebas alkohol sebelum dan sesudah penggunaan, lalu keringkan dengan kain bersih dan simpan di kantung penyimpanan khusus yang kami sediakan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa lama waktu pengiriman dan dari mana produk dikirim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pesanan diproses dalam 1x24 jam dari gudang kami di Jakarta. Pengiriman reguler memakan waktu 1–3 hari kerja untuk area Jabodetabek dan 2–5 hari kerja untuk luar pulau, dengan opsi kurir Instant/Sameday untuk area tertentu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Di mana saya bisa membeli produk resmi PINCK SMILE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anda dapat membeli secara langsung melalui Official Store kami di marketplace terkemuka (Shopee, Tokopedia, TikTok Shop) atau melalui layanan WhatsApp Concierge privat kami untuk jaminan produk original dan garansi resmi."
+      }
+    }
+  ]
+};
+
+// Product ItemList Schema
+const productListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Koleksi Perawatan Intim PINCK SMILE",
+  "description": "Koleksi produk kesehatan intim wanita teruji klinis dan berbahan aman.",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "name": "Pinck Smile Gentle Intimate Wash",
+        "description": "Pembersih area kewanitaan dengan formula pH 4.0 seimbang, Chamomile Organik, dan Prebiotic Complex.",
+        "brand": {
+          "@type": "Brand",
+          "name": "PINCK SMILE"
+        },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "IDR",
+          "price": "149000",
+          "availability": "https://schema.org/InStock",
+          "url": "https://pincksmile.com/#produk"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "name": "Pinck Smile Soothing Hydrating Mist",
+        "description": "Mist penyegar area intim tanpa bilas dengan Rosewater, Niacinamide, dan Hyaluronic Acid.",
+        "brand": {
+          "@type": "Brand",
+          "name": "PINCK SMILE"
+        },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "IDR",
+          "price": "129000",
+          "availability": "https://schema.org/InStock",
+          "url": "https://pincksmile.com/#produk"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Product",
+        "name": "Pinck Smile Aura Intimate Device",
+        "description": "Perangkat relaksasi otot panggul dan kesehatan intim berbahan silikon medis 100% tahan air.",
+        "brand": {
+          "@type": "Brand",
+          "name": "PINCK SMILE"
+        },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "IDR",
+          "price": "489000",
+          "availability": "https://schema.org/InStock",
+          "url": "https://pincksmile.com/#produk"
+        }
+      }
+    }
+  ]
+};
 ---
 
-<Layout title="Female Intimate Wellness, Thoughtfully">
+<Layout 
+  title="Female Intimate Wellness, Thoughtfully"
+  description="PINCK SMILE - Solusi perawatan kesehatan intim wanita Indonesia. Formula pH seimbang, bahan body-safe medis, edukasi tanpa tabu, dan garansi 100% kemasan rahasia (discreet delivery)."
+  jsonLd={[faqSchema, productListSchema]}>
+  
   <!-- 1. HERO -->
   <Hero />
 

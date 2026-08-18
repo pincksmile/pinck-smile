@@ -1,42 +1,53 @@
 ---
 import Contactform from "@/components/contactform.astro";
 import Container from "@/components/container.astro";
-import Sectionhead from "@/components/sectionhead.astro";
 import Layout from "@/layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="Contact">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Contact</Fragment>
-      <Fragment slot="desc">We are a here to help.</Fragment>
-    </Sectionhead>
+<Layout title="Hubungi Kami & Konsultasi Privat - PINCK SMILE">
+  <Container class="py-16">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
+        Layanan Pelanggan & Konsultasi
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif font-semibold text-[#29242A]">
+        Hubungi PINCK SMILE
+      </h1>
+      <p class="text-base text-[#756B72] mt-4 leading-relaxed">
+        Punya pertanyaan seputar produk, pesanan, atau ingin berkonsultasi secara privat? Tim kami siap mendampingi Anda dengan ramah dan penuh kerahasiaan.
+      </p>
+    </div>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-      <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
+    <div class="grid md:grid-cols-2 gap-12 mx-auto max-w-4xl">
+      <div class="bg-[#FFF7FB] rounded-3xl p-8 border border-[#F0D5E4] space-y-6">
+        <h2 class="font-serif text-2xl font-semibold text-[#29242A]">Ruang Aman & Privat</h2>
+        <p class="text-sm leading-relaxed text-[#756B72]">
+          Kami menjamin seluruh percakapan, data pribadi, dan pertanyaan konsultasi Anda terjaga kerahasiaannya 100%.
         </p>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
-            >
+
+        <div class="space-y-4 pt-4 border-t border-[#F0D5E4] text-sm text-[#29242A]">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center font-semibold">📍</span>
+            <span>Jakarta, Indonesia</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center font-semibold">✉️</span>
+            <a href="mailto:care@pincksmile.com" class="hover:text-[#D98AAF] transition-colors">care@pincksmile.com</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center font-semibold">💬</span>
+            <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="hover:text-[#D98AAF] transition-colors">WhatsApp Concierge: +62 812-XXXX-XXXX</a>
           </div>
         </div>
+
+        <div class="p-4 rounded-2xl bg-white border border-[#F0D5E4] text-xs text-[#756B72]">
+          <strong class="text-[#29242A] block mb-1">Jam Operasional Konsultasi:</strong>
+          Senin – Sabtu: 09.00 – 20.00 WIB<br/>
+          Respons cepat dalam 1x24 jam.
+        </div>
       </div>
-      <div>
+
+      <div class="bg-white rounded-3xl p-8 border border-[#F0D5E4] shadow-xs">
         <Contactform />
       </div>
     </div>

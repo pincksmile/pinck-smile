@@ -3,37 +3,37 @@ import Container from "@/components/container.astro";
 
 const articles = [
   {
-    id: "panduan-perawatan-intim-harian",
-    title: "Panduan Lengkap Merawat Kesehatan Intim: Menjaga pH & Mikrobiom Seimbang",
+    slug: "panduan-perawatan-intim-wanita-ph-seimbang",
+    title: "Panduan Lengkap Perawatan Intim Wanita: Memahami pH Seimbang & Mikrobiom Alami",
     category: "Edukasi & Sains",
     date: "14 Ags 2026",
     readTime: "4 min baca",
     excerpt:
-      "Kenapa sabun mandi biasa tidak disarankan untuk area intim? Pelajari sains di balik tingkat keasaman (pH) alami wanita dan cara merawatnya tanpa merusak pelindung alami.",
+      "Ketahui sains di balik keasaman alami area kewanitaan, mengapa sabun mandi biasa berisiko menimbulkan iritasi, dan ritual harian yang aman untuk menjaga flora baik.",
     author: "dr. Amanda S., Sp.OG",
     imageGradient: "from-[#FFE5F7] to-[#FFF7FB]",
     tag: "Education",
   },
   {
-    id: "membangun-kepercayaan-diri-tubuh",
-    title: "Body Literacy: Langkah Nyata Membangun Rasa Percaya Diri Tanpa Rasa Malu",
-    category: "Confidence",
+    slug: "body-literacy-membangun-percaya-diri-wanita",
+    title: "Body Literacy: Cara Merawat Kesehatan Intim & Membangun Kepercayaan Diri Sejati",
+    category: "Confidence & Self-Care",
     date: "10 Ags 2026",
     readTime: "5 min baca",
     excerpt:
-      "Menghilangkan rasa bersalah dan kecanggungan seputar anatomi tubuh kita sendiri. Merangkul setiap fase perubahan tubuh dengan penuh cinta dan rasa hormat.",
+      "Mengenal tubuh sendiri tanpa rasa canggung atau tabu. Pelajari bagaimana body literacy membantu wanita merasa berdaya, aman, dan nyaman dalam kulitnya sendiri.",
     author: "Pinck Editorial Team",
     imageGradient: "from-[#FFF7FB] to-[#FFE5F7]",
     tag: "Confidence",
   },
   {
-    id: "komunikasi-intim-tanpa-canggung",
-    title: "Menciptakan Ruang Aman: Membicarakan Keinginan & Kenyamanan Bersama Pasangan",
-    category: "Relationship",
+    slug: "tips-komunikasi-keintiman-sehat-dan-terbuka",
+    title: "Tips Menjaga Keintiman & Komunikasi Terbuka Bersama Pasangan Tanpa Canggung",
+    category: "Relationship & Intimacy",
     date: "05 Ags 2026",
     readTime: "6 min baca",
     excerpt:
-      "Komunikasi yang jujur adalah kunci utama keintiman yang langgeng. Simak tips praktis membuka obrolan intim dengan pasangan secara hangat dan penuh penghargaan.",
+      "Membicarakan kenyamanan dan batas pribadi dalam keintiman. Langkah praktis membangun ruang komunikasi yang hangat, saling menghargai, dan membahagiakan.",
     author: "Nathalia R., M.Psi",
     imageGradient: "from-[#FFE5F7] via-[#FFF7FB] to-white",
     tag: "Relationship",
@@ -104,7 +104,7 @@ const articles = [
                 </span>
 
                 <h3 class="text-lg font-serif font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors leading-snug mb-3 line-clamp-2">
-                  <a href="/blog">
+                  <a href={`/blog/${article.slug}`}>
                     {article.title}
                   </a>
                 </h3>
@@ -119,7 +119,7 @@ const articles = [
             <div class="px-6 pb-6 pt-2 border-t border-[#F5E6EF] flex items-center justify-between text-xs">
               <span class="text-[#756B72] font-medium">{article.author}</span>
               <a
-                href="/blog"
+                href={`/blog/${article.slug}`}
                 class="font-semibold text-[#D98AAF] group-hover:text-[#29242A] transition-colors flex items-center gap-1">
                 <span>Baca</span>
                 <span class="text-xs">→</span>

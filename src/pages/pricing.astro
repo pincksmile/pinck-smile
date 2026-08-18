@@ -1,81 +1,129 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
-import Sectionhead from "@/components/sectionhead.astro";
-import PricingCard from "@/components/pricing.astro";
 
-const pricing = [
+const bundles = [
   {
-    name: "Personal",
-    price: "Free",
+    name: "Essential Daily Care",
+    tagline: "Perawatan Harian Dasar",
+    price: "Rp 149.000",
+    badge: "Populer",
     popular: false,
+    description: "Paket pembersih intim harian untuk menjaga pH dan kesegaran mikrobiom.",
     features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
+      "1x Gentle Intimate Wash (150ml)",
+      "Formula pH 4.0 seimbang",
+      "Chamomile & Prebiotic complex",
+      "Kemasan polos & pengiriman rahasia",
     ],
-    button: {
-      text: "Get Started",
-      link: "/",
-    },
+    buttonText: "Beli Sekarang",
+    buttonLink: "/#official-store",
   },
   {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
+    name: "Complete Comfort Set",
+    tagline: "Perawatan Lengkap & On-The-Go",
+    price: "Rp 259.000",
+    badge: "Rekomendasi",
     popular: true,
+    description: "Kombinasi pembersih harian dan mist penyegar portabel untuk kenyamanan sepanjang hari.",
     features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
+      "1x Gentle Intimate Wash (150ml)",
+      "1x Soothing Hydrating Mist (60ml)",
+      "Hemat Rp 19.000",
+      "Bonus Pouch Kosmetik Sutra Polos",
+      "Pengiriman Privasi 100% Terjamin",
     ],
-    button: {
-      text: "Get Started",
-      link: "#",
-    },
+    buttonText: "Pesan Paket Lengkap",
+    buttonLink: "/#official-store",
   },
   {
-    name: "Enterprise",
-    price: "Custom",
+    name: "Ultimate Wellness Ritual",
+    tagline: "Koleksi Lengkap & Intimate Device",
+    price: "Rp 699.000",
+    badge: "Best Value",
     popular: false,
+    description: "Pengalaman relaksasi dan keintiman maksimal dengan rangkaian perawatan menyeluruh.",
     features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
+      "1x Gentle Intimate Wash (150ml)",
+      "1x Soothing Hydrating Mist (60ml)",
+      "1x Aura Intimate Device (Medical Silicone)",
+      "Magnetic USB Charger & Storage Bag",
+      "Garansi Resmi 1 Tahun PINCK SMILE",
+      "Gratis Ongkir & Prioritas Pengiriman",
     ],
-    button: {
-      text: "Contact us",
-      link: "/contact",
-    },
+    buttonText: "Pilih Ultimate Set",
+    buttonLink: "/#official-store",
   },
 ];
 ---
 
-<Layout title="Pricing">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Pricing</Fragment>
-      <Fragment slot="desc">
-        Simple & Predictable pricing. No Surprises.
-      </Fragment>
-    </Sectionhead>
+<Layout 
+  title="Daftar Harga & Paket Produk - PINCK SMILE Intimate Wellness"
+  description="Daftar harga resmi produk dan paket hemat PINCK SMILE Female Intimate Wellness. 100% original, body-safe, pH seimbang, dan garansi pengiriman tertutup.">
+  <Container class="py-16">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
+        Katalog & Paket Hemat
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif font-semibold text-[#29242A]">
+        Pilihan Perawatan Sesuai Kebutuhan Anda
+      </h1>
+      <p class="text-base text-[#756B72] mt-4 leading-relaxed">
+        Harga transparan tanpa biaya tersembunyi. Semua pesanan dikirim dengan kemasan polos rahasia (discreet).
+      </p>
+    </div>
 
-    <div
-      class="grid md:grid-cols-3 gap-10 mx-auto max-w-(--breakpoint-lg) mt-12">
-      {pricing.map((item) => <PricingCard plan={item} />)}
+    <div class="grid md:grid-cols-3 gap-8 mx-auto max-w-6xl">
+      {
+        bundles.map((bundle) => (
+          <div class={`rounded-3xl p-8 border flex flex-col justify-between relative brand-card-hover ${bundle.popular ? 'bg-[#FFF7FB] border-[#D98AAF] shadow-md' : 'bg-white border-[#F0D5E4]'}`}>
+            {bundle.popular && (
+              <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#D98AAF] text-white text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full shadow-xs">
+                Paling Diminati
+              </div>
+            )}
+
+            <div>
+              <span class="text-xs font-semibold text-[#D98AAF] block uppercase tracking-wider mb-1">
+                {bundle.badge}
+              </span>
+              <h2 class="text-2xl font-serif font-semibold text-[#29242A]">
+                {bundle.name}
+              </h2>
+              <p class="text-xs text-[#756B72] mt-1 mb-4">
+                {bundle.tagline}
+              </p>
+
+              <div class="text-3xl font-bold text-[#29242A] mb-4">
+                {bundle.price}
+              </div>
+
+              <p class="text-xs text-[#756B72] leading-relaxed mb-6">
+                {bundle.description}
+              </p>
+
+              <ul class="space-y-3 pt-6 border-t border-[#F0D5E4] mb-8">
+                {bundle.features.map((feature) => (
+                  <li class="flex items-start gap-2.5 text-xs text-[#29242A]/90">
+                    <span class="w-4 h-4 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center shrink-0 mt-0.5">
+                      ✓
+                    </span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <a
+                href={bundle.buttonLink}
+                class={`w-full block text-center py-3.5 rounded-full text-xs font-semibold transition-all duration-200 ${bundle.popular ? 'bg-[#D98AAF] text-white hover:bg-[#C6759B] shadow-sm' : 'bg-[#29242A] text-white hover:bg-[#D98AAF]'}`}>
+                {bundle.buttonText}
+              </a>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </Container>
 </Layout>

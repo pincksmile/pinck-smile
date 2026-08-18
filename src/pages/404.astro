@@ -3,12 +3,26 @@ import Container from "@/components/container.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout title="404 Not Found">
+<Layout title="404 - Halaman Tidak Ditemukan">
   <Container>
-    <div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-      <div class="mt-16 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">404</h1>
-        <p class="text-lg mt-4 text-slate-600">Page not found.</p>
+    <div class="min-h-[60vh] flex items-center justify-center py-20">
+      <div class="text-center max-w-md bg-[#FFF7FB] rounded-3xl p-10 border border-[#F0D5E4] shadow-xs">
+        <div class="w-16 h-16 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center mx-auto mb-4 text-2xl font-serif font-bold">
+          404
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-serif font-semibold text-[#29242A]">
+          Halaman Tidak Ditemukan
+        </h1>
+        <p class="text-sm text-[#756B72] mt-3 leading-relaxed">
+          Maaf, halaman yang Anda tuju tidak tersedia atau telah dipindahkan.
+        </p>
+        <div class="mt-6">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#D98AAF] text-white text-xs font-semibold hover:bg-[#C6759B] transition-colors shadow-sm">
+            Kembali ke Beranda
+          </a>
+        </div>
       </div>
     </div>
   </Container>

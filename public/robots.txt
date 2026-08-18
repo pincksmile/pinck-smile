@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://astroship.web3templates.com/sitemap-index.xml
+# Host
+Host: https://pincksmile.com
+
+# Sitemaps
+Sitemap: https://pincksmile.com/sitemap-index.xml
