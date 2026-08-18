@@ -1,0 +1,87 @@
+---
+import Container from "@/components/container.astro";
+---
+
+<footer id="tentang" class="bg-[#29242A] text-white pt-16 pb-12 border-t border-[#3A333B]">
+  <Container>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#433B45]">
+      
+      <!-- Brand & Mission Column -->
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-2">
+          <span class="w-8 h-8 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>
+          <span class="text-xl tracking-[0.18em] font-semibold text-white">
+            PINCK <span class="text-[#D98AAF] font-normal">SMILE</span>
+          </span>
+        </div>
+
+        <p class="text-sm text-[#A89CA5] leading-relaxed max-w-sm">
+          Female intimate wellness, thoughtfully. Kami mendampingi setiap wanita untuk merangkul kesehatan tubuh dan rasa percaya diri melalui produk yang aman, lembut, dan menjaga privasi penuh.
+        </p>
+
+        <!-- Discreet Commitment Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#362F38] border border-[#4E4450] text-xs text-[#EAD8E4]">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Garansi 100% Pengemasan Polos & Privat</span>
+        </div>
+      </div>
+
+      <!-- Links Column 1: Produk -->
+      <div>
+        <h4 class="text-xs uppercase tracking-wider font-semibold text-[#D98AAF] mb-4">
+          Produk
+        </h4>
+        <ul class="space-y-2.5 text-sm text-[#C8BDC5]">
+          <li><a href="#produk" class="hover:text-white transition-colors">Gentle Intimate Wash</a></li>
+          <li><a href="#produk" class="hover:text-white transition-colors">Soothing Hydrating Mist</a></li>
+          <li><a href="#produk" class="hover:text-white transition-colors">Aura Intimate Device</a></li>
+          <li><a href="#official-store" class="hover:text-white transition-colors">Semua Koleksi</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Wellness & Edukasi -->
+      <div>
+        <h4 class="text-xs uppercase tracking-wider font-semibold text-[#D98AAF] mb-4">
+          Intimate Wellness
+        </h4>
+        <ul class="space-y-2.5 text-sm text-[#C8BDC5]">
+          <li><a href="#intimate-wellness" class="hover:text-white transition-colors">Education & Body Literacy</a></li>
+          <li><a href="#intimate-wellness" class="hover:text-white transition-colors">Confidence & Self-Care</a></li>
+          <li><a href="#intimate-wellness" class="hover:text-white transition-colors">Relationship & Intimacy</a></li>
+          <li><a href="#edukasi" class="hover:text-white transition-colors">Artikel & Jurnal</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ & Bantuan</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Toko Resmi & Layanan -->
+      <div>
+        <h4 class="text-xs uppercase tracking-wider font-semibold text-[#D98AAF] mb-4">
+          Official Store
+        </h4>
+        <ul class="space-y-2.5 text-sm text-[#C8BDC5]">
+          <li><a href="#official-store" class="hover:text-white transition-colors">Shopee Official</a></li>
+          <li><a href="#official-store" class="hover:text-white transition-colors">Tokopedia Mall</a></li>
+          <li><a href="#official-store" class="hover:text-white transition-colors">WhatsApp Concierge</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">Panduan Pengiriman</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright & Disclaimer -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#8E828B]">
+      <p>
+        © {new Date().getFullYear()} PINCK SMILE. All rights reserved. Female Intimate Wellness.
+      </p>
+      <div class="flex items-center gap-6">
+        <a href="#tentang" class="hover:text-[#D98AAF] transition-colors">Kebijakan Privasi</a>
+        <a href="#tentang" class="hover:text-[#D98AAF] transition-colors">Syarat & Ketentuan</a>
+        <a href="#faq" class="hover:text-[#D98AAF] transition-colors">Pusat Bantuan</a>
+      </div>
+    </div>
+  </Container>
+</footer>

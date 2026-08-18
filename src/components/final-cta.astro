@@ -1,0 +1,63 @@
+---
+import Container from "@/components/container.astro";
+---
+
+<section id="official-store" class="py-24 bg-gradient-to-b from-[#FFF7FB] via-[#FFE5F7]/40 to-white relative overflow-hidden">
+  <!-- Subtle decorative ambient elements -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#FFE5F7]/80 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <Container>
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 sm:p-14 border border-[#F0D5E4] shadow-lg text-center relative overflow-hidden">
+      <!-- Background subtle floral/watermark motif -->
+      <div class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-[#FFE5F7] opacity-60 blur-xl pointer-events-none"></div>
+      <div class="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-[#FFF7FB] opacity-80 blur-xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase">
+          ✦ Mulai Perjalanan Anda
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#29242A]">
+          Discover Pinck Smile
+        </h2>
+
+        <p class="text-base sm:text-lg text-[#756B72] max-w-xl mx-auto leading-relaxed">
+          Temukan koleksi lengkap produk perawatan intim yang dirancang khusus untuk kenyamanan, kemurnian, dan kepercayaan diri Anda.
+        </p>
+
+        <!-- Official Store Direct Action Buttons -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://shopee.co.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#D98AAF] text-white font-semibold text-[15px] hover:bg-[#C6759B] transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 group">
+            <span>Official Store</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </a>
+
+          <a
+            href="https://wa.me"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-full bg-white text-[#29242A] border border-[#F0D5E4] font-semibold text-[15px] hover:bg-[#FFE5F7] hover:border-[#D98AAF] transition-all duration-200">
+            <span>WhatsApp Concierge</span>
+          </a>
+        </div>
+
+        <!-- Official Channels Marketplace Pills -->
+        <div class="pt-8 border-t border-[#F5E6EF] flex flex-wrap items-center justify-center gap-3 text-xs text-[#756B72]">
+          <span class="font-medium text-[#29242A]">Tersedia resmi di:</span>
+          <span class="px-3 py-1 bg-[#FFF7FB] rounded-full border border-[#F0D5E4]">Shopee Mall</span>
+          <span class="px-3 py-1 bg-[#FFF7FB] rounded-full border border-[#F0D5E4]">Tokopedia Official</span>
+          <span class="px-3 py-1 bg-[#FFF7FB] rounded-full border border-[#F0D5E4]">TikTok Shop</span>
+          <span class="px-3 py-1 bg-[#FFF7FB] rounded-full border border-[#F0D5E4]">Layanan Pengiriman Privasi 100%</span>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

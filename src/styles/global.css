@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter Variable', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  --color-primary-pink: #FFE5F7;
+  --color-soft-pink: #FFF7FB;
+  --color-accent-pink: #D98AAF;
+  --color-accent-dark: #C6759B;
+  --color-brand-dark: #29242A;
+  --color-brand-muted: #756B72;
+  --color-brand-white: #FFFFFF;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #F0E6ED;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #29242A;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #29242A;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom scroll and smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom subtle ambient glow */
+.soft-pink-gradient {
+  background: radial-gradient(circle at 50% 30%, #FFE5F7 0%, #FFF7FB 60%, #FFFFFF 100%);
+}
+
+.brand-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(217, 138, 175, 0.18);
+}
+

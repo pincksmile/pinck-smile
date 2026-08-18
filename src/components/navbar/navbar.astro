@@ -1,0 +1,84 @@
+---
+import Container from "@/components/container.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const menuitems = [
+  {
+    title: "Produk",
+    path: "#produk",
+  },
+  {
+    title: "Intimate Wellness",
+    path: "#intimate-wellness",
+  },
+  {
+    title: "Edukasi",
+    path: "#edukasi",
+  },
+  {
+    title: "Tentang",
+    path: "#tentang",
+  },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#F5E6EF]/80 transition-all duration-200">
+  <Container>
+    <div class="flex flex-col lg:flex-row justify-between items-center py-4">
+      <Astronav>
+        <div class="flex w-full lg:w-auto items-center justify-between">
+          <a href="/" class="flex items-center gap-2 group text-decoration-none">
+            <span class="w-8 h-8 rounded-full bg-[#FFE5F7] border border-[#D98AAF]/40 flex items-center justify-center text-[#D98AAF] group-hover:bg-[#D98AAF] group-hover:text-white transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </span>
+            <span class="text-xl tracking-[0.18em] font-semibold text-[#29242A] font-sans">
+              PINCK <span class="text-[#D98AAF] font-normal">SMILE</span>
+            </span>
+          </a>
+          <div class="block lg:hidden">
+            <MenuIcon class="w-6 h-6 text-[#29242A] cursor-pointer" />
+          </div>
+        </div>
+
+        <MenuItems class="hidden w-full lg:w-auto mt-4 lg:flex lg:mt-0 items-center">
+          <ul class="flex flex-col lg:flex-row lg:items-center gap-1 lg:gap-8 text-[15px] font-medium text-[#756B72]">
+            {
+              menuitems.map((item) => (
+                <li>
+                  <a
+                    href={item.path}
+                    class="block py-2 lg:py-0 hover:text-[#29242A] transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#D98AAF] hover:after:w-full after:transition-all after:duration-200">
+                    {item.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+
+          <div class="lg:hidden flex flex-col gap-3 pt-4 border-t border-[#F5E6EF] mt-4 w-full">
+            <a
+              href="#official-store"
+              class="w-full text-center px-6 py-2.5 rounded-full bg-[#D98AAF] text-white font-medium text-sm hover:bg-[#C6759B] transition-colors shadow-sm">
+              Shop
+            </a>
+          </div>
+        </MenuItems>
+      </Astronav>
+
+      <div class="hidden lg:flex items-center gap-4">
+        <a
+          href="#official-store"
+          class="inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#D98AAF] text-white font-medium text-sm hover:bg-[#C6759B] transition-all duration-200 shadow-sm hover:shadow hover:-translate-y-0.5">
+          <span>Shop</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 ml-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </Container>
+</header>

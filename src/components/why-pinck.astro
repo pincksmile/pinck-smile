@@ -1,0 +1,89 @@
+---
+import Container from "@/components/container.astro";
+
+const pillars = [
+  {
+    id: "discreet",
+    title: "Discreet",
+    subtitle: "Privasi Tanpa Kompromi",
+    description:
+      "Kami memahami betapa pentingnya rasa nyaman dan privasi Anda. Mulai dari pengemasan polos tanpa label produk hingga pengiriman aman dan perlindungan data pribadi yang ketat.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`,
+    highlights: ["Kemasan luar polos 100%", "Tanpa nama produk di resi pengiriman", "Konsultasi privat & ramah"],
+  },
+  {
+    id: "thoughtful",
+    title: "Thoughtful",
+    subtitle: "Diformulasikan dengan Penuh Perhatian",
+    description:
+      "Setiap produk dirancang secara khusus menyesuaikan anatomi dan sensitivitas kulit wanita. Menggunakan bahan bersertifikasi body-safe, pH seimbang, bebas paraben, dan ramah mikrobiom alami.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>`,
+    highlights: ["pH-balanced (3.8 - 4.5)", "Dermatologically tested", "Bahan food/medical grade"],
+  },
+  {
+    id: "simple",
+    title: "Simple",
+    subtitle: "Kemudahan Ritual Harian",
+    description:
+      "Perawatan intim tidak perlu rumit atau membingungkan. Kami menghadirkan solusi intuitif yang mudah diintegrasikan ke dalam rutinitas self-care Anda dengan instruksi yang jelas dan praktis.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>`,
+    highlights: ["Mudah dibersihkan & disimpan", "Desain ergonomis & estetik", "Panduan penggunaan jelas"],
+  },
+];
+---
+
+<section id="why-pinck-smile" class="py-20 bg-white border-y border-[#F5E6EF]">
+  <Container>
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
+        Filosofi Inti
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-[#29242A]">
+        WHY PINCK SMILE
+      </h2>
+      <p class="text-base text-[#756B72] mt-3 leading-relaxed">
+        Tiga pilar komitmen kami dalam menghadirkan pengalaman perawatan intim yang aman, bermartabat, dan memberdayakan.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        pillars.map((pillar) => (
+          <div class="group relative bg-[#FFF7FB] rounded-2xl p-8 border border-[#F0D5E4]/80 brand-card-hover flex flex-col justify-between">
+            <div>
+              <!-- Icon Container -->
+              <div class="w-14 h-14 rounded-2xl bg-[#FFE5F7] border border-[#D98AAF]/30 text-[#D98AAF] flex items-center justify-center mb-6 group-hover:bg-[#D98AAF] group-hover:text-white transition-colors duration-300">
+                <Fragment set:html={pillar.icon} />
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-2xl font-serif font-semibold text-[#29242A] mb-1">
+                {pillar.title}
+              </h3>
+              <p class="text-xs font-medium text-[#D98AAF] tracking-wide mb-4">
+                {pillar.subtitle}
+              </p>
+
+              <!-- Description -->
+              <p class="text-sm text-[#756B72] leading-relaxed mb-6">
+                {pillar.description}
+              </p>
+            </div>
+
+            <!-- Feature Bullet points -->
+            <ul class="space-y-2.5 pt-4 border-t border-[#F0D5E4]/70">
+              {pillar.highlights.map((item) => (
+                <li class="flex items-center gap-2.5 text-xs text-[#29242A]/90">
+                  <span class="w-4 h-4 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center shrink-0">
+                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,7 @@
+{
+  "name": "PINCK SMILE",
+  "description": "Female intimate wellness, thoughtfully. A more confident you starts here.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

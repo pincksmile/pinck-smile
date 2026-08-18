@@ -1,0 +1,74 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://pincksmile.com").toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site || "https://pincksmile.com"
+).toString();
+
+const { 
+  title, 
+  description = "PINCK SMILE - Female intimate wellness, thoughtfully. A more confident you starts here with discreet, thoughtful, and simple intimate care." 
+} = Astro.props;
+
+const makeTitle = title
+  ? `${title} | PINCK SMILE`
+  : "PINCK SMILE | Female Intimate Wellness, Thoughtfully";
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Google Fonts for Editorial & Elegant Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <SEO
+      title={makeTitle}
+      description={description}
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: makeTitle,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "PINCK SMILE - Female Intimate Wellness",
+        },
+      }}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col bg-white text-[#29242A] selection:bg-[#FFE5F7] selection:text-[#29242A]">
+    <Navbar />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>
+

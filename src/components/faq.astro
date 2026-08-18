@@ -1,0 +1,90 @@
+---
+import Container from "@/components/container.astro";
+
+const faqs = [
+  {
+    question: "Apakah kemasan pengiriman dijamin 100% aman dan privasi (discreet)?",
+    answer:
+      "Tentu saja. Semua pesanan PINCK SMILE dikemas dalam kotak/amplop polos cokelat atau hitam tanpa logo, tanpa stempel nama produk, dan resi ekspedisi hanya mencantumkan informasi pengirim berupa inisial logistik umum untuk menjamin kerahasiaan penuh Anda.",
+  },
+  {
+    question: "Apakah produk Pinck Smile aman untuk kulit sensitif dan ibu hamil/menyusui?",
+    answer:
+      "Semua formula Pinck Smile diformulasikan dengan pH 3.8 – 4.5 seimbang, bebas sulfat, paraben, alkohol keras, dan pewarna sintetis. Seluruh produk telah lolos uji dermatologis. Namun untuk kondisi kehamilan khusus, kami selalu menyarankan untuk berkonsultasi dengan dokter kandungan Anda.",
+  },
+  {
+    question: "Bagaimana cara membersihkan dan merawat perangkat Pinck Smile?",
+    answer:
+      "Perangkat Pinck Smile dibuat dari 100% silikon medis bersertifikat yang tahan air (IPX7). Cukup bersihkan dengan air hangat dan sabun berbusa lembut bebas alkohol sebelum dan sesudah penggunaan, lalu keringkan dengan kain bersih dan simpan di kantung penyimpanan khusus yang kami sediakan.",
+  },
+  {
+    question: "Berapa lama waktu pengiriman dan dari mana produk dikirim?",
+    answer:
+      "Pesanan diproses dalam 1x24 jam dari gudang kami di Jakarta. Pengiriman reguler memakan waktu 1–3 hari kerja untuk area Jabodetabek dan 2–5 hari kerja untuk luar pulau, dengan opsi kurir Instant/Sameday untuk area tertentu.",
+  },
+  {
+    question: "Di mana saya bisa membeli produk resmi PINCK SMILE?",
+    answer:
+      "Anda dapat membeli secara langsung melalui Official Store kami di marketplace terkemuka (Shopee, Tokopedia, TikTok Shop) atau melalui layanan WhatsApp Concierge privat kami untuk jaminan produk original dan garansi resmi.",
+  },
+];
+---
+
+<section id="faq" class="py-24 bg-white border-b border-[#F5E6EF]">
+  <Container>
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
+        Pertanyaan Umum
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#29242A]">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-base text-[#756B72] mt-3 leading-relaxed">
+        Jawaban atas pertanyaan seputar privasi, keamanan bahan, dan panduan penggunaan produk PINCK SMILE.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion List -->
+    <div class="max-w-3xl mx-auto space-y-4">
+      {
+        faqs.map((faq, index) => (
+          <details
+            class="group bg-[#FFF7FB] rounded-2xl border border-[#F0D5E4] p-5 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-[#FFE5F7]/30 open:border-[#D98AAF]/50">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 font-serif text-lg font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors">
+              <span>{faq.question}</span>
+              <span class="shrink-0 w-8 h-8 rounded-full bg-white border border-[#F0D5E4] text-[#D98AAF] flex items-center justify-center transition duration-300 group-open:-rotate-180">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </span>
+            </summary>
+
+            <p class="mt-4 text-sm text-[#756B72] leading-relaxed border-t border-[#F0D5E4]/60 pt-4">
+              {faq.answer}
+            </p>
+          </details>
+        ))
+      }
+    </div>
+
+    <!-- Help Notice -->
+    <div class="text-center mt-12 text-sm text-[#756B72]">
+      Punya pertanyaan lain?{" "}
+      <a
+        href="#official-store"
+        class="font-semibold text-[#D98AAF] hover:underline">
+        Hubungi Tim Konsultasi Privat Kami →
+      </a>
+    </div>
+  </Container>
+</section>

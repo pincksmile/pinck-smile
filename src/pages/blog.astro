@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+
+// Filter blog entries with 'draft: false' & date before current date
+const publishedBlogEntries = await getCollection("blog", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+
+// Sort content entries by publication date
+publishedBlogEntries.sort(function (a, b) {
+  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+});
+---
+
+<Layout title="Edukasi & Jurnal - Female Intimate Wellness">
+  <Container class="py-16">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
+        Edukasi & Artikel
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif font-semibold text-[#29242A]">
+        Jurnal PINCK SMILE
+      </h1>
+      <p class="text-base text-[#756B72] mt-4 leading-relaxed">
+        Wawasan seputar kesehatan reproduksi, kenyamanan intim, kepercayaan diri, dan keharmonisan hubungan.
+      </p>
+    </div>
+
+    <main class="max-w-4xl mx-auto">
+      <div class="grid gap-10">
+        {
+          publishedBlogEntries.map((blogPostEntry) => (
+            <article class="bg-[#FFF7FB] rounded-3xl p-6 sm:p-8 border border-[#F0D5E4] brand-card-hover group">
+              <a href={`/blog/${blogPostEntry.slug}`} class="block">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-xs font-semibold uppercase tracking-wider text-[#D98AAF] bg-white px-3 py-1 rounded-full border border-[#F0D5E4]">
+                    {blogPostEntry.data.category}
+                  </span>
+                  <span class="text-xs text-[#756B72]">
+                    {blogPostEntry.data.publishDate.toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  </span>
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl font-serif font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors leading-snug mb-3">
+                  {blogPostEntry.data.title}
+                </h2>
+
+                <p class="text-sm text-[#756B72] leading-relaxed mb-4">
+                  {blogPostEntry.data.snippet}
+                </p>
+
+                <div class="flex items-center justify-between text-xs font-medium text-[#756B72] pt-4 border-t border-[#F0D5E4]">
+                  <span>Penulis: {blogPostEntry.data.author}</span>
+                  <span class="text-[#D98AAF] font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                    Baca Selengkapnya →
+                  </span>
+                </div>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </main>
+  </Container>
+</Layout>

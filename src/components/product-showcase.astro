@@ -1,0 +1,172 @@
+---
+import Container from "@/components/container.astro";
+
+const products = [
+  {
+    id: "gentle-wash",
+    name: "Pinck Smile Gentle Intimate Wash",
+    tagline: "pH 4.0 Daily Balance Cleanser",
+    category: "Daily Care",
+    badge: "Best Seller",
+    price: "Rp 149.000",
+    volume: "150 ml",
+    description:
+      "Pembersih area kewanitaan dengan formula ultra-lembut diperkaya Chamomile Organik, Ekstrak Daun Sirih, dan Prebiotic Complex untuk menjaga keseimbangan flora alami tanpa rasa kering.",
+    features: [
+      "pH 4.0 seimbang sesuai mikrobiom wanita",
+      "Bebas SLS, Paraben, dan Pewangi Buatan",
+      "Dermatologically & Gynaecologically Tested",
+      "Aroma alami yang menenangkan dan segar",
+    ],
+    accentGradient: "from-[#FFE5F7] to-[#FFF7FB]",
+  },
+  {
+    id: "soothing-mist",
+    name: "Pinck Smile Soothing Hydrating Mist",
+    tagline: "Instant Refresh & Barrier Defense",
+    category: "On-the-go Care",
+    badge: "Staff Pick",
+    price: "Rp 129.000",
+    volume: "60 ml",
+    description:
+      "Mist praktis tanpa bilas dengan Rosewater murni, Niacinamide, dan Asam Hialuronat. Memberikan hidrasi instan, meredakan rasa tidak nyaman setelah berolahraga atau beraktivitas seharian.",
+    features: [
+      "Travel-friendly 60ml aman di dalam tas",
+      "360° spray nozzle untuk kemudahan aplikasi",
+      "Cepat meresap, tanpa rasa lengket",
+      "Menenangkan kulit sensitif & pasca-cukur",
+    ],
+    accentGradient: "from-[#FFF7FB] to-[#FFE5F7]",
+  },
+  {
+    id: "wellness-device",
+    name: "Pinck Smile Aura Intimate Device",
+    tagline: "Ergonomic & Whisper-Quiet Wellness",
+    category: "Wellness & Confidence",
+    badge: "Premium Edition",
+    price: "Rp 489.000",
+    volume: "Medical Silicone",
+    description:
+      "Dirancang khusus untuk mendukung relaksasi otot panggul, eksplorasi tubuh yang sehat, serta meningkatkan kenyamanan intim dengan motor ultra-senyap dan silikon selembut sutra.",
+    features: [
+      "100% Medical-Grade Body-Safe Silicone",
+      "IPX7 Waterproof (Mudah dibersihkan)",
+      "Magnetic USB Fast Rechargeable",
+      "8 Mode getaran halus & whisper-quiet (<40dB)",
+    ],
+    accentGradient: "from-[#FFE5F7] via-[#FFF7FB] to-white",
+  },
+];
+---
+
+<section id="produk" class="py-24 bg-[#FFF7FB]/70 relative">
+  <!-- Subtle background glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(#FFE5F7_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+
+  <Container>
+    <!-- Section Heading -->
+    <div class="relative text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3 shadow-xs">
+        Koleksi Pilihan
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#29242A]">
+        MEET PINCK SMILE
+      </h2>
+      <p class="text-base text-[#756B72] mt-3 leading-relaxed">
+        Setiap produk dirancang untuk memberikan perawatan terbaik, memelihara kesehatan alami, serta menumbuhkan kenyamanan diri yang sesungguhnya.
+      </p>
+    </div>
+
+    <!-- Product Grid Showcase -->
+    <div class="relative grid md:grid-cols-3 gap-8 mb-16">
+      {
+        products.map((product) => (
+          <div class="bg-white rounded-3xl p-6 sm:p-7 border border-[#F0D5E4] shadow-xs brand-card-hover flex flex-col justify-between relative overflow-hidden group">
+            
+            <!-- Top tag & Category -->
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="text-[11px] font-semibold text-[#756B72] uppercase tracking-wider bg-[#FFF7FB] px-2.5 py-1 rounded-full border border-[#F0D5E4]">
+                  {product.category}
+                </span>
+                <span class="text-[11px] font-medium text-[#D98AAF] bg-[#FFE5F7] px-2.5 py-1 rounded-full">
+                  {product.badge}
+                </span>
+              </div>
+
+              <!-- Product Visual Illustration Container -->
+              <div class={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-br ${product.accentGradient} border border-[#F0D5E4]/60 flex items-center justify-center p-6 mb-6 relative overflow-hidden group-hover:scale-[1.01] transition-transform duration-300`}>
+                <div class="w-20 h-28 rounded-xl bg-white shadow-md border border-[#F5E6EF] flex flex-col items-center justify-between p-2.5 text-center">
+                  <div class="w-6 h-2 rounded-full bg-[#D98AAF]/70"></div>
+                  <div class="space-y-0.5">
+                    <div class="text-[9px] font-bold tracking-wider text-[#29242A] uppercase">PINCK SMILE</div>
+                    <div class="text-[7px] text-[#756B72] leading-tight line-clamp-1">{product.tagline}</div>
+                  </div>
+                  <div class="text-[7px] text-[#D98AAF] font-medium">Safe & Pure</div>
+                </div>
+
+                <div class="absolute bottom-3 right-3 text-[10px] font-medium text-[#756B72] bg-white/90 backdrop-blur-xs px-2 py-0.5 rounded-full border border-[#F0D5E4]">
+                  {product.volume}
+                </div>
+              </div>
+
+              <!-- Title & Tagline -->
+              <h3 class="text-xl font-serif font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors">
+                {product.name}
+              </h3>
+              <p class="text-xs font-medium text-[#D98AAF] mt-1 mb-3">
+                {product.tagline}
+              </p>
+
+              <!-- Description -->
+              <p class="text-xs text-[#756B72] leading-relaxed mb-5">
+                {product.description}
+              </p>
+
+              <!-- Feature Checklist -->
+              <ul class="space-y-2 mb-6">
+                {product.features.map((feat) => (
+                  <li class="flex items-start gap-2 text-xs text-[#29242A]/85">
+                    <span class="w-3.5 h-3.5 mt-0.5 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center shrink-0">
+                      <svg class="w-2 h-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    </span>
+                    <span class="leading-tight">{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Price & Button -->
+            <div class="pt-4 border-t border-[#F5E6EF] flex items-center justify-between gap-3">
+              <div>
+                <span class="text-[10px] text-[#756B72] block">Harga Resmi</span>
+                <span class="text-base font-semibold text-[#29242A]">{product.price}</span>
+              </div>
+
+              <a
+                href="#official-store"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#FFE5F7] text-[#29242A] hover:bg-[#D98AAF] hover:text-white text-xs font-semibold transition-all duration-200 border border-[#F0D5E4]">
+                Pesan Sekarang
+              </a>
+            </div>
+
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Center Section Action Button [ Learn More ] -->
+    <div class="text-center">
+      <a
+        href="#intimate-wellness"
+        class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#29242A] text-white hover:bg-[#D98AAF] text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 group">
+        <span>Learn More</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+  </Container>
+</section>

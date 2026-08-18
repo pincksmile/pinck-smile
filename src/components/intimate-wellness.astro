@@ -1,0 +1,129 @@
+---
+import Container from "@/components/container.astro";
+
+const wellnessPillars = [
+  {
+    id: "education",
+    title: "Education",
+    subtitle: "Pemahaman Tubuh & Literasi Kesehatan",
+    description:
+      "Membuka dialog terbuka seputar kesehatan reproduksi wanita tanpa stigma atau rasa tabu. Kami menyediakan panduan berbasis sains agar Anda memahami siklus hormonal, keseimbangan mikrobiom alami, dan sinyal-sinyal tubuh.",
+    topics: [
+      "Keseimbangan flora & pH intim",
+      "Perubahan tubuh sepanjang siklus menstruasi",
+      "Mitos vs fakta seputar perawatan kewanitaan",
+    ],
+    tag: "Body Literacy",
+    number: "01",
+  },
+  {
+    id: "confidence",
+    title: "Confidence",
+    subtitle: "Rasa Percaya Diri & Kenyamanan Diri",
+    description:
+      "Kenyamanan fisik yang terawat melahirkan rasa percaya diri yang otentik. Ketika Anda merasa segar, aman, dan memahami tubuh Anda seutuhnya, Anda dapat menjalani setiap aktivitas dengan energi positif dan keanggunan.",
+    topics: [
+      "Menerima & mencintai tubuh tanpa rasa malu",
+      "Rutinitas self-care yang memberdayakan",
+      "Mengatasi ketidaknyamanan sehari-hari",
+    ],
+    tag: "Self-Empowerment",
+    number: "02",
+  },
+  {
+    id: "relationship",
+    title: "Relationship",
+    subtitle: "Keintiman Sehat & Komunikasi Terbuka",
+    description:
+      "Keintiman berkualitas dibangun atas dasar komunikasi yang jujur, rasa aman, dan saling menghargai. Pinck Smile mendampingi Anda untuk mengutarakan kebutuhan, mempererat ikatan, dan merayakan kebersamaan.",
+    topics: [
+      "Membangun komunikasi intim yang nyaman",
+      "Menghilangkan rasa canggung dalam hubungan",
+      "Harmoni emosional dan kedekatan pasangan",
+    ],
+    tag: "Deeper Connection",
+    number: "03",
+  },
+];
+---
+
+<section id="intimate-wellness" class="py-24 bg-white border-b border-[#F5E6EF]">
+  <Container>
+    <!-- Section Title & Subtitle -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
+        Filosofi Kesejahteraan
+      </div>
+      
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#29242A]">
+        INTIMATE WELLNESS
+      </h2>
+      
+      <p class="text-lg font-medium text-[#D98AAF] mt-2">
+        Education / confidence / relationship
+      </p>
+
+      <p class="text-sm text-[#756B72] mt-3 leading-relaxed max-w-2xl mx-auto">
+        Kesehatan intim bukan sekadar tentang produk fisik, melainkan integrasi harmonis antara pemahaman diri, rasa percaya diri yang tumbuh dari dalam, dan kualitas hubungan yang bermakna.
+      </p>
+    </div>
+
+    <!-- Three Pillars Grid -->
+    <div class="grid lg:grid-cols-3 gap-8">
+      {
+        wellnessPillars.map((pillar) => (
+          <div class="bg-[#FFF7FB] rounded-3xl p-8 border border-[#F0D5E4] brand-card-hover flex flex-col justify-between relative overflow-hidden">
+            <!-- Background subtle number -->
+            <div class="absolute -right-2 -top-4 text-7xl font-serif font-bold text-[#FFE5F7] select-none pointer-events-none opacity-60">
+              {pillar.number}
+            </div>
+
+            <div class="relative z-10">
+              <span class="inline-block px-3 py-1 rounded-full bg-white text-[11px] font-semibold text-[#D98AAF] border border-[#F0D5E4] mb-4">
+                {pillar.tag}
+              </span>
+
+              <h3 class="text-2xl font-serif font-semibold text-[#29242A] mb-1">
+                {pillar.title}
+              </h3>
+              
+              <p class="text-xs font-medium text-[#756B72] mb-4">
+                {pillar.subtitle}
+              </p>
+
+              <p class="text-sm text-[#756B72] leading-relaxed mb-6">
+                {pillar.description}
+              </p>
+            </div>
+
+            <!-- Focus Topics -->
+            <div class="relative z-10 pt-5 border-t border-[#F0D5E4]">
+              <div class="text-[11px] font-semibold uppercase tracking-wider text-[#29242A] mb-2.5">
+                Fokus Utama:
+              </div>
+              <ul class="space-y-2">
+                {pillar.topics.map((topic) => (
+                  <li class="flex items-center gap-2 text-xs text-[#756B72]">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#D98AAF]"></span>
+                    <span>{topic}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Quote Banner -->
+    <div class="mt-16 bg-gradient-to-r from-[#FFE5F7] via-[#FFF7FB] to-[#FFE5F7] rounded-3xl p-8 sm:p-10 border border-[#F0D5E4] text-center max-w-4xl mx-auto">
+      <p class="font-serif italic text-lg sm:text-xl text-[#29242A] max-w-2xl mx-auto leading-relaxed">
+        "Ketika seorang wanita merasa nyaman dan memahami tubuhnya secara utuh, rasa percaya diri akan terpancar dalam setiap aspek kehidupannya."
+      </p>
+      <div class="mt-4 text-xs font-medium tracking-wider uppercase text-[#D98AAF]">
+        — PINCK SMILE Advisory & Care Team
+      </div>
+    </div>
+
+  </Container>
+</section>
