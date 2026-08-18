@@ -1,0 +1,377 @@
+---
+// Interactive Shopping Bag & Discreet Checkout Drawer
+---
+
+<!-- Floating Bag Trigger Button -->
+<button
+  id="floating-cart-btn"
+  class="fixed bottom-6 right-6 z-40 bg-[#29242A] text-white p-3.5 rounded-full shadow-2xl hover:bg-[#D98AAF] transition-all duration-300 flex items-center gap-2.5 border-2 border-white/80 hover:scale-105 active:scale-95 group"
+  aria-label="Buka Tas Belanja">
+  <div class="relative flex items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    </svg>
+    <span
+      id="cart-badge-count"
+      class="absolute -top-2 -right-2.5 bg-[#D98AAF] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#29242A] scale-0 transition-transform duration-200">
+      0
+    </span>
+  </div>
+  <span class="hidden sm:inline text-xs font-semibold tracking-wide pr-1">
+    Tas Belanja
+  </span>
+</button>
+
+<!-- Backdrop Overlay -->
+<div
+  id="cart-backdrop"
+  class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300">
+</div>
+
+<!-- Cart Side Drawer -->
+<aside
+  id="cart-drawer"
+  class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl flex flex-col justify-between translate-x-full transition-transform duration-300 ease-in-out border-l border-[#F0D5E4]">
+  
+  <!-- Header -->
+  <div class="p-6 border-b border-[#F0D5E4] flex items-center justify-between bg-[#FFF7FB]">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-[#FFE5F7] text-[#D98AAF] flex items-center justify-center font-bold text-sm">
+        🛍️
+      </div>
+      <div>
+        <h3 class="font-serif text-lg font-semibold text-[#29242A]">Tas Belanja Anda</h3>
+        <p class="text-[11px] text-[#756B72]">100% Pengemasan Polos & Rahasia (Discreet)</p>
+      </div>
+    </div>
+
+    <button
+      id="cart-close-btn"
+      class="w-8 h-8 rounded-full bg-white border border-[#F0D5E4] text-[#756B72] hover:text-[#29242A] hover:bg-[#FFE5F7] flex items-center justify-center transition-colors text-lg"
+      aria-label="Tutup Keranjang">
+      ✕
+    </button>
+  </div>
+
+  <!-- Cart Items List / Empty State -->
+  <div class="flex-grow overflow-y-auto p-6 space-y-4" id="cart-items-container">
+    <!-- Populated by JavaScript -->
+    <div id="cart-empty-state" class="text-center py-16 space-y-4">
+      <div class="w-16 h-16 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] flex items-center justify-center text-3xl mx-auto text-[#D98AAF]">
+        🌸
+      </div>
+      <p class="font-serif text-base font-semibold text-[#29242A]">Tas belanja Anda masih kosong</p>
+      <p class="text-xs text-[#756B72] max-w-xs mx-auto leading-relaxed">
+        Pilih produk perawatan intim favorit Anda dan nikmati kenyamanan berbelanja yang privat.
+      </p>
+      <a
+        href="/pricing"
+        id="explore-products-btn"
+        class="inline-block px-5 py-2.5 rounded-full bg-[#FFE5F7] text-[#29242A] text-xs font-semibold hover:bg-[#D98AAF] hover:text-white transition-colors border border-[#F0D5E4]">
+        Lihat Koleksi Produk
+      </a>
+    </div>
+
+    <div id="cart-item-list" class="space-y-3 hidden">
+      <!-- Items dynamically injected -->
+    </div>
+  </div>
+
+  <!-- Footer & Checkout Controls -->
+  <div class="p-6 border-t border-[#F0D5E4] bg-[#FFF7FB] space-y-4">
+    <!-- Promo Code Area -->
+    <div class="flex gap-2">
+      <input
+        type="text"
+        id="promo-input"
+        placeholder="Kode Voucher (Contoh: PINCK10)"
+        class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-[#F0D5E4] bg-white focus:outline-none focus:border-[#D98AAF] text-[#29242A] uppercase placeholder:normal-case"
+      />
+      <button
+        id="apply-promo-btn"
+        class="px-4 py-2.5 rounded-xl bg-white border border-[#F0D5E4] text-xs font-semibold text-[#29242A] hover:bg-[#FFE5F7] transition-colors shrink-0">
+        Pakai
+      </button>
+    </div>
+    <div id="promo-message" class="text-[11px] font-medium hidden"></div>
+
+    <!-- Discreet Option Selection -->
+    <div class="p-3 rounded-xl bg-white border border-[#F0D5E4] text-xs flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-emerald-600 font-bold">✓</span>
+        <span class="text-[#29242A] font-medium">Discreet Packaging</span>
+      </div>
+      <span class="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md font-semibold">Gratis 100%</span>
+    </div>
+
+    <!-- Pricing Summary -->
+    <div class="space-y-1.5 text-xs text-[#756B72] pt-2 border-t border-[#F0D5E4]">
+      <div class="flex justify-between">
+        <span>Subtotal</span>
+        <span id="cart-subtotal" class="font-semibold text-[#29242A]">Rp 0</span>
+      </div>
+      <div id="discount-row" class="flex justify-between text-[#D98AAF] hidden">
+        <span>Diskon Voucher</span>
+        <span id="cart-discount">- Rp 0</span>
+      </div>
+      <div class="flex justify-between text-sm font-bold text-[#29242A] pt-2 border-t border-[#F0D5E4]/60">
+        <span>Total Estimasi</span>
+        <span id="cart-total" class="text-base text-[#D98AAF]">Rp 0</span>
+      </div>
+    </div>
+
+    <!-- Checkout Actions -->
+    <div class="space-y-2 pt-1">
+      <button
+        id="whatsapp-checkout-btn"
+        class="w-full py-3 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+        <span>Pesan Cepat via WhatsApp Concierge</span>
+      </button>
+
+      <div class="grid grid-cols-2 gap-2">
+        <a
+          href="https://shopee.co.id"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="py-2.5 rounded-full bg-[#EE4D2D] text-white text-center text-xs font-semibold hover:opacity-90 transition-opacity">
+          Beli di Shopee
+        </a>
+        <a
+          href="https://tokopedia.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="py-2.5 rounded-full bg-[#03AC0E] text-white text-center text-xs font-semibold hover:opacity-90 transition-opacity">
+          Beli di Tokopedia
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- Toast Notification -->
+<div
+  id="cart-toast"
+  class="fixed bottom-24 right-6 z-50 bg-[#29242A] text-white px-5 py-3 rounded-2xl shadow-xl border border-white/20 text-xs flex items-center gap-3 translate-y-20 opacity-0 pointer-events-none transition-all duration-300">
+  <span class="w-2 h-2 rounded-full bg-[#D98AAF] animate-ping"></span>
+  <span id="cart-toast-message">Produk ditambahkan ke tas!</span>
+</div>
+
+<script is:inline>
+  (function () {
+    // Client-side Cart State
+    let cart = [];
+    let discountPercent = 0;
+
+    // Load persisted cart if available
+    try {
+      const saved = localStorage.getItem("pinck_cart");
+      if (saved) {
+        cart = JSON.parse(saved);
+      }
+    } catch (e) {
+      console.warn("Storage not accessible", e);
+    }
+
+    const drawer = document.getElementById("cart-drawer");
+    const backdrop = document.getElementById("cart-backdrop");
+    const floatingBtn = document.getElementById("floating-cart-btn");
+    const closeBtn = document.getElementById("cart-close-btn");
+    const badge = document.getElementById("cart-badge-count");
+    const itemsList = document.getElementById("cart-item-list");
+    const emptyState = document.getElementById("cart-empty-state");
+    const subtotalEl = document.getElementById("cart-subtotal");
+    const discountRow = document.getElementById("discount-row");
+    const discountEl = document.getElementById("cart-discount");
+    const totalEl = document.getElementById("cart-total");
+    const toast = document.getElementById("cart-toast");
+    const toastMsg = document.getElementById("cart-toast-message");
+    const promoInput = document.getElementById("promo-input");
+    const promoBtn = document.getElementById("apply-promo-btn");
+    const promoMsg = document.getElementById("promo-message");
+    const waCheckoutBtn = document.getElementById("whatsapp-checkout-btn");
+
+    function saveCart() {
+      try {
+        localStorage.setItem("pinck_cart", JSON.stringify(cart));
+      } catch (e) {}
+      renderCart();
+    }
+
+    function showToast(msg) {
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = msg;
+      toast.classList.remove("translate-y-20", "opacity-0", "pointer-events-none");
+      setTimeout(() => {
+        toast.classList.add("translate-y-20", "opacity-0", "pointer-events-none");
+      }, 2500);
+    }
+
+    function openCart() {
+      if (!drawer || !backdrop) return;
+      drawer.classList.remove("translate-x-full");
+      backdrop.classList.remove("opacity-0", "pointer-events-none");
+      backdrop.classList.add("opacity-100");
+    }
+
+    function closeCart() {
+      if (!drawer || !backdrop) return;
+      drawer.classList.add("translate-x-full");
+      backdrop.classList.remove("opacity-100");
+      backdrop.classList.add("opacity-0", "pointer-events-none");
+    }
+
+    function renderCart() {
+      const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+
+      // Update badge
+      if (badge) {
+        badge.textContent = totalItems;
+        if (totalItems > 0) {
+          badge.classList.remove("scale-0");
+        } else {
+          badge.classList.add("scale-0");
+        }
+      }
+
+      if (!itemsList || !emptyState) return;
+
+      if (cart.length === 0) {
+        emptyState.classList.remove("hidden");
+        itemsList.classList.add("hidden");
+      } else {
+        emptyState.classList.add("hidden");
+        itemsList.classList.remove("hidden");
+
+        itemsList.innerHTML = cart
+          .map(
+            (item, index) => `
+          <div class="bg-[#FFF7FB] rounded-2xl p-3 border border-[#F0D5E4] flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-white border border-[#F0D5E4] flex items-center justify-center text-sm shrink-0">
+                🌸
+              </div>
+              <div>
+                <h4 class="font-semibold text-xs text-[#29242A] line-clamp-1">${item.name}</h4>
+                <p class="text-[11px] text-[#D98AAF] font-medium">Rp ${(item.price).toLocaleString("id-ID")}</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <div class="flex items-center border border-[#F0D5E4] rounded-lg bg-white overflow-hidden">
+                <button onclick="window.updateCartQty(${index}, -1)" class="px-2 py-0.5 text-xs text-[#756B72] hover:bg-[#FFE5F7] transition-colors">-</button>
+                <span class="px-2 text-xs font-semibold text-[#29242A]">${item.qty}</span>
+                <button onclick="window.updateCartQty(${index}, 1)" class="px-2 py-0.5 text-xs text-[#756B72] hover:bg-[#FFE5F7] transition-colors">+</button>
+              </div>
+              <button onclick="window.removeCartItem(${index})" class="text-xs text-[#756B72] hover:text-red-500 p-1">✕</button>
+            </div>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      // Calculations
+      const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+      const discount = Math.round(subtotal * (discountPercent / 100));
+      const grandTotal = Math.max(0, subtotal - discount);
+
+      if (subtotalEl) subtotalEl.textContent = `Rp ${subtotal.toLocaleString("id-ID")}`;
+      if (discountEl) discountEl.textContent = `- Rp ${discount.toLocaleString("id-ID")}`;
+      if (totalEl) totalEl.textContent = `Rp ${grandTotal.toLocaleString("id-ID")}`;
+
+      if (discountRow) {
+        if (discount > 0) {
+          discountRow.classList.remove("hidden");
+        } else {
+          discountRow.classList.add("hidden");
+        }
+      }
+    }
+
+    // Global helper to add items
+    window.addToCart = function (id, name, priceNum) {
+      const existing = cart.find((i) => i.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id, name, price: priceNum, qty: 1 });
+      }
+      saveCart();
+      showToast(`${name} ditambahkan ke tas!`);
+      openCart();
+    };
+
+    window.updateCartQty = function (index, delta) {
+      if (!cart[index]) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      saveCart();
+    };
+
+    window.removeCartItem = function (index) {
+      if (!cart[index]) return;
+      cart.splice(index, 1);
+      saveCart();
+    };
+
+    // Promo code handler
+    if (promoBtn && promoInput) {
+      promoBtn.addEventListener("click", () => {
+        const code = promoInput.value.trim().toUpperCase();
+        if (code === "PINCK10" || code === "CONFIDENT" || code === "WELLNESS") {
+          discountPercent = 10;
+          if (promoMsg) {
+            promoMsg.textContent = "✓ Voucher 10% Diskon Berhasil Digunakan!";
+            promoMsg.className = "text-[11px] font-medium text-emerald-600 block";
+          }
+        } else if (code) {
+          discountPercent = 0;
+          if (promoMsg) {
+            promoMsg.textContent = "✕ Kode voucher tidak valid.";
+            promoMsg.className = "text-[11px] font-medium text-red-500 block";
+          }
+        }
+        renderCart();
+      });
+    }
+
+    // WhatsApp Checkout Formatter
+    if (waCheckoutBtn) {
+      waCheckoutBtn.addEventListener("click", () => {
+        if (cart.length === 0) {
+          alert("Tas belanja Anda masih kosong. Silakan pilih produk terlebih dahulu.");
+          return;
+        }
+
+        const itemsText = cart
+          .map((i) => `- ${i.name} (x${i.qty}) : Rp ${(i.price * i.qty).toLocaleString("id-ID")}`)
+          .join("\n");
+
+        const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+        const discount = Math.round(subtotal * (discountPercent / 100));
+        const grandTotal = Math.max(0, subtotal - discount);
+
+        const msg = encodeURIComponent(
+          `Halo Concierge PINCK SMILE,\nSaya ingin melakukan pemesanan privat (Discreet Packaging):\n\n${itemsText}\n\nTotal Estimasi: Rp ${grandTotal.toLocaleString(
+            "id-ID"
+          )}\n\nMohon info ketersediaan & petunjuk pembayaran. Terima kasih!`
+        );
+
+        window.open(`https://wa.me/?text=${msg}`, "_blank");
+      });
+    }
+
+    // Event Listeners
+    if (floatingBtn) floatingBtn.addEventListener("click", openCart);
+    if (closeBtn) closeBtn.addEventListener("click", closeCart);
+    if (backdrop) backdrop.addEventListener("click", closeCart);
+
+    // Initial render
+    renderCart();
+  })();
+</script>

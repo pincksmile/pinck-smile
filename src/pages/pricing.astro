@@ -4,9 +4,11 @@ import Container from "@/components/container.astro";
 
 const bundles = [
   {
+    id: "bundle-essential",
     name: "Essential Daily Care",
     tagline: "Perawatan Harian Dasar",
     price: "Rp 149.000",
+    priceNum: 149000,
     badge: "Populer",
     popular: false,
     description: "Paket pembersih intim harian untuk menjaga pH dan kesegaran mikrobiom.",
@@ -16,13 +18,14 @@ const bundles = [
       "Chamomile & Prebiotic complex",
       "Kemasan polos & pengiriman rahasia",
     ],
-    buttonText: "Beli Sekarang",
-    buttonLink: "/#official-store",
+    buttonText: "Beli Paket Dasar",
   },
   {
+    id: "bundle-complete",
     name: "Complete Comfort Set",
     tagline: "Perawatan Lengkap & On-The-Go",
     price: "Rp 259.000",
+    priceNum: 259000,
     badge: "Rekomendasi",
     popular: true,
     description: "Kombinasi pembersih harian dan mist penyegar portabel untuk kenyamanan sepanjang hari.",
@@ -34,12 +37,13 @@ const bundles = [
       "Pengiriman Privasi 100% Terjamin",
     ],
     buttonText: "Pesan Paket Lengkap",
-    buttonLink: "/#official-store",
   },
   {
+    id: "bundle-ultimate",
     name: "Ultimate Wellness Ritual",
     tagline: "Koleksi Lengkap & Intimate Device",
     price: "Rp 699.000",
+    priceNum: 699000,
     badge: "Best Value",
     popular: false,
     description: "Pengalaman relaksasi dan keintiman maksimal dengan rangkaian perawatan menyeluruh.",
@@ -52,7 +56,6 @@ const bundles = [
       "Gratis Ongkir & Prioritas Pengiriman",
     ],
     buttonText: "Pilih Ultimate Set",
-    buttonLink: "/#official-store",
   },
 ];
 ---
@@ -115,11 +118,12 @@ const bundles = [
             </div>
 
             <div>
-              <a
-                href={bundle.buttonLink}
-                class={`w-full block text-center py-3.5 rounded-full text-xs font-semibold transition-all duration-200 ${bundle.popular ? 'bg-[#D98AAF] text-white hover:bg-[#C6759B] shadow-sm' : 'bg-[#29242A] text-white hover:bg-[#D98AAF]'}`}>
+              <button
+                type="button"
+                onclick={`window.addToCart('${bundle.id}', '${bundle.name}', ${bundle.priceNum})`}
+                class={`w-full block text-center py-3.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${bundle.popular ? 'bg-[#D98AAF] text-white hover:bg-[#C6759B] shadow-sm' : 'bg-[#29242A] text-white hover:bg-[#D98AAF]'}`}>
                 {bundle.buttonText}
-              </a>
+              </button>
             </div>
           </div>
         ))

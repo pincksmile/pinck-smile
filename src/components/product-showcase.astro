@@ -147,11 +147,12 @@ const products = [
                 <span class="text-base font-semibold text-[#29242A]">{product.price}</span>
               </div>
 
-              <a
-                href="#official-store"
-                class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#FFE5F7] text-[#29242A] hover:bg-[#D98AAF] hover:text-white text-xs font-semibold transition-all duration-200 border border-[#F0D5E4]">
-                Pesan Sekarang
-              </a>
+              <button
+                type="button"
+                onclick={`window.addToCart('${product.id}', '${product.name}', ${product.id === 'gentle-wash' ? 149000 : product.id === 'soothing-mist' ? 129000 : 489000})`}
+                class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#FFE5F7] text-[#29242A] hover:bg-[#D98AAF] hover:text-white text-xs font-semibold transition-all duration-200 border border-[#F0D5E4] cursor-pointer">
+                + Tambah ke Tas
+              </button>
             </div>
 
           </div>

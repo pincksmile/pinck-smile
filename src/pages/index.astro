@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/hero.astro";
 import WhyPinck from "@/components/why-pinck.astro";
 import ProductShowcase from "@/components/product-showcase.astro";
+import RoutineQuiz from "@/components/routine-quiz.astro";
 import IntimateWellness from "@/components/intimate-wellness.astro";
 import LatestArticles from "@/components/latest-articles.astro";
 import Faq from "@/components/faq.astro";
@@ -141,15 +142,18 @@ const productListSchema = {
   <!-- 3. MEET PINCK SMILE (PRODUCT SHOWCASE) -->
   <ProductShowcase />
 
-  <!-- 4. INTIMATE WELLNESS -->
+  <!-- 4. INTERACTIVE ROUTINE & PRODUCT QUIZ -->
+  <RoutineQuiz />
+
+  <!-- 5. INTIMATE WELLNESS -->
   <IntimateWellness />
 
-  <!-- 5. LATEST FROM PINCK SMILE -->
+  <!-- 6. LATEST FROM PINCK SMILE -->
   <LatestArticles />
 
-  <!-- 6. FAQ -->
+  <!-- 7. FAQ -->
   <Faq />
 
-  <!-- 7. FINAL CTA: Discover Pinck Smile -->
+  <!-- 8. FINAL CTA: Discover Pinck Smile -->
   <FinalCta />
 </Layout>

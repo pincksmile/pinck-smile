@@ -3,7 +3,9 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 ---
 
-<Layout title="Tentang Kami - Female Intimate Wellness, Thoughtfully">
+<Layout 
+  title="Tentang Kami - Female Intimate Wellness, Thoughtfully"
+  description="Mengenal PINCK SMILE: Misi, standar keamanan medis, komitmen pengiriman 100% rahasia, serta komitmen kami dalam memberdayakan literasi kesehatan intim wanita.">
   <Container class="py-16">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
@@ -22,31 +24,53 @@ import Container from "@/components/container.astro";
         <h2 class="text-2xl font-serif font-semibold text-[#29242A] mb-4">
           Misi & Nilai Kami
         </h2>
-        <p class="mb-4">
+        <p class="mb-4 text-sm sm:text-base leading-relaxed">
           Kami percaya bahwa setiap wanita berhak atas akses perawatan intim berkualitas tinggi tanpa rasa canggung, tabu, atau kompromi terhadap keamanan bahan. 
         </p>
-        <p>
+        <p class="text-sm sm:text-base leading-relaxed">
           Dengan memadukan formulasi botani yang lembut, standar kebersihan medis, dan nilai edukasi terbuka seputar literasi tubuh, PINCK SMILE hadir sebagai ruang yang aman bagi perempuan untuk merawat diri mereka dengan rasa percaya diri.
         </p>
       </div>
 
       <div class="grid sm:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-6 border border-[#F0D5E4] text-center">
+        <div class="bg-white rounded-2xl p-6 border border-[#F0D5E4] text-center shadow-xs">
           <div class="text-2xl font-serif font-bold text-[#D98AAF] mb-1">100%</div>
           <div class="text-xs font-semibold uppercase tracking-wider text-[#29242A] mb-1">Discreet Guarantee</div>
-          <p class="text-xs text-[#756B72]">Pengiriman tanpa nama produk & privasi terjaga.</p>
+          <p class="text-xs text-[#756B72]">Pengiriman tanpa nama produk & privasi terjaga penuh.</p>
         </div>
 
-        <div class="bg-white rounded-2xl p-6 border border-[#F0D5E4] text-center">
+        <div class="bg-white rounded-2xl p-6 border border-[#F0D5E4] text-center shadow-xs">
           <div class="text-2xl font-serif font-bold text-[#D98AAF] mb-1">pH 4.0</div>
           <div class="text-xs font-semibold uppercase tracking-wider text-[#29242A] mb-1">Balanced Formula</div>
-          <p class="text-xs text-[#756B72]">Menjaga flora dan pelindung alami kewanitaan.</p>
+          <p class="text-xs text-[#756B72]">Menjaga flora dan pelindung asam alami kewanitaan.</p>
         </div>
 
-        <div class="bg-white rounded-2xl p-6 border border-[#F0D5E4] text-center">
+        <div class="bg-white rounded-2xl p-6 border border-[#F0D5E4] text-center shadow-xs">
           <div class="text-2xl font-serif font-bold text-[#D98AAF] mb-1">Safe</div>
           <div class="text-xs font-semibold uppercase tracking-wider text-[#29242A] mb-1">Medical Grade</div>
           <p class="text-xs text-[#756B72]">Bahan silikon medis & teruji dermatologis.</p>
+        </div>
+      </div>
+
+      <!-- Action Card -->
+      <div class="bg-white rounded-3xl p-8 border border-[#F0D5E4] text-center shadow-sm space-y-4">
+        <h3 class="text-xl font-serif font-semibold text-[#29242A]">
+          Siap Merawat Diri dengan Lebih Sadar & Percaya Diri?
+        </h3>
+        <p class="text-xs sm:text-sm text-[#756B72] max-w-lg mx-auto">
+          Jelajahi koleksi produk kami atau hubungi tim konsultan privat kami untuk pertanyaan lebih mendalam seputar rutinitas self-care Anda.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3 pt-2">
+          <a
+            href="/pricing"
+            class="px-6 py-3 rounded-full bg-[#D98AAF] text-white text-xs font-semibold hover:bg-[#C6759B] transition-colors shadow-xs">
+            Lihat Koleksi Produk
+          </a>
+          <a
+            href="/contact"
+            class="px-6 py-3 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-[#29242A] text-xs font-semibold hover:bg-[#FFE5F7] transition-colors">
+            Konsultasi Privat
+          </a>
         </div>
       </div>
     </div>

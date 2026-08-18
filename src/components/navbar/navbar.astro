@@ -5,19 +5,23 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 const menuitems = [
   {
     title: "Produk",
-    path: "#produk",
+    path: "/pricing",
   },
   {
     title: "Intimate Wellness",
-    path: "#intimate-wellness",
+    path: "/#intimate-wellness",
   },
   {
     title: "Edukasi",
-    path: "#edukasi",
+    path: "/blog",
   },
   {
     title: "Tentang",
-    path: "#tentang",
+    path: "/about",
+  },
+  {
+    title: "Kontak",
+    path: "/contact",
   },
 ];
 ---
@@ -57,26 +61,31 @@ const menuitems = [
           </ul>
 
           <div class="lg:hidden flex flex-col gap-3 pt-4 border-t border-[#F5E6EF] mt-4 w-full">
-            <a
-              href="#official-store"
-              class="w-full text-center px-6 py-2.5 rounded-full bg-[#D98AAF] text-white font-medium text-sm hover:bg-[#C6759B] transition-colors shadow-sm">
-              Shop
-            </a>
+            <button
+              type="button"
+              onclick="document.getElementById('floating-cart-btn')?.click()"
+              class="w-full text-center px-6 py-2.5 rounded-full bg-[#D98AAF] text-white font-medium text-sm hover:bg-[#C6759B] transition-colors shadow-sm flex items-center justify-center gap-2">
+              <span>Tas Belanja</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </button>
           </div>
         </MenuItems>
       </Astronav>
 
       <div class="hidden lg:flex items-center gap-4">
-        <a
-          href="#official-store"
-          class="inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#D98AAF] text-white font-medium text-sm hover:bg-[#C6759B] transition-all duration-200 shadow-sm hover:shadow hover:-translate-y-0.5">
-          <span>Shop</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 ml-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button
+          type="button"
+          onclick="document.getElementById('floating-cart-btn')?.click()"
+          class="inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#D98AAF] text-white font-medium text-sm hover:bg-[#C6759B] transition-all duration-200 shadow-sm hover:shadow hover:-translate-y-0.5 group">
+          <span>Shop / Bag</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 ml-1.5 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <path d="M16 10a4 4 0 0 1-8 0"></path>
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   </Container>

@@ -12,11 +12,15 @@ const publishedBlogEntries = await getCollection("blog", ({ data }) => {
 publishedBlogEntries.sort(function (a, b) {
   return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
 });
+
+const categories = ["Semua", "Edukasi & Sains", "Confidence & Self-Care", "Relationship & Intimacy"];
 ---
 
-<Layout title="Edukasi & Jurnal - Female Intimate Wellness">
+<Layout 
+  title="Edukasi & Jurnal - Female Intimate Wellness"
+  description="Wawasan ilmiah, panduan perawatan pH seimbang, body literacy, dan tips keintiman sehat dari para ahli dan tim editorial PINCK SMILE.">
   <Container class="py-16">
-    <div class="text-center max-w-2xl mx-auto mb-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
         Edukasi & Artikel
       </div>
@@ -28,11 +32,54 @@ publishedBlogEntries.sort(function (a, b) {
       </p>
     </div>
 
+    <!-- Interactive Search & Category Filter Toolbar -->
+    <div class="max-w-4xl mx-auto mb-10 space-y-4">
+      <!-- Search Input -->
+      <div class="relative">
+        <input
+          type="text"
+          id="article-search-input"
+          placeholder="Cari topik artikel (contoh: pH seimbang, body literacy, mikrobiom)..."
+          class="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-[#F0D5E4] bg-white text-xs text-[#29242A] focus:outline-none focus:border-[#D98AAF] shadow-xs"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5 text-[#756B72] absolute left-3.5 top-1/2 -translate-y-1/2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        {
+          categories.map((cat, idx) => (
+            <button
+              type="button"
+              data-category={cat}
+              class={`filter-category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all border ${
+                idx === 0
+                  ? "bg-[#D98AAF] text-white border-[#D98AAF] shadow-xs"
+                  : "bg-[#FFF7FB] text-[#756B72] border-[#F0D5E4] hover:bg-[#FFE5F7] hover:text-[#29242A]"
+              }`}>
+              {cat}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
     <main class="max-w-4xl mx-auto">
-      <div class="grid gap-10">
+      <div id="articles-container" class="grid gap-8">
         {
           publishedBlogEntries.map((blogPostEntry) => (
-            <article class="bg-[#FFF7FB] rounded-3xl p-6 sm:p-8 border border-[#F0D5E4] brand-card-hover group">
+            <article 
+              data-category={blogPostEntry.data.category}
+              data-title={blogPostEntry.data.title.toLowerCase()}
+              data-snippet={blogPostEntry.data.snippet.toLowerCase()}
+              class="article-card bg-[#FFF7FB] rounded-3xl p-6 sm:p-8 border border-[#F0D5E4] brand-card-hover group transition-all duration-300">
               <a href={`/blog/${blogPostEntry.slug}`} class="block">
                 <div class="flex items-center gap-3 mb-3">
                   <span class="text-xs font-semibold uppercase tracking-wider text-[#D98AAF] bg-white px-3 py-1 rounded-full border border-[#F0D5E4]">
@@ -62,6 +109,72 @@ publishedBlogEntries.sort(function (a, b) {
           ))
         }
       </div>
+
+      <!-- Empty Filter State -->
+      <div id="no-articles-found" class="hidden text-center py-16 bg-[#FFF7FB] rounded-3xl border border-[#F0D5E4] p-8">
+        <div class="text-3xl mb-2">🔍</div>
+        <h3 class="font-serif text-lg font-semibold text-[#29242A]">Artikel Tidak Ditemukan</h3>
+        <p class="text-xs text-[#756B72] mt-1">Coba gunakan kata kunci pencarian yang lain atau pilih kategori Semua.</p>
+      </div>
     </main>
   </Container>
 </Layout>
+
+<script is:inline>
+  (function () {
+    const searchInput = document.getElementById("article-search-input");
+    const filterBtns = document.querySelectorAll(".filter-category-btn");
+    const articles = document.querySelectorAll(".article-card");
+    const noArticlesMsg = document.getElementById("no-articles-found");
+
+    let currentCategory = "Semua";
+    let searchQuery = "";
+
+    function filterArticles() {
+      let visibleCount = 0;
+
+      articles.forEach((card) => {
+        const cat = card.getAttribute("data-category");
+        const title = card.getAttribute("data-title") || "";
+        const snippet = card.getAttribute("data-snippet") || "";
+
+        const matchesCat = currentCategory === "Semua" || cat === currentCategory;
+        const matchesQuery = !searchQuery || title.includes(searchQuery) || snippet.includes(searchQuery);
+
+        if (matchesCat && matchesQuery) {
+          card.style.display = "block";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      if (noArticlesMsg) {
+        if (visibleCount === 0) {
+          noArticlesMsg.classList.remove("hidden");
+        } else {
+          noArticlesMsg.classList.add("hidden");
+        }
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        filterArticles();
+      });
+    }
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach((b) => {
+          b.className = "filter-category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all border bg-[#FFF7FB] text-[#756B72] border-[#F0D5E4] hover:bg-[#FFE5F7] hover:text-[#29242A]";
+        });
+        btn.className = "filter-category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all border bg-[#D98AAF] text-white border-[#D98AAF] shadow-xs";
+
+        currentCategory = btn.getAttribute("data-category");
+        filterArticles();
+      });
+    });
+  })();
+</script>
