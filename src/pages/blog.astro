@@ -14,11 +14,33 @@ publishedBlogEntries.sort(function (a, b) {
 });
 
 const categories = ["Semua", "Edukasi & Sains", "Confidence & Self-Care", "Relationship & Intimacy"];
+
+const siteUrl = "https://pinck-smile.netlify.app";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Jurnal & Edukasi",
+      "item": `${siteUrl}/blog`
+    }
+  ]
+};
 ---
 
 <Layout 
-  title="Edukasi & Jurnal - Female Intimate Wellness"
-  description="Wawasan ilmiah, panduan perawatan pH seimbang, body literacy, dan tips keintiman sehat dari para ahli dan tim editorial PINCK SMILE.">
+  title="Edukasi & Jurnal Intimate Wellness - PINCK SMILE (Pink Smile)"
+  description="Wawasan ilmiah, panduan perawatan pH seimbang, body literacy, dan tips keintiman sehat dari para ahli dan tim editorial PINCK SMILE (Pink Smile)."
+  jsonLd={[breadcrumbSchema]}>
   <Container class="py-16">
     <div class="text-center max-w-2xl mx-auto mb-12">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">

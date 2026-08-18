@@ -2,9 +2,33 @@
 import Contactform from "@/components/contactform.astro";
 import Container from "@/components/container.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const siteUrl = "https://pinck-smile.netlify.app";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kontak & Konsultasi",
+      "item": `${siteUrl}/contact`
+    }
+  ]
+};
 ---
 
-<Layout title="Hubungi Kami & Konsultasi Privat - PINCK SMILE">
+<Layout 
+  title="Hubungi Kami & Konsultasi Privat - PINCK SMILE (Pink Smile)"
+  description="Layanan konsultasi intim wanita dan customer support privat PINCK SMILE (Pink Smile). Hubungi tim ahli kami via WhatsApp, email, atau formulir resmi."
+  jsonLd={[breadcrumbSchema]}>
   <Container class="py-16">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">

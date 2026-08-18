@@ -40,6 +40,7 @@ export interface Product {
   shopeeUrl: string;
   lazadaUrl: string;
   waText: string;
+  image: string;
 }
 
 export const products: Product[] = [
@@ -57,6 +58,7 @@ export const products: Product[] = [
     volume: "150 ml",
     rating: 4.9,
     reviewCount: 1420,
+    image: "/products/gentle-intimate-wash-og.jpg",
     shortDescription:
       "Pembersih area kewanitaan dengan formula ultra-lembut ber-pH 4.0 seimbang, diperkaya Chamomile Organik, Ekstrak Daun Sirih, dan Prebiotic Complex untuk menjaga keseimbangan mikrobiom alami tanpa rasa kering atau iritasi.",
     fullDescription:
@@ -150,6 +152,7 @@ export const products: Product[] = [
     volume: "60 ml",
     rating: 4.8,
     reviewCount: 980,
+    image: "/products/soothing-hydrating-mist-og.jpg",
     shortDescription:
       "Mist hidrasi intim tanpa bilas dengan formula semprot 360° yang praktis. Menghadirkan kesegaran instan, meredakan rasa lembap berlebih, gerah, dan gesekan pasca-olahraga atau aktivitas padat.",
     fullDescription:
@@ -238,6 +241,7 @@ export const products: Product[] = [
     volume: "Medical Silicone",
     rating: 5.0,
     reviewCount: 840,
+    image: "/products/aura-intimate-device-og.jpg",
     shortDescription:
       "Perangkat stimulasi dan relaksasi otot panggul premium berfrekuensi mikro dengan silikon medis ultra-lembut bersertifikasi FDA. Dirancang khusus untuk melatih respons relaksasi, melancarkan sirkulasi panggul, dan meningkatkan kepercayaan diri intim secara higienis dan senyap.",
     fullDescription:
