@@ -18,7 +18,7 @@ interface Props {
 
 const { product } = Astro.props;
 
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pincksmile.com";
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.netlify.app";
 const pageUrl = `${siteUrl}/products/${product.slug}`;
 
 // Related products

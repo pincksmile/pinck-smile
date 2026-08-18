@@ -6,7 +6,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://pincksmile.com",
+  site: "https://pinck-smile.netlify.app",
   server: {
     host: "0.0.0.0",
     port: 3000,

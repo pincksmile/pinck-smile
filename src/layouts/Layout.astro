@@ -20,7 +20,7 @@ export interface Props {
   jsonLd?: Record<string, any> | Array<Record<string, any>>;
 }
 
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pincksmile.com";
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.netlify.app";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
 
 const defaultDescription = "PINCK SMILE - Female Intimate Wellness, Thoughtfully. Perawatan kesehatan intim wanita dengan formula pH seimbang, bahan body-safe medis, edukasi literasi tubuh, serta jaminan kemasan privat (discreet) 100%.";

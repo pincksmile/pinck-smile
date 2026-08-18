@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://pincksmile.com
+Host: https://pinck-smile.netlify.app
 
 # Sitemaps
-Sitemap: https://pincksmile.com/sitemap-index.xml
+Sitemap: https://pinck-smile.netlify.app/sitemap-index.xml

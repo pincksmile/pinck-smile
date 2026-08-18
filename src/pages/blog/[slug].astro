@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pincksmile.com";
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.netlify.app";
 const pageUrl = `${siteUrl}/blog/${entry.slug}`;
 
 // Get all published blog entries for related posts recommendation
