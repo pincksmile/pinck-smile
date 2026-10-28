@@ -3,7 +3,7 @@ draft: false
 title: "Panduan Lengkap Perawatan Intim Wanita: Memahami pH Seimbang & Mikrobiom Alami"
 snippet: "Ketahui sains di balik keasaman alami area kewanitaan, mengapa sabun mandi biasa berisiko menimbulkan iritasi, dan ritual harian yang aman untuk menjaga flora baik."
 image: {
-    src: "https://images.unsplash.com/photo-1556228720-195a672e8a03?fit=crop&w=800&h=500",
+    src: "/blog/panduan-perawatan-intim-wanita-ph-seimbang.jpg",
     alt: "Perawatan intim wanita alami dan lembut"
 }
 publishDate: "2026-08-14 10:00"

@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
+import ProductVisual from "@/components/product-visual.astro";
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -182,13 +183,19 @@ const breadcrumbSchema = {
     </header>
 
     <!-- Featured Image -->
-    <div class="mx-auto max-w-3xl mb-12 rounded-3xl overflow-hidden shadow-md border border-[#F0D5E4]">
+    <div class="mx-auto max-w-3xl mb-12 rounded-3xl overflow-hidden shadow-md border border-[#F0D5E4] bg-gradient-to-br from-[#FFF7FB] via-[#FFE5F7] to-[#F5E6EF] relative aspect-[16/9]">
       <img
         src={entry.data.image.src}
         alt={entry.data.image.alt}
         loading="eager"
-        class="w-full aspect-[16/9] object-cover"
+        referrerpolicy="no-referrer"
+        onerror="this.style.display='none'"
+        class="w-full h-full object-cover relative z-10"
       />
+      <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-0">
+        <span class="text-4xl text-[#D98AAF] font-serif mb-2">✦</span>
+        <span class="text-sm font-serif text-[#756B72]">{entry.data.title}</span>
+      </div>
     </div>
 
     <!-- Article Body -->
@@ -221,9 +228,9 @@ const breadcrumbSchema = {
     <!-- IN-ARTICLE PRODUCT SHOWCASE SECTION -->
     <section class="max-w-3xl mx-auto my-16 pt-12 border-t border-[#F0D5E4]">
       <div class="text-center mb-8">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-[11px] font-semibold tracking-wider text-[#D98AAF] uppercase mb-2">
-          ✦ Rekomendasi Produk Terkait
-        </div>
+        <p class="text-xs font-semibold tracking-widest text-[#D98AAF] uppercase mb-2">
+          Rekomendasi Produk Terkait
+        </p>
         <h3 class="text-2xl sm:text-3xl font-serif font-semibold text-[#29242A]">
           Koleksi Perawatan Intim PINCK SMILE
         </h3>
@@ -235,13 +242,19 @@ const breadcrumbSchema = {
       <div class="grid sm:grid-cols-3 gap-5">
         {
           featuredProducts.map((p) => (
-            <div class="bg-white rounded-2xl p-5 border border-[#F0D5E4] shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div class="bg-white rounded-2xl p-4 border border-[#F0D5E4] shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow group">
               <div>
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-[10px] font-semibold uppercase tracking-wider text-[#D98AAF] bg-[#FFF7FB] px-2 py-0.5 rounded-full border border-[#F0D5E4]">
+                <a href={`/products/${p.slug}`} class="block mb-3.5">
+                  <div class="w-full aspect-[4/3] rounded-xl bg-gradient-to-br from-[#FFE5F7] to-[#FFF7FB] border border-[#F0D5E4]/80 overflow-hidden relative">
+                    <ProductVisual id={p.id} size="sm" />
+                  </div>
+                </a>
+                <div class="flex items-center justify-between text-[11px] text-[#756B72] mb-2">
+                  <span class="font-semibold text-[#D98AAF]">
                     {p.badge}
                   </span>
-                  <span class="text-[10px] text-[#756B72]">{p.volume}</span>
+                  <span>·</span>
+                  <span>{p.volume}</span>
                 </div>
 
                 <h4 class="font-serif font-semibold text-sm text-[#29242A] hover:text-[#D98AAF] transition-colors leading-snug mb-1">
@@ -257,7 +270,7 @@ const breadcrumbSchema = {
 
               <div class="pt-3 border-t border-[#F5E6EF] space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs font-serif font-bold text-[#D98AAF]">
+                  <span class="text-xs font-serif font-bold text-[#D98AAF] tabular-nums">
                     {p.priceStr}
                   </span>
                   <a
@@ -273,7 +286,7 @@ const breadcrumbSchema = {
                   data-name={p.name}
                   data-price={p.priceNum}
                   data-category={p.category}
-                  class="add-to-cart-btn w-full py-2 px-3 rounded-full bg-[#29242A] text-white text-[11px] font-semibold hover:bg-[#D98AAF] transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                  class="add-to-cart-btn w-full py-2 px-3 rounded-full bg-[#29242A] text-white text-[11px] font-semibold hover:bg-[#D98AAF] transition-colors flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
@@ -301,16 +314,16 @@ const breadcrumbSchema = {
         <section class="max-w-3xl mx-auto my-16 pt-12 border-t border-[#F0D5E4]">
           <div class="flex items-center justify-between mb-8">
             <div>
-              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-[11px] font-semibold tracking-wider text-[#D98AAF] uppercase mb-1">
+              <p class="text-xs font-semibold tracking-widest text-[#D98AAF] uppercase mb-1">
                 Edukasi Lainnya
-              </div>
+              </p>
               <h3 class="text-2xl font-serif font-semibold text-[#29242A]">
                 Artikel Terkait yang Mungkin Anda Suka
               </h3>
             </div>
             <a
               href="/blog"
-              class="text-xs font-semibold text-[#D98AAF] hover:text-[#29242A] transition-colors hidden sm:inline-block">
+              class="text-xs font-semibold text-[#D98AAF] hover:text-[#29242A] transition-colors hidden sm:inline-block whitespace-nowrap">
               Semua Artikel →
             </a>
           </div>
@@ -318,30 +331,46 @@ const breadcrumbSchema = {
           <div class="grid sm:grid-cols-3 gap-6">
             {
               relatedPosts.map((post) => (
-                <article class="bg-[#FFF7FB] rounded-2xl p-5 border border-[#F0D5E4] brand-card-hover group flex flex-col justify-between">
+                <article class="bg-white rounded-2xl overflow-hidden border border-[#F0D5E4] brand-card-hover group flex flex-col justify-between">
                   <div>
-                    <div class="flex items-center gap-2 mb-2">
-                      <span class="text-[10px] font-semibold uppercase tracking-wider text-[#D98AAF] bg-white px-2 py-0.5 rounded-full border border-[#F0D5E4]">
-                        {post.data.category}
-                      </span>
-                    </div>
-
-                    <h4 class="font-serif font-semibold text-sm text-[#29242A] group-hover:text-[#D98AAF] transition-colors leading-snug mb-2 line-clamp-2">
-                      <a href={`/blog/${post.slug}`}>
-                        {post.data.title}
-                      </a>
-                    </h4>
-
-                    <p class="text-[11px] text-[#756B72] leading-relaxed line-clamp-2 mb-3">
-                      {post.data.snippet}
-                    </p>
-                  </div>
-
-                  <div class="pt-3 border-t border-[#F0D5E4] flex items-center justify-between text-[11px]">
-                    <span class="text-[#756B72]">{post.data.author}</span>
                     <a
                       href={`/blog/${post.slug}`}
-                      class="text-[#D98AAF] font-semibold group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
+                      class="block w-full aspect-[16/10] bg-gradient-to-br from-[#FFF7FB] via-[#FFE5F7] to-[#F5E6EF] relative overflow-hidden border-b border-[#F0D5E4]">
+                      <img
+                        src={post.data.image.src}
+                        alt={post.data.image.alt}
+                        loading="lazy"
+                        referrerpolicy="no-referrer"
+                        onerror="this.style.display='none'"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out relative z-10"
+                      />
+                      <div class="absolute inset-0 flex items-center justify-center z-0">
+                        <span class="text-2xl text-[#D98AAF] font-serif">✦</span>
+                      </div>
+                    </a>
+
+                    <div class="p-4">
+                      <div class="text-[10px] font-semibold text-[#D98AAF] mb-1.5">
+                        {post.data.category}
+                      </div>
+
+                      <h4 class="font-serif font-semibold text-sm text-[#29242A] group-hover:text-[#D98AAF] transition-colors leading-snug mb-2 line-clamp-2">
+                        <a href={`/blog/${post.slug}`}>
+                          {post.data.title}
+                        </a>
+                      </h4>
+
+                      <p class="text-[11px] text-[#756B72] leading-relaxed line-clamp-2">
+                        {post.data.snippet}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="px-4 pb-4 pt-3 border-t border-[#F0D5E4] flex items-center justify-between text-[11px]">
+                    <span class="text-[#756B72] truncate max-w-[110px]">{post.data.author}</span>
+                    <a
+                      href={`/blog/${post.slug}`}
+                      class="text-[#D98AAF] font-semibold group-hover:translate-x-0.5 transition-transform flex items-center gap-1 whitespace-nowrap shrink-0">
                       <span>Baca</span>
                       <span>→</span>
                     </a>

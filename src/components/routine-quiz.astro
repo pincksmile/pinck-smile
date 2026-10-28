@@ -165,8 +165,18 @@ import Container from "@/components/container.astro";
           </div>
 
           <div class="bg-[#FFF7FB] rounded-3xl p-6 border border-[#F0D5E4] max-w-md mx-auto space-y-4">
-            <div class="w-16 h-16 rounded-2xl bg-white border border-[#F0D5E4] flex items-center justify-center text-3xl mx-auto shadow-xs">
-              🌸
+            <div class="w-full aspect-[4/3] max-w-[260px] rounded-2xl bg-gradient-to-br from-[#FFE5F7] to-white border border-[#F0D5E4] flex items-center justify-center text-3xl mx-auto shadow-xs overflow-hidden relative">
+              <img
+                id="result-image"
+                src="/products/gentle-intimate-wash.jpg"
+                alt="Rekomendasi Produk PINCK SMILE"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="this.style.display='none'"
+                class="absolute inset-0 w-full h-full object-cover object-center z-10"
+              />
+              <span>🌸</span>
             </div>
             
             <div>
@@ -237,31 +247,42 @@ import Container from "@/components/container.astro";
       let prodPrice = 149000;
       let prodDesc = "Formula pH 4.0 dengan Chamomile dan Prebiotic sangat cocok untuk menyeimbangkan flora dan pelindung alami kewanitaan.";
 
+      let prodImg = "/products/gentle-intimate-wash.jpg";
+
       if (answers[1] === "active" || answers[3] === "mist") {
         prodName = "Pinck Smile Soothing Hydrating Mist";
         prodId = "soothing-mist";
         prodPrice = 129000;
+        prodImg = "/products/soothing-hydrating-mist.jpg";
         prodDesc = "Mist praktis tanpa bilas dengan Rosewater & Hyaluronic Acid memberikan hidrasi instan dan menenangkan kulit seketika saat aktif.";
       } else if (answers[1] === "intimacy") {
         prodName = "Pinck Smile Aura Intimate Device";
         prodId = "wellness-device";
         prodPrice = 489000;
+        prodImg = "/products/aura-intimate-device.jpg";
         prodDesc = "Perangkat berbahan silikon medis 100% tahan air untuk relaksasi otot panggul, eksplorasi tubuh yang sehat, dan kenyamanan intim maksimal.";
       } else if (answers[3] === "set") {
         prodName = "Complete Comfort Set";
         prodId = "complete-set";
         prodPrice = 259000;
+        prodImg = "/products/complete-comfort-set.jpg";
         prodDesc = "Kombinasi lengkap Gentle Intimate Wash + Hydrating Mist untuk perawatan rumah dan bepergian.";
       }
 
       const titleEl = document.getElementById("result-title");
       const descEl = document.getElementById("result-desc");
       const priceEl = document.getElementById("result-price");
+      const imgEl = document.getElementById("result-image");
       const addBtn = document.getElementById("result-add-btn");
 
       if (titleEl) titleEl.textContent = prodName;
       if (descEl) descEl.textContent = prodDesc;
       if (priceEl) priceEl.textContent = `Rp ${prodPrice.toLocaleString("id-ID")}`;
+      if (imgEl) {
+        imgEl.style.display = "";
+        imgEl.setAttribute("src", prodImg);
+        imgEl.setAttribute("alt", prodName);
+      }
 
       if (addBtn) {
         addBtn.onclick = function () {

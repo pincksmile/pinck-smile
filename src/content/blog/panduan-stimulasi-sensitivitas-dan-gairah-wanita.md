@@ -3,7 +3,7 @@ draft: false
 title: "Meningkatkan Gairah & Sensitivitas: Panduan Stimulasi Alami, Foreplay Berkualitas, dan Keintiman Harmonis"
 snippet: "Pelajari seni stimulasi alami untuk membangkitkan gairah wanita secara bertahap melalui pemahaman zona sensitif, relaksasi otot dasar panggul, dan komunikasi penuh kelembutan."
 image: {
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?fit=crop&w=800&h=500",
+    src: "/blog/panduan-stimulasi-sensitivitas-dan-gairah-wanita.jpg",
     alt: "Panduan stimulasi sensitivitas gairah dan keintiman wanita"
 }
 publishDate: "2026-08-16 16:45"

@@ -8,16 +8,48 @@ interface Props {
 
 const { id, size = "md", accentGradient = "from-[#FFE5F7] to-[#FFF7FB]" } = Astro.props;
 
-const isWash = id === "gentle-wash" || id.includes("wash");
+const isWash = id === "gentle-wash" || id === "bundle-essential" || id.includes("wash");
 const isMist = id === "soothing-mist" || id.includes("mist");
 const isDevice = id === "wellness-device" || id.includes("aura") || id.includes("device");
-const isBundleComfort = id === "bundle-complete" || id.includes("comfort");
-const isBundleUltimate = id === "bundle-ultimate" || id.includes("ultimate");
+const isBundleComfort = id === "bundle-complete" || id === "complete-set" || id.includes("comfort") || id.includes("complete");
+const isBundleUltimate = id === "bundle-ultimate" || id === "ultimate-ritual" || id.includes("ultimate") || id.includes("ritual");
+
+const imageSrc = isBundleUltimate
+  ? "/products/ultimate-wellness-ritual.jpg"
+  : isBundleComfort
+    ? "/products/complete-comfort-set.jpg"
+    : isDevice
+      ? "/products/aura-intimate-device.jpg"
+      : isMist
+        ? "/products/soothing-hydrating-mist.jpg"
+        : "/products/gentle-intimate-wash.jpg";
+
+const imageAlt = isBundleUltimate
+  ? "PINCK SMILE Ultimate Wellness Ritual - Gentle Wash, Hydrating Mist & Aura Intimate Device"
+  : isBundleComfort
+    ? "PINCK SMILE Complete Comfort Set - Gentle Intimate Wash 150ml, Hydrating Mist 60ml & Silk Pouch"
+    : isDevice
+      ? "PINCK SMILE Aura Intimate Device - Perangkat Relaksasi Otot Panggul Silikon Medis"
+      : isMist
+        ? "PINCK SMILE Soothing Hydrating Mist 60ml - Rosewater & Niacinamide"
+        : "PINCK SMILE Gentle Intimate Wash 150ml - Pembersih Kewanitaan pH 4.0";
 ---
 
-<div class="relative w-full h-full flex items-center justify-center p-4 select-none">
+<div class="relative w-full h-full flex items-center justify-center p-4 select-none overflow-hidden group/visual">
   
-  {/* Ambient Soft Studio Glow */}
+  {/* High-Resolution Studio Product Photography Layer (with automatic fallback to CSS artwork underneath) */}
+  <img
+    src={imageSrc}
+    alt={imageAlt}
+    loading={size === "lg" ? "eager" : "lazy"}
+    decoding="async"
+    referrerpolicy="no-referrer"
+    onerror="this.style.display='none'"
+    class="absolute inset-0 w-full h-full object-cover object-center z-20 transition-transform duration-700 ease-out group-hover/visual:scale-105 group-hover:scale-105"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-[#29242A]/15 via-transparent to-white/10 z-20 pointer-events-none"></div>
+
+  {/* Ambient Soft Studio Glow (Fallback Layer) */}
   <div class="absolute inset-0 bg-radial from-white/70 via-transparent to-transparent opacity-80 pointer-events-none"></div>
 
   {/* 1. GENTLE INTIMATE WASH BOTTLE */}

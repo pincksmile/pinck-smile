@@ -3,7 +3,7 @@ draft: false
 title: "Fakta Medis Seputar Perangsang Wanita: Menghindari Obat Berbahaya dan Memilih Stimulasi Aman Teruji Klinis"
 snippet: "Tinjauan medis mengenai bahaya obat perangsang ilegal tanpa izin edar serta panduan stimulasi fisik dan perawatan intim yang aman, teruji klinis, dan menghormati integritas tubuh."
 image: {
-    src: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?fit=crop&w=800&h=500",
+    src: "/blog/fakta-medis-perangsang-wanita-dan-stimulasi-aman.jpg",
     alt: "Fakta medis perangsang wanita dan standar keamanan klinis"
 }
 publishDate: "2026-08-15 14:00"

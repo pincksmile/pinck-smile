@@ -247,11 +247,23 @@
 
         itemsList.innerHTML = cart
           .map(
-            (item, index) => `
+            (item, index) => {
+              const idStr = String(item.id || "").toLowerCase();
+              const thumbSrc = idStr.includes("ultimate") || idStr.includes("ritual")
+                ? "/products/ultimate-wellness-ritual.jpg"
+                : idStr.includes("complete") || idStr.includes("comfort")
+                  ? "/products/complete-comfort-set.jpg"
+                  : idStr.includes("device") || idStr.includes("aura")
+                    ? "/products/aura-intimate-device.jpg"
+                    : idStr.includes("mist")
+                      ? "/products/soothing-hydrating-mist.jpg"
+                      : "/products/gentle-intimate-wash.jpg";
+              return `
           <div class="bg-[#FFF7FB] rounded-2xl p-3 border border-[#F0D5E4] flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white border border-[#F0D5E4] flex items-center justify-center text-sm shrink-0">
-                🌸
+              <div class="w-11 h-11 rounded-xl bg-white border border-[#F0D5E4] flex items-center justify-center text-sm shrink-0 overflow-hidden relative">
+                <img src="${thumbSrc}" alt="${item.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover z-10" />
+                <span>🌸</span>
               </div>
               <div>
                 <h4 class="font-semibold text-xs text-[#29242A] line-clamp-1">${item.name}</h4>
@@ -268,7 +280,8 @@
               <button onclick="window.removeCartItem(${index})" class="text-xs text-[#756B72] hover:text-red-500 p-1">✕</button>
             </div>
           </div>
-        `
+        `;
+            }
           )
           .join("");
       }

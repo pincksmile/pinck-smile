@@ -58,7 +58,7 @@ export const products: Product[] = [
     volume: "150 ml",
     rating: 4.9,
     reviewCount: 1420,
-    image: "/products/gentle-intimate-wash-og.jpg",
+    image: "/products/gentle-intimate-wash.jpg",
     shortDescription:
       "Pembersih area kewanitaan dengan formula ultra-lembut ber-pH 4.0 seimbang, diperkaya Chamomile Organik, Ekstrak Daun Sirih, dan Prebiotic Complex untuk menjaga keseimbangan mikrobiom alami tanpa rasa kering atau iritasi.",
     fullDescription:
@@ -152,7 +152,7 @@ export const products: Product[] = [
     volume: "60 ml",
     rating: 4.8,
     reviewCount: 980,
-    image: "/products/soothing-hydrating-mist-og.jpg",
+    image: "/products/soothing-hydrating-mist.jpg",
     shortDescription:
       "Mist hidrasi intim tanpa bilas dengan formula semprot 360° yang praktis. Menghadirkan kesegaran instan, meredakan rasa lembap berlebih, gerah, dan gesekan pasca-olahraga atau aktivitas padat.",
     fullDescription:
@@ -241,7 +241,7 @@ export const products: Product[] = [
     volume: "Medical Silicone",
     rating: 5.0,
     reviewCount: 840,
-    image: "/products/aura-intimate-device-og.jpg",
+    image: "/products/aura-intimate-device.jpg",
     shortDescription:
       "Perangkat stimulasi dan relaksasi otot panggul premium berfrekuensi mikro dengan silikon medis ultra-lembut bersertifikasi FDA. Dirancang khusus untuk melatih respons relaksasi, melancarkan sirkulasi panggul, dan meningkatkan kepercayaan diri intim secara higienis dan senyap.",
     fullDescription:
@@ -334,6 +334,7 @@ export const products: Product[] = [
     volume: "150ml + 60ml",
     rating: 4.9,
     reviewCount: 1650,
+    image: "/products/complete-comfort-set.jpg",
     shortDescription:
       "Kombinasi sempurna Gentle Intimate Wash (150ml) untuk ritual mandi harian di rumah dan Soothing Hydrating Mist (60ml) portabel untuk kesegaran di luar rumah. Lengkap dengan bonus silk travel pouch eksklusif.",
     fullDescription:
@@ -409,6 +410,7 @@ export const products: Product[] = [
     volume: "3-in-1 Full Box",
     rating: 5.0,
     reviewCount: 520,
+    image: "/products/ultimate-wellness-ritual.jpg",
     shortDescription:
       "Pengalaman perawatan kebugaran intim terlengkap. Mencakup Gentle Intimate Wash (150ml), Soothing Hydrating Mist (60ml), dan Aura Intimate Device bersilikon medis untuk relaksasi otot panggul serta kepercayaan diri maksimal.",
     fullDescription:

@@ -3,7 +3,7 @@ draft: false
 title: "Body Literacy: Cara Merawat Kesehatan Intim & Membangun Kepercayaan Diri Sejati"
 snippet: "Mengenal tubuh sendiri tanpa rasa canggung atau tabu. Pelajari bagaimana body literacy membantu wanita merasa berdaya, aman, dan nyaman dalam kulitnya sendiri."
 image: {
-    src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?fit=crop&w=800&h=500",
+    src: "/blog/body-literacy-membangun-percaya-diri-wanita.jpg",
     alt: "Wanita percaya diri dan merawat kesehatan tubuh"
 }
 publishDate: "2026-08-10 14:30"

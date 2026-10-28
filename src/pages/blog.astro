@@ -43,10 +43,10 @@ const breadcrumbSchema = {
   jsonLd={[breadcrumbSchema]}>
   <Container class="py-16">
     <div class="text-center max-w-2xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF7FB] border border-[#F0D5E4] text-xs font-semibold tracking-wider text-[#D98AAF] uppercase mb-3">
+      <p class="text-xs font-semibold tracking-widest text-[#D98AAF] uppercase mb-3">
         Edukasi & Artikel
-      </div>
-      <h1 class="text-4xl sm:text-5xl font-serif font-semibold text-[#29242A]">
+      </p>
+      <h1 class="text-4xl sm:text-5xl font-serif font-semibold text-[#29242A] text-balance">
         Jurnal PINCK SMILE
       </h1>
       <p class="text-base text-[#756B72] mt-4 leading-relaxed">
@@ -55,7 +55,7 @@ const breadcrumbSchema = {
     </div>
 
     <!-- Interactive Search & Category Filter Toolbar -->
-    <div class="max-w-4xl mx-auto mb-10 space-y-4">
+    <div class="max-w-5xl mx-auto mb-10 space-y-4">
       <!-- Search Input -->
       <div class="relative">
         <input
@@ -74,14 +74,14 @@ const breadcrumbSchema = {
         </svg>
       </div>
 
-      <!-- Category Filter Pills -->
+      <!-- Category Filter Tabs -->
       <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
         {
           categories.map((cat, idx) => (
             <button
               type="button"
               data-category={cat}
-              class={`filter-category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all border ${
+              class={`filter-category-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap shrink-0 transition-all border ${
                 idx === 0
                   ? "bg-[#D98AAF] text-white border-[#D98AAF] shadow-xs"
                   : "bg-[#FFF7FB] text-[#756B72] border-[#F0D5E4] hover:bg-[#FFE5F7] hover:text-[#29242A]"
@@ -93,36 +93,58 @@ const breadcrumbSchema = {
       </div>
     </div>
 
-    <main class="max-w-4xl mx-auto">
-      <div id="articles-container" class="grid gap-8">
+    <main class="max-w-5xl mx-auto">
+      <div id="articles-container" class="grid md:grid-cols-2 gap-8">
         {
           publishedBlogEntries.map((blogPostEntry) => (
             <article 
               data-category={blogPostEntry.data.category}
               data-title={blogPostEntry.data.title.toLowerCase()}
               data-snippet={blogPostEntry.data.snippet.toLowerCase()}
-              class="article-card bg-[#FFF7FB] rounded-3xl p-6 sm:p-8 border border-[#F0D5E4] brand-card-hover group transition-all duration-300">
-              <a href={`/blog/${blogPostEntry.slug}`} class="block">
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="text-xs font-semibold uppercase tracking-wider text-[#D98AAF] bg-white px-3 py-1 rounded-full border border-[#F0D5E4]">
-                    {blogPostEntry.data.category}
-                  </span>
-                  <span class="text-xs text-[#756B72]">
-                    {blogPostEntry.data.publishDate.toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' })}
-                  </span>
+              class="article-card bg-white rounded-3xl overflow-hidden border border-[#F0D5E4] shadow-xs brand-card-hover group transition-all duration-300 flex flex-col justify-between">
+              <a href={`/blog/${blogPostEntry.slug}`} class="flex flex-col h-full justify-between">
+                <div>
+                  <!-- Article Thumbnail -->
+                  <div class="w-full aspect-[16/10] bg-gradient-to-br from-[#FFF7FB] via-[#FFE5F7] to-[#F5E6EF] relative overflow-hidden border-b border-[#F0D5E4]">
+                    <img
+                      src={blogPostEntry.data.image.src}
+                      alt={blogPostEntry.data.image.alt}
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                      onerror="this.style.display='none'"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out relative z-10"
+                    />
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-0">
+                      <span class="text-3xl text-[#D98AAF] font-serif mb-1">✦</span>
+                      <span class="text-xs font-serif text-[#756B72] line-clamp-1">{blogPostEntry.data.title}</span>
+                    </div>
+                  </div>
+
+                  <!-- Article Body -->
+                  <div class="p-6 sm:p-7">
+                    <div class="flex items-center gap-2 text-xs text-[#756B72] mb-3">
+                      <span class="font-semibold text-[#D98AAF]">
+                        {blogPostEntry.data.category}
+                      </span>
+                      <span aria-hidden="true">·</span>
+                      <time datetime={blogPostEntry.data.publishDate.toISOString()}>
+                        {blogPostEntry.data.publishDate.toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' })}
+                      </time>
+                    </div>
+
+                    <h2 class="text-xl sm:text-2xl font-serif font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors leading-snug mb-3 text-balance">
+                      {blogPostEntry.data.title}
+                    </h2>
+
+                    <p class="text-sm text-[#756B72] leading-relaxed line-clamp-3">
+                      {blogPostEntry.data.snippet}
+                    </p>
+                  </div>
                 </div>
 
-                <h2 class="text-2xl sm:text-3xl font-serif font-semibold text-[#29242A] group-hover:text-[#D98AAF] transition-colors leading-snug mb-3">
-                  {blogPostEntry.data.title}
-                </h2>
-
-                <p class="text-sm text-[#756B72] leading-relaxed mb-4">
-                  {blogPostEntry.data.snippet}
-                </p>
-
-                <div class="flex items-center justify-between text-xs font-medium text-[#756B72] pt-4 border-t border-[#F0D5E4]">
+                <div class="px-6 sm:px-7 pb-6 pt-4 border-t border-[#F5E6EF] flex items-center justify-between text-xs font-medium text-[#756B72]">
                   <span>Penulis: {blogPostEntry.data.author}</span>
-                  <span class="text-[#D98AAF] font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                  <span class="text-[#D98AAF] font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 whitespace-nowrap shrink-0">
                     Baca Selengkapnya →
                   </span>
                 </div>
@@ -164,7 +186,7 @@ const breadcrumbSchema = {
         const matchesQuery = !searchQuery || title.includes(searchQuery) || snippet.includes(searchQuery);
 
         if (matchesCat && matchesQuery) {
-          card.style.display = "block";
+          card.style.display = "flex";
           visibleCount++;
         } else {
           card.style.display = "none";

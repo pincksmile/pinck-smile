@@ -93,13 +93,24 @@ import Container from "@/components/container.astro";
           </div>
 
           <!-- Product Showcase Artwork / Mockup Display -->
-          <div class="relative z-10 my-auto flex flex-col items-center justify-center text-center py-6">
-            <!-- Elegant Product Visual representation -->
-            <div class="relative w-48 h-60 rounded-2xl bg-white shadow-lg border border-[#F5E6EF] flex flex-col items-center justify-between p-4 transform hover:scale-[1.02] transition-transform duration-300">
-              <!-- Bottle / Device aesthetic cap -->
+          <div class="relative z-10 my-auto flex flex-col items-center justify-center text-center py-4">
+            <!-- High-Resolution Product Photography Showcase with Fallback -->
+            <a href="/products" class="relative w-full aspect-[4/3] rounded-2xl bg-white shadow-lg border border-[#F5E6EF] flex flex-col items-center justify-between p-4 overflow-hidden group/heroimg">
+              <img
+                src="/products/ultimate-wellness-ritual.jpg"
+                alt="Koleksi Lengkap Produk Perawatan Intim Wanita PINCK SMILE - Gentle Intimate Wash, Soothing Hydrating Mist, dan Aura Intimate Device"
+                loading="eager"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="this.style.display='none'"
+                class="absolute inset-0 w-full h-full object-cover object-center z-20 transition-transform duration-700 ease-out group-hover/heroimg:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#29242A]/20 via-transparent to-transparent z-20 pointer-events-none"></div>
+
+              <!-- Fallback Bottle / Device aesthetic cap -->
               <div class="w-14 h-6 rounded-t-lg bg-gradient-to-r from-[#D98AAF] to-[#E5A3C0] shadow-xs"></div>
               
-              <!-- Center Logo & Minimalist Typography -->
+              <!-- Fallback Center Logo & Minimalist Typography -->
               <div class="space-y-1 w-full flex flex-col items-center">
                 <img 
                   src="/pinck-smile-logo.svg" 
@@ -110,15 +121,15 @@ import Container from "@/components/container.astro";
                 <div class="text-[9px] text-[#D98AAF] font-medium tracking-wide">pH 4.0 • Prebiotic Complex</div>
               </div>
 
-              <!-- Bottom volume & certification indicator -->
+              <!-- Fallback Bottom volume & certification indicator -->
               <div class="w-full pt-2 border-t border-[#F5E6EF] flex justify-between items-center text-[9px] text-[#756B72]">
-                <span>100 ml</span>
+                <span>150 ml</span>
                 <span class="text-[#D98AAF] font-semibold">Derm-Tested</span>
               </div>
-            </div>
+            </a>
 
             <!-- Floating Companion Pill Element -->
-            <div class="absolute -bottom-2 -left-2 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-md border border-[#F0D5E4] flex items-center gap-3">
+            <div class="absolute -bottom-1 -left-2 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-md border border-[#F0D5E4] flex items-center gap-3">
               <div class="w-8 h-8 rounded-full bg-[#FFE5F7] flex items-center justify-center text-[#D98AAF]">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -131,7 +142,7 @@ import Container from "@/components/container.astro";
             </div>
 
             <!-- Floating Privacy Tag -->
-            <div class="absolute -top-1 -right-2 bg-white/95 backdrop-blur-md rounded-2xl px-3 py-2 shadow-md border border-[#F0D5E4] flex items-center gap-2">
+            <div class="absolute -top-1 -right-2 z-30 bg-white/95 backdrop-blur-md rounded-2xl px-3 py-2 shadow-md border border-[#F0D5E4] flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
               <span class="text-[11px] font-medium text-[#29242A]">Discreet Packaging Guaranteed</span>
             </div>

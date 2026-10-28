@@ -3,7 +3,7 @@ draft: false
 title: "Tips Menjaga Keintiman & Komunikasi Terbuka Bersama Pasangan Tanpa Canggung"
 snippet: "Membicarakan kenyamanan dan batas pribadi dalam keintiman. Langkah praktis membangun ruang komunikasi yang hangat, saling menghargai, dan membahagiakan."
 image: {
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?fit=crop&w=800&h=500",
+    src: "/blog/tips-komunikasi-keintiman-sehat-dan-terbuka.jpg",
     alt: "Keintiman dan komunikasi sehat pasangan"
 }
 publishDate: "2026-08-05 09:15"

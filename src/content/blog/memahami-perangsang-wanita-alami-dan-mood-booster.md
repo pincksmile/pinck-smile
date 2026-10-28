@@ -3,7 +3,7 @@ draft: false
 title: "Memahami Perangsang Wanita Alami: Cara Kerja Stimulasi, Hormon Oksitosin, dan Female Mood Booster"
 snippet: "Kupas tuntas sains di balik gairah wanita, bagaimana respons gairah alami bekerja melalui relaksasi pikiran, pelepasan oksitosin, serta stimulasi lembut yang aman bagi tubuh."
 image: {
-    src: "https://images.unsplash.com/photo-1518611012118-696072aa579a?fit=crop&w=800&h=500",
+    src: "/blog/memahami-perangsang-wanita-alami-dan-mood-booster.jpg",
     alt: "Edukasi perangsang wanita alami dan kebugaran intim"
 }
 publishDate: "2026-08-16 09:30"
