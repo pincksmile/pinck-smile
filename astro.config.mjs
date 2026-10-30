@@ -47,9 +47,9 @@ export default defineConfig({
         }
 
         // 4. Educational Blog & Articles (Knowledge & SEO Engine)
-        if (url.includes("/blog")) {
+        if (url.includes("/blog") || url.includes("/artikel") || url.includes("/pinck-smile-obat-apa")) {
           item.changefreq = "weekly";
-          item.priority = 0.85;
+          item.priority = 0.9;
           item.lastmod = now;
           return item;
         }

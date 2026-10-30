@@ -3,9 +3,9 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 
-// Filter blog entries with 'draft: false' & date before current date
+// Filter blog entries with 'draft: false'
 const publishedBlogEntries = await getCollection("blog", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
+  return !data.draft;
 });
 
 // Sort content entries by publication date
@@ -13,7 +13,7 @@ publishedBlogEntries.sort(function (a, b) {
   return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
 });
 
-const categories = ["Semua", "Edukasi & Sains", "Confidence & Self-Care", "Relationship & Intimacy"];
+const categories = ["Semua", "Kesehatan Seksual", "Edukasi & Sains", "Confidence & Self-Care", "Relationship & Intimacy"];
 
 const siteUrl = "https://pinck-smile.netlify.app";
 

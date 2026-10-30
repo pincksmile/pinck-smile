@@ -4,7 +4,7 @@ import Container from "@/components/container.astro";
 
 // Get all published blog entries dynamically
 const allPosts = await getCollection("blog", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
+  return !data.draft;
 });
 
 // Sort by date descending and take top 3

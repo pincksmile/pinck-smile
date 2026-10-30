@@ -8,6 +8,7 @@ import "../styles/global.css";
 
 export interface Props {
   title?: string;
+  exactTitle?: boolean;
   description?: string;
   image?: string;
   article?: {
@@ -27,6 +28,7 @@ const defaultDescription = "PINCK SMILE - Female Intimate Wellness, Thoughtfully
 
 const { 
   title, 
+  exactTitle = false,
   description = defaultDescription,
   image = "/opengraph.jpg",
   article,
@@ -34,7 +36,7 @@ const {
 } = Astro.props;
 
 const makeTitle = title
-  ? (title.toLowerCase().includes("pinck smile") ? title : `${title} | PINCK SMILE`)
+  ? (exactTitle || title.toLowerCase().includes("pinck smile") ? title : `${title} | PINCK SMILE`)
   : "PINCK SMILE - Female Intimate Wellness Indonesia";
 
 const ogImageUrl = image.startsWith("http") ? image : new URL(image, siteUrl).toString();
