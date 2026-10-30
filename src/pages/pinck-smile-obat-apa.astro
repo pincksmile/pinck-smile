@@ -1,0 +1,673 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/container.astro";
+import ProductVisual from "../components/product-visual.astro";
+import { products } from "../data/products";
+
+const officialStores = {
+  shopee: "https://s.shopee.co.id/9zx2C9Pfba",
+  lazada: "https://share.google/nJK2B7iDNKitHambl",
+  whatsappNumber: "6288980874055"
+};
+
+const pageTitle = "Pinck Smile (Pink Smile) Obat Apa? Kenali Identitas Produk dan Informasi Penggunaannya";
+const pageDescription = "Penjelasan resmi Pinck Smile (Pink Smile) obat apa: kenali identitas merek perawatan area intim wanita, perbedaan dengan istilah obat pink, kandungan sesuai kemasan, cara pakai, dan izin edar.";
+
+const faqItems = [
+  {
+    q: "Apakah Pinck Smile termasuk obat atau produk kategori lain?",
+    a: "Pinck Smile (sering diketik pengguna sebagai Pink Smile) bukan obat medis oral, bukan obat resep dokter, dan bukan obat penyembuh penyakit infeksi. Pinck Smile adalah merek produk perawatan kebersihan dan kebugaran area intim eksternal wanita (kategori kosmetika perawatan tubuh / personal care & wellness device) yang dirancang untuk menjaga keseimbangan pH alami dan kenyamanan area kewanitaan bagian luar (vulva) sehari-hari."
+  },
+  {
+    q: "Apakah Pinck Smile sama dengan obat sakit gigi berwarna pink?",
+    a: "Tidak sama. Pinck Smile tidak memiliki kaitan apa pun dengan obat sakit gigi berwarna pink, tablet/kapsul pereda nyeri (analgesik), maupun obat minum jenis apa pun. Di masyarakat, istilah pencarian 'obat pink' atau 'pink smile' terkadang tumpang tindih dengan sebutan awam untuk pil berwarna merah muda. Oleh karena itu, identifikasi produk tidak boleh hanya didasarkan pada warna kemasan atau kemiripan kata, melainkan harus merujuk pada nama merek resmi pada label kemasan, bentuk sediaan (pembersih luar, hydrating mist, atau perangkat kebugaran silikon), dan peruntukan penggunaannya."
+  },
+  {
+    q: "Apa kandungan Pinck Smile?",
+    a: "Berdasarkan komposisi resmi pada kemasan masing-masing varian: (1) Pinck Smile Gentle Intimate Wash (150 ml) mengandung Lactic Acid, Chamomilla Recutita (Matricaria) Flower Extract, Alpha-Glucan Oligosaccharide, Piper Betle Leaf Extract, Aloe Barbadensis Leaf Juice, Allantoin, Panthenol, Aqua, Coco-Glucoside, dan Glycerin; (2) Pinck Smile Soothing Hydrating Mist (60 ml) mengandung Rosa Damascena Flower Water, Sodium Hyaluronate, Centella Asiatica Extract, Niacinamide, Lactic Acid, Panthenol, Allantoin, Aqua, dan Butylene Glycol; (3) Pinck Smile Aura Intimate Device menggunakan material 100% Medical-Grade Liquid Silicone (bebas ftalat, bebas BPA, bebas lateks) dan ABS Core tahan air IPX7."
+  },
+  {
+    q: "Bagaimana cara penggunaannya?",
+    a: "Seluruh rangkaian produk cairan Pinck Smile hanya ditujukan untuk pemakaian luar (external use only) pada area vulva dan lipatan luar kewanitaan, bukan untuk ditelan dan tidak boleh disemprotkan atau dibasuhkan ke saluran dalam vagina (bukan untuk vaginal douching). Untuk Gentle Intimate Wash, busakan 1–2 pompa di telapak tangan, basuhkan lembut ke area luar selama 20–30 detik, lalu bilas dengan air bersih. Untuk Soothing Hydrating Mist, semprotkan 2–3 kali dari jarak 10–15 cm pada area luar yang bersih dan tepuk lembut hingga meresap."
+  },
+  {
+    q: "Apa yang harus diperhatikan sebelum menggunakan produk?",
+    a: "Periksa keutuhan segel kemasan, masa kedaluwarsa, dan daftar komposisi pada label untuk memastikan Anda tidak memiliki riwayat alergi terhadap salah satu bahan (seperti ekstrak tumbuhan tertentu). Hentikan penggunaan segera apabila muncul tanda iritasi atau hipersensitivitas (kemerahan berlebih, rasa panas, atau gatal). Apabila Anda mengalami gejala medis seperti keputihan berubah warna (kuning kehijauan atau keabu-abuan), bau amis menyengat, nyeri panggul, atau perdarahan tidak normal, segera konsultasikan dengan dokter spesialis obstetri dan ginekologi (Sp.OG) karena produk perawatan harian tidak menggantikan pengobatan medis."
+  },
+  {
+    q: "Di mana mendapatkan informasi produk dan penjual resmi?",
+    a: "Informasi resmi produk, rincian label kemasan, dan layanan konsultasi pelanggan dapat diakses langsung melalui situs web resmi PINCK SMILE Indonesia (https://pinck-smile.netlify.app) serta kanal distribusi resmi terverifikasi di Shopee Official Store, Lazada Official Store, dan layanan WhatsApp Concierge resmi kami."
+  }
+];
+
+const pageJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": "https://pinck-smile.netlify.app/pinck-smile-obat-apa/#webpage",
+    "url": "https://pinck-smile.netlify.app/pinck-smile-obat-apa/",
+    "name": pageTitle,
+    "headline": pageTitle,
+    "description": pageDescription,
+    "inLanguage": "id-ID",
+    "datePublished": "2025-05-10",
+    "dateModified": new Date().toISOString().split("T")[0],
+    "lastReviewed": new Date().toISOString().split("T")[0],
+    "author": {
+      "@type": "Organization",
+      "name": "Tim Edukasi & Kepatuhan Produk PINCK SMILE Indonesia",
+      "url": "https://pinck-smile.netlify.app/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PINCK SMILE",
+      "url": "https://pinck-smile.netlify.app",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pinck-smile.netlify.app/og-image.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://pinck-smile.netlify.app/pinck-smile-obat-apa/"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://pinck-smile.netlify.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Informasi Produk",
+        "item": "https://pinck-smile.netlify.app/products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Pinck Smile Obat Apa?",
+        "item": "https://pinck-smile.netlify.app/pinck-smile-obat-apa/"
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  image="/products/complete-comfort-set.jpg"
+  article={{
+    publishedTime: "2025-05-10",
+    modifiedTime: new Date().toISOString().split("T")[0],
+    authors: ["Tim Edukasi & Kepatuhan Produk PINCK SMILE Indonesia"],
+    section: "Informasi Resmi Produk & Edukasi Konsumen",
+    tags: ["Pinck Smile", "Pink Smile", "Pinck Smile Obat Apa", "Pink Smile Obat Apa", "Perawatan Kewanitaan"]
+  }}
+  jsonLd={pageJsonLd}
+>
+  <article class="py-12 md:py-20 bg-[#FFF7FB] border-b border-[#F3DCEB]">
+    <Container>
+      <!-- Breadcrumb Navigation -->
+      <nav aria-label="Breadcrumb" class="max-w-4xl mx-auto mb-8 text-xs md:text-sm text-[#756B72] flex flex-wrap items-center gap-2">
+        <a href="/" class="hover:text-[#29242A] transition-colors">Beranda</a>
+        <span>/</span>
+        <a href="/products" class="hover:text-[#29242A] transition-colors">Katalog Produk</a>
+        <span>/</span>
+        <span class="text-[#29242A] font-medium">Pinck Smile Obat Apa?</span>
+      </nav>
+
+      <!-- Document Header & Editorial Trust Banner -->
+      <header class="max-w-4xl mx-auto bg-white border border-[#F3DCEB] rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_12px_40px_rgba(41,36,42,0.04)] mb-10">
+        <div class="flex flex-wrap items-center gap-2.5 text-xs font-semibold uppercase tracking-widest text-[#B85D8E] mb-4">
+          <span class="bg-[#FFF7FB] border border-[#F3DCEB] px-3 py-1 rounded-md">Informasi Resmi Produk & Panduan Konsumen</span>
+          <span class="text-[#756B72]">•</span>
+          <span class="text-[#756B72] font-normal normal-case tracking-normal">Diperbarui oleh Tim Kepatuhan Produk PINCK SMILE Indonesia</span>
+        </div>
+
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#29242A] leading-[1.18] mb-6">
+          Pinck Smile Obat Apa?
+        </h1>
+
+        <p class="text-base sm:text-lg text-[#5C5359] leading-relaxed mb-6">
+          Banyak pengguna mesin pencari mengetikkan pertanyaan <strong>“Pinck Smile obat apa?”</strong> atau <strong>“Pink Smile obat apa?”</strong> untuk memastikan fungsi, keamanan, serta kategori produk sebelum menggunakannya. Halaman ini disusun secara resmi oleh <strong>PINCK SMILE Indonesia</strong> sebagai sumber informasi primer yang transparan, faktual, dan sesuai dengan dokumentasi label kemasan produk yang kami kelola.
+        </p>
+
+        <!-- Pembuka & Klarifikasi Perbedaan Istilah ("Obat Pink" vs Merek Pinck Smile) -->
+        <div class="bg-[#FFF7FB] border-l-4 border-[#D98AAF] rounded-r-2xl p-5 sm:p-6 space-y-3">
+          <div class="flex items-center gap-2 text-sm font-bold text-[#29242A]">
+            <svg class="w-5 h-5 text-[#B85D8E] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Penting: Membedakan Merek Resmi PINCK SMILE dan Istilah Umum “Obat Pink”</span>
+          </div>
+          <p class="text-sm text-[#5C5359] leading-relaxed">
+            <strong>1. Identitas Merek yang Kami Kelola:</strong> <strong>PINCK SMILE</strong> (sering pula dicari dengan ejaan <em>Pink Smile</em>) adalah merek resmi produk <strong>perawatan kebersihan dan kebugaran area intim eksternal wanita (<em>female intimate hygiene & wellness care</em>)</strong>. Produk ini <strong>bukan obat medis minum (oral)</strong> dan bukan obat untuk menyembuhkan penyakit infeksi.
+          </p>
+          <p class="text-sm text-[#5C5359] leading-relaxed">
+            <strong>2. Perbedaan Istilah di Masyarakat:</strong> Dalam pencarian sehari-hari, istilah umum seperti <em>“obat pink”</em> kerap digunakan masyarakat untuk merujuk pada berbagai produk farmasi yang berbeda—misalnya tablet atau kapsul pereda nyeri/obat sakit gigi berwarna merah muda. Warna kemasan atau kemiripan kata saja <strong>tidak cukup</strong> untuk mengidentifikasi suatu produk kesehatan. Selalu periksa <strong>nama merek pada kemasan, bentuk sediaan, komposisi, dan kategori izin edar</strong> sebelum menggunakan produk apa pun.
+          </p>
+        </div>
+      </header>
+
+      <!-- Table of Contents / Quick Jump -->
+      <div class="max-w-4xl mx-auto bg-white border border-[#F3DCEB] rounded-2xl p-6 mb-10">
+        <p class="text-xs font-bold uppercase tracking-wider text-[#756B72] mb-3">Daftar Isi Panduan Resmi:</p>
+        <ol class="grid sm:grid-cols-2 gap-2.5 text-sm text-[#29242A] font-medium list-decimal list-inside">
+          <li><a href="#identitas-produk" class="hover:text-[#B85D8E] underline-offset-4 hover:underline">Identitas Produk, Bentuk Sediaan & Kategori</a></li>
+          <li><a href="#digunakan-untuk-apa" class="hover:text-[#B85D8E] underline-offset-4 hover:underline">Pinck Smile Digunakan untuk Apa?</a></li>
+          <li><a href="#kandungan-pinck-smile" class="hover:text-[#B85D8E] underline-offset-4 hover:underline">Apa Kandungan Pinck Smile? (Sesuai Kemasan)</a></li>
+          <li><a href="#cara-menggunakan" class="hover:text-[#B85D8E] underline-offset-4 hover:underline">Bagaimana Cara Menggunakan Pinck Smile?</a></li>
+          <li><a href="#keamanan-izin-edar" class="hover:text-[#B85D8E] underline-offset-4 hover:underline">Apakah Pinck Smile Aman dan Memiliki Izin Edar?</a></li>
+          <li><a href="#pertanyaan-umum" class="hover:text-[#B85D8E] underline-offset-4 hover:underline">Pertanyaan Umum tentang Pinck Smile (FAQ)</a></li>
+          <li><a href="#sumber-informasi-resmi" class="hover:text-[#B85D8E] underline-offset-4 hover:underline">Label Produk & Sumber Informasi Resmi</a></li>
+        </ol>
+      </div>
+
+      <!-- Main Content Body -->
+      <div class="max-w-4xl mx-auto space-y-12">
+
+        <!-- Section 1: Detailed explanation under H1 context -->
+        <section id="identitas-produk" class="bg-white border border-[#F3DCEB] rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgba(41,36,42,0.03)]">
+          <div class="inline-block text-xs font-semibold uppercase tracking-widest text-[#B85D8E] mb-2">
+            01 • Identitas & Klasifikasi Produk
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#29242A] mb-5">
+            Mengenal Identitas Produk, Bentuk Sediaan, dan Kategori Pinck Smile
+          </h2>
+          <p class="text-[#5C5359] leading-relaxed mb-6">
+            Menjawab pertanyaan <strong>“Pinck Smile obat apa?”</strong> secara tepat mengharuskan kita merujuk pada klasifikasi produk konsumen yang berlaku. Berdasarkan label resmi produsen, <strong>PINCK SMILE bukanlah obat farmasi (bukan obat bebas, obat bebas terbatas, maupun obat keras/resep)</strong> yang ditujukan untuk mengobati, menyembuhkan, atau mencegah penyakit medis.
+          </p>
+          <p class="text-[#5C5359] leading-relaxed mb-6">
+            PINCK SMILE adalah lini produk <strong>Perawatan Kebersihan & Kebugaran Intim Eksternal Wanita (<em>Intimate Personal Care & Wellness</em>)</strong> yang diformulasikan khusus untuk membantu menjaga kebersihan kulit area kewanitaan bagian luar (vulva), mendukung keseimbangan tingkat keasaman (pH) alami kulit intim, serta memberikan rasa segar dan nyaman dalam aktivitas harian.
+          </p>
+
+          <!-- Summary Table of Identity -->
+          <div class="overflow-x-auto border border-[#F3DCEB] rounded-2xl mb-8">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-[#FFF7FB] border-b border-[#F3DCEB] text-[#29242A]">
+                  <th class="py-3.5 px-4 font-semibold w-1/3">Aspek Identitas</th>
+                  <th class="py-3.5 px-4 font-semibold">Keterangan Resmi Sesuai Dokumentasi Produk</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#F3DCEB] text-[#5C5359]">
+                <tr>
+                  <td class="py-3.5 px-4 font-medium text-[#29242A]">Nama Merek Resmi</td>
+                  <td class="py-3.5 px-4"><strong>PINCK SMILE</strong> (sering dicari publik sebagai <em>Pink Smile</em>)</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-medium text-[#29242A]">Kategori Produk</td>
+                  <td class="py-3.5 px-4">Kosmetika Perawatan Kebersihan Area Intim Eksternal (<em>Personal Care</em>) & Perangkat Kebugaran Pribadi (<em>Intimate Wellness Device</em>). <strong>Bukan Obat Medis.</strong></td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-medium text-[#29242A]">Bentuk Sediaan</td>
+                  <td class="py-3.5 px-4">
+                    <ul class="list-disc list-inside space-y-1">
+                      <li><strong>Cairan Pembersih Luar (Liquid Wash):</strong> <em>Pinck Smile Gentle Intimate Wash</em> (Botol pompa 150 ml)</li>
+                      <li><strong>Cairan Semprot Halus (Spray Mist):</strong> <em>Pinck Smile Soothing Hydrating Mist</em> (Botol spray 60 ml)</li>
+                      <li><strong>Perangkat Relaksasi Fisik Eksternal:</strong> <em>Pinck Smile Aura Intimate Device</em> (Silikon tingkat medis)</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-medium text-[#29242A]">Rute & Area Penggunaan</td>
+                  <td class="py-3.5 px-4"><strong>Hanya untuk pemakaian luar (<em>External Use Only</em>)</strong> pada kulit area vulva/kewanitaan luar. Tidak untuk diminum/ditelan dan tidak untuk pembilasan bagian dalam saluran vagina (<em>no douching</em>).</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-medium text-[#29242A]">Target Pengguna</td>
+                  <td class="py-3.5 px-4">Wanita dewasa yang membutuhkan perawatan kebersihan harian area kewanitaan luar yang lembut, ber-pH seimbang (3.8–4.5), terutama saat cuaca lembap, aktivitas padat, masa menstruasi, atau setelah berolahraga.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Visual Showcase of Official Products -->
+          <div class="grid sm:grid-cols-3 gap-5">
+            {products.slice(0, 3).map((item) => (
+              <a href={`/products/${item.slug}`} class="group bg-[#FFF7FB] border border-[#F3DCEB] rounded-2xl p-4 flex flex-col hover:border-[#D98AAF] transition-all">
+                <div class="w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-white">
+                  <ProductVisual id={item.id} size="sm" accentGradient={item.accentGradient} />
+                </div>
+                <span class="text-[11px] font-semibold uppercase tracking-wider text-[#B85D8E] mb-1">{item.category}</span>
+                <h3 class="font-serif font-bold text-base text-[#29242A] group-hover:text-[#B85D8E] transition-colors mb-1">{item.name}</h3>
+                <p class="text-xs text-[#756B72] line-clamp-2">{item.tagline}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <!-- Section 2: H2 — Pinck Smile Digunakan untuk Apa? -->
+        <section id="digunakan-untuk-apa" class="bg-white border border-[#F3DCEB] rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgba(41,36,42,0.03)]">
+          <div class="inline-block text-xs font-semibold uppercase tracking-widest text-[#B85D8E] mb-2">
+            02 • Fungsi & Tujuan Penggunaan Sesuai Label
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#29242A] mb-5">
+            Pinck Smile Digunakan untuk Apa?
+          </h2>
+          <p class="text-[#5C5359] leading-relaxed mb-6">
+            Berdasarkan label kemasan resmi dan informasi produk yang dapat diverifikasi, setiap varian produk <strong>PINCK SMILE</strong> memiliki fungsi perawatan spesifik yang berfokus pada kebersihan, hidrasi permukaan kulit luar, dan relaksasi. Untuk membantu konsumen membuat keputusan yang tepat, penting untuk membedakan antara <strong>manfaat perawatan kosmetika/kebersihan harian yang sesuai label</strong> dengan <strong>tindakan pengobatan medis</strong>.
+          </p>
+
+          <!-- Product-by-product verified usage -->
+          <div class="space-y-4 mb-8">
+            <div class="p-5 rounded-2xl bg-[#FFF7FB] border border-[#F3DCEB]">
+              <h3 class="font-serif font-bold text-lg text-[#29242A] mb-2">
+                1. Pinck Smile Gentle Intimate Wash (150 ml)
+              </h3>
+              <p class="text-sm text-[#5C5359] leading-relaxed">
+                <strong>Tujuan Penggunaan Sesuai Label:</strong> Digunakan sebagai cairan pembersih lembut harian untuk kulit area kewanitaan bagian luar (vulva). Membantu membersihkan sisa keringat, sekresi alami di permukaan luar, dan kotoran tanpa merusak lapisan pelindung kulit (<em>skin barrier</em>) berkat tingkat keasaman yang disesuaikan pada rentang pH fisiologis (pH 3.8–4.2) dan surfaktan ringan non-sabun (bebas SLS/SLES).
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#FFF7FB] border border-[#F3DCEB]">
+              <h3 class="font-serif font-bold text-lg text-[#29242A] mb-2">
+                2. Pinck Smile Soothing Hydrating Mist (60 ml)
+              </h3>
+              <p class="text-sm text-[#5C5359] leading-relaxed">
+                <strong>Tujuan Penggunaan Sesuai Label:</strong> Digunakan sebagai cairan semprot penyegar tanpa bilas (<em>leave-on external mist</em>) untuk memberikan kelembapan ringan, menyejukkan kulit area luar yang terasa kering atau kurang nyaman akibat gesekan pakaian dalam/pembalut, serta menjaga kesegaran saat beraktivitas atau bepergian.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#FFF7FB] border border-[#F3DCEB]">
+              <h3 class="font-serif font-bold text-lg text-[#29242A] mb-2">
+                3. Pinck Smile Aura Intimate Device
+              </h3>
+              <p class="text-sm text-[#5C5359] leading-relaxed">
+                <strong>Tujuan Penggunaan Sesuai Label:</strong> Digunakan sebagai perangkat pijat kebugaran intim pribadi berbahan silikon tingkat medis untuk membantu relaksasi otot-otot dasar panggul dan mendukung kenyamanan fisik serta kualitas istirahat wanita dewasa.
+              </p>
+            </div>
+          </div>
+
+          <!-- Comparison Table: Verified Benefits vs What It Is Not (Distinguishing Marketing vs Proven Function) -->
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="border border-emerald-200 bg-emerald-50/50 rounded-2xl p-5">
+              <div class="flex items-center gap-2 font-bold text-emerald-900 text-sm mb-3">
+                <svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Manfaat Perawatan Sesuai Label Produk</span>
+              </div>
+              <ul class="space-y-2 text-xs sm:text-sm text-emerald-950/80 list-disc list-inside leading-relaxed">
+                <li>Membersihkan area vulva luar secara lembut tanpa memicu kekeringan kulit.</li>
+                <li>Membantu mempertahankan pH asam alami kulit intim luar (pH 3.8–4.5) berkat kandungan <em>Lactic Acid</em>.</li>
+                <li>Menyejukkan rasa tidak nyaman ringan pada kulit luar akibat lembap atau gesekan pakaian.</li>
+                <li>Menyegarkan dan mengurangi bau tidak sedap yang berasal dari keringat di lipatan kulit luar.</li>
+              </ul>
+            </div>
+
+            <div class="border border-rose-200 bg-rose-50/50 rounded-2xl p-5">
+              <div class="flex items-center gap-2 font-bold text-rose-900 text-sm mb-3">
+                <svg class="w-5 h-5 text-rose-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>Bukan Klaim Medis / Bukan Pengganti Obat</span>
+              </div>
+              <ul class="space-y-2 text-xs sm:text-sm text-rose-950/80 list-disc list-inside leading-relaxed">
+                <li><strong>Bukan obat antibiotik atau antijamur</strong> untuk menyembuhkan infeksi vaginosis bakterialis maupun kandidiasis.</li>
+                <li><strong>Bukan obat untuk mengatasi Infeksi Menular Seksual (IMS)</strong> atau penyakit ginekologis organik.</li>
+                <li><strong>Bukan produk perawatan internal vagina</strong> (tidak untuk mengubah struktur anatomi internal).</li>
+                <li><strong>Tidak menggantikan pemeriksaan atau resep dokter</strong> apabila terdapat gejala infeksi patologis.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: H2 — Apa Kandungan Pinck Smile? -->
+        <section id="kandungan-pinck-smile" class="bg-white border border-[#F3DCEB] rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgba(41,36,42,0.03)]">
+          <div class="inline-block text-xs font-semibold uppercase tracking-widest text-[#B85D8E] mb-2">
+            03 • Komposisi Resmi Pada Kemasan
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#29242A] mb-5">
+            Apa Kandungan Pinck Smile?
+          </h2>
+          <p class="text-[#5C5359] leading-relaxed mb-6">
+            Berikut adalah daftar komposisi (<em>ingredients list</em>) dan spesifikasi material yang tercantum secara resmi pada kemasan produk <strong>PINCK SMILE</strong>. Kami mencantumkan daftar bahan sesuai tata nama standar kosmetika (INCI) sebagaimana tertera pada label produk, tanpa menebak dosis farmakologis di luar informasi resmi produsen:
+          </p>
+
+          <div class="space-y-6">
+            <!-- Variant 1 Composition -->
+            <div class="border border-[#F3DCEB] rounded-2xl overflow-hidden">
+              <div class="bg-[#FFF7FB] px-5 py-4 border-b border-[#F3DCEB] flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h3 class="font-serif font-bold text-lg text-[#29242A]">Pinck Smile Gentle Intimate Wash</h3>
+                  <p class="text-xs text-[#756B72]">Kemasan Botol Pompa • Netto 150 ml (5.07 fl. oz.)</p>
+                </div>
+                <span class="text-xs font-semibold bg-white border border-[#F3DCEB] text-[#B85D8E] px-3 py-1 rounded-md">
+                  Target pH Sediaan: 4.0 (3.8 – 4.2)
+                </span>
+              </div>
+              <div class="p-5 space-y-4">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-[#756B72] mb-1.5">Daftar Komposisi Lengkap (Sesuai Label Kemasan):</p>
+                  <p class="text-sm font-mono bg-[#FFF7FB] p-3.5 rounded-xl border border-[#F3DCEB] text-[#29242A] leading-relaxed">
+                    Aqua, Coco-Glucoside, Glycerin, Lactic Acid, Alpha-Glucan Oligosaccharide, Chamomilla Recutita (Matricaria) Flower Extract, Piper Betle (Leaf) Extract, Aloe Barbadensis Leaf Juice, Panthenol, Allantoin.
+                  </p>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-[#5C5359]">
+                  <div class="p-3 rounded-xl bg-gray-50">
+                    <strong class="text-[#29242A] block mb-0.5">Lactic Acid & Alpha-Glucan Oligosaccharide:</strong>
+                    Berfungsi sebagai pengatur keasaman (<em>pH adjuster</em>) dan prebiotik pendukung keseimbangan mikrobioma permukaan kulit luar.
+                  </div>
+                  <div class="p-3 rounded-xl bg-gray-50">
+                    <strong class="text-[#29242A] block mb-0.5">Chamomilla Recutita, Aloe Vera & Allantoin:</strong>
+                    Agen penyejuk kulit (<em>skin conditioning & soothing agents</em>) untuk menjaga kelembapan dan meminimalkan potensi iritasi.
+                  </div>
+                </div>
+                <p class="text-xs text-[#756B72] italic">
+                  *Catatan Formulasi Label: Diformulasikan tanpa Sodium Lauryl Sulfate (SLS), Sodium Laureth Sulfate (SLES), Paraben, Alkohol Pengering, dan Pewarna Sintetis.
+                </p>
+              </div>
+            </div>
+
+            <!-- Variant 2 Composition -->
+            <div class="border border-[#F3DCEB] rounded-2xl overflow-hidden">
+              <div class="bg-[#FFF7FB] px-5 py-4 border-b border-[#F3DCEB] flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h3 class="font-serif font-bold text-lg text-[#29242A]">Pinck Smile Soothing Hydrating Mist</h3>
+                  <p class="text-xs text-[#756B72]">Kemasan Botol Fine-Mist Spray • Netto 60 ml (2.03 fl. oz.)</p>
+                </div>
+                <span class="text-xs font-semibold bg-white border border-[#F3DCEB] text-[#B85D8E] px-3 py-1 rounded-md">
+                  Target pH Sediaan: 4.2
+                </span>
+              </div>
+              <div class="p-5 space-y-4">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-[#756B72] mb-1.5">Daftar Komposisi Lengkap (Sesuai Label Kemasan):</p>
+                  <p class="text-sm font-mono bg-[#FFF7FB] p-3.5 rounded-xl border border-[#F3DCEB] text-[#29242A] leading-relaxed">
+                    Aqua, Rosa Damascena Flower Water, Butylene Glycol, Sodium Hyaluronate, Centella Asiatica Extract, Niacinamide, Lactic Acid, Panthenol, Allantoin.
+                  </p>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-[#5C5359]">
+                  <div class="p-3 rounded-xl bg-gray-50">
+                    <strong class="text-[#29242A] block mb-0.5">Rosa Damascena Water & Sodium Hyaluronate:</strong>
+                    Memberikan hidrasi ringan di permukaan kulit luar serta sensasi sejuk tanpa meninggalkan residu lengket.
+                  </div>
+                  <div class="p-3 rounded-xl bg-gray-50">
+                    <strong class="text-[#29242A] block mb-0.5">Centella Asiatica, Panthenol & Allantoin:</strong>
+                    Membantu menenangkan kulit area lipatan luar yang mengalami kemerahan ringan akibat gesekan pakaian.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Variant 3 Composition -->
+            <div class="border border-[#F3DCEB] rounded-2xl overflow-hidden">
+              <div class="bg-[#FFF7FB] px-5 py-4 border-b border-[#F3DCEB] flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h3 class="font-serif font-bold text-lg text-[#29242A]">Pinck Smile Aura Intimate Device</h3>
+                  <p class="text-xs text-[#756B72]">Perangkat Kebugaran & Relaksasi Eksternal • Kemasan Box Eksklusif</p>
+                </div>
+                <span class="text-xs font-semibold bg-white border border-[#F3DCEB] text-[#B85D8E] px-3 py-1 rounded-md">
+                  Material Biokompatibel IPX7
+                </span>
+              </div>
+              <div class="p-5">
+                <p class="text-xs font-bold uppercase tracking-wider text-[#756B72] mb-1.5">Spesifikasi Material Resmi:</p>
+                <p class="text-sm bg-[#FFF7FB] p-3.5 rounded-xl border border-[#F3DCEB] text-[#29242A] leading-relaxed">
+                  Lapisan Luar: <strong>100% Medical-Grade Liquid Silicone</strong> (Biokompatibel, tidak berpori, bebas Phthalate, bebas BPA, bebas Lateks). Struktur Inti: <strong>ABS Core</strong> dengan baterai Lithium-ion magnetik isi ulang dan segel kedap air berstandar <strong>IPX7</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: H2 — Bagaimana Cara Menggunakan Pinck Smile? -->
+        <section id="cara-menggunakan" class="bg-white border border-[#F3DCEB] rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgba(41,36,42,0.03)]">
+          <div class="inline-block text-xs font-semibold uppercase tracking-widest text-[#B85D8E] mb-2">
+            04 • Petunjuk Penggunaan, Peringatan & Konsultasi Medis
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#29242A] mb-5">
+            Bagaimana Cara Menggunakan Pinck Smile?
+          </h2>
+          <p class="text-[#5C5359] leading-relaxed mb-6">
+            Gunakan produk <strong>PINCK SMILE</strong> sesuai dengan petunjuk penggunaan yang tertera pada kemasan untuk memperoleh manfaat kebersihan yang optimal sekaligus menghindari risiko iritasi akibat penggunaan yang keliru:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-2xl border border-[#F3DCEB] bg-[#FFF7FB]">
+              <h3 class="font-serif font-bold text-lg text-[#29242A] mb-3">
+                Petunjuk Pakai Gentle Intimate Wash
+              </h3>
+              <ol class="space-y-2.5 text-sm text-[#5C5359] list-decimal list-inside leading-relaxed">
+                <li>Cuci tangan terlebih dahulu, lalu basahi area kewanitaan bagian luar (vulva) dengan air bersih.</li>
+                <li>Tuangkan <strong>1–2 pompa</strong> cairan ke telapak tangan dan busakan secara lembut.</li>
+                <li>Usapkan lembut hanya pada <strong>area vulva dan lipatan luar</strong> dari arah depan ke belakang (<em>front-to-back</em>) selama 20–30 detik.</li>
+                <li>Bilas hingga bersih menggunakan air mengalir dan keringkan dengan menepuk lembut menggunakan handuk bersih.</li>
+                <li>Frekuensi sesuai label: Gunakan 1–2 kali sehari saat mandi.</li>
+              </ol>
+            </div>
+
+            <div class="p-5 rounded-2xl border border-[#F3DCEB] bg-[#FFF7FB]">
+              <h3 class="font-serif font-bold text-lg text-[#29242A] mb-3">
+                Petunjuk Pakai Soothing Hydrating Mist
+              </h3>
+              <ol class="space-y-2.5 text-sm text-[#5C5359] list-decimal list-inside leading-relaxed">
+                <li>Pastikan area kewanitaan bagian luar telah dibersihkan dan dikeringkan terlebih dahulu setelah dari kamar kecil.</li>
+                <li>Kocok botol perlahan, lalu semprotkan <strong>2–3 kali</strong> dari jarak sekitar <strong>10–15 cm</strong> pada area luar.</li>
+                <li>Tepuk lembut dengan tisu bersih atau biarkan mengering alami selama beberapa detik sebelum mengenakan pakaian dalam.</li>
+                <li>Tidak perlu dibilas dengan air. Dapat digunakan kembali saat berganti pembalut atau saat cuaca panas/lembap.</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Label Warnings & Contraindications -->
+          <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 sm:p-6 mb-6">
+            <h3 class="font-bold text-amber-950 text-base mb-2 flex items-center gap-2">
+              <svg class="w-5 h-5 text-amber-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <span>Peringatan Penggunaan Sesuai Label (Harap Diperhatikan)</span>
+            </h3>
+            <ul class="space-y-1.5 text-xs sm:text-sm text-amber-950/85 list-disc list-inside leading-relaxed">
+              <li><strong>Hanya untuk pemakaian luar (External Use Only):</strong> Jangan ditelan/diminum dan hindari kontak dengan mata.</li>
+              <li><strong>Dilarang melakukan Vaginal Douching:</strong> Jangan menyemprotkan atau memasukkan cairan pembersih maupun <em>mist</em> ke dalam liang vagina bagian dalam, karena tindakan <em>douching</em> dapat mengganggu flora normal <em>Lactobacillus</em> internal.</li>
+              <li><strong>Uji Sensitivitas & Reaksi Alergi:</strong> Jangan gunakan pada kulit yang sedang mengalami luka terbuka, lecet parah, atau lepuhan. Hentikan pemakaian segera jika timbul rasa perih berlebih, kemerahan, atau reaksi alergi.</li>
+              <li><strong>Penyimpanan:</strong> Simpan di tempat sejuk dan kering (suhu ruang di bawah 30°C), terhindar dari paparan sinar matahari langsung, dan jauhkan dari jangkauan anak-anak.</li>
+            </ul>
+          </div>
+
+          <!-- When to Consult a Doctor -->
+          <div class="bg-white border-2 border-[#D98AAF] rounded-2xl p-5 sm:p-6">
+            <h3 class="font-serif font-bold text-lg text-[#29242A] mb-2">
+              Kapan Pengguna Perlu Berkonsultasi dengan Tenaga Kesehatan (Dokter)?
+            </h3>
+            <p class="text-sm text-[#5C5359] leading-relaxed mb-3">
+              Produk perawatan kebersihan luar tidak ditujukan untuk menangani keluhan infeksi medis. Segera tunda penggunaan produk kosmetika dan <strong>konsultasikan diri Anda ke dokter atau dokter spesialis obstetri dan ginekologi (Sp.OG)</strong> apabila Anda mengalami salah satu tanda klinis berikut:
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-2 text-xs sm:text-sm text-[#29242A] list-disc list-inside">
+              <li>Keputihan berubah warna menjadi kuning pekat, kehijauan, atau keabu-abuan.</li>
+              <li>Keputihan bertekstur menggumpal seperti keju hancur (<em>cottage cheese</em>) atau berbusa.</li>
+              <li>Muncul bau amis menyengat (<em>fishy odor</em>) yang menetap.</li>
+              <li>Rasa gatal hebat, nyeri, panas terbakar saat buang air kecil (disuria), atau bengkak pada vulva.</li>
+              <li>Nyeri panggul bagian bawah atau perdarahan di luar siklus menstruasi normal.</li>
+              <li>Keluhan sedang dalam masa kehamilan berisiko tinggi atau pascapersalinan dengan luka jahitan perineum yang belum pulih.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5: H2 — Apakah Pinck Smile Aman dan Memiliki Izin Edar? -->
+        <section id="keamanan-izin-edar" class="bg-white border border-[#F3DCEB] rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgba(41,36,42,0.03)]">
+          <div class="inline-block text-xs font-semibold uppercase tracking-widest text-[#B85D8E] mb-2">
+            05 • Transparansi Regulasi, Produsen & Keamanan
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#29242A] mb-5">
+            Apakah Pinck Smile Aman dan Memiliki Izin Edar?
+          </h2>
+          <p class="text-[#5C5359] leading-relaxed mb-5">
+            Keamanan produk perawatan area sensitif sangat bergantung pada kepatuhan formulasi, kejelasan identitas pengelola merek, serta pemeriksaan status izin edar yang dapat diverifikasi oleh konsumen secara mandiri. Berikut adalah informasi resmi mengenai pengelolaan produk <strong>PINCK SMILE</strong>:
+          </p>
+
+          <div class="space-y-4 mb-6">
+            <div class="p-5 rounded-2xl bg-[#FFF7FB] border border-[#F3DCEB]">
+              <h3 class="font-bold text-[#29242A] text-base mb-1.5">1. Identitas Pengelola Merek & Standar Mutu</h3>
+              <p class="text-sm text-[#5C5359] leading-relaxed">
+                Merek <strong>PINCK SMILE</strong> dikelola dan didistribusikan secara resmi oleh <strong>PINCK SMILE Indonesia</strong> (berkedudukan di Jakarta Selatan, DKI Jakarta). Seluruh produk cairan perawatan luar diformulasikan mengikuti standar batas keamanan bahan kosmetika (bebas merkuri, bebas hidrokuinon, bebas paraben, dan bebas surfaktan keras SLS/SLES), sedangkan lini perangkat kebugaran menggunakan silikon biokompatibel non-toksik.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#FFF7FB] border border-[#F3DCEB]">
+              <h3 class="font-bold text-[#29242A] text-base mb-1.5">2. Cara Memeriksa Nomor Izin Edar Secara Mandiri</h3>
+              <p class="text-sm text-[#5C5359] leading-relaxed mb-3">
+                Di Indonesia, produk perawatan pembersih luar kewanitaan diklasifikasikan dalam kategori <strong>Kosmetika (Notifikasi NA)</strong> di bawah pengawasan Badan Pengawas Obat dan Makanan (BPOM RI), bukan nomor registrasi obat (DBL/DKL). Kami mendorong setiap konsumen untuk selalu melakukan verifikasi mandiri dengan langkah berikut:
+              </p>
+              <ol class="text-xs sm:text-sm text-[#5C5359] list-decimal list-inside space-y-1.5">
+                <li>Periksa fisik kemasan produk yang Anda terima: pastikan terdapat <strong>Nomor Batch Produksi</strong>, <strong>Tanggal Kedaluwarsa (Expiry Date)</strong>, nama produsen/distributor, serta nomor notifikasi pada label kemasan fisik.</li>
+                <li>Kunjungi situs resmi Cek BPOM di <a href="https://cekbpom.pom.go.id" target="_blank" rel="noopener noreferrer" class="text-[#B85D8E] font-semibold underline hover:text-[#29242A]">https://cekbpom.pom.go.id</a>.</li>
+                <li>Cocokkan nomor izin edar yang tertera pada kemasan fisik produk dengan data nama produk, bentuk sediaan, dan pendaftar yang tampil pada pangkalan data resmi BPOM RI.</li>
+                <li>Jangan membeli atau menggunakan produk apabila kemasan rusak, segel terbuka, label informasi dihapus, atau dibeli dari penjual tidak resmi di luar kanal distribusi PINCK SMILE.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: H2 — Pertanyaan Umum tentang Pinck Smile -->
+        <section id="pertanyaan-umum" class="bg-white border border-[#F3DCEB] rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgba(41,36,42,0.03)]">
+          <div class="inline-block text-xs font-semibold uppercase tracking-widest text-[#B85D8E] mb-2">
+            06 • Tanya Jawab Faktual (FAQ)
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#29242A] mb-6">
+            Pertanyaan Umum tentang Pinck Smile
+          </h2>
+
+          <div class="space-y-4">
+            {faqItems.map((item, idx) => (
+              <details class="group border border-[#F3DCEB] rounded-2xl bg-[#FFF7FB] open:bg-white transition-colors" open={idx < 2}>
+                <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none font-serif font-bold text-base sm:text-lg text-[#29242A]">
+                  <span>{item.q}</span>
+                  <span class="w-7 h-7 rounded-lg bg-white border border-[#F3DCEB] flex items-center justify-center text-[#B85D8E] group-open:rotate-180 transition-transform shrink-0">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-5 pb-5 pt-1 text-sm sm:text-base text-[#5C5359] leading-relaxed border-t border-[#F3DCEB]/60">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Section 7: Sumber Informasi, Label Produk & Kanal Resmi -->
+        <section id="sumber-informasi-resmi" class="bg-white border border-[#F3DCEB] rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgba(41,36,42,0.03)]">
+          <div class="inline-block text-xs font-semibold uppercase tracking-widest text-[#B85D8E] mb-2">
+            07 • Dokumentasi Label & Referensi Resmi
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#29242A] mb-5">
+            Sumber Informasi, Ringkasan Label Produk, dan Penjual Resmi
+          </h2>
+          <p class="text-[#5C5359] leading-relaxed mb-6">
+            Untuk memastikan Anda memperoleh informasi yang sahih dan produk asli yang terjamin penyimpanannya, selalu rujuk pada ringkasan label produk di bawah ini serta kanal distribusi resmi yang dikelola langsung oleh <strong>PINCK SMILE Indonesia</strong>:
+          </p>
+
+          <!-- Official Product Label Summary Cards -->
+          <div class="grid md:grid-cols-3 gap-4 mb-8">
+            <div class="border border-[#F3DCEB] rounded-2xl p-4 bg-[#FFF7FB]">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#B85D8E]">Label Produk 01</span>
+              <h3 class="font-serif font-bold text-base text-[#29242A] mt-1 mb-2">Pinck Smile Gentle Intimate Wash</h3>
+              <dl class="space-y-1.5 text-xs text-[#5C5359]">
+                <div><dt class="font-semibold text-[#29242A] inline">Bentuk Sediaan:</dt> <dd class="inline">Cairan pembersih luar (150 ml)</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">pH Sediaan:</dt> <dd class="inline">3.8 – 4.2 (Lactic Acid buffered)</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">Peruntukan:</dt> <dd class="inline">Pembersih harian kulit vulva luar (Bilas)</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">Detail Produk:</dt> <dd class="inline"><a href="/products/gentle-intimate-wash" class="text-[#B85D8E] underline font-medium">Lihat Halaman Produk →</a></dd></div>
+              </dl>
+            </div>
+
+            <div class="border border-[#F3DCEB] rounded-2xl p-4 bg-[#FFF7FB]">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#B85D8E]">Label Produk 02</span>
+              <h3 class="font-serif font-bold text-base text-[#29242A] mt-1 mb-2">Pinck Smile Soothing Hydrating Mist</h3>
+              <dl class="space-y-1.5 text-xs text-[#5C5359]">
+                <div><dt class="font-semibold text-[#29242A] inline">Bentuk Sediaan:</dt> <dd class="inline">Cairan semprot halus (60 ml)</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">pH Sediaan:</dt> <dd class="inline">4.2 (Rose Water & Hyaluronic)</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">Peruntukan:</dt> <dd class="inline">Penyegar & pelembap area luar (Tanpa Bilas)</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">Detail Produk:</dt> <dd class="inline"><a href="/products/soothing-hydrating-mist" class="text-[#B85D8E] underline font-medium">Lihat Halaman Produk →</a></dd></div>
+              </dl>
+            </div>
+
+            <div class="border border-[#F3DCEB] rounded-2xl p-4 bg-[#FFF7FB]">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#B85D8E]">Label Produk 03</span>
+              <h3 class="font-serif font-bold text-base text-[#29242A] mt-1 mb-2">Pinck Smile Aura Intimate Device</h3>
+              <dl class="space-y-1.5 text-xs text-[#5C5359]">
+                <div><dt class="font-semibold text-[#29242A] inline">Bentuk Sediaan:</dt> <dd class="inline">Perangkat silikon medis IPX7</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">Material:</dt> <dd class="inline">100% Medical-Grade Silicone</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">Peruntukan:</dt> <dd class="inline">Relaksasi & kebugaran otot panggul luar</dd></div>
+                <div><dt class="font-semibold text-[#29242A] inline">Detail Produk:</dt> <dd class="inline"><a href="/products/aura-intimate-device" class="text-[#B85D8E] underline font-medium">Lihat Halaman Produk →</a></dd></div>
+              </dl>
+            </div>
+          </div>
+
+          <!-- Official Store Channels -->
+          <div class="border border-[#F3DCEB] rounded-2xl p-5 sm:p-6 bg-[#FFF7FB] mb-6">
+            <h3 class="font-serif font-bold text-lg text-[#29242A] mb-2">Kanal Distribusi & Penjual Resmi Terverifikasi</h3>
+            <p class="text-xs sm:text-sm text-[#5C5359] mb-4">
+              Pembelian produk asli dan konsultasi informasi produk secara langsung hanya dilayani melalui kanal resmi berikut:
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="/products"
+                class="inline-flex items-center gap-2 bg-[#29242A] hover:bg-[#3d363e] text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
+              >
+                <span>Katalog Resmi Website</span>
+              </a>
+              <a
+                href={officialStores.shopee}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-[#EE4D2D] hover:bg-[#d84224] text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
+              >
+                <span>Shopee Official Store ↗</span>
+              </a>
+              <a
+                href={officialStores.lazada}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-[#0f146d] hover:bg-[#1b228c] text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
+              >
+                <span>Lazada Official Store ↗</span>
+              </a>
+              <a
+                href={`https://wa.me/${officialStores.whatsappNumber}?text=${encodeURIComponent("Halo Tim PINCK SMILE, saya ingin menanyakan informasi produk resmi setelah membaca halaman Pinck Smile Obat Apa.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-white hover:bg-emerald-50 text-[#29242A] border border-[#F3DCEB] text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-colors"
+              >
+                <span>Layanan Konsumen WhatsApp (+62 889-8087-4055)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Scientific & Regulatory References -->
+          <div class="border-t border-[#F3DCEB] pt-5 text-xs text-[#756B72] space-y-2">
+            <p class="font-bold text-[#29242A] uppercase tracking-wider">Sumber Referensi & Pedoman Kesehatan:</p>
+            <ul class="list-disc list-inside space-y-1 leading-relaxed">
+              <li>Dokumen Spesifikasi Produk & Label Kemasan Resmi <strong>PINCK SMILE Indonesia</strong> (Edisi 2025).</li>
+              <li>Pangkalan Data Registrasi Produk Badan Pengawas Obat dan Makanan Republik Indonesia (BPOM RI) — <a href="https://cekbpom.pom.go.id" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#29242A]">cekbpom.pom.go.id</a>.</li>
+              <li>Chen, Y., Bruning, E., Rubino, J., & Eder, S. E. (2017). <em>Role of female intimate hygiene in vulvovaginal health: Global hygiene practices and product usage</em>. Women's Health (London, England), 13(3), 58–67.</li>
+              <li>Royal College of Obstetricians and Gynaecologists (RCOG) & American College of Obstetricians and Gynecologists (ACOG) — <em>Vulvovaginal Health & External Hygiene Care Guidelines</em> (pedoman perawatan area vulva luar dan penghindaran praktik <em>vaginal douching</em>).</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+    </Container>
+  </article>
+</Layout>

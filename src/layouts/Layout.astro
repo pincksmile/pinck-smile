@@ -34,7 +34,7 @@ const {
 } = Astro.props;
 
 const makeTitle = title
-  ? (title.includes("PINCK SMILE") ? title : `${title} | PINCK SMILE`)
+  ? (title.toLowerCase().includes("pinck smile") ? title : `${title} | PINCK SMILE`)
   : "PINCK SMILE - Female Intimate Wellness Indonesia";
 
 const ogImageUrl = image.startsWith("http") ? image : new URL(image, siteUrl).toString();
