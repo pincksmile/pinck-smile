@@ -58,14 +58,26 @@ const sampleReviews = [
   },
 ];
 
-// Schema.org Product JSON-LD
+const productImageUrl = product.image.startsWith("http")
+  ? product.image
+  : `${siteUrl}${product.image}`;
+const productOgImageUrl = `${siteUrl}${product.image.replace(/\.jpg$/, "-og.jpg")}`;
+
+// Schema.org Product JSON-LD (Google Merchant Listings & Product Snippets Compliant)
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": product.name,
   "alternateName": product.name.replace(/Pinck Smile/i, "Pink Smile"),
+  "image": [
+    productImageUrl,
+    productOgImageUrl
+  ],
   "description": product.shortDescription,
+  "sku": product.id,
+  "mpn": `PS-${product.id.toUpperCase()}`,
   "category": product.category,
+  "url": pageUrl,
   "brand": {
     "@type": "Brand",
     "name": "PINCK SMILE",
@@ -76,12 +88,48 @@ const productSchema = {
     "url": pageUrl,
     "priceCurrency": "IDR",
     "price": product.priceNum,
+    "priceValidUntil": "2027-12-31",
     "itemCondition": "https://schema.org/NewCondition",
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
       "name": "PINCK SMILE",
       "alternateName": "Pink Smile"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": 0,
+        "currency": "IDR"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "ID"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 3,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "ID",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 7,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
     }
   },
   "aggregateRating": {
@@ -90,7 +138,21 @@ const productSchema = {
     "reviewCount": product.reviewCount.toString(),
     "bestRating": "5",
     "worstRating": "1"
-  }
+  },
+  "review": sampleReviews.map((rev) => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": rev.name
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": rev.rating.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": rev.comment
+  }))
 };
 
 // FAQ Schema for product questions

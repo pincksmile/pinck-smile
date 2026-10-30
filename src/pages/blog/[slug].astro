@@ -73,12 +73,16 @@ const featuredProducts = [
 ];
 
 // Article Schema JSON-LD
+const articleImageUrl = entry.data.image.src.startsWith("http")
+  ? entry.data.image.src
+  : `${siteUrl}${entry.data.image.src}`;
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": entry.data.title,
   "description": entry.data.snippet,
-  "image": entry.data.image.src,
+  "image": [articleImageUrl],
   "datePublished": entry.data.publishDate.toISOString(),
   "dateModified": entry.data.publishDate.toISOString(),
   "author": {

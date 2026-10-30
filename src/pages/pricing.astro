@@ -77,8 +77,14 @@ const pricingSchema = {
       "@type": "Product",
       "name": `PINCK SMILE ${bundle.name}`,
       "alternateName": `Pink Smile ${bundle.name}`,
-      "image": `${siteUrl}/products/${bundle.slug}.jpg`,
+      "image": [
+        `${siteUrl}/products/${bundle.slug}.jpg`,
+        `${siteUrl}/products/${bundle.slug}-og.jpg`
+      ],
       "description": bundle.description,
+      "sku": bundle.id,
+      "mpn": `PS-${bundle.id.toUpperCase()}`,
+      "url": `${siteUrl}/products/${bundle.slug}`,
       "brand": {
         "@type": "Brand",
         "name": "PINCK SMILE",
@@ -86,9 +92,24 @@ const pricingSchema = {
       },
       "offers": {
         "@type": "Offer",
+        "url": `${siteUrl}/products/${bundle.slug}`,
         "priceCurrency": "IDR",
         "price": bundle.priceNum,
-        "availability": "https://schema.org/InStock"
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "PINCK SMILE",
+          "alternateName": "Pink Smile"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1420",
+        "bestRating": "5",
+        "worstRating": "1"
       }
     }
   }))

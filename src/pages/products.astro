@@ -18,7 +18,13 @@ const productCatalogSchema = {
       "@type": "Product",
       "name": prod.name,
       "alternateName": prod.name.replace(/Pinck Smile/i, "Pink Smile"),
+      "image": [
+        `${siteUrl}${prod.image}`,
+        `${siteUrl}${prod.image.replace(/\.jpg$/, "-og.jpg")}`
+      ],
       "description": prod.shortDescription,
+      "sku": prod.id,
+      "mpn": `PS-${prod.id.toUpperCase()}`,
       "url": `${siteUrl}/products/${prod.slug}`,
       "brand": {
         "@type": "Brand",
@@ -27,9 +33,24 @@ const productCatalogSchema = {
       },
       "offers": {
         "@type": "Offer",
+        "url": `${siteUrl}/products/${prod.slug}`,
         "priceCurrency": "IDR",
         "price": prod.priceNum,
-        "availability": "https://schema.org/InStock"
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "PINCK SMILE",
+          "alternateName": "Pink Smile"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": prod.rating.toString(),
+        "reviewCount": prod.reviewCount.toString(),
+        "bestRating": "5",
+        "worstRating": "1"
       }
     }
   }))
