@@ -65,6 +65,61 @@ const faqSchema = {
   ]
 };
 
+const defaultShippingDetails = {
+  "@type": "OfferShippingDetails",
+  "shippingRate": {
+    "@type": "MonetaryAmount",
+    "value": 0,
+    "currency": "IDR"
+  },
+  "shippingDestination": {
+    "@type": "DefinedRegion",
+    "addressCountry": "ID"
+  },
+  "deliveryTime": {
+    "@type": "ShippingDeliveryTime",
+    "handlingTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 0,
+      "maxValue": 1,
+      "unitCode": "DAY"
+    },
+    "transitTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 1,
+      "maxValue": 3,
+      "unitCode": "DAY"
+    }
+  }
+};
+
+const defaultMerchantReturnPolicy = {
+  "@type": "MerchantReturnPolicy",
+  "applicableCountry": "ID",
+  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+  "merchantReturnDays": 7,
+  "returnMethod": "https://schema.org/ReturnByMail",
+  "returnFees": "https://schema.org/FreeReturn"
+};
+
+const defaultReview = [
+  {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Clara S."
+    },
+    "datePublished": "2026-07-28",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": "Pengiriman sangat aman dan tertutup rapi tanpa label nama produk di kardus. Kualitas produknya premium sekali, terasa nyaman dari pemakaian pertama."
+  }
+];
+
 // Product ItemList Schema
 const productListSchema = {
   "@context": "https://schema.org",
@@ -104,7 +159,9 @@ const productListSchema = {
             "@type": "Organization",
             "name": "PINCK SMILE",
             "alternateName": "Pink Smile"
-          }
+          },
+          "shippingDetails": defaultShippingDetails,
+          "hasMerchantReturnPolicy": defaultMerchantReturnPolicy
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -112,7 +169,8 @@ const productListSchema = {
           "reviewCount": "1420",
           "bestRating": "5",
           "worstRating": "1"
-        }
+        },
+        "review": defaultReview
       }
     },
     {
@@ -147,7 +205,9 @@ const productListSchema = {
             "@type": "Organization",
             "name": "PINCK SMILE",
             "alternateName": "Pink Smile"
-          }
+          },
+          "shippingDetails": defaultShippingDetails,
+          "hasMerchantReturnPolicy": defaultMerchantReturnPolicy
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -155,7 +215,8 @@ const productListSchema = {
           "reviewCount": "980",
           "bestRating": "5",
           "worstRating": "1"
-        }
+        },
+        "review": defaultReview
       }
     },
     {
@@ -190,7 +251,9 @@ const productListSchema = {
             "@type": "Organization",
             "name": "PINCK SMILE",
             "alternateName": "Pink Smile"
-          }
+          },
+          "shippingDetails": defaultShippingDetails,
+          "hasMerchantReturnPolicy": defaultMerchantReturnPolicy
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -198,7 +261,8 @@ const productListSchema = {
           "reviewCount": "840",
           "bestRating": "5",
           "worstRating": "1"
-        }
+        },
+        "review": defaultReview
       }
     }
   ]

@@ -6,6 +6,43 @@ import ProductVisual from "@/components/product-visual.astro";
 
 const siteUrl = "https://pinck-smile.netlify.app";
 
+const defaultShippingDetails = {
+  "@type": "OfferShippingDetails",
+  "shippingRate": {
+    "@type": "MonetaryAmount",
+    "value": 0,
+    "currency": "IDR"
+  },
+  "shippingDestination": {
+    "@type": "DefinedRegion",
+    "addressCountry": "ID"
+  },
+  "deliveryTime": {
+    "@type": "ShippingDeliveryTime",
+    "handlingTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 0,
+      "maxValue": 1,
+      "unitCode": "DAY"
+    },
+    "transitTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 1,
+      "maxValue": 3,
+      "unitCode": "DAY"
+    }
+  }
+};
+
+const defaultMerchantReturnPolicy = {
+  "@type": "MerchantReturnPolicy",
+  "applicableCountry": "ID",
+  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+  "merchantReturnDays": 7,
+  "returnMethod": "https://schema.org/ReturnByMail",
+  "returnFees": "https://schema.org/FreeReturn"
+};
+
 const productCatalogSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -43,7 +80,9 @@ const productCatalogSchema = {
           "@type": "Organization",
           "name": "PINCK SMILE",
           "alternateName": "Pink Smile"
-        }
+        },
+        "shippingDetails": defaultShippingDetails,
+        "hasMerchantReturnPolicy": defaultMerchantReturnPolicy
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -51,7 +90,24 @@ const productCatalogSchema = {
         "reviewCount": prod.reviewCount.toString(),
         "bestRating": "5",
         "worstRating": "1"
-      }
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Clara S."
+          },
+          "datePublished": "2026-07-28",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "Pengiriman sangat aman dan tertutup rapi tanpa label nama produk di kardus. Kualitas produknya premium sekali, terasa nyaman dari pemakaian pertama."
+        }
+      ]
     }
   }))
 };

@@ -38,6 +38,7 @@ const sampleReviews = [
     role: "Verified Medical Specialist",
     rating: 5,
     date: "12 Agustus 2026",
+    isoDate: "2026-08-12",
     comment: "Sebagai dokter kulit, saya sangat mengapresiasi formulasi pH seimbang tanpa sulfat keras dari PINCK SMILE. Menjaga flora alami tanpa mengikis kelembapan.",
   },
   {
@@ -46,6 +47,7 @@ const sampleReviews = [
     role: "Verified Buyer",
     rating: 5,
     date: "28 Juli 2026",
+    isoDate: "2026-07-28",
     comment: "Pengiriman sangat aman dan tertutup rapi tanpa label nama produk di kardus. Kualitas produknya premium sekali, terasa nyaman dari pemakaian pertama.",
   },
   {
@@ -54,6 +56,7 @@ const sampleReviews = [
     role: "Verified Buyer",
     rating: 5,
     date: "04 Agustus 2026",
+    isoDate: "2026-08-04",
     comment: "Sangat membantu mengatasi rasa gerah dan lembap setelah berolahraga. Aromanya botani alami, tidak menyengat sama sekali. Pasti repurchase!",
   },
 ];
@@ -145,6 +148,7 @@ const productSchema = {
       "@type": "Person",
       "name": rev.name
     },
+    "datePublished": rev.isoDate,
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": rev.rating.toString(),
