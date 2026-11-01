@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 
-const siteUrl = "https://pinck-smile.netlify.app";
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.pages.dev";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

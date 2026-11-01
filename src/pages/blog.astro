@@ -15,7 +15,7 @@ publishedBlogEntries.sort(function (a, b) {
 
 const categories = ["Semua", "Kesehatan Seksual", "Edukasi & Sains", "Confidence & Self-Care", "Relationship & Intimacy"];
 
-const siteUrl = "https://pinck-smile.netlify.app";
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.pages.dev";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

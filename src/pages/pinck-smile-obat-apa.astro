@@ -36,20 +36,22 @@ const faqItems = [
   },
   {
     q: "Di mana mendapatkan informasi produk dan penjual resmi?",
-    a: "Informasi resmi produk, rincian label kemasan, dan layanan konsultasi pelanggan dapat diakses langsung melalui situs web resmi PINCK SMILE Indonesia (https://pinck-smile.netlify.app) serta kanal distribusi resmi terverifikasi di Shopee Official Store, Lazada Official Store, dan layanan WhatsApp Concierge resmi kami."
+    a: `Informasi resmi produk, rincian label kemasan, dan layanan konsultasi pelanggan dapat diakses langsung melalui situs web resmi PINCK SMILE Indonesia (${Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.pages.dev"}) serta kanal distribusi resmi terverifikasi di Shopee Official Store, Lazada Official Store, dan layanan WhatsApp Concierge resmi kami.`
   }
 ];
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.pages.dev";
 
 const pageJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    "@id": "https://pinck-smile.netlify.app/pinck-smile-obat-apa/#webpage",
-    "url": "https://pinck-smile.netlify.app/pinck-smile-obat-apa/",
+    "@id": `${siteUrl}/pinck-smile-obat-apa/#webpage`,
+    "url": `${siteUrl}/pinck-smile-obat-apa/`,
     "name": pageTitle,
     "headline": pageTitle,
     "description": pageDescription,
-    "image": "https://pinck-smile.netlify.app/products/complete-comfort-set.jpg",
+    "image": `${siteUrl}/products/complete-comfort-set.jpg`,
     "inLanguage": "id-ID",
     "datePublished": "2025-05-10",
     "dateModified": new Date().toISOString().split("T")[0],
@@ -57,20 +59,20 @@ const pageJsonLd = [
     "author": {
       "@type": "Organization",
       "name": "Tim Edukasi & Kepatuhan Produk PINCK SMILE Indonesia",
-      "url": "https://pinck-smile.netlify.app/about"
+      "url": `${siteUrl}/about`
     },
     "publisher": {
       "@type": "Organization",
       "name": "PINCK SMILE",
-      "url": "https://pinck-smile.netlify.app",
+      "url": siteUrl,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://pinck-smile.netlify.app/favicon.svg"
+        "url": `${siteUrl}/favicon.svg`
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://pinck-smile.netlify.app/pinck-smile-obat-apa/"
+      "@id": `${siteUrl}/pinck-smile-obat-apa/`
     }
   },
   {
@@ -93,19 +95,19 @@ const pageJsonLd = [
         "@type": "ListItem",
         "position": 1,
         "name": "Beranda",
-        "item": "https://pinck-smile.netlify.app/"
+        "item": `${siteUrl}/`
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Informasi Produk",
-        "item": "https://pinck-smile.netlify.app/products"
+        "item": `${siteUrl}/products`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Pinck Smile Obat Apa?",
-        "item": "https://pinck-smile.netlify.app/pinck-smile-obat-apa/"
+        "item": `${siteUrl}/pinck-smile-obat-apa/`
       }
     ]
   }

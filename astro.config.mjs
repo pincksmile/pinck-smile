@@ -4,9 +4,16 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
+const siteUrl = (
+  process.env.PUBLIC_SITE_URL ||
+  process.env.SITE_URL ||
+  process.env.CF_PAGES_URL ||
+  "https://pinck-smile.pages.dev"
+).replace(/\/$/, "");
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://pinck-smile.netlify.app",
+  site: siteUrl,
   server: {
     host: "0.0.0.0",
     port: 3000,
@@ -23,7 +30,7 @@ export default defineConfig({
         const now = new Date();
 
         // 1. Homepage (Top Priority)
-        if (url === "https://pinck-smile.netlify.app/" || url === "https://pinck-smile.netlify.app") {
+        if (url === `${siteUrl}/` || url === siteUrl) {
           item.changefreq = "daily";
           item.priority = 1.0;
           item.lastmod = now;

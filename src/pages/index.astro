@@ -120,6 +120,8 @@ const defaultReview = [
   }
 ];
 
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.pages.dev";
+
 // Product ItemList Schema
 const productListSchema = {
   "@context": "https://schema.org",
@@ -135,13 +137,13 @@ const productListSchema = {
         "name": "Pinck Smile Gentle Intimate Wash",
         "alternateName": "Pink Smile Gentle Intimate Wash",
         "image": [
-          "https://pinck-smile.netlify.app/products/gentle-intimate-wash.jpg",
-          "https://pinck-smile.netlify.app/products/gentle-intimate-wash-og.jpg"
+          `${siteUrl}/products/gentle-intimate-wash.jpg`,
+          `${siteUrl}/products/gentle-intimate-wash-og.jpg`
         ],
         "description": "Pembersih area kewanitaan dengan formula pH 4.0 seimbang, Chamomile Organik, dan Prebiotic Complex.",
         "sku": "gentle-wash",
         "mpn": "PS-GENTLE-WASH",
-        "url": "https://pinck-smile.netlify.app/products/gentle-intimate-wash",
+        "url": `${siteUrl}/products/gentle-intimate-wash`,
         "brand": {
           "@type": "Brand",
           "name": "PINCK SMILE",
@@ -154,7 +156,7 @@ const productListSchema = {
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
-          "url": "https://pinck-smile.netlify.app/products/gentle-intimate-wash",
+          "url": `${siteUrl}/products/gentle-intimate-wash`,
           "seller": {
             "@type": "Organization",
             "name": "PINCK SMILE",
@@ -181,13 +183,13 @@ const productListSchema = {
         "name": "Pinck Smile Soothing Hydrating Mist",
         "alternateName": "Pink Smile Soothing Hydrating Mist",
         "image": [
-          "https://pinck-smile.netlify.app/products/soothing-hydrating-mist.jpg",
-          "https://pinck-smile.netlify.app/products/soothing-hydrating-mist-og.jpg"
+          `${siteUrl}/products/soothing-hydrating-mist.jpg`,
+          `${siteUrl}/products/soothing-hydrating-mist-og.jpg`
         ],
         "description": "Mist penyegar area intim tanpa bilas dengan Rosewater, Niacinamide, dan Hyaluronic Acid.",
         "sku": "soothing-mist",
         "mpn": "PS-SOOTHING-MIST",
-        "url": "https://pinck-smile.netlify.app/products/soothing-hydrating-mist",
+        "url": `${siteUrl}/products/soothing-hydrating-mist`,
         "brand": {
           "@type": "Brand",
           "name": "PINCK SMILE",
@@ -200,7 +202,7 @@ const productListSchema = {
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
-          "url": "https://pinck-smile.netlify.app/products/soothing-hydrating-mist",
+          "url": `${siteUrl}/products/soothing-hydrating-mist`,
           "seller": {
             "@type": "Organization",
             "name": "PINCK SMILE",
@@ -227,13 +229,13 @@ const productListSchema = {
         "name": "Pinck Smile Aura Intimate Device",
         "alternateName": "Pink Smile Aura Intimate Device",
         "image": [
-          "https://pinck-smile.netlify.app/products/aura-intimate-device.jpg",
-          "https://pinck-smile.netlify.app/products/aura-intimate-device-og.jpg"
+          `${siteUrl}/products/aura-intimate-device.jpg`,
+          `${siteUrl}/products/aura-intimate-device-og.jpg`
         ],
         "description": "Perangkat relaksasi otot panggul dan kesehatan intim berbahan silikon medis 100% tahan air.",
         "sku": "wellness-device",
         "mpn": "PS-WELLNESS-DEVICE",
-        "url": "https://pinck-smile.netlify.app/products/aura-intimate-device",
+        "url": `${siteUrl}/products/aura-intimate-device`,
         "brand": {
           "@type": "Brand",
           "name": "PINCK SMILE",
@@ -246,7 +248,7 @@ const productListSchema = {
           "priceValidUntil": "2027-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "availability": "https://schema.org/InStock",
-          "url": "https://pinck-smile.netlify.app/products/aura-intimate-device",
+          "url": `${siteUrl}/products/aura-intimate-device`,
           "seller": {
             "@type": "Organization",
             "name": "PINCK SMILE",

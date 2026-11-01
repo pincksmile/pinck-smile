@@ -1,2 +1,2 @@
-# Netlify Redirects for Sitemaps and Legacy URLs
-/sitemap.xml    /sitemap-index.xml    301!
+# Redirects for Sitemaps and Legacy URLs (Cloudflare Pages & Workers compatible)
+/sitemap.xml /sitemap-index.xml 301
