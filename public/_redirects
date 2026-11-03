@@ -2,4 +2,5 @@
 /sitemap.xml /sitemap-index.xml 301
 /promo /promo-spesial 301
 /lp /promo-spesial 301
-
+/paket-bundle /paket-bundling 301
+/bundling /paket-bundling 301

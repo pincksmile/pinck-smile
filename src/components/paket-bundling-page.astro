@@ -1,0 +1,719 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import ProductVisual from "@/components/product-visual.astro";
+
+interface Props {
+  canonicalSlug?: string;
+}
+
+const { canonicalSlug = "paket-buing" } = Astro.props;
+
+const bundlingPackages = [
+  {
+    id: "bundle-complete",
+    slug: "complete-comfort-set",
+    visualId: "bundle-complete",
+    name: "Paket Bundling 1: Complete Comfort Duo Set",
+    shortLabel: "Wash 150ml + Mist 60ml + Silk Pouch",
+    tagline: "Perlindungan pH 4.0 Harian di Rumah & Kesegaran Tanpa Bilas di Luar Rumah",
+    originalPrice: "Rp 278.000",
+    originalPriceNum: 278000,
+    price: "Rp 195.000",
+    priceNum: 195000,
+    savings: "Hemat Rp 83.000 (Diskon 30%)",
+    discountBadge: "DISKON 30%",
+    badge: "PALING LARIS • BEST SELLER",
+    popular: true,
+    duration: "Pemakaian ± 2–3 Bulan",
+    image: "/products/complete-comfort-set.jpg",
+    description:
+      "Kombinasi paling favorit wanita aktif: Gentle Intimate Wash (150ml) untuk menjaga keseimbangan mikrobiom saat mandi dan Soothing Hydrating Mist (60ml) praktis dibawa di tas kerja atau olahraga.",
+    itemsIncluded: [
+      "1x Pinck Smile Gentle Intimate Wash (150 ml)",
+      "1x Pinck Smile Soothing Hydrating Mist (60 ml)",
+      "1x Bonus Exclusive Silk Travel Pouch (Polos & Higienis)",
+      "Garansi 100% Kemasan Polos Rahasia (Discreet Shipping)",
+    ],
+    benefits: [
+      "Atasi keputihan berlebih, gatal & bau tak sedap",
+      "Kunci pH 4.0 alami sepanjang hari (24 Jam)",
+      "Bisa COD (Bayar di Tempat saat paket sampai)",
+    ],
+  },
+  {
+    id: "bundle-twin-wash",
+    slug: "gentle-intimate-wash",
+    visualId: "gentle-wash",
+    name: "Paket Bundling 2: Twin Pack Gentle Intimate Wash",
+    shortLabel: "2 Botol Gentle Intimate Wash (2 x 150ml)",
+    tagline: "Stok Hemat Perawatan Mikrobiom Harian untuk 4–6 Bulan",
+    originalPrice: "Rp 358.000",
+    originalPriceNum: 358000,
+    price: "Rp 249.000",
+    priceNum: 249000,
+    savings: "Hemat Rp 109.000 (Diskon 30%)",
+    discountBadge: "HEMAT RP 109RB",
+    badge: "STOK HEMAT",
+    popular: false,
+    duration: "Pemakaian ± 4–6 Bulan",
+    image: "/products/gentle-intimate-wash.jpg",
+    description:
+      "Lebih hemat untuk pemakaian rutin setiap hari di rumah. Cocok untuk persediaan pribadi jangka panjang atau diletakkan di dua kamar mandi berbeda.",
+    itemsIncluded: [
+      "2x Pinck Smile Gentle Intimate Wash @ 150 ml (Total 300 ml)",
+      "Formula pH 4.0 Chamomile Organik, Daun Sirih & Prebiotik",
+      "1x Panduan Perawatan Mikrobiom Intim Wanita",
+      "Garansi 100% Kemasan Polos Rahasia (Discreet Shipping)",
+    ],
+    benefits: [
+      "Harga per botol jauh lebih murah (Rp 124.500/botol)",
+      "Bebas SLS/SLES, Paraben & Pewangi Sintetis Keras",
+      "Aman digunakan harian, saat haid & kulit sensitif",
+    ],
+  },
+  {
+    id: "bundle-twin-mist",
+    slug: "soothing-hydrating-mist",
+    visualId: "soothing-mist",
+    name: "Paket Bundling 3: Twin Pack Soothing Hydrating Mist",
+    shortLabel: "2 Botol Soothing Hydrating Mist (2 x 60ml)",
+    tagline: "Kesegaran Instan 360° Tanpa Bilas untuk Wanita Aktif & Traveler",
+    originalPrice: "Rp 318.000",
+    originalPriceNum: 318000,
+    price: "Rp 219.000",
+    priceNum: 219000,
+    savings: "Hemat Rp 99.000 (Diskon 31%)",
+    discountBadge: "DISKON 31%",
+    badge: "ON-THE-GO DUO",
+    popular: false,
+    duration: "Pemakaian ± 3–4 Bulan",
+    image: "/products/soothing-hydrating-mist.jpg",
+    description:
+      "Simpan 1 botol di tas kerja/olahraga dan 1 botol di rumah. Semprotan halus Rosewater & Niacinamide 2% untuk meredakan lembap, gerah, dan mencerahkan area lipatan.",
+    itemsIncluded: [
+      "2x Pinck Smile Soothing Hydrating Mist @ 60 ml (Total 120 ml)",
+      "1x Bonus Exclusive Silk Travel Pouch",
+      "Teknologi 360° Fine-Mist Pump (Bisa disemprot terbalik)",
+      "Garansi 100% Kemasan Polos Rahasia (Discreet Shipping)",
+    ],
+    benefits: [
+      "Praktis tanpa perlu dibilas setelah toilet umum/olahraga",
+      "Kandungan Niacinamide 2% merawat & mencerahkan lipatan kulit",
+      "Cepat meresap < 10 detik tanpa rasa lengket",
+    ],
+  },
+  {
+    id: "bundle-couple-harmony",
+    slug: "aura-intimate-device",
+    visualId: "wellness-device",
+    name: "Paket Bundling 4: Intimate Harmony & Couple Set",
+    shortLabel: "Gentle Wash 150ml + Aura Intimate Device",
+    tagline: "Sinergi Kebersihan pH 4.0 & Relaksasi Otot Dasar Panggul",
+    originalPrice: "Rp 829.000",
+    originalPriceNum: 829000,
+    price: "Rp 549.000",
+    priceNum: 549000,
+    savings: "Hemat Rp 280.000 (Diskon 33%)",
+    discountBadge: "HEMAT RP 280RB",
+    badge: "FAVORIT PASUTRI",
+    popular: false,
+    duration: "Garansi Resmi 1 Tahun",
+    image: "/products/aura-intimate-device.jpg",
+    description:
+      "Rangkaian khusus untuk menjaga kebersihan area kewanitaan sekaligus merilekskan ketegangan otot panggul dengan perangkat silikon medis FDA-grade yang sangat senyap (<40 dB).",
+    itemsIncluded: [
+      "1x Pinck Smile Gentle Intimate Wash (150 ml)",
+      "1x Pinck Smile Aura Intimate Device (100% Medical Silicone)",
+      "1x Magnetic Fast USB Charger + Silk Storage Bag",
+      "Garansi Resmi Ganti Baru 1 Tahun PINCK SMILE",
+    ],
+    benefits: [
+      "Meningkatkan sirkulasi panggul & kenyamanan bersama pasangan",
+      "100% Tahan Air (IPX7 Waterproof) & mudah dibersihkan",
+      "Kemasan kardus cokelat polos tanpa nama barang sensitif",
+    ],
+  },
+  {
+    id: "bundle-ultimate",
+    slug: "ultimate-wellness-ritual",
+    visualId: "bundle-ultimate",
+    name: "Paket Bundling 5: Ultimate Wellness Ritual (3-in-1 Full Box)",
+    shortLabel: "Wash 150ml + Mist 60ml + Aura Intimate Device",
+    tagline: "Koleksi Lengkap Perawatan Intim dari Pagi hingga Malam",
+    originalPrice: "Rp 987.000",
+    originalPriceNum: 987000,
+    price: "Rp 649.000",
+    priceNum: 649000,
+    savings: "Hemat Rp 338.000 (Diskon 34%)",
+    discountBadge: "BEST VALUE 3-IN-1",
+    badge: "KOLEKSI LENGKAP",
+    popular: true,
+    duration: "Full Set + Garansi 1 Tahun",
+    image: "/products/ultimate-wellness-ritual.jpg",
+    description:
+      "Semua produk unggulan PINCK SMILE dalam satu paket eksklusif. Memberikan perlindungan mikrobiom harian, kesegaran on-the-go, dan relaksasi intim menyeluruh dengan penghematan terbesar.",
+    itemsIncluded: [
+      "1x Pinck Smile Gentle Intimate Wash (150 ml)",
+      "1x Pinck Smile Soothing Hydrating Mist (60 ml)",
+      "1x Pinck Smile Aura Intimate Device (Medical Grade Silicone)",
+      "1x Magnetic USB Charger + 2x Silk Storage Pouch",
+      "Prioritas Pengiriman + Garansi Resmi 1 Tahun",
+    ],
+    benefits: [
+      "Hemat Rp 338.000 dibandingkan membeli satuan",
+      "Cocok untuk self-reward maupun kado pernikahan istri/sahabat",
+      "Gratis konsultasi privat & garansi pengiriman rahasia 100%",
+    ],
+  },
+  {
+    id: "bundle-family-stock",
+    slug: "complete-comfort-set",
+    visualId: "bundle-complete",
+    name: "Paket Bundling 6: Royal Stockist Set (2 Wash + 2 Mist)",
+    shortLabel: "2x Gentle Wash 150ml + 2x Hydrating Mist 60ml",
+    tagline: "Paket Persediaan Lengkap 5–6 Bulan dengan Harga Paling Ekonomis",
+    originalPrice: "Rp 676.000",
+    originalPriceNum: 676000,
+    price: "Rp 379.000",
+    priceNum: 379000,
+    savings: "Hemat Rp 297.000 (Diskon 44%)",
+    discountBadge: "SUPER HEMAT 44%",
+    badge: "SUPER DEAL",
+    popular: false,
+    duration: "Pemakaian ± 5–6 Bulan",
+    image: "/products/complete-comfort-set.jpg",
+    description:
+      "Pilihan paling cerdas untuk pelanggan setia PINCK SMILE. Dapatkan 2 botol Gentle Wash dan 2 botol Hydrating Mist sekaligus dengan potongan harga hampir setengah harga normal.",
+    itemsIncluded: [
+      "2x Pinck Smile Gentle Intimate Wash (150 ml)",
+      "2x Pinck Smile Soothing Hydrating Mist (60 ml)",
+      "2x Bonus Exclusive Silk Travel Pouch",
+      "Prioritas Pengiriman + Kemasan Polos 100% Rahasia",
+    ],
+    benefits: [
+      "Jatuhnya hanya Rp 94.750 per produk (Paling Ekonomis!)",
+      "Bebas khawatir kehabisan stok selama setengah tahun",
+      "Bisa patungan bersama saudara/sahabat perempuan",
+    ],
+  },
+];
+
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "https://pinck-smile.pages.dev";
+
+const defaultShippingDetails = {
+  "@type": "OfferShippingDetails",
+  "shippingRate": {
+    "@type": "MonetaryAmount",
+    "value": 0,
+    "currency": "IDR",
+  },
+  "shippingDestination": {
+    "@type": "DefinedRegion",
+    "addressCountry": "ID",
+  },
+  "deliveryTime": {
+    "@type": "ShippingDeliveryTime",
+    "handlingTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 0,
+      "maxValue": 1,
+      "unitCode": "DAY",
+    },
+    "transitTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 1,
+      "maxValue": 3,
+      "unitCode": "DAY",
+    },
+  },
+};
+
+const defaultMerchantReturnPolicy = {
+  "@type": "MerchantReturnPolicy",
+  "applicableCountry": "ID",
+  "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+  "merchantReturnDays": 7,
+  "returnMethod": "https://schema.org/ReturnByMail",
+  "returnFees": "https://schema.org/FreeReturn",
+};
+
+const bundlingSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Paket Bundling Hemat PINCK SMILE (Pink Smile)",
+  "description": "Daftar paket bundling hemat produk perawatan kewanitaan PINCK SMILE (Pink Smile) dengan diskon hingga 44%, bisa COD, dan privasi paket 100% terjaga.",
+  "itemListElement": bundlingPackages.map((pkg, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Product",
+      "name": pkg.name,
+      "alternateName": `Pink Smile ${pkg.name}`,
+      "image": [`${siteUrl}${pkg.image}`],
+      "description": pkg.description,
+      "sku": pkg.id,
+      "mpn": `PS-${pkg.id.toUpperCase()}`,
+      "url": `${siteUrl}/products/${pkg.slug}`,
+      "brand": {
+        "@type": "Brand",
+        "name": "PINCK SMILE",
+        "alternateName": "Pink Smile",
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": `${siteUrl}/${canonicalSlug}`,
+        "priceCurrency": "IDR",
+        "price": pkg.priceNum,
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "PINCK SMILE",
+          "alternateName": "Pink Smile",
+        },
+        "shippingDetails": defaultShippingDetails,
+        "hasMerchantReturnPolicy": defaultMerchantReturnPolicy,
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1650",
+        "bestRating": "5",
+        "worstRating": "1",
+      },
+    },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Paket Bundling Hemat",
+      "item": `${siteUrl}/${canonicalSlug}`,
+    },
+  ],
+};
+---
+
+<Layout
+  title="Paket Bundling Hemat PINCK SMILE (Pink Smile) — Diskon Hingga 44% & Bisa COD"
+  description="Pilih Paket Bundling Hemat PINCK SMILE: Complete Comfort Duo Set, Twin Pack Gentle Wash, Twin Pack Hydrating Mist, hingga Ultimate 3-in-1 Ritual. Garansi 100% original, kemasan polos rahasia, bisa COD."
+  image="/products/complete-comfort-set-og.jpg"
+  jsonLd={[bundlingSchema, breadcrumbSchema]}>
+  <!-- HERO BANNER PAKET BUNDLING -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#FFF0F8] via-[#FFF7FB] to-white pt-10 pb-12 border-b border-[#F0D5E4]">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E8B8D1] shadow-2xs mb-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#B85080]">
+            Official Paket Bundling Hemat • Diskon s/d 44%
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-serif font-semibold text-[#29242A] leading-tight">
+          Paket Bundling Perawatan Intim <span class="text-[#D98AAF]">PINCK SMILE</span>
+        </h1>
+
+        <p class="mt-4 text-sm sm:text-base text-[#6E626B] leading-relaxed max-w-2xl mx-auto">
+          Lebih hemat hingga <strong>Rp 338.000</strong> dengan memilih paket bundling resmi. Semua paket dijamin <strong>100% Original BPOM</strong>, dikirim dengan <strong>kardus polos rahasia (tanpa nama produk di resi)</strong>, dan mendukung pembayaran <strong>COD (Bayar di Tempat)</strong>.
+        </p>
+
+        <!-- Trust Highlights Strip -->
+        <div class="mt-7 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left max-w-2xl mx-auto">
+          <div class="bg-white/90 border border-[#F0D5E4] rounded-2xl p-3 flex items-center gap-2.5 shadow-2xs">
+            <span class="w-8 h-8 rounded-full bg-[#FFE5F7] text-[#B85080] flex items-center justify-center font-bold text-sm shrink-0">
+              %
+            </span>
+            <div>
+              <p class="text-xs font-bold text-[#29242A]">Hemat s/d 44%</p>
+              <p class="text-[11px] text-[#756B72]">Harga Spesial Bundle</p>
+            </div>
+          </div>
+
+          <div class="bg-white/90 border border-[#F0D5E4] rounded-2xl p-3 flex items-center gap-2.5 shadow-2xs">
+            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm shrink-0">
+              ✓
+            </span>
+            <div>
+              <p class="text-xs font-bold text-[#29242A]">Bisa COD</p>
+              <p class="text-[11px] text-[#756B72]">Bayar Saat Sampai</p>
+            </div>
+          </div>
+
+          <div class="bg-white/90 border border-[#F0D5E4] rounded-2xl p-3 flex items-center gap-2.5 shadow-2xs">
+            <span class="w-8 h-8 rounded-full bg-[#FFE5F7] text-[#B85080] flex items-center justify-center font-bold text-sm shrink-0">
+              🔒
+            </span>
+            <div>
+              <p class="text-xs font-bold text-[#29242A]">100% Privasi</p>
+              <p class="text-[11px] text-[#756B72]">Kardus Polos Rapat</p>
+            </div>
+          </div>
+
+          <div class="bg-white/90 border border-[#F0D5E4] rounded-2xl p-3 flex items-center gap-2.5 shadow-2xs">
+            <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm shrink-0">
+              🎁
+            </span>
+            <div>
+              <p class="text-xs font-bold text-[#29242A]">Bonus Pouch</p>
+              <p class="text-[11px] text-[#756B72]">Silk Pouch Eksklusif</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- DAFTAR 6 PAKET BUNDLING LENGKAP -->
+  <section class="py-14 bg-white" id="katalog-bundling">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {
+          bundlingPackages.map((pkg) => (
+            <article
+              class={`rounded-3xl p-6 sm:p-7 border flex flex-col justify-between relative transition-all duration-300 hover:-translate-y-1 ${
+                pkg.popular
+                  ? "bg-gradient-to-b from-[#FFF7FB] to-white border-2 border-[#D98AAF] shadow-xl"
+                  : "bg-white border-[#F0D5E4] shadow-md hover:shadow-lg"
+              }`}>
+              {/* Top Floating Popular Ribbon */}
+              {pkg.popular && (
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#C81E45] text-white text-[11px] font-extrabold tracking-wider uppercase px-4 py-1 rounded-full shadow-md whitespace-nowrap">
+                  ★ {pkg.badge} ★
+                </div>
+              )}
+
+              <div>
+                {/* Top Meta Chips */}
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="inline-block px-3 py-1 rounded-full bg-[#FFE5F7] text-[#B85080] text-[11px] font-bold uppercase tracking-wide">
+                    {pkg.discountBadge}
+                  </span>
+                  <span class="text-[11px] font-semibold text-[#756B72] bg-[#FAF5F8] px-2.5 py-1 rounded-full border border-[#F0D5E4]">
+                    {pkg.duration}
+                  </span>
+                </div>
+
+                {/* Product Visual Box */}
+                <a href={`/products/${pkg.slug}`} class="block mb-5 group">
+                  <div class="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#FFE5F7] to-[#FFF7FB] border border-[#F0D5E4] overflow-hidden relative shadow-inner">
+                    <ProductVisual id={pkg.visualId} size="md" />
+                  </div>
+                </a>
+
+                {/* Package Title & Subtitle */}
+                <h2 class="text-xl font-serif font-semibold text-[#29242A] leading-snug hover:text-[#D98AAF] transition-colors">
+                  <a href={`/products/${pkg.slug}`}>{pkg.name}</a>
+                </h2>
+                <p class="text-xs font-bold text-[#B85080] mt-1">
+                  {pkg.shortLabel}
+                </p>
+                <p class="text-xs text-[#756B72] mt-2 leading-relaxed">
+                  {pkg.description}
+                </p>
+
+                {/* Price Box with Strikethrough & Savings */}
+                <div class="mt-4 p-4 rounded-2xl bg-[#FFF7FB] border border-[#F0D5E4]">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-xs text-[#756B72] line-through font-medium">
+                      Harga Normal: {pkg.originalPrice}
+                    </span>
+                    <span class="text-[11px] font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                      {pkg.savings}
+                    </span>
+                  </div>
+                  <div class="mt-1 flex items-baseline gap-2">
+                    <span class="text-3xl font-extrabold text-[#29242A]">
+                      {pkg.price}
+                    </span>
+                    <span class="text-[11px] font-semibold text-[#756B72]">
+                      / paket lengkap
+                    </span>
+                  </div>
+                </div>
+
+                {/* Isi Paket List */}
+                <div class="mt-5 pt-4 border-t border-[#F0D5E4]">
+                  <p class="text-xs font-bold uppercase tracking-wider text-[#29242A] mb-2.5">
+                    Isi Paket Bundling:
+                  </p>
+                  <ul class="space-y-2">
+                    {pkg.itemsIncluded.map((item) => (
+                      <li class="flex items-start gap-2 text-xs text-[#29242A]/90">
+                        <span class="w-4 h-4 rounded-full bg-[#FFE5F7] text-[#B85080] flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
+                          ✓
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Keunggulan Paket */}
+                <div class="mt-4 pt-3 border-t border-dashed border-[#F0D5E4] mb-6">
+                  <p class="text-[11px] font-bold uppercase tracking-wider text-[#756B72] mb-2">
+                    Keunggulan Utama:
+                  </p>
+                  <ul class="space-y-1.5">
+                    {pkg.benefits.map((benefit) => (
+                      <li class="flex items-start gap-2 text-[11px] text-[#5C535A]">
+                        <span class="text-emerald-600 font-bold">•</span>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div class="space-y-2.5 pt-2">
+                <button
+                  type="button"
+                  data-id={pkg.id}
+                  data-name={pkg.name}
+                  data-price={pkg.priceNum}
+                  class={`add-to-cart-btn w-full py-3.5 px-4 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 ${
+                    pkg.popular
+                      ? "bg-[#C81E45] text-white hover:bg-[#A81638] shadow-md"
+                      : "bg-[#29242A] text-white hover:bg-[#D98AAF]"
+                  }`}>
+                  <span>🛍️ + Tambah Paket ke Tas Belanja</span>
+                </button>
+
+                <a
+                  href={`https://wa.me/6288980874055?text=${encodeURIComponent(
+                    `Halo CS Resmi PINCK SMILE, saya mau pesan *${pkg.name}* (${pkg.shortLabel}) dengan harga promo bundling *${pkg.price}* (${pkg.savings}). Mohon diproses dengan kemasan polos rahasia ya.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+                  <span>💬 Pesan Langsung via WhatsApp (Bisa COD)</span>
+                </a>
+
+                <div class="grid grid-cols-2 gap-2 pt-1">
+                  <a
+                    href="https://s.shopee.co.id/9zx2C9Pfba"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="py-2 px-3 rounded-full bg-[#EE4D2D]/10 text-[#EE4D2D] border border-[#EE4D2D]/30 hover:bg-[#EE4D2D] hover:text-white text-[11px] font-bold text-center transition-colors">
+                    Shopee Mall ↗
+                  </a>
+                  <a
+                    href="https://share.google/nJK2B7iDNKitHambl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="py-2 px-3 rounded-full bg-[#0F146D]/10 text-[#0F146D] border border-[#0F146D]/30 hover:bg-[#0F146D] hover:text-white text-[11px] font-bold text-center transition-colors">
+                    Lazada Official ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <!-- TABEL PERBANDINGAN PENGHEMATAN PAKET BUNDLING -->
+  <section class="py-12 bg-[#FFF7FB] border-y border-[#F0D5E4]">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-serif font-semibold text-[#29242A]">
+            Perbandingan Hemat Beli Paket Bundling vs Satuan
+          </h2>
+          <p class="text-xs sm:text-sm text-[#756B72] mt-2">
+            Semua paket bundling mendapatkan jaminan produk 100% original dengan masa kedaluwarsa panjang.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-[#F0D5E4] bg-white shadow-sm">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-[#29242A] text-white">
+                <th class="py-3.5 px-4 font-bold">Nama Paket Bundling</th>
+                <th class="py-3.5 px-4 font-bold">Isi Produk</th>
+                <th class="py-3.5 px-4 font-bold">Harga Satuan</th>
+                <th class="py-3.5 px-4 font-bold text-[#FFEA00]">Harga Bundling</th>
+                <th class="py-3.5 px-4 font-bold">Anda Hemat</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#F0D5E4]">
+              {
+                bundlingPackages.map((pkg) => (
+                  <tr class="hover:bg-[#FFF7FB]/60 transition-colors">
+                    <td class="py-3.5 px-4 font-bold text-[#29242A]">
+                      {pkg.name}
+                    </td>
+                    <td class="py-3.5 px-4 text-[#6E626B]">{pkg.shortLabel}</td>
+                    <td class="py-3.5 px-4 text-[#8E828B] line-through">
+                      {pkg.originalPrice}
+                    </td>
+                    <td class="py-3.5 px-4 font-extrabold text-[#C81E45]">
+                      {pkg.price}
+                    </td>
+                    <td class="py-3.5 px-4 font-bold text-emerald-700">
+                      {pkg.savings}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- FORM PEMESANAN CEPAT PAKET BUNDLING (BISA COD) -->
+  <section class="py-14 bg-white" id="form-bundling">
+    <Container>
+      <div class="max-w-xl mx-auto rounded-3xl border-2 border-[#D98AAF] bg-[#FFF7FB] p-6 sm:p-8 shadow-xl">
+        <div class="text-center mb-6">
+          <span class="inline-block bg-[#C81E45] text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+            Form Order Cepat • Bisa COD
+          </span>
+          <h2 class="text-2xl font-serif font-semibold text-[#29242A]">
+            Pesan Paket Bundling Sekarang
+          </h2>
+          <p class="text-xs text-[#756B72] mt-1">
+            Isi data di bawah ini untuk memesan langsung melalui CS Resmi PINCK SMILE. Privasi nama produk 100% dirahasiakan pada label paket.
+          </p>
+        </div>
+
+        <form id="bundling-quick-form" class="space-y-4" novalidate>
+          <div>
+            <label for="bundle-select" class="block text-xs font-bold text-[#29242A] mb-1.5">
+              Pilih Paket Bundling <span class="text-red-600">*</span>
+            </label>
+            <select
+              id="bundle-select"
+              name="paket"
+              class="w-full rounded-xl border border-[#E2C2D3] bg-white px-3.5 py-3 text-xs sm:text-sm font-semibold text-[#29242A] focus:border-[#D98AAF] focus:outline-none">
+              {
+                bundlingPackages.map((pkg) => (
+                  <option value={`${pkg.name} (${pkg.shortLabel}) - ${pkg.price}`}>
+                    {pkg.name} — {pkg.price} ({pkg.savings})
+                  </option>
+                ))
+              }
+            </select>
+          </div>
+
+          <div>
+            <label for="bundle-nama" class="block text-xs font-bold text-[#29242A] mb-1">
+              Nama Lengkap Penerima <span class="text-red-600">*</span>
+            </label>
+            <input
+              id="bundle-nama"
+              type="text"
+              required
+              placeholder="Contoh: Bunda Rina / Kak Sarah"
+              class="w-full rounded-xl border border-[#E2C2D3] bg-white px-3.5 py-2.5 text-sm text-[#29242A] placeholder:text-neutral-400 focus:border-[#D98AAF] focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="bundle-wa" class="block text-xs font-bold text-[#29242A] mb-1">
+              Nomor WhatsApp Aktif <span class="text-red-600">*</span>
+            </label>
+            <input
+              id="bundle-wa"
+              type="tel"
+              required
+              placeholder="Contoh: 081234567890"
+              class="w-full rounded-xl border border-[#E2C2D3] bg-white px-3.5 py-2.5 text-sm text-[#29242A] placeholder:text-neutral-400 focus:border-[#D98AAF] focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="bundle-alamat" class="block text-xs font-bold text-[#29242A] mb-1">
+              Alamat Lengkap Pengiriman <span class="text-red-600">*</span>
+            </label>
+            <textarea
+              id="bundle-alamat"
+              rows="3"
+              required
+              placeholder="Jalan, Nomor Rumah, RT/RW, Kecamatan, Kota/Kabupaten"
+              class="w-full rounded-xl border border-[#E2C2D3] bg-white px-3.5 py-2.5 text-sm text-[#29242A] placeholder:text-neutral-400 focus:border-[#D98AAF] focus:outline-none"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="bundle-metode" class="block text-xs font-bold text-[#29242A] mb-1">
+              Metode Pembayaran
+            </label>
+            <select
+              id="bundle-metode"
+              class="w-full rounded-xl border border-[#E2C2D3] bg-white px-3.5 py-2.5 text-sm font-semibold text-[#29242A] focus:border-[#D98AAF] focus:outline-none">
+              <option value="COD (Bayar di Tempat Saat Paket Sampai)">🚚 COD — Bayar di Tempat Saat Paket Sampai</option>
+              <option value="Transfer Bank / QRIS (Prioritas Kirim Hari Ini)">💳 Transfer Bank / QRIS</option>
+            </select>
+          </div>
+
+          <div id="bundle-form-error" class="hidden rounded-xl bg-red-100 border border-red-300 px-3.5 py-2.5 text-xs font-bold text-red-800">
+            Mohon lengkapi Nama Penerima, Nomor WhatsApp, dan Alamat Pengiriman terlebih dahulu.
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3.5 px-6 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg transition cursor-pointer flex items-center justify-center gap-2">
+            <span>🚀 Ambil Paket Bundling via WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </Container>
+  </section>
+
+  <script is:inline>
+    (function () {
+      const form = document.getElementById("bundling-quick-form");
+      const err = document.getElementById("bundle-form-error");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const paket = document.getElementById("bundle-select")?.value || "";
+          const nama = document.getElementById("bundle-nama")?.value.trim() || "";
+          const wa = document.getElementById("bundle-wa")?.value.trim() || "";
+          const alamat = document.getElementById("bundle-alamat")?.value.trim() || "";
+          const metode = document.getElementById("bundle-metode")?.value || "COD";
+
+          if (!nama || !wa || !alamat) {
+            if (err) err.classList.remove("hidden");
+            return;
+          }
+          if (err) err.classList.add("hidden");
+
+          const msg = [
+            "Halo CS Resmi *PINCK SMILE*, saya ingin memesan *PAKET BUNDLING HEMAT*:",
+            "",
+            "🎁 *Paket Bundling:* " + paket,
+            "👤 *Nama Penerima:* " + nama,
+            "📱 *No. WhatsApp:* " + wa,
+            "🏠 *Alamat Lengkap:* " + alamat,
+            "💳 *Pembayaran:* " + metode,
+            "🔒 *Kemasan:* Kardus Polos Privasi 100% Aman",
+            "",
+            "Mohon segera diproses ya kak, terima kasih! 🙏",
+          ].join("\n");
+
+          window.location.href =
+            "https://wa.me/6288980874055?text=" + encodeURIComponent(msg);
+        });
+      }
+    })();
+  </script>
+</Layout>
