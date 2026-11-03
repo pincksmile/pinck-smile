@@ -1,0 +1,1459 @@
+---
+import { SEO } from "astro-seo";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+}
+
+const {
+  title = "Promo Spesial Pinck Smile Diskon 30% — Solusi Perawatan Kewanitaan & Keharmonisan Alami (Bisa COD)",
+  description = "Atasi keputihan berlebih, bau tak sedap, gatal, dan jaga keseimbangan pH 4.0 area intim dengan Pinck Smile. Promo Diskon 30% hari ini, garansi 100% original, privasi paket tertutup rapat, bisa bayar di tempat (COD).",
+  canonicalPath = "/promo-spesial",
+} = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.origin : "https://pinck-smile.pages.dev";
+const canonicalURL = new URL(canonicalPath, siteUrl).toString();
+const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toString();
+---
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#990000" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Google Fonts for High-Impact Direct-Response Ad Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: title,
+          image: ogImageUrl,
+        },
+        image: {
+          alt: "Promo Spesial Pinck Smile Diskon 30% Bisa COD",
+        },
+      }}
+    />
+
+    <style is:inline>
+      .font-impact {
+        font-family: 'Anton', 'Archivo Black', Impact, sans-serif;
+        letter-spacing: 0.02em;
+      }
+      .font-black-display {
+        font-family: 'Archivo Black', 'Plus Jakarta Sans', sans-serif;
+      }
+      .font-body {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      .text-stroke-white {
+        -webkit-text-stroke: 4px #ffffff;
+        paint-order: stroke fill;
+      }
+      .text-stroke-white-sm {
+        -webkit-text-stroke: 2.5px #ffffff;
+        paint-order: stroke fill;
+      }
+      .text-stroke-black {
+        -webkit-text-stroke: 3px #000000;
+        paint-order: stroke fill;
+      }
+      .text-stroke-red {
+        -webkit-text-stroke: 3px #8b0000;
+        paint-order: stroke fill;
+      }
+      @keyframes bounceDown {
+        0%, 100% { transform: translateY(0); opacity: 1; }
+        50% { transform: translateY(8px); opacity: 0.75; }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+        50% { transform: scale(1.03); box-shadow: 0 0 25px 6px rgba(250, 204, 21, 0.75); }
+      }
+      .animate-chevron {
+        animation: bounceDown 1.1s infinite ease-in-out;
+      }
+      .animate-cta-pulse {
+        animation: pulseGlow 1.6s infinite ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#ECECEC] font-body text-neutral-900 antialiased selection:bg-red-700 selection:text-yellow-300 pb-20">
+    <!-- Top Helper Bar for Owner / Ad Manager (Automatically hidden when accessed with ?fbclid= or can be dismissed) -->
+    <div id="ad-manager-bar" class="bg-neutral-900 text-white text-xs py-2 px-3 border-b border-neutral-700">
+      <div class="max-w-[640px] mx-auto flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span class="font-semibold text-amber-300">Mode Landing Page Iklan (Scalev Style)</span>
+          <a href="/" class="text-neutral-300 underline hover:text-white ml-1">← Kembali ke Beranda</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            id="copy-ad-url-btn"
+            class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-2.5 py-1 rounded text-[11px] transition cursor-pointer">
+            Salin Link Iklan FB/IG
+          </button>
+          <button
+            type="button"
+            id="close-ad-bar-btn"
+            aria-label="Tutup panel"
+            class="text-neutral-400 hover:text-white px-1 text-sm leading-none cursor-pointer">
+            ✕
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN SCALEV CANVAS CONTAINER (640px Centered Direct-Response Stack) -->
+    <main class="max-w-[640px] w-full mx-auto bg-white shadow-[0_0_40px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col">
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 1: HERO PROBLEM & AGITATION (Matches Scalev Image 1)           -->
+      <!-- ===================================================================== -->
+      <section class="relative w-full overflow-hidden bg-[#D5D5D5] select-none" id="poster-1">
+        <!-- Textured Studio Image Base -->
+        <div class="relative w-full aspect-[9/15] sm:aspect-[9/14] flex flex-col justify-between">
+          <img
+            src="/lp/hero-problem.jpg"
+            alt="Cegah Masalah Kewanitaan Sebelum Merusak Keharmonisan Dengan Pinck Smile"
+            class="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125 brightness-95"
+            fetchpriority="high"
+          />
+          <!-- Top Light Concrete Vignette for High-Contrast Headline Readability -->
+          <div class="absolute inset-x-0 top-0 h-[44%] bg-gradient-to-b from-[#E5E5E5] via-[#E5E5E5]/90 to-transparent"></div>
+          <!-- Red Problem Glow on Lower Abdomen -->
+          <div class="absolute left-1/2 top-[63%] -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-full bg-red-600/55 blur-2xl pointer-events-none"></div>
+
+          <!-- Top Headline Block -->
+          <div class="relative z-10 pt-6 sm:pt-8 px-3 text-center flex flex-col items-center">
+            <h1 class="font-impact uppercase leading-[1.08] tracking-wide text-[34px] sm:text-[48px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.35)]">
+              <span class="text-black text-stroke-white">CEGAH </span>
+              <span class="text-[#9E0B0F] text-stroke-white">MASALAH KEWANITAAN</span>
+              <br />
+              <span class="text-black text-stroke-white">SEBELUM </span>
+              <span class="text-[#9E0B0F] text-stroke-white">SUAMI MENJAUH</span>
+            </h1>
+
+            <!-- Dark Red Pill Badge -->
+            <div class="mt-3 sm:mt-4 inline-flex items-center justify-center bg-[#990000] border-2 border-[#7A0000] rounded-full px-7 sm:px-10 py-2 sm:py-2.5 shadow-lg">
+              <span class="font-black-display text-[#FFEA00] text-lg sm:text-2xl tracking-wide uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                DENGAN PINCK SMILE
+              </span>
+            </div>
+          </div>
+
+          <!-- Middle Anatomical / Microbiome Inset Zoom Circle + Red Beam -->
+          <div class="relative z-10 px-4 sm:px-8 my-auto flex items-center">
+            <div class="relative flex items-center">
+              <!-- Red Spotlight Cone -->
+              <div
+                class="hidden sm:block w-36 h-28 bg-gradient-to-r from-red-700/75 to-red-600/10 -ml-6"
+                style="clip-path: polygon(0 15%, 100% 38%, 100% 62%, 0 85%); position: absolute; left: 135px; top: 50%; transform: translateY(-50%); width: 170px; height: 140px;"
+              ></div>
+              <!-- Circular Zoom Graphic -->
+              <div class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full border-[6px] border-[#990000] bg-gradient-to-br from-[#520000] via-[#8B0000] to-[#3A0000] shadow-2xl overflow-hidden flex flex-col items-center justify-center p-3 text-center">
+                <!-- Simulated Microbiome / pH Imbalance Visual -->
+                <div class="w-full h-full rounded-full border border-red-400/40 bg-[radial-gradient(circle_at_center,#ef4444_0%,#7f1d1d_65%,#450a0a_100%)] flex flex-col items-center justify-center p-2">
+                  <span class="bg-yellow-400 text-red-950 font-extrabold text-[10px] sm:text-xs px-2 py-0.5 rounded-full uppercase tracking-tighter mb-1">
+                    pH &gt; 5.5 RUSAK
+                  </span>
+                  <p class="text-white font-extrabold text-xs sm:text-sm leading-tight drop-shadow">
+                    Bakteri, Jamur &amp; Bau Berkembang Cepat!
+                  </p>
+                  <div class="mt-1.5 flex gap-1">
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-300 animate-pulse"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-300 animate-pulse"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-300 animate-pulse"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Dark Red Warning Banner -->
+          <div class="relative z-10 bg-[#990000] border-t-4 border-[#FFEA00] px-4 sm:px-6 py-4 sm:py-5 flex items-center gap-3.5 sm:gap-5">
+            <!-- Yellow Exclamation Triangle -->
+            <div class="shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
+              <svg viewBox="0 0 100 90" class="w-full h-full drop-shadow-md">
+                <polygon points="50,4 96,86 4,86" fill="#FFCC00" stroke="#E6AC00" stroke-width="4" stroke-linejoin="round" />
+                <rect x="45" y="28" width="10" height="32" rx="5" fill="#1F2937" />
+                <circle cx="50" cy="72" r="5.5" fill="#1F2937" />
+              </svg>
+            </div>
+            <p class="font-black-display uppercase text-sm sm:text-[19px] leading-[1.25] tracking-tight text-white">
+              <span class="text-[#FFEA00]">SATU KETIDAKSEIMBANGAN pH KECIL</span> DI AREA INTIM SUDAH CUKUP UNTUK <span class="text-[#FFEA00]">MERUSAK KENYAMANAN &amp; KEHARMONISAN ANDA !!</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 2: "SUDAH BANYAK KASUSNYA" NEWS CLIPPINGS (Matches Image 2)     -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-white pt-6 pb-5 px-3 sm:px-5" id="poster-2">
+        <h2 class="font-impact text-center text-black uppercase text-[34px] sm:text-[46px] leading-none tracking-tight mb-4">
+          SUDAH BANYAK KASUSNYA
+        </h2>
+
+        <!-- Deep Red News Clippings Container -->
+        <div class="bg-[#990000] rounded-[26px] p-3.5 sm:p-6 shadow-lg flex flex-col gap-3.5">
+          <p class="font-black-display text-center uppercase text-[#FFEA00] text-lg sm:text-2xl leading-snug drop-shadow-[0_2px_2px_rgba(0,0,0,0.85)] px-2">
+            “KEPUTIHAN &amp; BAU TAK SEDAP DIBIARKAN,<br />RASA PERCAYA DIRI &amp; KEHARMONISAN HILANG SEKETIKA”
+          </p>
+
+          <!-- News Card 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-md border border-neutral-200">
+            <div class="bg-[#004A8F] text-white px-3.5 py-2 flex items-center justify-between text-[10px] sm:text-xs font-bold tracking-wider">
+              <span class="font-serif text-xs sm:text-sm tracking-normal">SUARA KESEHATAN WANITA</span>
+              <div class="hidden sm:flex gap-3 text-[10px] opacity-90">
+                <span>HOME</span>
+                <span>KESEHATAN</span>
+                <span>KELUARGA</span>
+                <span>EDUKASI</span>
+              </div>
+            </div>
+            <div class="p-3.5 sm:p-4">
+              <p class="text-[11px] text-neutral-500 mb-1">Beranda &gt; Kesehatan Intim Wanita</p>
+              <h3 class="font-bold text-neutral-900 text-base sm:text-[21px] leading-snug">
+                78% Wanita Mengalami <span class="inline-block border-2 border-[#990000] px-1.5 py-0.5 text-[#990000] bg-red-50">Keputihan &amp; Bau Tak Sedap</span> Akibat pH Area Intim Tidak Seimbang
+              </h3>
+              <p class="text-[11px] text-neutral-400 mt-1.5">by Redaksi Kesehatan — 16 Oktober 2025</p>
+              <p class="text-xs text-neutral-600 mt-2 leading-relaxed">
+                <strong>JAKARTA</strong> — Dokter spesialis kesehatan wanita mengingatkan bahwa penggunaan sabun mandi biasa dengan pH basa pada area kewanitaan justru mematikan bakteri baik <em>Lactobacillus</em> dan memicu gatal, bau tak sedap, hingga infeksi berulang.
+              </p>
+            </div>
+          </div>
+
+          <!-- News Card 2 -->
+          <div class="bg-white rounded-xl p-2.5 sm:p-3 shadow-md border border-neutral-200 flex gap-3 items-center">
+            <img
+              src="/blog/panduan-perawatan-intim-wanita-ph-seimbang.jpg"
+              alt="Kasus Infeksi dan Gatal Area Kewanitaan"
+              class="w-28 h-20 sm:w-36 sm:h-24 object-cover rounded-lg shrink-0"
+              loading="lazy"
+            />
+            <div class="flex-1 min-w-0">
+              <span class="text-[10px] font-semibold text-neutral-400 uppercase">Medis &amp; Gaya Hidup</span>
+              <h3 class="font-bold text-neutral-900 text-xs sm:text-[15px] leading-snug mt-0.5">
+                Sering Dianggap Sepele, <span class="inline-block border-2 border-[#990000] px-1 text-[#990000] bg-red-50">Gatal &amp; Iritasi Kewanitaan</span> Bikin Wanita Stres dan Kurang Nyaman Beraktivitas
+              </h3>
+              <p class="text-[10px] text-neutral-400 mt-1">30 Juli 2025 - 10:31 WIB</p>
+            </div>
+          </div>
+
+          <!-- News Card 3 -->
+          <div class="bg-white rounded-xl p-2.5 sm:p-3 shadow-md border border-neutral-200 flex gap-3 items-center">
+            <img
+              src="/blog/tips-komunikasi-keintiman-sehat-dan-terbuka.jpg"
+              alt="Keharmonisan Rumah Tangga Terganggu"
+              class="w-28 h-20 sm:w-36 sm:h-24 object-cover rounded-lg shrink-0"
+              loading="lazy"
+            />
+            <div class="flex-1 min-w-0">
+              <span class="text-[10px] font-semibold text-neutral-400 uppercase">Harmoni Pasutri</span>
+              <h3 class="font-bold text-neutral-900 text-xs sm:text-[15px] leading-snug mt-0.5">
+                Survei: Masalah <span class="inline-block border-2 border-[#990000] px-1 text-[#990000] bg-red-50">Bau &amp; Kurang Percaya Diri</span> Jadi Pemicu Utama Istri Menolak Momen Intim Bersama Suami
+              </h3>
+              <p class="text-[10px] text-neutral-400 mt-1">05 Oktober 2025 - 20:05 WIB</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Yellow Callout Box -->
+        <div class="mt-4 bg-[#FFEA00] border-[3.5px] border-black rounded-2xl py-3.5 px-4 text-center shadow-md">
+          <p class="font-impact uppercase text-2xl sm:text-[32px] leading-tight tracking-wide">
+            <span class="text-black">KENALI </span>
+            <span class="text-[#990000]">TANDA AREA KEWANITAAN </span>
+            <span class="text-black">ANDA SEDANG</span>
+            <br />
+            <span class="text-[#990000]">TERANCAM</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 3: 4 RED SYMPTOM BARS + YELLOW WARNING (Matches Image 3)       -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-white py-3 px-4 sm:px-8 flex flex-col gap-3.5" id="poster-3">
+        <div class="bg-[#8F0000] border-[3px] border-black rounded-2xl py-4 px-3 text-center shadow">
+          <span class="font-impact uppercase text-[#FFEA00] text-2xl sm:text-[34px] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]">
+            KEPUTIHAN BERLEBIH &amp; BERWARNA
+          </span>
+        </div>
+
+        <div class="bg-[#8F0000] border-[3px] border-black rounded-2xl py-4 px-3 text-center shadow">
+          <span class="font-impact uppercase text-[#FFEA00] text-2xl sm:text-[34px] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]">
+            BAU TAK SEDAP WALAU SUDAH MANDI
+          </span>
+        </div>
+
+        <div class="bg-[#8F0000] border-[3px] border-black rounded-2xl py-4 px-3 text-center shadow">
+          <span class="font-impact uppercase text-[#FFEA00] text-2xl sm:text-[34px] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]">
+            GATAL, PERIH &amp; LEMBAP SEHARIAN
+          </span>
+        </div>
+
+        <div class="bg-[#8F0000] border-[3px] border-black rounded-2xl py-4 px-3 text-center shadow">
+          <span class="font-impact uppercase text-[#FFEA00] text-2xl sm:text-[34px] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]">
+            KURANG KESAT &amp; HILANG PERCAYA DIRI
+          </span>
+        </div>
+
+        <!-- Yellow Warning Box with Left & Right Triangles -->
+        <div class="mt-2 bg-[#FFEA00] border-[4px] border-black rounded-2xl py-3.5 px-3 sm:px-5 flex items-center justify-between gap-2 shadow-md">
+          <svg viewBox="0 0 100 90" class="w-11 h-11 sm:w-14 sm:h-14 shrink-0">
+            <polygon points="50,6 95,85 5,85" fill="#FFCC00" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
+            <rect x="45" y="28" width="10" height="30" rx="4" fill="#000000" />
+            <circle cx="50" cy="70" r="5.5" fill="#000000" />
+          </svg>
+          <p class="font-black-display uppercase text-black text-center text-base sm:text-[22px] leading-tight">
+            RAWAT AREA INTIM ANDA<br />SEBELUM SEMAKIN PARAH
+          </p>
+          <svg viewBox="0 0 100 90" class="w-11 h-11 sm:w-14 sm:h-14 shrink-0">
+            <polygon points="50,6 95,85 5,85" fill="#FFCC00" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
+            <rect x="45" y="28" width="10" height="30" rx="4" fill="#000000" />
+            <circle cx="50" cy="70" r="5.5" fill="#000000" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 4: "JANGAN SEPELEKAN / WASPADA !!" (Matches Image 4)           -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-white pt-4 pb-2" id="poster-4">
+        <!-- Top Red Header Bar -->
+        <div class="bg-[#D60000] py-3 px-4 text-center">
+          <h2 class="font-black-display uppercase text-white text-2xl sm:text-4xl tracking-tight">
+            JANGAN SEPELEKAN
+          </h2>
+        </div>
+
+        <!-- Dramatic Visual Section -->
+        <div class="relative w-full aspect-[4/3] overflow-hidden bg-neutral-900">
+          <img
+            src="/blog/memahami-perangsang-wanita-alami-dan-mood-booster.jpg"
+            alt="Jangan Sepelekan Masalah Kewanitaan"
+            class="w-full h-full object-cover opacity-80 contrast-125"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#8B0000] via-transparent to-white/30"></div>
+
+          <!-- Bottom Red Alert Box Overlay -->
+          <div class="absolute inset-x-3 sm:inset-x-6 bottom-3 sm:bottom-5 bg-[#CC0000] border-[3px] border-white/90 rounded-lg p-3 sm:p-4 text-center shadow-2xl">
+            <p class="font-black-display uppercase text-[#FFEA00] text-3xl sm:text-5xl leading-none tracking-wide drop-shadow">
+              WASPADA !!
+            </p>
+            <p class="font-black-display uppercase text-[#FFEA00] text-base sm:text-2xl leading-tight mt-1.5">
+              JANGAN TUNGGU SAMPAI INFEKSI KRONIS<br />&amp; KEHARMONISAN RUMAH TANGGA RETAAK
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 5: HERO PRODUCT SOLUTION REVEAL (Matches Image 5)              -->
+      <!-- ===================================================================== -->
+      <section class="relative w-full overflow-hidden bg-gradient-to-b from-[#E8F4FA] via-[#D4EEF9] to-[#990000]" id="poster-5">
+        <div class="relative pt-7 pb-0 flex flex-col items-center text-center">
+          <!-- Headline Stack -->
+          <div class="px-4 z-10">
+            <h2 class="font-black-display italic uppercase text-[#CC0000] text-3xl sm:text-5xl leading-tight text-stroke-white drop-shadow-md">
+              PINCK SMILE<br />PILIHAN TERBAIK
+            </h2>
+            <p class="font-black-display italic text-black text-base sm:text-2xl mt-1 text-stroke-white-sm">
+              Untuk Perawatan Intim &amp; Keharmonisan Wanita
+            </p>
+
+            <!-- White Verified Badge Pill -->
+            <div class="mt-2.5 inline-flex items-center gap-1.5 bg-white px-4 py-1 rounded-full shadow border border-sky-100">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-sky-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="font-extrabold text-black text-xs sm:text-base">
+                Formula pH 4.0 Botanical Pertama
+              </span>
+            </div>
+
+            <!-- Dark Red Pill -->
+            <div class="mt-2">
+              <span class="inline-block bg-[#990000] text-[#FFEA00] font-black-display italic uppercase text-xs sm:text-lg px-6 py-1.5 rounded-full shadow-md">
+                UNTUK WANITA AKTIF &amp; ISTRI TERCINTA
+              </span>
+            </div>
+          </div>
+
+          <!-- Center Botanical Product Podium Graphic -->
+          <div class="relative w-full mt-3">
+            <img
+              src="/lp/botanical-podium.jpg"
+              alt="Pinck Smile Botanical Formula Podium"
+              class="w-full aspect-[4/4] object-cover object-bottom"
+              loading="lazy"
+            />
+            <!-- Official Pinck Smile Complete Set Bottle Card Overlay Badge -->
+            <div class="absolute bottom-4 right-3 sm:right-6 bg-white/95 backdrop-blur-sm border-2 border-[#D98AAF] rounded-2xl p-2 sm:p-2.5 shadow-xl flex items-center gap-2.5 max-w-[230px] sm:max-w-[260px] text-left">
+              <img
+                src="/products/complete-comfort-set.jpg"
+                alt="Pinck Smile Complete Comfort Set"
+                class="w-14 h-14 sm:w-16 sm:h-16 object-cover rounded-xl shrink-0 border border-pink-200"
+              />
+              <div>
+                <span class="inline-block bg-emerald-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase">
+                  100% Original BPOM
+                </span>
+                <p class="font-extrabold text-neutral-900 text-xs sm:text-sm leading-tight mt-0.5">
+                  Pinck Smile Duo Care
+                </p>
+                <p class="text-[10px] text-neutral-600 leading-tight">
+                  Wash 150ml + Mist 60ml
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Dark Red 7X Banner -->
+          <div class="w-full bg-[#8B0000] border-t-4 border-white/20 px-4 sm:px-7 py-4 sm:py-5 flex items-center gap-3 sm:gap-5 text-left">
+            <span class="font-black-display text-[#FFEA00] text-5xl sm:text-7xl leading-none text-stroke-black shrink-0">
+              7X
+            </span>
+            <p class="font-black-display uppercase text-white text-sm sm:text-[21px] leading-[1.2]">
+              LEBIH <span class="text-[#FFEA00]">EFEKTIF ATASI BAU TAK SEDAP,</span><br />
+              KEPUTIHAN, GATAL &amp; JAGA<br />
+              KEHARMONISAN ALAMI
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 6: WHATSAPP PHONE MOCKUP & CONSULTANT (Matches Image 6)        -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-white pt-6" id="poster-6">
+        <div class="px-3 text-center">
+          <h2 class="font-impact uppercase text-black text-[28px] sm:text-[42px] leading-[1.1]">
+            MEREKA YANG TERBEBAS DARI<br />
+            MASALAH <span class="text-[#990000]">KEWANITAAN &amp; BAU TAK SEDAP!</span>
+          </h2>
+
+          <!-- 3 Animated Triple-Down Red Chevrons -->
+          <div class="my-3 flex justify-center gap-8 sm:gap-12">
+            {[1, 2, 3].map(() => (
+              <div class="animate-chevron flex flex-col items-center -space-y-2">
+                <svg class="w-8 h-8 sm:w-10 sm:h-10 text-[#CC0000]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                </svg>
+                <svg class="w-8 h-8 sm:w-10 sm:h-10 text-[#CC0000]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                </svg>
+                <svg class="w-8 h-8 sm:w-10 sm:h-10 text-[#CC0000]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                </svg>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Red Composite Scene: Consultant + Smartphone WhatsApp Screen + Callout Bubble -->
+        <div class="relative w-full bg-gradient-to-b from-[#D94A4A] via-[#B81D1D] to-[#990000] pt-4 pb-0 overflow-hidden">
+          <!-- Subtle Customer Grid Pattern Behind -->
+          <img
+            src="/lp/happy-customers-collage.jpg"
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-multiply"
+            loading="lazy"
+          />
+
+          <div class="relative z-10 px-3 sm:px-5 grid grid-cols-12 items-end gap-2">
+            <!-- Left: Wellness Consultant Holding Bottle -->
+            <div class="col-span-6 relative">
+              <img
+                src="/lp/doctor-consultant.jpg"
+                alt="Konsultan Kesehatan Wanita Pinck Smile"
+                class="w-full h-[300px] sm:h-[390px] object-cover object-top rounded-t-2xl shadow-xl border-2 border-white/40"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Right: Smartphone WhatsApp Chat Mockup -->
+            <div class="col-span-6 pb-4">
+              <div class="bg-[#111827] rounded-[24px] p-1.5 sm:p-2 shadow-2xl border-2 border-neutral-700 transform rotate-1">
+                <!-- WhatsApp Top Bar -->
+                <div class="bg-[#075E54] text-white px-2.5 py-2 rounded-t-[18px] flex items-center justify-between">
+                  <div class="flex items-center gap-1.5 min-w-0">
+                    <span class="w-6 h-6 rounded-full bg-pink-200 text-pink-900 font-bold text-[10px] flex items-center justify-center shrink-0">
+                      PS
+                    </span>
+                    <div class="truncate">
+                      <p class="text-[10px] sm:text-xs font-bold leading-none truncate">CS Pinck Smile COD</p>
+                      <p class="text-[8px] text-emerald-200 leading-none mt-0.5">online • hari ini</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px]">📹 📞</span>
+                </div>
+
+                <!-- WhatsApp Chat Body -->
+                <div class="bg-[#ECE5DD] p-2 space-y-2 text-[10px] sm:text-[11px] leading-snug">
+                  <div class="bg-[#DCF8C6] rounded-lg p-2 shadow-sm text-neutral-800 ml-3">
+                    Alhamdulillah kak, konsumen kami sebelumnya yang ada keluhan keputihan &amp; bau tak sedap sudah banyak yang tuntas &amp; makin harmonis berkat rutin pakai Pinck Smile 🙏🥰
+                    <span class="block text-right text-[8px] text-neutral-400 mt-0.5">10.36 ✓✓</span>
+                  </div>
+
+                  <div class="bg-white rounded-lg p-2 shadow-sm text-neutral-900 mr-2 border-l-4 border-pink-500">
+                    Makasih untuk Pinck Smile, baru pakai 1 paket keluhan keputihan &amp; gatal saya sembuh total, kesat &amp; wangi lembut seharian. Suami makin sayang!
+                    <span class="block text-right text-[8px] text-neutral-400 mt-0.5">19.46</span>
+                  </div>
+
+                  <div class="bg-[#DCF8C6] rounded-lg p-2 shadow-sm text-neutral-800 ml-3">
+                    Alhamdulillah 😊 Turut senang mendengarnya kak, semoga sehat &amp; harmonis selalu ya kak. Aamiin 🤲
+                    <span class="block text-right text-[8px] text-neutral-400 mt-0.5">20.05 ✓✓</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zoomed-Out White WhatsApp Message Bubble Overlay -->
+          <div class="relative z-20 mx-3 sm:mx-6 -mt-6 mb-4 bg-white rounded-2xl p-3.5 sm:p-5 shadow-2xl border-2 border-neutral-300">
+            <p class="text-neutral-900 text-xs sm:text-base font-medium leading-relaxed">
+              “Makasih untuk <strong>Pinck Smile</strong>, baru habis 1 paket keluhan keputihan &amp; bau tak sedap saya hilang total, saya sangat bersyukur ketemu Pinck Smile. Sekarang terasa bersih, kesat, dan nyaman seharian. Sekali lagi makasih untuk Pinck Smile, keluhan yang sudah 6 bulan bikin minder akhirnya tuntas juga.”
+            </p>
+            <span class="block text-right text-xs text-neutral-400 font-semibold mt-1">19.46 ✓✓</span>
+          </div>
+
+          <!-- Bottom Bright Yellow Banner -->
+          <div class="relative z-20 bg-[#FFEA00] border-t-4 border-[#990000] py-3.5 px-3 text-center">
+            <p class="font-black-display uppercase text-xl sm:text-3xl leading-tight">
+              <span class="text-[#990000]">PERUBAHAN</span>
+              <span class="text-black"> TERASA</span>
+              <br />
+              <span class="text-black">MULAI PEMAKAIAN PERTAMA</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 7: 3 STACKED SOCIAL MEDIA TESTIMONIAL CARDS (Matches Image 7)  -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-[#FDF8F8] py-5 px-3 sm:px-5 space-y-6" id="poster-7">
+        <!-- Review Card 1 -->
+        <div class="space-y-3">
+          <div class="bg-[#CC0000] py-2.5 px-3 rounded-lg text-center shadow">
+            <h3 class="font-black-display uppercase text-white text-lg sm:text-2xl leading-tight">
+              KEPUTIHAN MENAHUN &amp; BAU<br />
+              <span class="text-[#FFEA00]">TUNTAS SECARA ALAMI</span>
+            </h3>
+          </div>
+          <div class="grid grid-cols-12 gap-2.5 items-center">
+            <div class="col-span-4">
+              <img
+                src="/blog/body-literacy-membangun-percaya-diri-wanita.jpg"
+                alt="Testimoni Ibu Rina Wulandari"
+                class="w-full aspect-[3/4] object-cover rounded-xl border-2 border-[#CC0000] shadow-md"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-span-8 bg-white border-[3px] border-[#CC0000] rounded-2xl p-3 sm:p-4 shadow-lg">
+              <p class="font-bold text-neutral-900 text-xs sm:text-sm mb-1">Rina Wulandari</p>
+              <p class="text-neutral-800 text-[11px] sm:text-[13px] leading-relaxed">
+                Saya juga sdh mencobanya. Dulu sering banget <mark class="bg-[#FFEA00] px-1 font-semibold">keputihan berlebih dan gatal</mark> apalagi kalau habis aktivitas padat. Sudah coba berbagai sabun kewanitaan di warung tapi malah makin kering dan perih. Setelah <mark class="bg-[#FFEA00] px-1 font-semibold">ada iklan ini saya pesan Paket Complete Pinck Smile, baru rutin pakai seminggu hasilnya memuaskan. Gatal &amp; bau tak sedap hilang total,</mark> segar seharian. Trima kasih Pinck Smile.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="space-y-3">
+          <div class="bg-[#CC0000] py-2.5 px-3 rounded-lg text-center shadow">
+            <h3 class="font-black-display uppercase text-white text-lg sm:text-2xl leading-tight">
+              AREA INTIM SEGAR &amp; NYAMAN<br />
+              <span class="text-[#FFEA00]">DALAM 2 HARI PEMAKAIAN</span>
+            </h3>
+          </div>
+          <div class="grid grid-cols-12 gap-2.5 items-center">
+            <div class="col-span-4">
+              <img
+                src="/lp/doctor-consultant.jpg"
+                alt="Testimoni Dwi Sugiarti"
+                class="w-full aspect-[3/4] object-cover rounded-xl border-2 border-[#CC0000] shadow-md"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-span-8 bg-white border-[3px] border-[#CC0000] rounded-2xl p-3 sm:p-4 shadow-lg">
+              <p class="font-bold text-neutral-900 text-xs sm:text-sm mb-1">
+                Dwi Sugiarti · <span class="text-blue-600 font-semibold">Ikuti</span>
+              </p>
+              <p class="text-neutral-800 text-[11px] sm:text-[13px] leading-relaxed">
+                Awalnya minder banget sama suami karena <mark class="bg-[#FFEA00] px-1 font-semibold">sering lembap dan bau kurang sedap</mark> setiap pulang kerja. <mark class="bg-[#FFEA00] px-1 font-semibold">Alhamdulillah beli Pinck Smile baru 2 hari pakai, sudah terasa kesat alami, bersih, dan wanginya lembut banget 😍</mark> Suami sampai nanya pakai perawatan apa kok sekarang beda banget. Semoga berkah selalu Pinck Smile!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="space-y-3">
+          <div class="bg-[#CC0000] py-2.5 px-3 rounded-lg text-center shadow">
+            <h3 class="font-black-display uppercase text-white text-lg sm:text-2xl leading-tight">
+              BEBAS IRITASI &amp; MAKIN HARMONIS<br />
+              <span class="text-[#FFEA00]">TERUJI LEMBUT pH 4.0</span>
+            </h3>
+          </div>
+          <div class="grid grid-cols-12 gap-2.5 items-center">
+            <div class="col-span-4">
+              <img
+                src="/blog/fakta-medis-perangsang-wanita-dan-stimulasi-aman.jpg"
+                alt="Testimoni Sarah Maharani"
+                class="w-full aspect-[3/4] object-cover rounded-xl border-2 border-[#CC0000] shadow-md"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-span-8 bg-white border-[3px] border-[#CC0000] rounded-2xl p-3 sm:p-4 shadow-lg">
+              <p class="font-bold text-neutral-900 text-xs sm:text-sm mb-1">Sarah Maharani</p>
+              <p class="text-neutral-800 text-[11px] sm:text-[13px] leading-relaxed">
+                Saya punya kulit sensitif sejak 2022, salah pakai sabun langsung perih dan iritasi. Setelah rutin pakai <strong>Gentle Intimate Wash</strong> &amp; semprot <strong>Hydrating Mist Pinck Smile</strong>, keluhan gatal mulai hilang, sekarang tetap stok di kamar mandi &amp; tas. Dan alhamdulillah tidak pernah iritasi lagi. Paket datang juga polos banget jadi privasi aman.
+              </p>
+              <div class="mt-2 flex items-center gap-3 text-[10px] text-neutral-500 font-semibold">
+                <span>5 hari</span>
+                <span>Suka</span>
+                <span>Balas</span>
+                <span class="text-blue-600">Kirim Pesan</span>
+                <span>Sembunyikan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 8: SEBELUM & SESUDAH COMPARISON (Matches Image 8)              -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-[#B80F14] py-6 px-3 sm:px-6 text-white" id="poster-8">
+        <h2 class="font-black-display uppercase text-center text-white text-2xl sm:text-4xl leading-tight mb-5">
+          SEBELUM &amp; SESUDAH<br />PAKAI PINCK SMILE
+        </h2>
+
+        <!-- Comparison Row 1: Microbiome & pH Balance -->
+        <div class="grid grid-cols-11 items-center gap-2 mb-5">
+          <!-- SEBELUM -->
+          <div class="col-span-5 flex flex-col items-center">
+            <div class="w-full aspect-[4/3] rounded-xl border-[3px] border-white bg-[#3B0A0C] p-3 flex flex-col items-center justify-center text-center relative overflow-hidden">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600/80 blur-md absolute"></div>
+              <span class="relative z-10 bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">
+                pH &gt; 5.5 (Basa/Rusak)
+              </span>
+              <p class="relative z-10 font-bold text-pink-100 text-xs sm:text-sm mt-2 leading-snug">
+                Bakteri Penyebab Bau &amp; Jamur Keputihan Mengumpul
+              </p>
+              <p class="relative z-10 text-[10px] text-red-200 mt-1">
+                Kemerahan, Gatal &amp; Lembap
+              </p>
+            </div>
+            <span class="font-black-display uppercase text-[#FFEA00] text-lg sm:text-2xl mt-2">
+              SEBELUM
+            </span>
+          </div>
+
+          <!-- White Arrow -->
+          <div class="col-span-1 flex justify-center">
+            <svg class="w-8 h-8 sm:w-12 sm:h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </div>
+
+          <!-- SESUDAH -->
+          <div class="col-span-5 flex flex-col items-center">
+            <div class="w-full aspect-[4/3] rounded-xl border-[3px] border-white bg-[#0B3B24] p-3 flex flex-col items-center justify-center text-center relative overflow-hidden">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-400/50 blur-md absolute"></div>
+              <span class="relative z-10 bg-emerald-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">
+                pH 4.0 Ideal Seimbang
+              </span>
+              <p class="relative z-10 font-bold text-emerald-50 text-xs sm:text-sm mt-2 leading-snug">
+                Flora Alami Terlindungi &amp; Bebas Bakteri Bau
+              </p>
+              <p class="relative z-10 text-[10px] text-emerald-200 mt-1">
+                Tenang, Lembut &amp; Segar
+              </p>
+            </div>
+            <span class="font-black-display uppercase text-[#FFEA00] text-lg sm:text-2xl mt-2">
+              SESUDAH
+            </span>
+          </div>
+        </div>
+
+        <!-- Comparison Row 2: Daily Comfort & Confidence -->
+        <div class="grid grid-cols-11 items-center gap-2">
+          <!-- SEBELUM -->
+          <div class="col-span-5 flex flex-col items-center">
+            <div class="w-full aspect-[4/3] rounded-xl border-[3px] border-white bg-[#2A1215] overflow-hidden relative">
+              <img
+                src="/lp/hero-problem.jpg"
+                alt="Sebelum Pakai Pinck Smile"
+                class="w-full h-full object-cover opacity-65 grayscale"
+                loading="lazy"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-red-950/90 py-1.5 px-2 text-center">
+                <p class="text-[10px] sm:text-xs font-bold text-red-200">
+                  Minder, Kurang Nyaman &amp; Risih
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- White Arrow -->
+          <div class="col-span-1 flex justify-center">
+            <svg class="w-8 h-8 sm:w-12 sm:h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </div>
+
+          <!-- SESUDAH -->
+          <div class="col-span-5 flex flex-col items-center">
+            <div class="w-full aspect-[4/3] rounded-xl border-[3px] border-white bg-[#102E22] overflow-hidden relative">
+              <img
+                src="/products/complete-comfort-set.jpg"
+                alt="Sesudah Pakai Pinck Smile"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-emerald-900/90 py-1.5 px-2 text-center">
+                <p class="text-[10px] sm:text-xs font-bold text-emerald-100">
+                  Bersih, Kesat, Harum &amp; Harmonis
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- BANNER 9 & 10: ANIMATED GUARANTEE & CTA STRIP (Matches GIF 9 & 10)    -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-white py-4 px-3 sm:px-5 flex flex-col gap-3" id="poster-9-10">
+        <!-- 4 Icon Guarantee Strip -->
+        <div class="bg-gradient-to-r from-[#8B0000] via-[#B80F14] to-[#8B0000] rounded-2xl p-3 sm:p-4 text-white shadow-lg border-2 border-[#FFEA00]">
+          <div class="grid grid-cols-4 gap-2 text-center">
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-[#990000] font-extrabold flex items-center justify-center text-xs sm:text-sm shadow">
+                BPOM
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold mt-1 text-[#FFEA00]">TERUJI AMAN</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-emerald-700 font-extrabold flex items-center justify-center text-xs sm:text-sm shadow">
+                pH 4.0
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold mt-1 text-[#FFEA00]">FLORA ALAMI</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-[#990000] font-extrabold flex items-center justify-center text-xs sm:text-sm shadow">
+                COD
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold mt-1 text-[#FFEA00]">BAYAR DITEMPAT</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-neutral-900 font-extrabold flex items-center justify-center text-xs sm:text-sm shadow">
+                100%
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold mt-1 text-[#FFEA00]">PRIVASI POLOS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Pulsing CTA Button Banner -->
+        <a
+          href="#form-pemesanan"
+          class="animate-cta-pulse block bg-gradient-to-b from-[#FFEA00] to-[#F59E0B] border-[3px] border-[#990000] rounded-2xl py-3.5 px-4 text-center shadow-xl">
+          <span class="font-impact uppercase text-[#990000] text-2xl sm:text-3xl tracking-wide block leading-none">
+            👉 KLIK AMBIL PROMO DISKON 30% SEKARANG 👈
+          </span>
+          <span class="font-extrabold text-black text-xs sm:text-sm block mt-1">
+            Bisa COD (Bayar Saat Paket Sampai) • Privasi Paket 100% Tertutup Rapat
+          </span>
+        </a>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 11: "PROMO SPESIAL DISKON 30%" SQUARE POSTER (Matches Img 11)  -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-gradient-to-b from-white via-[#F9F9F9] to-[#EFEFEF] pt-5 pb-6 px-3 sm:px-6 border-t border-neutral-200" id="poster-11">
+        <!-- Top Row: Brand Logo + Trust Badges + Official Store Pill -->
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+            <img
+              src="/pinck-smile-logo.svg"
+              alt="Pinck Smile Official"
+              class="h-9 sm:h-11 w-auto object-contain"
+            />
+            <!-- Circular Trust Chips -->
+            <div class="flex items-center gap-1.5">
+              <span class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-neutral-300 shadow-sm flex flex-col items-center justify-center text-[7px] sm:text-[8px] font-extrabold text-blue-800 leading-none text-center">
+                <span>BADAN</span>
+                <span class="text-[9px] text-emerald-600">POM</span>
+              </span>
+              <span class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-neutral-300 shadow-sm flex flex-col items-center justify-center text-[7px] sm:text-[8px] font-extrabold text-purple-900 leading-none text-center">
+                <span>HALAL</span>
+                <span class="text-[7px] text-neutral-500">TESTED</span>
+              </span>
+              <span class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-neutral-300 shadow-sm flex flex-col items-center justify-center text-[7px] sm:text-[8px] font-extrabold text-emerald-700 leading-none text-center">
+                <span>HERBAL</span>
+                <span class="text-[8px]">pH 4.0</span>
+              </span>
+              <span class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-amber-100 border border-amber-400 shadow-sm flex flex-col items-center justify-center text-[7px] sm:text-[8px] font-extrabold text-amber-900 leading-none text-center">
+                <span>BEST</span>
+                <span>SELLER</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Red Official Store Pill -->
+          <div class="inline-flex items-center gap-1.5 bg-[#CC0000] text-white px-3 py-1.5 rounded-xl shadow font-bold text-xs sm:text-sm">
+            <span class="w-4 h-4 rounded-full bg-emerald-400 text-white flex items-center justify-center text-[10px] font-black">✓</span>
+            <span>Official Store</span>
+          </div>
+        </div>
+
+        <!-- Giant PROMO SPESIAL Headline -->
+        <div class="text-center">
+          <h2 class="font-impact uppercase text-black text-5xl sm:text-[68px] leading-none tracking-tight drop-shadow-sm">
+            PROMO SPESIAL
+          </h2>
+          <div class="mt-2 inline-block bg-[#CC0000] border-b-4 border-[#800000] rounded-2xl px-7 sm:px-12 py-2 shadow-lg">
+            <span class="font-black-display uppercase text-[#FFEA00] text-2xl sm:text-4xl tracking-wide">
+              DISKON 30%
+            </span>
+          </div>
+        </div>
+
+        <!-- Product Image + Strikethrough Price & Offer Box -->
+        <div class="mt-5 grid grid-cols-12 items-center gap-3">
+          <!-- Left: Product Showcase on Marble Podium -->
+          <div class="col-span-6 relative">
+            <div class="rounded-2xl overflow-hidden border-2 border-pink-200 shadow-xl bg-white p-1.5">
+              <img
+                src="/products/complete-comfort-set.jpg"
+                alt="Promo Paket Pinck Smile Complete Comfort Set"
+                class="w-full aspect-square object-cover rounded-xl"
+                loading="lazy"
+              />
+            </div>
+            <span class="block text-[11px] font-semibold text-neutral-700 mt-2 pl-1">
+              * privasi paket 100% tertutup rapat
+            </span>
+          </div>
+
+          <!-- Right: Strikethrough Price + Red Price Box + Black COD Strip -->
+          <div class="col-span-6 flex flex-col items-center text-center">
+            <!-- Strikethrough Old Price -->
+            <div class="relative inline-block">
+              <span class="font-black-display text-black text-xl sm:text-3xl tracking-tight">
+                RP. 278.000
+              </span>
+              <span class="absolute left-[-6%] right-[-6%] top-1/2 h-1 bg-[#CC0000] -rotate-3"></span>
+            </div>
+
+            <!-- New Price Box -->
+            <div class="mt-1.5 w-full bg-[#CC0000] rounded-xl py-2.5 sm:py-3.5 px-2 shadow-lg border-2 border-[#990000]">
+              <span class="font-black-display text-[#FFEA00] text-2xl sm:text-4xl leading-none tracking-tight">
+                RP. 195.000
+              </span>
+            </div>
+
+            <!-- Black 3-Column Feature Strip -->
+            <div class="mt-2.5 w-full bg-black text-white rounded-xl p-2 sm:p-2.5 grid grid-cols-3 divide-x divide-neutral-700 text-center shadow-md">
+              <div class="px-1 flex flex-col items-center justify-center">
+                <span class="font-extrabold text-xs sm:text-sm text-white leading-none">🚚 COD</span>
+                <span class="text-[8px] sm:text-[9px] text-[#FFEA00] font-bold mt-0.5 leading-tight">BAYAR DI TEMPAT</span>
+              </div>
+              <div class="px-1 flex flex-col items-center justify-center">
+                <span class="font-extrabold text-[10px] sm:text-xs text-[#FFEA00] leading-none">GRATIS</span>
+                <span class="text-[8px] sm:text-[9px] text-white font-semibold mt-0.5 leading-tight">KONSULTASI</span>
+              </div>
+              <div class="px-1 flex flex-col items-center justify-center">
+                <span class="font-extrabold text-[8px] sm:text-[9px] text-[#FFEA00] leading-tight">PENGIRIMAN</span>
+                <span class="text-[8px] sm:text-[9px] text-white font-bold leading-tight">SELURUH INDONESIA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 12: "ISI FORM PEMESANAN DAN DAPATKAN POTONGAN HARGA 30%"       -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-white pt-4 pb-2 px-3 sm:px-6 text-center" id="poster-12">
+        <p class="font-black-display uppercase text-black text-base sm:text-2xl tracking-tight">
+          ISI FORM PEMESANAN DAN DAPATKAN
+        </p>
+
+        <div class="mt-2 bg-[#B80000] rounded-2xl py-4 sm:py-6 px-3 shadow-lg">
+          <p class="font-black-display uppercase text-[#FFEA00] text-4xl sm:text-6xl leading-[1.05] tracking-tight">
+            POTONGAN<br />HARGA 30%
+          </p>
+        </div>
+
+        <p class="mt-3 font-black-display uppercase text-lg sm:text-2xl leading-snug">
+          <span class="bg-[#FFEA00] text-[#990000] px-2 py-0.5">PROMO TERBATAS</span>
+          <span class="text-black"> UNTUK </span>
+          <span class="text-[#990000]">20 ORANG</span>
+          <span class="text-black"> PEMBELI PERTAMA</span>
+        </p>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- BANNER 13: ANIMATED DOWN ARROWS POINTING TO CHECKOUT FORM             -->
+      <!-- ===================================================================== -->
+      <div class="w-full bg-white py-2 flex justify-center gap-6 sm:gap-10">
+        {[1, 2, 3, 4].map(() => (
+          <div class="animate-chevron flex flex-col items-center -space-y-3">
+            <svg class="w-9 h-9 sm:w-11 sm:h-11 text-[#CC0000]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+            </svg>
+            <svg class="w-9 h-9 sm:w-11 sm:h-11 text-[#FF9900]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+            </svg>
+          </div>
+        ))}
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- BLOCK 14: EMBEDDED SCALEV-STYLE DIRECT CHECKOUT FORM (#form-pemesanan)-->
+      <!-- ===================================================================== -->
+      <section id="form-pemesanan" class="w-full bg-white px-3 sm:px-6 py-5 scroll-mt-4">
+        <div class="border-2 border-neutral-300 rounded-2xl bg-[#FAFAFA] p-4 sm:p-6 shadow-xl">
+          <!-- Form Header -->
+          <div class="border-b border-neutral-200 pb-3 mb-4 flex items-center justify-between">
+            <div>
+              <h2 class="font-extrabold text-neutral-900 text-lg sm:text-xl">
+                Lengkapi Data Pemesanan:
+              </h2>
+              <p class="text-xs text-neutral-500 mt-0.5">
+                Data Anda 100% rahasia &amp; paket dikirim tanpa keterangan nama produk.
+              </p>
+            </div>
+            <span class="bg-emerald-100 text-emerald-800 text-[11px] font-extrabold px-2.5 py-1 rounded-full shrink-0">
+              🔒 SSL Aman
+            </span>
+          </div>
+
+          <form id="scalev-order-form" class="space-y-4" novalidate>
+            <!-- Pilihan Paket Promo -->
+            <div>
+              <label class="block text-sm font-bold text-neutral-800 mb-2">
+                Pilih Paket Promo <span class="text-red-600">*</span>
+              </label>
+              <div class="space-y-2.5">
+                <!-- Option 1: Best Seller Complete Comfort Set -->
+                <label class="flex items-start gap-3 p-3 rounded-xl border-2 border-[#CC0000] bg-red-50/60 cursor-pointer transition hover:bg-red-50">
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Paket Promo Diskon 30% - Complete Comfort Set (Gentle Wash 150ml + Hydrating Mist 60ml + Silk Pouch) - Rp 195.000"
+                    data-price="Rp 195.000"
+                    checked
+                    class="mt-1 w-4 h-4 text-[#CC0000] focus:ring-[#CC0000]"
+                  />
+                  <div class="flex-1 text-xs sm:text-sm">
+                    <div class="flex flex-wrap items-center justify-between gap-1">
+                      <span class="font-extrabold text-neutral-900">
+                        🔥 PAKET PROMO DISKON 30% (Wash + Mist + Pouch)
+                      </span>
+                      <span class="bg-[#CC0000] text-[#FFEA00] text-[10px] font-extrabold px-2 py-0.5 rounded">
+                        TERLARIS
+                      </span>
+                    </div>
+                    <p class="text-neutral-600 text-xs mt-0.5">
+                      1x Gentle Intimate Wash (150ml) + 1x Soothing Hydrating Mist (60ml) + Bonus Silk Travel Pouch
+                    </p>
+                    <div class="mt-1 flex items-center gap-2">
+                      <span class="line-through text-neutral-400 text-xs">Rp 278.000</span>
+                      <span class="font-extrabold text-[#CC0000] text-sm sm:text-base">Rp 195.000</span>
+                      <span class="text-[11px] text-emerald-700 font-bold">(Hemat Rp 83.000)</span>
+                    </div>
+                  </div>
+                </label>
+
+                <!-- Option 2: Single Gentle Intimate Wash -->
+                <label class="flex items-start gap-3 p-3 rounded-xl border border-neutral-300 bg-white cursor-pointer transition hover:border-neutral-400">
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Paket 1 Botol - Pinck Smile Gentle Intimate Wash (150ml) - Rp 149.000"
+                    data-price="Rp 149.000"
+                    class="mt-1 w-4 h-4 text-[#CC0000] focus:ring-[#CC0000]"
+                  />
+                  <div class="flex-1 text-xs sm:text-sm">
+                    <span class="font-bold text-neutral-900">
+                      Paket Trial 1 Botol — Gentle Intimate Wash (150ml)
+                    </span>
+                    <div class="mt-1 flex items-center gap-2">
+                      <span class="line-through text-neutral-400 text-xs">Rp 199.000</span>
+                      <span class="font-extrabold text-neutral-900 text-sm">Rp 149.000</span>
+                    </div>
+                  </div>
+                </label>
+
+                <!-- Option 3: Ultimate Intimate Care Set -->
+                <label class="flex items-start gap-3 p-3 rounded-xl border border-neutral-300 bg-white cursor-pointer transition hover:border-neutral-400">
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Paket Lengkap Ultimate Ritual (Wash 150ml + Mist 60ml + Aura Intimate Device) - Rp 539.000"
+                    data-price="Rp 539.000"
+                    class="mt-1 w-4 h-4 text-[#CC0000] focus:ring-[#CC0000]"
+                  />
+                  <div class="flex-1 text-xs sm:text-sm">
+                    <span class="font-bold text-neutral-900">
+                      👑 Paket Lengkap Ultimate Ritual (Wash + Mist + Aura Device)
+                    </span>
+                    <div class="mt-1 flex items-center gap-2">
+                      <span class="line-through text-neutral-400 text-xs">Rp 767.000</span>
+                      <span class="font-extrabold text-neutral-900 text-sm">Rp 539.000</span>
+                      <span class="text-[11px] text-emerald-700 font-bold">(Hemat Rp 228.000)</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Nama Lengkap -->
+            <div>
+              <label for="input-nama" class="block text-sm font-bold text-neutral-800 mb-1">
+                Nama Lengkap <span class="text-red-600">*</span>
+              </label>
+              <input
+                id="input-nama"
+                name="nama"
+                type="text"
+                required
+                placeholder="Contoh: Bunda Rina / Ibu Dewi"
+                class="w-full rounded-xl border border-neutral-300 bg-white px-3.5 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-[#CC0000] focus:outline-none focus:ring-2 focus:ring-red-200"
+              />
+            </div>
+
+            <!-- No. WhatsApp with +62 Flag Prefix (Matches Scalev Form) -->
+            <div>
+              <label for="input-wa" class="block text-sm font-bold text-neutral-800 mb-1">
+                No. WhatsApp Aktif <span class="text-red-600">*</span>
+              </label>
+              <div class="flex rounded-xl border border-neutral-300 bg-white overflow-hidden focus-within:border-[#CC0000] focus-within:ring-2 focus-within:ring-red-200">
+                <div class="bg-neutral-100 border-r border-neutral-300 px-3 py-3 flex items-center gap-1.5 text-sm font-bold text-neutral-700 shrink-0">
+                  <span class="inline-block w-5 h-3.5 rounded-xs overflow-hidden border border-neutral-300 flex flex-col">
+                    <span class="block h-1/2 w-full bg-[#CE1126]"></span>
+                    <span class="block h-1/2 w-full bg-white"></span>
+                  </span>
+                  <span>+62</span>
+                </div>
+                <input
+                  id="input-wa"
+                  name="whatsapp"
+                  type="tel"
+                  required
+                  placeholder="81234567890"
+                  class="w-full px-3.5 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <!-- Alamat Lengkap -->
+            <div>
+              <label for="input-alamat" class="block text-sm font-bold text-neutral-800 mb-1">
+                Alamat Lengkap Pengiriman <span class="text-red-600">*</span>
+              </label>
+              <textarea
+                id="input-alamat"
+                name="alamat"
+                rows="3"
+                required
+                placeholder="Tulis Jalan, No. Rumah, RT/RW, Kelurahan, Kecamatan, Kota/Kabupaten"
+                class="w-full rounded-xl border border-neutral-300 bg-white px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-[#CC0000] focus:outline-none focus:ring-2 focus:ring-red-200"
+              ></textarea>
+            </div>
+
+            <!-- Metode Pembayaran -->
+            <div>
+              <label for="input-metode" class="block text-sm font-bold text-neutral-800 mb-1">
+                Metode Pembayaran <span class="text-red-600">*</span>
+              </label>
+              <select
+                id="input-metode"
+                name="metode"
+                class="w-full rounded-xl border border-neutral-300 bg-white px-3.5 py-3 text-sm font-semibold text-neutral-900 focus:border-[#CC0000] focus:outline-none focus:ring-2 focus:ring-red-200">
+                <option value="COD (Bayar di Tempat Saat Paket Sampai)">🚚 COD — Bayar di Tempat Saat Paket Sampai</option>
+                <option value="Transfer Bank / QRIS (Prioritas Kirim Hari Ini)">💳 Transfer Bank / QRIS (Diskon Ongkir)</option>
+              </select>
+            </div>
+
+            <!-- Validation Error Message -->
+            <div id="form-error-msg" class="hidden rounded-xl bg-red-100 border border-red-400 px-3.5 py-2.5 text-xs font-bold text-red-800">
+              Mohon lengkapi Nama Lengkap, Nomor WhatsApp, dan Alamat Pengiriman terlebih dahulu.
+            </div>
+
+            <!-- Confirmation Message -->
+            <div id="form-success-msg" class="hidden rounded-xl bg-emerald-100 border border-emerald-400 px-3.5 py-3 text-xs font-bold text-emerald-900">
+              ✓ Data pemesanan berhasil disiapkan! Mengarahkan Anda ke WhatsApp CS Resmi Pinck Smile...
+            </div>
+
+            <!-- Submit Button: LANJUT KE WHATSAPP -->
+            <button
+              type="submit"
+              class="w-full rounded-xl bg-[#16A34A] hover:bg-[#15803D] active:scale-[0.99] text-white font-black-display uppercase text-lg sm:text-xl py-4 px-6 shadow-lg transition flex items-center justify-center gap-2.5 cursor-pointer">
+              <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z" />
+              </svg>
+              <span>LANJUT KE WHATSAPP</span>
+            </button>
+
+            <!-- Alternative Official Marketplace Quick Checkout -->
+            <div class="pt-2 text-center">
+              <p class="text-[11px] text-neutral-500 mb-2">
+                Atau pesan langsung melalui Official Marketplace kami:
+              </p>
+              <div class="grid grid-cols-2 gap-2">
+                <a
+                  href="https://s.shopee.co.id/9zx2C9Pfba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="py-2 px-3 rounded-lg bg-[#EE4D2D] text-white font-bold text-xs flex items-center justify-center gap-1 hover:opacity-95 transition">
+                  <span>Shopee Official Mall ↗</span>
+                </a>
+                <a
+                  href="https://share.google/nJK2B7iDNKitHambl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="py-2 px-3 rounded-lg bg-[#0F146D] text-white font-bold text-xs flex items-center justify-center gap-1 hover:opacity-95 transition">
+                  <span>Lazada Official Store ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="text-[10px] text-center text-neutral-400 pt-1">
+              This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 15: 4x4 CUSTOMER COLLAGE + RED BOTTOM COUNTER (Matches Img 15) -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-gradient-to-b from-[#CC0000] via-[#DF2A2A] to-[#990000] pt-5 overflow-hidden" id="poster-15">
+        <div class="px-3 sm:px-5">
+          <img
+            src="/lp/happy-customers-collage.jpg"
+            alt="Ribuan Wanita Indonesia Telah Merasakan Manfaat Pinck Smile"
+            class="w-full rounded-2xl border-2 border-white/30 shadow-2xl"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Dark Red Curved Bottom Counter Banner -->
+        <div class="mt-4 bg-[#800000] rounded-t-[40px] pt-6 pb-7 px-4 sm:px-8 text-center border-t-4 border-[#FFEA00]/60 shadow-inner">
+          <p class="font-extrabold text-white text-base sm:text-[22px] leading-snug">
+            <span class="text-[#FFEA00] font-black-display">24.870+++</span> Wanita Indonesia Telah Terbebas dari Masalah Keputihan Berlebih, Bau Tak Sedap, Gatal &amp; Kembali Percaya Diri.<br />
+            <span class="text-[#FFEA00]">Tuntas Secara Alami, Privasi 100% Terjaga &amp; Kembali Harmonis Bersama Pasangan!</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 16: "WEBSITE RESMI" 3 GOLD SEALS GUARANTEE (Matches Image 16)  -->
+      <!-- ===================================================================== -->
+      <section class="relative w-full bg-[#FAF6F0] pb-7 pt-0 px-4 sm:px-8 overflow-hidden border-t border-neutral-200" id="poster-16">
+        <!-- Top Center Red Tab: WEBSITE RESMI -->
+        <div class="mx-auto max-w-[340px] bg-[#B80000] rounded-b-2xl py-2.5 px-5 text-center shadow-md flex items-center justify-center gap-2">
+          <span class="w-6 h-6 rounded-full border-2 border-white text-white flex items-center justify-center font-extrabold text-xs">
+            ✓
+          </span>
+          <span class="font-extrabold italic uppercase text-white text-lg sm:text-2xl tracking-wide">
+            WEBSITE RESMI
+          </span>
+        </div>
+
+        <!-- Center Brand Logo -->
+        <div class="my-5 flex flex-col items-center">
+          <img
+            src="/pinck-smile-logo.svg"
+            alt="Pinck Smile Official Store"
+            class="h-14 sm:h-16 w-auto object-contain drop-shadow"
+          />
+          <span class="text-xs font-bold tracking-widest uppercase text-neutral-600 mt-1">
+            Female Intimate Wellness Indonesia
+          </span>
+        </div>
+
+        <!-- 3 Gold Seal Rows -->
+        <div class="space-y-5 max-w-[540px] mx-auto">
+          <!-- Seal 1: 100% Original -->
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-full bg-gradient-to-br from-amber-300 via-yellow-500 to-amber-700 p-1.5 shadow-lg flex items-center justify-center">
+              <div class="w-full h-full rounded-full bg-[#111827] border-2 border-amber-200 flex flex-col items-center justify-center text-center p-1">
+                <span class="text-[8px] font-bold text-amber-300 uppercase tracking-wider">ORIGINAL</span>
+                <span class="font-black-display text-white text-sm sm:text-base bg-[#CC0000] px-2 py-0.5 rounded my-0.5">100%</span>
+                <span class="text-[8px] font-bold text-amber-300 uppercase tracking-wider">GUARANTEED</span>
+              </div>
+            </div>
+            <p class="font-black-display uppercase text-[#B80000] text-base sm:text-2xl leading-tight">
+              PRODUK 100% ASLI<br />BERKHASIAT
+            </p>
+          </div>
+
+          <!-- Seal 2: Gratis Konsultasi -->
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-full bg-gradient-to-br from-amber-300 via-yellow-500 to-amber-700 p-1.5 shadow-lg flex items-center justify-center">
+              <div class="w-full h-full rounded-full bg-[#111827] border-2 border-amber-200 flex flex-col items-center justify-center text-center p-1">
+                <span class="font-black-display text-amber-300 text-sm sm:text-base leading-none">100%</span>
+                <span class="text-[7px] font-bold text-white uppercase my-0.5">SATISFACTION</span>
+                <span class="text-[8px] font-extrabold bg-[#CC0000] text-white px-1.5 py-0.5 rounded uppercase">GUARANTEED</span>
+              </div>
+            </div>
+            <p class="font-black-display uppercase text-[#B80000] text-base sm:text-2xl leading-tight">
+              GRATIS KONSULTASI DAN<br />PELAYANAN RAMAH
+            </p>
+          </div>
+
+          <!-- Seal 3: Pengiriman Cepat, Bisa COD -->
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-full bg-gradient-to-br from-amber-300 via-yellow-500 to-amber-700 p-1.5 shadow-lg flex items-center justify-center">
+              <div class="w-full h-full rounded-full bg-amber-950 border-2 border-amber-200 flex flex-col items-center justify-center text-center p-1">
+                <span class="text-[8px] text-amber-300">★ ★ ★</span>
+                <span class="font-black-display text-white text-[10px] sm:text-xs uppercase tracking-tight bg-black/80 px-1.5 py-0.5 rounded my-0.5">
+                  BEST OFFER
+                </span>
+                <span class="text-[8px] text-amber-300">★ ★ ★</span>
+              </div>
+            </div>
+            <p class="font-black-display uppercase text-[#B80000] text-base sm:text-2xl leading-tight">
+              PENGIRIMAN CEPAT,<br />PRIVASI AMAN,<br />BISA COD
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- POSTER 17: INDONESIA MAP THOUSANDS OF BOXES SHIPPED (Matches Img 17)  -->
+      <!-- ===================================================================== -->
+      <section class="w-full bg-white py-7 px-3 sm:px-6 text-center border-t border-neutral-200" id="poster-17">
+        <h2 class="font-black-display uppercase text-2xl sm:text-4xl leading-tight tracking-tight">
+          <span class="text-white text-stroke-red">PESANAN RIBUAN PAKET</span>
+          <br />
+          <span class="text-[#990000]">DIKIRIM SETIAP HARINYA</span>
+        </h2>
+
+        <!-- stylized Red Archipelago Map of Indonesia with Pinck Smile Product Nodes -->
+        <div class="relative my-5 w-full aspect-[16/9] bg-gradient-to-b from-red-50/50 to-white rounded-2xl border border-red-100 flex items-center justify-center overflow-hidden p-2">
+          <!-- Indonesia Archipelago Stylized SVG Silhouette -->
+          <svg viewBox="0 0 800 320" class="w-full h-full fill-[#990000] drop-shadow">
+            <!-- Sumatra -->
+            <path d="M35,65 L95,95 L165,165 L195,215 L165,230 L105,175 L55,115 Z" />
+            <!-- Java -->
+            <path d="M205,235 L365,245 L395,260 L215,262 Z" />
+            <!-- Bali & Nusa Tenggara -->
+            <path d="M405,252 L445,255 L445,266 L405,264 Z M460,256 L520,258 L520,268 L460,266 Z M535,260 L585,264 L575,276 L535,272 Z" />
+            <!-- Kalimantan -->
+            <path d="M245,95 L345,75 L395,115 L375,185 L275,185 L235,145 Z" />
+            <!-- Sulawesi -->
+            <path d="M435,105 L505,95 L505,120 L465,135 L495,155 L485,205 L455,205 L445,155 L425,175 Z" />
+            <!-- Maluku -->
+            <path d="M545,125 L575,115 L580,155 L550,165 Z M555,180 L595,185 L590,205 L555,200 Z" />
+            <!-- Papua -->
+            <path d="M625,135 L715,125 L785,165 L785,235 L735,235 L715,195 L645,185 Z" />
+          </svg>
+
+          <!-- Product Bottle Pins Across Indonesia -->
+          <div class="absolute inset-0 pointer-events-none">
+            {[
+              { top: "24%", left: "10%", city: "Aceh" },
+              { top: "38%", left: "16%", city: "Medan" },
+              { top: "54%", left: "21%", city: "Palembang" },
+              { top: "72%", left: "28%", city: "Jakarta" },
+              { top: "75%", left: "35%", city: "Bandung" },
+              { top: "76%", left: "42%", city: "Semarang" },
+              { top: "77%", left: "48%", city: "Surabaya" },
+              { top: "79%", left: "55%", city: "Bali" },
+              { top: "42%", left: "34%", city: "Pontianak" },
+              { top: "48%", left: "43%", city: "Banjarmasin" },
+              { top: "32%", left: "46%", city: "Samarinda" },
+              { top: "52%", left: "57%", city: "Makassar" },
+              { top: "33%", left: "60%", city: "Manado" },
+              { top: "48%", left: "70%", city: "Ambon" },
+              { top: "50%", left: "84%", city: "Jayapura" },
+              { top: "64%", left: "91%", city: "Merauke" },
+            ].map((pin) => (
+              <div
+                style={`top: ${pin.top}; left: ${pin.left};`}
+                class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="w-6 h-8 sm:w-8 sm:h-10 rounded bg-white p-0.5 shadow-md border border-[#990000]">
+                  <img
+                    src="/products/gentle-intimate-wash.jpg"
+                    alt={pin.city}
+                    class="w-full h-full object-cover rounded-xs"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="bg-black/80 text-[#FFEA00] text-[7px] sm:text-[8px] font-bold px-1 rounded mt-0.5">
+                  {pin.city}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <h3 class="font-black-display uppercase text-2xl sm:text-4xl leading-none tracking-tight">
+          <span class="text-white text-stroke-red">KE SELURUH INDONESIA</span>
+        </h3>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- FOOTER: SCALEV BADGE & LEGAL LINKS                                    -->
+      <!-- ===================================================================== -->
+      <footer class="w-full bg-neutral-100 border-t border-neutral-200 py-6 px-4 text-center text-xs text-neutral-500 space-y-2">
+        <p class="font-bold text-neutral-700">
+          © {new Date().getFullYear()} PINCK SMILE OFFICIAL STORE — Female Intimate Wellness Indonesia
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-[11px] text-neutral-500">
+          <a href="/" class="hover:text-neutral-800 underline">Beranda Website</a>
+          <a href="/products" class="hover:text-neutral-800 underline">Katalog Produk</a>
+          <a href="/pinck-smile-obat-apa/" class="hover:text-neutral-800 underline">Informasi Produk</a>
+          <a href="/contact" class="hover:text-neutral-800 underline">Hubungi CS</a>
+        </div>
+      </footer>
+    </main>
+
+    <!-- STICKY BOTTOM MOBILE CTA BAR (<12% viewport height) -->
+    <div class="fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-t-2 border-[#CC0000] py-2 px-3 shadow-[0_-4px_20px_rgba(0,0,0,0.15)]">
+      <div class="max-w-[640px] mx-auto flex items-center justify-between gap-2.5">
+        <div class="min-w-0">
+          <span class="inline-block bg-[#CC0000] text-[#FFEA00] text-[10px] font-extrabold px-1.5 py-0.5 rounded uppercase">
+            PROMO DISKON 30%
+          </span>
+          <p class="font-extrabold text-neutral-900 text-xs sm:text-sm truncate mt-0.5">
+            Rp 195.000 <span class="line-through text-neutral-400 text-[11px] font-normal">Rp 278.000</span> • Bisa COD
+          </p>
+        </div>
+        <a
+          href="#form-pemesanan"
+          class="shrink-0 bg-[#16A34A] hover:bg-[#15803D] text-white font-extrabold text-xs sm:text-sm px-4 sm:px-6 py-2.5 rounded-xl shadow-md flex items-center gap-1.5 transition">
+          <span>AMBIL PROMO &amp; COD</span>
+          <span>↓</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CLIENT-SIDE FORM & AD TRACKING SCRIPT -->
+    <script is:inline>
+      (function () {
+        // Hide Ad Manager helper bar automatically if visitor comes from Meta/TikTok/Google Paid Ads
+        const params = new URLSearchParams(window.location.search);
+        const adBar = document.getElementById("ad-manager-bar");
+        if (
+          params.has("fbclid") ||
+          params.has("utm_source") ||
+          params.has("ttclid") ||
+          params.has("gclid")
+        ) {
+          if (adBar) adBar.style.display = "none";
+        }
+
+        const closeBtn = document.getElementById("close-ad-bar-btn");
+        if (closeBtn && adBar) {
+          closeBtn.addEventListener("click", function () {
+            adBar.style.display = "none";
+          });
+        }
+
+        const copyBtn = document.getElementById("copy-ad-url-btn");
+        if (copyBtn) {
+          copyBtn.addEventListener("click", function () {
+            const adUrl =
+              window.location.origin +
+              window.location.pathname +
+              "?utm_source=fb&utm_medium=paid&utm_campaign=promo_diskon_30";
+            navigator.clipboard.writeText(adUrl).then(function () {
+              copyBtn.textContent = "✓ Link Iklan Tersalin!";
+              setTimeout(function () {
+                copyBtn.textContent = "Salin Link Iklan FB/IG";
+              }, 2500);
+            });
+          });
+        }
+
+        // Order Form Submission Handler -> Direct WhatsApp Concierge
+        const form = document.getElementById("scalev-order-form");
+        const errorBox = document.getElementById("form-error-msg");
+        const successBox = document.getElementById("form-success-msg");
+
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const namaEl = document.getElementById("input-nama");
+            const waEl = document.getElementById("input-wa");
+            const alamatEl = document.getElementById("input-alamat");
+            const metodeEl = document.getElementById("input-metode");
+            const selectedPaket = form.querySelector('input[name="paket"]:checked');
+
+            const nama = namaEl ? namaEl.value.trim() : "";
+            const waRaw = waEl ? waEl.value.trim() : "";
+            const alamat = alamatEl ? alamatEl.value.trim() : "";
+            const metode = metodeEl ? metodeEl.value : "COD";
+            const paket = selectedPaket ? selectedPaket.value : "Paket Promo Diskon 30% - Rp 195.000";
+
+            if (!nama || !waRaw || !alamat) {
+              if (errorBox) errorBox.classList.remove("hidden");
+              if (successBox) successBox.classList.add("hidden");
+              return;
+            }
+
+            if (errorBox) errorBox.classList.add("hidden");
+            if (successBox) successBox.classList.remove("hidden");
+
+            const cleanWa = waRaw.replace(/^0+/, "");
+            const utmSource = params.get("utm_source") || (params.has("fbclid") ? "Facebook Ads" : "Website LP");
+            const utmCampaign = params.get("utm_campaign") || "Promo Diskon 30%";
+
+            const message = [
+              "Halo CS Resmi *PINCK SMILE*, saya mau ambil *PROMO DISKON 30%* dari Halaman Promo:",
+              "",
+              "📦 *Paket:* " + paket,
+              "👤 *Nama Penerima:* " + nama,
+              "📱 *No. WhatsApp:* +62" + cleanWa,
+              "🏠 *Alamat Lengkap:* " + alamat,
+              "💳 *Pembayaran:* " + metode,
+              "🔒 *Request:* Kemasan Polos Privasi 100% Aman",
+              "📊 *Sumber:* " + utmSource + " (" + utmCampaign + ")",
+              "",
+              "Mohon segera diproses ya kak, terima kasih! 🙏",
+            ].join("\n");
+
+            const waUrl =
+              "https://wa.me/6288980874055?text=" + encodeURIComponent(message);
+
+            setTimeout(function () {
+              window.location.href = waUrl;
+            }, 400);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,2 +1,5 @@
 # Redirects for Sitemaps and Legacy URLs (Cloudflare Pages & Workers compatible)
 /sitemap.xml /sitemap-index.xml 301
+/promo /promo-spesial 301
+/lp /promo-spesial 301
+
