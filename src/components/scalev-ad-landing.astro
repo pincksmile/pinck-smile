@@ -10,9 +10,9 @@ interface Props {
 }
 
 const {
-  title = "Promo Spesial Pinck Smile Diskon 30% — Solusi Perawatan Kewanitaan & Keharmonisan Alami (Bisa COD)",
-  description = "Atasi keputihan berlebih, bau tak sedap, gatal, dan jaga keseimbangan pH 4.0 area intim dengan Pinck Smile. Promo Diskon 30% hari ini, garansi 100% original, privasi paket tertutup rapat, bisa bayar di tempat (COD).",
-  canonicalPath = "/cegah-masalah-kewanitaan",
+  title = "Promo Spesial Pinck Smile — Female Mood Booster untuk Wanita Dewasa",
+  description = "Kenali faktor yang memengaruhi mood, rasa percaya diri, dan kenyamanan dalam hubungan intim. Temukan informasi produk Pinck Smile, cara penggunaan sesuai label, dan pilihan pemesanan.",
+  canonicalPath = "/female-mood-booster",
 } = Astro.props;
 
 const siteUrl = Astro.site ? Astro.site.origin : "https://pinck-smile.pages.dev";
@@ -50,7 +50,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           image: ogImageUrl,
         },
         image: {
-          alt: "Promo Spesial Pinck Smile Diskon 30% Bisa COD",
+          alt: "Pinck Smile Female Mood Booster",
         },
       }}
     />
@@ -117,7 +117,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
   </head>
 
   <body class="bg-[#1F2024] font-body text-neutral-900 antialiased selection:bg-red-700 selection:text-yellow-300 pb-20">
-    <!-- Top Helper Bar for Owner / Ad Manager (Locked to 420px mobile width; hidden when accessed with ?fbclid=) -->
+    <!-- Top Helper Bar for Owner / Ad Manager (Locked to 420px mobile width; hidden when accessed with ?fbclid=) 
     <div id="ad-manager-bar" class="mobile-viewport-lock bg-neutral-900 text-white text-[11px] py-2 px-3 border-b border-neutral-700">
       <div class="flex items-center justify-between gap-1.5">
         <div class="flex items-center gap-1.5 min-w-0">
@@ -125,6 +125,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           <span class="font-semibold text-amber-300 truncate">Tampilan Mobile (420px)</span>
           <a href="/" class="text-neutral-300 underline hover:text-white ml-1 shrink-0">← Beranda</a>
         </div>
+      
         <div class="flex items-center gap-1.5 shrink-0">
           <button
             type="button"
@@ -140,8 +141,10 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             ✕
           </button>
         </div>
+    
       </div>
     </div>
+    -->
 
     <!-- MAIN SCALEV MOBILE CANVAS CONTAINER (Strictly 420px Mobile Resolution on Both Mobile & Desktop) -->
     <main class="mobile-viewport-lock bg-white shadow-[0_0_50px_rgba(0,0,0,0.65)] overflow-hidden flex flex-col">
@@ -154,7 +157,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
         <div class="relative w-full aspect-[9/15] flex flex-col justify-between">
           <img
             src="/lp/hero-problem.jpg"
-            alt="Cegah Masalah Kewanitaan Sebelum Merusak Keharmonisan Dengan Pinck Smile"
+            alt="Pinck Smile Female Mood Booster untuk Mood dan Keharmonisan Wanita"
             class="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125 brightness-95"
             fetchpriority="high"
           />
@@ -166,11 +169,11 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           <!-- Top Headline Block -->
           <div class="relative z-10 pt-5 px-3 text-center flex flex-col items-center">
             <h1 class="font-impact uppercase leading-[1.08] tracking-wide text-[32px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.35)]">
-              <span class="text-black text-stroke-white">CEGAH </span>
-              <span class="text-[#9E0B0F] text-stroke-white">MASALAH KEWANITAAN</span>
+              <span class="text-black text-stroke-white">BANGKITKAN </span>
+              <span class="text-[#9E0B0F] text-stroke-white">MOOD & PERCAYA DIRI</span>
               <br />
-              <span class="text-black text-stroke-white">SEBELUM </span>
-              <span class="text-[#9E0B0F] text-stroke-white">SUAMI MENJAUH</span>
+              <span class="text-black text-stroke-white">KENALI PEMICU </span>
+              <span class="text-[#9E0B0F] text-stroke-white">LEBIH PERCAYA DIRI</span>
             </h1>
 
             <!-- Dark Red Pill Badge -->
@@ -193,10 +196,10 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
               <div class="relative w-36 h-36 rounded-full border-[5px] border-[#990000] bg-gradient-to-br from-[#520000] via-[#8B0000] to-[#3A0000] shadow-2xl overflow-hidden flex flex-col items-center justify-center p-2.5 text-center">
                 <div class="w-full h-full rounded-full border border-red-400/40 bg-[radial-gradient(circle_at_center,#ef4444_0%,#7f1d1d_65%,#450a0a_100%)] flex flex-col items-center justify-center p-2">
                   <span class="bg-yellow-400 text-red-950 font-extrabold text-[10px] px-2 py-0.5 rounded-full uppercase tracking-tighter mb-1">
-                    pH &gt; 5.5 RUSAK
+                    MOOD BUTUH PERHATIAN
                   </span>
                   <p class="text-white font-extrabold text-xs leading-tight drop-shadow">
-                    Bakteri, Jamur &amp; Bau Berkembang Cepat!
+                    Kenali kebutuhan diri dan komunikasi dengan pasangan
                   </p>
                   <div class="mt-1.5 flex gap-1">
                     <span class="w-2 h-2 rounded-full bg-yellow-300 animate-pulse"></span>
@@ -219,7 +222,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
               </svg>
             </div>
             <p class="font-black-display uppercase text-[13px] leading-[1.25] tracking-tight text-white">
-              <span class="text-[#FFEA00]">SATU KETIDAKSEIMBANGAN pH KECIL</span> DI AREA INTIM SUDAH CUKUP UNTUK <span class="text-[#FFEA00]">MERUSAK KENYAMANAN &amp; KEHARMONISAN ANDA !!</span>
+              <span class="text-[#FFEA00]">MOOD, STRES, KELELAHAN, DAN KOMUNIKASI</span> DAPAT MEMENGARUHI <span class="text-[#FFEA00]">KENYAMANAN SERTA KEDEKATAN PASANGAN</span>
             </p>
           </div>
         </div>
@@ -236,7 +239,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
         <!-- Deep Red News Clippings Container -->
         <div class="bg-[#990000] rounded-[22px] p-3 shadow-lg flex flex-col gap-3">
           <p class="font-black-display text-center uppercase text-[#FFEA00] text-[16px] leading-snug drop-shadow-[0_2px_2px_rgba(0,0,0,0.85)] px-1">
-            “KEPUTIHAN &amp; BAU TAK SEDAP DIBIARKAN,<br />RASA PERCAYA DIRI &amp; KEHARMONISAN HILANG SEKETIKA”
+            “MOOD DAN RASA PERCAYA DIRI BERPERAN DALAM<br />MEMBANGUN KEDEKATAN DENGAN PASANGAN”
           </p>
 
           <!-- News Card 1 -->
@@ -248,11 +251,12 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             <div class="p-3">
               <p class="text-[10px] text-neutral-500 mb-1">Beranda &gt; Kesehatan Intim Wanita</p>
               <h3 class="font-bold text-neutral-900 text-[15px] leading-snug">
-                78% Wanita Mengalami <span class="inline-block border-2 border-[#990000] px-1 py-0.5 text-[#990000] bg-red-50">Keputihan &amp; Bau Tak Sedap</span> Akibat pH Area Intim Tidak Seimbang
+                Mood wanita dapat dipengaruhi <span class="inline-block border-2 border-[#990000] px-1 py-0.5 text-[#990000] bg-red-50">stres, kelelahan, dan perubahan hormon</span> serta kualitas komunikasi dengan pasangan
               </h3>
-              <p class="text-[10px] text-neutral-400 mt-1">by Redaksi Kesehatan — 16 Oktober 2025</p>
+              
+              <p class="text-[10px] text-neutral-400 mt-1">Informasi umum • Edukasi wanita dewasa</p>
               <p class="text-[11px] text-neutral-600 mt-1.5 leading-relaxed">
-                <strong>JAKARTA</strong> — Dokter spesialis kesehatan wanita mengingatkan bahwa penggunaan sabun mandi biasa dengan pH basa pada area kewanitaan justru mematikan bakteri baik <em>Lactobacillus</em> dan memicu gatal, bau tak sedap, hingga infeksi berulang.
+                <strong>INFO EDUKASI</strong> — Mood dan gairah wanita dipengaruhi banyak hal, seperti stres, kelelahan, kualitas tidur, perubahan hormon, kondisi kesehatan, rasa aman, dan komunikasi dengan pasangan.
               </p>
             </div>
           </div>
@@ -261,16 +265,16 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           <div class="bg-white rounded-xl p-2.5 shadow-md border border-neutral-200 flex gap-2.5 items-center">
             <img
               src="/blog/panduan-perawatan-intim-wanita-ph-seimbang.jpg"
-              alt="Kasus Infeksi dan Gatal Area Kewanitaan"
+              alt="Ilustrasi edukasi mood dan kesejahteraan wanita"
               class="w-24 h-20 object-cover rounded-lg shrink-0"
               loading="lazy"
             />
             <div class="flex-1 min-w-0">
               <span class="text-[9px] font-semibold text-neutral-400 uppercase block">Medis &amp; Gaya Hidup</span>
               <h3 class="font-bold text-neutral-900 text-xs leading-snug mt-0.5">
-                Sering Dianggap Sepele, <span class="inline-block border border-[#990000] px-1 text-[#990000] bg-red-50">Gatal &amp; Iritasi Kewanitaan</span> Bikin Wanita Stres dan Kurang Nyaman
+                Jangan abaikan <span class="inline-block border border-[#990000] px-1 text-[#990000] bg-red-50">stres dan kelelahan</span> — keduanya dapat memengaruhi mood serta kedekatan
               </h3>
-              <p class="text-[9px] text-neutral-400 mt-1">30 Juli 2025 - 10:31 WIB</p>
+              <p class="text-[9px] text-neutral-400 mt-1">Topik edukasi</p>
             </div>
           </div>
 
@@ -278,16 +282,16 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           <div class="bg-white rounded-xl p-2.5 shadow-md border border-neutral-200 flex gap-2.5 items-center">
             <img
               src="/blog/tips-komunikasi-keintiman-sehat-dan-terbuka.jpg"
-              alt="Keharmonisan Rumah Tangga Terganggu"
+              alt="Ilustrasi komunikasi dan keharmonisan pasangan"
               class="w-24 h-20 object-cover rounded-lg shrink-0"
               loading="lazy"
             />
             <div class="flex-1 min-w-0">
-              <span class="text-[9px] font-semibold text-neutral-400 uppercase block">Harmoni Pasutri</span>
+              <span class="text-[9px] font-semibold text-neutral-400 uppercase block">Mood & Keharmonisan</span>
               <h3 class="font-bold text-neutral-900 text-xs leading-snug mt-0.5">
-                Survei: Masalah <span class="inline-block border border-[#990000] px-1 text-[#990000] bg-red-50">Bau &amp; Kurang Percaya Diri</span> Jadi Pemicu Istri Menolak Momen Intim
+                Bangun <span class="inline-block border border-[#990000] px-1 text-[#990000] bg-red-50">rasa nyaman dan percaya diri</span> lewat perawatan diri serta komunikasi terbuka
               </h3>
-              <p class="text-[9px] text-neutral-400 mt-1">05 Oktober 2025 - 20:05 WIB</p>
+              <p class="text-[9px] text-neutral-400 mt-1">Topik edukasi</p>
             </div>
           </div>
         </div>
@@ -295,11 +299,11 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
         <!-- Bottom Yellow Callout Box -->
         <div class="mt-3.5 bg-[#FFEA00] border-[3px] border-black rounded-2xl py-3 px-3 text-center shadow-md">
           <p class="font-impact uppercase text-[23px] leading-tight tracking-wide">
-            <span class="text-black">KENALI </span>
-            <span class="text-[#990000]">TANDA AREA KEWANITAAN </span>
+            <span class="text-black">PAHAMI </span>
+            <span class="text-[#990000]">FAKTOR YANG MEMENGARUHI MOOD </span>
             <span class="text-black">ANDA SEDANG</span>
             <br />
-            <span class="text-[#990000]">TERANCAM</span>
+            <span class="text-[#990000]">PERLU DIPERHATIKAN</span>
           </p>
         </div>
       </section>
@@ -310,25 +314,25 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
       <section class="w-full bg-white py-2.5 px-3.5 flex flex-col gap-3" id="poster-3">
         <div class="bg-[#8F0000] border-[3px] border-black rounded-2xl py-3.5 px-3 text-center shadow">
           <span class="font-impact uppercase text-[#FFEA00] text-[23px] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)] block leading-tight">
-            KEPUTIHAN BERLEBIH &amp; BERWARNA
+            MOOD MUDAH BERUBAH
           </span>
         </div>
 
         <div class="bg-[#8F0000] border-[3px] border-black rounded-2xl py-3.5 px-3 text-center shadow">
           <span class="font-impact uppercase text-[#FFEA00] text-[23px] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)] block leading-tight">
-            BAU TAK SEDAP WALAU SUDAH MANDI
+            STRES DAN BEBAN PIKIRAN
           </span>
         </div>
 
         <div class="bg-[#8F0000] border-[3px] border-black rounded-2xl py-3.5 px-3 text-center shadow">
           <span class="font-impact uppercase text-[#FFEA00] text-[23px] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)] block leading-tight">
-            GATAL, PERIH &amp; LEMBAP SEHARIAN
+            LELAH DAN KURANG ISTIRAHAT
           </span>
         </div>
 
         <div class="bg-[#8F0000] border-[3px] border-black rounded-2xl py-3.5 px-3 text-center shadow">
           <span class="font-impact uppercase text-[#FFEA00] text-[23px] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)] block leading-tight">
-            KURANG KESAT &amp; HILANG PERCAYA DIRI
+            KURANG NYAMAN DENGAN DIRI SENDIRI
           </span>
         </div>
 
@@ -340,7 +344,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             <circle cx="50" cy="70" r="5.5" fill="#000000" />
           </svg>
           <p class="font-black-display uppercase text-black text-center text-[15px] leading-tight">
-            RAWAT AREA INTIM ANDA<br />SEBELUM SEMAKIN PARAH
+            BERI WAKTU UNTUK DIRI SENDIRI<br />DAN BANGUN KOMUNIKASI TERBUKA
           </p>
           <svg viewBox="0 0 100 90" class="w-10 h-10 shrink-0">
             <polygon points="50,6 95,85 5,85" fill="#FFCC00" stroke="#000000" stroke-width="6" stroke-linejoin="round" />
@@ -364,7 +368,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
         <!-- Dramatic Visual Section -->
         <div class="relative w-full aspect-[4/3] overflow-hidden bg-neutral-900">
           <img
-            src="/blog/memahami-perangsang-wanita-alami-dan-mood-booster.jpg"
+            src="/blog/wanita-kecapeaan-saat-bekerja.jpg"
             alt="Jangan Sepelekan Masalah Kewanitaan"
             class="w-full h-full object-cover opacity-80 contrast-125"
             loading="lazy"
@@ -377,7 +381,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
               WASPADA !!
             </p>
             <p class="font-black-display uppercase text-[#FFEA00] text-[14px] leading-tight mt-1">
-              JANGAN TUNGGU SAMPAI INFEKSI KRONIS<br />&amp; KEHARMONISAN RUMAH TANGGA RETAK
+              JANGAN PENDAM STRES SENDIRIAN<br />BANGUN KEDekATAN DENGAN KOMUNIKASI
             </p>
           </div>
         </div>
@@ -394,7 +398,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
               PINCK SMILE<br />PILIHAN TERBAIK
             </h2>
             <p class="font-black-display italic text-black text-[15px] mt-1 text-stroke-white-sm">
-              Untuk Perawatan Intim &amp; Keharmonisan Wanita
+              Female Mood Booster — untuk ritual perawatan dan rasa percaya diri wanita
             </p>
 
             <!-- White Verified Badge Pill -->
@@ -403,7 +407,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
               <span class="font-extrabold text-black text-xs">
-                Formula pH 4.0 Botanical Pertama
+                Kenali Pinck Smile dan informasi produknya
               </span>
             </div>
 
@@ -432,7 +436,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
               />
               <div>
                 <span class="inline-block bg-emerald-600 text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded uppercase">
-                  100% Original BPOM
+                  Produk Original Pinck Smile
                 </span>
                 <p class="font-extrabold text-neutral-900 text-xs leading-tight mt-0.5">
                   Pinck Smile Duo Care
@@ -450,9 +454,9 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
               7X
             </span>
             <p class="font-black-display uppercase text-white text-[13px] leading-[1.22]">
-              LEBIH <span class="text-[#FFEA00]">EFEKTIF ATASI BAU TAK SEDAP,</span><br />
-              KEPUTIHAN, GATAL &amp; JAGA<br />
-              KEHARMONISAN ALAMI
+              BANGUN <span class="text-[#FFEA00]">MOOD DAN RASA PERCAYA DIRI,</span><br />
+              RAWAT DIRI DENGAN NYAMAN<br />
+              DAN JAGA KEDEKATAN PASANGAN
             </p>
           </div>
         </div>
@@ -464,8 +468,8 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
       <section class="w-full bg-white pt-5" id="poster-6">
         <div class="px-3 text-center">
           <h2 class="font-impact uppercase text-black text-[26px] leading-[1.12]">
-            MEREKA YANG TERBEBAS DARI<br />
-            MASALAH <span class="text-[#990000]">KEWANITAAN &amp; BAU TAK SEDAP!</span>
+            MULAI DARI DIRI SENDIRI<br />
+            BANGUN <span class="text-[#990000]">MOOD DAN KEDEKATAN!</span>
           </h2>
 
           <!-- 3 Animated Triple-Down Red Chevrons -->
@@ -501,7 +505,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             <!-- Left: Wellness Consultant Holding Bottle -->
             <div class="col-span-6 relative">
               <img
-                src="/lp/doctor-consultant.jpg"
+                src="/lp/dwi-sugiarti.jpg"
                 alt="Konsultan Kesehatan Wanita Pinck Smile"
                 class="w-full h-[290px] object-cover object-top rounded-t-2xl shadow-xl border-2 border-white/40"
                 loading="lazy"
@@ -528,17 +532,17 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
                 <!-- WhatsApp Chat Body -->
                 <div class="bg-[#ECE5DD] p-1.5 space-y-1.5 text-[9.5px] leading-snug">
                   <div class="bg-[#DCF8C6] rounded-lg p-1.5 shadow-sm text-neutral-800 ml-2">
-                    Alhamdulillah kak, konsumen kami sebelumnya yang ada keluhan keputihan &amp; bau tak sedap sudah banyak yang tuntas berkat rutin pakai Pinck Smile 🙏🥰
+                    Hai kak, setiap wanita punya kebutuhan dan pengalaman yang berbeda. Yuk kenali informasi produk Pinck Smile dan pilih sesuai kebutuhanmu. 🌷
                     <span class="block text-right text-[7px] text-neutral-400 mt-0.5">10.36 ✓✓</span>
                   </div>
 
                   <div class="bg-white rounded-lg p-1.5 shadow-sm text-neutral-900 mr-1 border-l-3 border-pink-500">
-                    Makasih untuk Pinck Smile, baru pakai 1 paket keluhan keputihan &amp; gatal saya sembuh total, kesat &amp; wangi lembut seharian. Suami makin sayang!
+                    Terima kasih sudah mencari tahu tentang Pinck Smile. Ingat, mood dan gairah juga dipengaruhi kondisi tubuh, pikiran, dan komunikasi dengan pasangan. 💗
                     <span class="block text-right text-[7px] text-neutral-400 mt-0.5">19.46</span>
                   </div>
 
                   <div class="bg-[#DCF8C6] rounded-lg p-1.5 shadow-sm text-neutral-800 ml-2">
-                    Alhamdulillah 😊 Semoga sehat &amp; harmonis selalu ya kak. Aamiin 🤲
+                    Sama-sama, kak. Semoga selalu nyaman merawat diri dan membangun hubungan yang hangat. 🤲
                     <span class="block text-right text-[7px] text-neutral-400 mt-0.5">20.05 ✓✓</span>
                   </div>
                 </div>
@@ -549,7 +553,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           <!-- Zoomed-Out White WhatsApp Message Bubble Overlay -->
           <div class="relative z-20 mx-3 -mt-5 mb-3.5 bg-white rounded-2xl p-3.5 shadow-2xl border-2 border-neutral-300">
             <p class="text-neutral-900 text-xs font-medium leading-relaxed">
-              “Makasih untuk <strong>Pinck Smile</strong>, baru habis 1 paket keluhan keputihan &amp; bau tak sedap saya hilang total, saya sangat bersyukur ketemu Pinck Smile. Sekarang terasa bersih, kesat, dan nyaman seharian. Sekali lagi makasih untuk Pinck Smile, keluhan yang sudah 6 bulan bikin minder akhirnya tuntas juga.”
+              “Merawat diri bukan perlombaan dan hasil setiap orang bisa berbeda. Mulailah dengan mengenali kebutuhan tubuh, menjaga istirahat, mengelola stres, serta membangun komunikasi yang nyaman dengan pasangan.”
             </p>
             <span class="block text-right text-[10px] text-neutral-400 font-semibold mt-1">19.46 ✓✓</span>
           </div>
@@ -557,40 +561,40 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           <!-- Bottom Bright Yellow Banner -->
           <div class="relative z-20 bg-[#FFEA00] border-t-4 border-[#990000] py-3 px-3 text-center">
             <p class="font-black-display uppercase text-[20px] leading-tight">
-              <span class="text-[#990000]">PERUBAHAN</span>
-              <span class="text-black"> TERASA</span>
+              <span class="text-[#990000]">MULAI</span>
+              <span class="text-black"> DARI DIRI SENDIRI</span>
               <br />
-              <span class="text-black">MULAI PEMAKAIAN PERTAMA</span>
+              <span class="text-black">KENALI KEBUTUHAN DAN MOOD ANDA</span>
             </p>
           </div>
         </div>
       </section>
 
       <!-- ===================================================================== -->
-      <!-- POSTER 7: 3 STACKED SOCIAL MEDIA TESTIMONIAL CARDS (Matches Image 7)  -->
+      <!-- POSTER 7: 3 STACKED SOCIAL MEDIA EDUKASIAL CARDS (Matches Image 7)  -->
       <!-- ===================================================================== -->
       <section class="w-full bg-[#FDF8F8] py-4 px-3 space-y-5" id="poster-7">
         <!-- Review Card 1 -->
         <div class="space-y-2.5">
           <div class="bg-[#CC0000] py-2 px-3 rounded-lg text-center shadow">
             <h3 class="font-black-display uppercase text-white text-[17px] leading-tight">
-              KEPUTIHAN MENAHUN &amp; BAU<br />
-              <span class="text-[#FFEA00]">TUNTAS SECARA ALAMI</span>
+              MOOD DAN RASA PERCAYA DIRI<br />
+              <span class="text-[#FFEA00]">KENALI DIRI LEBIH BAIK</span>
             </h3>
           </div>
           <div class="grid grid-cols-12 gap-2.5 items-center">
             <div class="col-span-4">
               <img
-                src="/blog/body-literacy-membangun-percaya-diri-wanita.jpg"
-                alt="Testimoni Ibu Rina Wulandari"
+                src="/lp/rini-wulandari.jpg"
+                alt="Ilustrasi edukasi wanita dewasa"
                 class="w-full aspect-[3/4] object-cover rounded-xl border-2 border-[#CC0000] shadow-md"
                 loading="lazy"
               />
             </div>
             <div class="col-span-8 bg-white border-[2.5px] border-[#CC0000] rounded-2xl p-3 shadow-lg">
-              <p class="font-bold text-neutral-900 text-xs mb-1">Rina Wulandari</p>
+              <p class="font-bold text-neutral-900 text-xs mb-1">Edukasi Pinck Smile</p>
               <p class="text-neutral-800 text-[11px] leading-relaxed">
-                Saya juga sdh mencobanya. Dulu sering banget <mark class="bg-[#FFEA00] px-1 font-semibold">keputihan berlebih dan gatal</mark> apalagi kalau habis aktivitas padat. Sudah coba berbagai sabun kewanitaan di warung tapi malah makin kering dan perih. Setelah <mark class="bg-[#FFEA00] px-1 font-semibold">ada iklan ini saya pesan Paket Complete Pinck Smile, baru rutin pakai seminggu hasilnya memuaskan. Gatal &amp; bau tak sedap hilang total,</mark> segar seharian. Trima kasih Pinck Smile.
+                Mood wanita dapat berubah karena <mark class="bg-[#FFEA00] px-1 font-semibold">stres, kelelahan, dan kurang tidur</mark>. Coba beri waktu untuk beristirahat, lakukan aktivitas yang disukai, dan komunikasikan kebutuhan dengan pasangan secara terbuka.
               </p>
             </div>
           </div>
@@ -600,25 +604,25 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
         <div class="space-y-2.5">
           <div class="bg-[#CC0000] py-2 px-3 rounded-lg text-center shadow">
             <h3 class="font-black-display uppercase text-white text-[17px] leading-tight">
-              AREA INTIM SEGAR &amp; NYAMAN<br />
-              <span class="text-[#FFEA00]">DALAM 2 HARI PEMAKAIAN</span>
+              RAWAT DIRI, TUMBUHKAN PERCAYA DIRI<br />
+              <span class="text-[#FFEA00]">KONSISTEN MERAWAT DIRI</span>
             </h3>
           </div>
           <div class="grid grid-cols-12 gap-2.5 items-center">
             <div class="col-span-4">
               <img
-                src="/lp/doctor-consultant.jpg"
-                alt="Testimoni Dwi Sugiarti"
+                src="/lp/sarah-maharani.jpg"
+                alt="Ilustrasi edukasi wanita dewasa"
                 class="w-full aspect-[3/4] object-cover rounded-xl border-2 border-[#CC0000] shadow-md"
                 loading="lazy"
               />
             </div>
             <div class="col-span-8 bg-white border-[2.5px] border-[#CC0000] rounded-2xl p-3 shadow-lg">
               <p class="font-bold text-neutral-900 text-xs mb-1">
-                Dwi Sugiarti · <span class="text-blue-600 font-semibold">Ikuti</span>
+                Tips untuk wanita dewasa
               </p>
               <p class="text-neutral-800 text-[11px] leading-relaxed">
-                Awalnya minder banget sama suami karena <mark class="bg-[#FFEA00] px-1 font-semibold">sering lembap dan bau kurang sedap</mark> setiap pulang kerja. <mark class="bg-[#FFEA00] px-1 font-semibold">Alhamdulillah beli Pinck Smile baru 2 hari pakai, sudah terasa kesat alami, bersih, dan wanginya lembut banget 😍</mark> Suami sampai nanya pakai perawatan apa kok sekarang beda banget. Semoga berkah selalu Pinck Smile!
+                Rasa percaya diri bisa dibangun dengan <mark class="bg-[#FFEA00] px-1 font-semibold">menerima diri dan mengenali kebutuhan pribadi</mark>. Perawatan diri, istirahat cukup, dan komunikasi yang saling menghargai dapat menjadi bagian dari rutinitas positif.
               </p>
             </div>
           </div>
@@ -628,27 +632,27 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
         <div class="space-y-2.5">
           <div class="bg-[#CC0000] py-2 px-3 rounded-lg text-center shadow">
             <h3 class="font-black-display uppercase text-white text-[17px] leading-tight">
-              BEBAS IRITASI &amp; MAKIN HARMONIS<br />
-              <span class="text-[#FFEA00]">TERUJI LEMBUT pH 4.0</span>
+              KOMUNIKASI TERBUKA, HUBUNGAN LEBIH HANGAT<br />
+              <span class="text-[#FFEA00]">EDUKASI KESEHATAN WANITA</span>
             </h3>
           </div>
           <div class="grid grid-cols-12 gap-2.5 items-center">
             <div class="col-span-4">
               <img
-                src="/blog/fakta-medis-perangsang-wanita-dan-stimulasi-aman.jpg"
-                alt="Testimoni Sarah Maharani"
+                src="/lp/siska-puji.jpg"
+                alt="Ilustrasi edukasi wanita dewasa"
                 class="w-full aspect-[3/4] object-cover rounded-xl border-2 border-[#CC0000] shadow-md"
                 loading="lazy"
               />
             </div>
             <div class="col-span-8 bg-white border-[2.5px] border-[#CC0000] rounded-2xl p-3 shadow-lg">
-              <p class="font-bold text-neutral-900 text-xs mb-1">Sarah Maharani</p>
+              <p class="font-bold text-neutral-900 text-xs mb-1">Catatan kesehatan wanita</p>
               <p class="text-neutral-800 text-[11px] leading-relaxed">
-                Saya punya kulit sensitif sejak 2022, salah pakai sabun langsung perih dan iritasi. Setelah rutin pakai <strong>Gentle Intimate Wash</strong> &amp; semprot <strong>Hydrating Mist Pinck Smile</strong>, keluhan gatal mulai hilang, sekarang tetap stok di kamar mandi &amp; tas. Dan alhamdulillah tidak pernah iritasi lagi. Paket datang juga polos banget jadi privasi aman.
+                Jika gairah menurun terus-menerus, muncul rasa nyeri, atau perubahan mood mengganggu keseharian, jangan menyalahkan diri sendiri. Konsultasikan dengan tenaga kesehatan untuk memahami penyebab dan pilihan penanganannya.
               </p>
               <div class="mt-2 flex items-center gap-2.5 text-[10px] text-neutral-500 font-semibold">
-                <span>5 hari</span>
-                <span>Suka</span>
+                <span>Edukasi</span>
+                <span>Simpan</span>
                 <span>Balas</span>
                 <span class="text-blue-600">Kirim Pesan</span>
                 <span>Sembunyikan</span>
@@ -659,31 +663,31 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
       </section>
 
       <!-- ===================================================================== -->
-      <!-- POSTER 8: SEBELUM & SESUDAH COMPARISON (Matches Image 8)              -->
+      <!-- POSTER 8: KENALI PEMICU & LANGKAH POSITIF COMPARISON (Matches Image 8)              -->
       <!-- ===================================================================== -->
       <section class="w-full bg-[#B80F14] py-5 px-3 text-white" id="poster-8">
         <h2 class="font-black-display uppercase text-center text-white text-[22px] leading-tight mb-4">
-          SEBELUM &amp; SESUDAH<br />PAKAI PINCK SMILE
+          LANGKAH KECIL<br />UNTUK MERAWAT MOOD
         </h2>
 
         <!-- Comparison Row 1: Microbiome & pH Balance -->
         <div class="grid grid-cols-11 items-center gap-1.5 mb-4">
-          <!-- SEBELUM -->
+          <!-- KENALI PEMICU -->
           <div class="col-span-5 flex flex-col items-center">
             <div class="w-full aspect-[4/3] rounded-xl border-[2.5px] border-white bg-[#3B0A0C] p-2.5 flex flex-col items-center justify-center text-center relative overflow-hidden">
               <div class="w-14 h-14 rounded-full bg-red-600/80 blur-md absolute"></div>
               <span class="relative z-10 bg-red-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase">
-                pH &gt; 5.5 (Basa/Rusak)
+                SAAT STRES & KELELAHAN
               </span>
               <p class="relative z-10 font-bold text-pink-100 text-[11px] mt-1.5 leading-snug">
-                Bakteri Penyebab Bau &amp; Jamur Mengumpul
+                Pikiran terasa penuh dan energi menurun
               </p>
               <p class="relative z-10 text-[9px] text-red-200 mt-0.5">
-                Kemerahan &amp; Gatal
+                Mood dan minat intim bisa ikut berubah
               </p>
             </div>
             <span class="font-black-display uppercase text-[#FFEA00] text-base mt-1.5">
-              SEBELUM
+              KENALI PEMICU
             </span>
           </div>
 
@@ -694,40 +698,40 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             </svg>
           </div>
 
-          <!-- SESUDAH -->
+          <!-- LANGKAH POSITIF -->
           <div class="col-span-5 flex flex-col items-center">
             <div class="w-full aspect-[4/3] rounded-xl border-[2.5px] border-white bg-[#0B3B24] p-2.5 flex flex-col items-center justify-center text-center relative overflow-hidden">
               <div class="w-14 h-14 rounded-full bg-emerald-400/50 blur-md absolute"></div>
               <span class="relative z-10 bg-emerald-500 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase">
-                pH 4.0 Seimbang
+                ISTIRAHAT & RAWAT DIRI
               </span>
               <p class="relative z-10 font-bold text-emerald-50 text-[11px] mt-1.5 leading-snug">
-                Flora Alami Terlindungi &amp; Bebas Bau
+                Tidur cukup, kelola stres, dan lakukan aktivitas yang menenangkan
               </p>
               <p class="relative z-10 text-[9px] text-emerald-200 mt-0.5">
-                Tenang, Lembut &amp; Segar
+                Komunikasi terbuka membantu membangun rasa aman
               </p>
             </div>
             <span class="font-black-display uppercase text-[#FFEA00] text-base mt-1.5">
-              SESUDAH
+              LANGKAH POSITIF
             </span>
           </div>
         </div>
 
         <!-- Comparison Row 2: Daily Comfort & Confidence -->
         <div class="grid grid-cols-11 items-center gap-1.5">
-          <!-- SEBELUM -->
+          <!-- KENALI PEMICU -->
           <div class="col-span-5 flex flex-col items-center">
             <div class="w-full aspect-[4/3] rounded-xl border-[2.5px] border-white bg-[#2A1215] overflow-hidden relative">
               <img
                 src="/lp/hero-problem.jpg"
-                alt="Sebelum Pakai Pinck Smile"
+                alt="Ilustrasi saat merasa lelah dan kurang percaya diri"
                 class="w-full h-full object-cover opacity-65 grayscale"
                 loading="lazy"
               />
               <div class="absolute inset-x-0 bottom-0 bg-red-950/90 py-1 px-1.5 text-center">
                 <p class="text-[9.5px] font-bold text-red-200">
-                  Minder, Kurang Nyaman &amp; Risih
+                  Merasa lelah, stres, dan kurang terhubung
                 </p>
               </div>
             </div>
@@ -740,18 +744,18 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             </svg>
           </div>
 
-          <!-- SESUDAH -->
+          <!-- LANGKAH POSITIF -->
           <div class="col-span-5 flex flex-col items-center">
             <div class="w-full aspect-[4/3] rounded-xl border-[2.5px] border-white bg-[#102E22] overflow-hidden relative">
               <img
                 src="/products/complete-comfort-set.jpg"
-                alt="Sesudah Pakai Pinck Smile"
+                alt="Ilustrasi perawatan diri dan suasana hati positif"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-x-0 bottom-0 bg-emerald-900/90 py-1 px-1.5 text-center">
                 <p class="text-[9.5px] font-bold text-emerald-100">
-                  Bersih, Kesat, Harum &amp; Harmonis
+                  Lebih sadar kebutuhan diri dan membangun komunikasi
                 </p>
               </div>
             </div>
@@ -768,13 +772,13 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           <div class="grid grid-cols-4 gap-1.5 text-center">
             <div class="flex flex-col items-center">
               <div class="w-10 h-10 rounded-full bg-white text-[#990000] font-extrabold flex items-center justify-center text-xs shadow">
-                BPOM
+                izin edar
               </div>
               <span class="text-[9.5px] font-bold mt-1 text-[#FFEA00]">TERUJI AMAN</span>
             </div>
             <div class="flex flex-col items-center">
               <div class="w-10 h-10 rounded-full bg-white text-emerald-700 font-extrabold flex items-center justify-center text-xs shadow">
-                pH 4.0
+                FEMALE MOOD
               </div>
               <span class="text-[9.5px] font-bold mt-1 text-[#FFEA00]">FLORA ALAMI</span>
             </div>
@@ -798,10 +802,10 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
           href="#form-pemesanan"
           class="animate-cta-pulse block bg-gradient-to-b from-[#FFEA00] to-[#F59E0B] border-[3px] border-[#990000] rounded-2xl py-3 px-3 text-center shadow-xl">
           <span class="font-impact uppercase text-[#990000] text-[22px] tracking-wide block leading-none">
-            👉 KLIK AMBIL PROMO DISKON 30% SEKARANG 👈
+            👉 KENALI PRODUK PINCK SMILE SEKARANG 👈
           </span>
           <span class="font-extrabold text-black text-[11px] block mt-1">
-            Bisa COD (Bayar Saat Paket Sampai) • Privasi Paket 100% Tertutup Rapat
+            Pilihan pembayaran mengikuti area layanan • Kemasan mengikuti ketentuan pengiriman
           </span>
         </a>
       </section>
@@ -830,7 +834,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
               </span>
               <span class="w-8 h-8 rounded-full bg-white border border-neutral-300 shadow-sm flex flex-col items-center justify-center text-[6.5px] font-extrabold text-emerald-700 leading-none text-center">
                 <span>HERBAL</span>
-                <span class="text-[7px]">pH 4.0</span>
+                <span class="text-[7px]">FEMALE MOOD</span>
               </span>
               <span class="w-8 h-8 rounded-full bg-amber-100 border border-amber-400 shadow-sm flex flex-col items-center justify-center text-[6.5px] font-extrabold text-amber-900 leading-none text-center">
                 <span>BEST</span>
@@ -871,7 +875,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
               />
             </div>
             <span class="block text-[10px] font-semibold text-neutral-700 mt-1.5 pl-0.5">
-              * privasi paket 100% tertutup rapat
+              * kemasan mengikuti ketentuan pengiriman
             </span>
           </div>
 
@@ -961,12 +965,14 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
                 Lengkapi Data Pemesanan:
               </h2>
               <p class="text-[11px] text-neutral-500 mt-0.5">
-                Data Anda 100% rahasia &amp; paket dikirim tanpa keterangan nama produk.
+                Data Anda dijaga kerahasiaannya &amp; paket dikirim tanpa keterangan nama produk.
               </p>
             </div>
+            <!--
             <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-1 rounded-full shrink-0">
               🔒 SSL Aman
             </span>
+            -->
           </div>
 
           <form id="scalev-order-form" class="space-y-3.5" novalidate>
@@ -981,7 +987,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
                   <input
                     type="radio"
                     name="paket"
-                    value="Paket Promo Diskon 30% - Complete Comfort Set (Gentle Wash 150ml + Hydrating Mist 60ml + Silk Pouch) - Rp 195.000"
+                    value="Paket Promo Promo Spesial - Complete Comfort Set (Gentle Wash 150ml + Hydrating Mist 60ml + Silk Pouch) - Rp 195.000"
                     data-price="Rp 195.000"
                     checked
                     class="mt-1 w-4 h-4 text-[#CC0000] focus:ring-[#CC0000]"
@@ -989,14 +995,14 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
                   <div class="flex-1 text-xs">
                     <div class="flex flex-wrap items-center justify-between gap-1">
                       <span class="font-extrabold text-neutral-900">
-                        🔥 PAKET PROMO DISKON 30% (Wash + Mist + Pouch)
+                        🔥 PAKET PROMO PINCK SMILE (Wash + Mist + Pouch)
                       </span>
                       <span class="bg-[#CC0000] text-[#FFEA00] text-[9px] font-extrabold px-1.5 py-0.5 rounded">
                         TERLARIS
                       </span>
                     </div>
                     <p class="text-neutral-600 text-[11px] mt-0.5">
-                      1x Gentle Intimate Wash (150ml) + 1x Soothing Hydrating Mist (60ml) + Bonus Silk Travel Pouch
+                      1x Wash 150ml + 1x Mist 60ml + Bonus Silk Travel Pouch. Periksa petunjuk penggunaan pada kemasan.
                     </p>
                     <div class="mt-1 flex items-center gap-1.5">
                       <span class="line-through text-neutral-400 text-[11px]">Rp 278.000</span>
@@ -1011,13 +1017,13 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
                   <input
                     type="radio"
                     name="paket"
-                    value="Paket 1 Botol - Pinck Smile Gentle Intimate Wash (150ml) - Rp 149.000"
+                    value="Paket 1 Botol - Pinck Smile Wash (150ml) - Rp 149.000"
                     data-price="Rp 149.000"
                     class="mt-1 w-4 h-4 text-[#CC0000] focus:ring-[#CC0000]"
                   />
                   <div class="flex-1 text-xs">
                     <span class="font-bold text-neutral-900">
-                      Paket Trial 1 Botol — Gentle Intimate Wash (150ml)
+                      Paket 1 Botol — Pinck Smile Wash (150ml)
                     </span>
                     <div class="mt-1 flex items-center gap-1.5">
                       <span class="line-through text-neutral-400 text-[11px]">Rp 199.000</span>
@@ -1031,13 +1037,13 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
                   <input
                     type="radio"
                     name="paket"
-                    value="Paket Lengkap Ultimate Ritual (Wash 150ml + Mist 60ml + Aura Intimate Device) - Rp 539.000"
+                    value="Paket Lengkap Pinck Smile (Wash 150ml + Mist 60ml + Aura Device) - Rp 539.000"
                     data-price="Rp 539.000"
                     class="mt-1 w-4 h-4 text-[#CC0000] focus:ring-[#CC0000]"
                   />
                   <div class="flex-1 text-xs">
                     <span class="font-bold text-neutral-900">
-                      👑 Paket Lengkap Ultimate Ritual (Wash + Mist + Aura Device)
+                      👑 PAKET LENGKAP PINCK SMILE
                     </span>
                     <div class="mt-1 flex items-center gap-1.5">
                       <span class="line-through text-neutral-400 text-[11px]">Rp 767.000</span>
@@ -1157,6 +1163,20 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
                   class="py-2 px-2.5 rounded-lg bg-[#0F146D] text-white font-bold text-[11px] flex items-center justify-center gap-1 hover:opacity-95 transition">
                   <span>Lazada Official Store ↗</span>
                 </a>
+                <a
+                  href="https://tk.tokopedia.com/ZSgKyKcXH/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="py-2 px-2.5 rounded-lg bg-[#16A34A] text-white font-bold text-[11px] flex items-center justify-center gap-1 hover:opacity-95 transition">
+                  <span>Toko Pedia Official ↗</span>
+                </a>
+                <a
+                  href="https://toco.id/link/wNFTQUyEpjD8RavnDXgz38"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-black-display py-2 px-2.5 rounded-lg bg-[#FFEA00] text-white font-bold text-[11px] flex items-center justify-center gap-1 hover:opacity-95 transition">
+                  <span>Toco Official Store ↗</span>
+                </a>
               </div>
             </div>
 
@@ -1174,7 +1194,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
         <div class="px-3">
           <img
             src="/lp/happy-customers-collage.jpg"
-            alt="Ribuan Wanita Indonesia Telah Merasakan Manfaat Pinck Smile"
+            alt="Pinck Smile — Female Mood Booster"
             class="w-full rounded-2xl border-2 border-white/30 shadow-2xl"
             loading="lazy"
           />
@@ -1183,7 +1203,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
         <!-- Dark Red Curved Bottom Counter Banner -->
         <div class="mt-3.5 bg-[#800000] rounded-t-[32px] pt-5 pb-6 px-4 text-center border-t-4 border-[#FFEA00]/60 shadow-inner">
           <p class="font-extrabold text-white text-[14px] leading-snug">
-            <span class="text-[#FFEA00] font-black-display">24.870+++</span> Wanita Indonesia Telah Terbebas dari Masalah Keputihan Berlebih, Bau Tak Sedap, Gatal &amp; Kembali Percaya Diri.<br />
+            <span class="text-[#FFEA00] font-black-display">PINCK SMILE</span> Mood dan gairah wanita dipengaruhi banyak faktor. Kenali kebutuhan diri, rawat kesehatan, dan bangun komunikasi yang nyaman bersama pasangan.<br />
             <span class="text-[#FFEA00]">Tuntas Secara Alami, Privasi 100% Terjaga &amp; Kembali Harmonis Bersama Pasangan!</span>
           </p>
         </div>
@@ -1211,13 +1231,13 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             class="h-12 w-auto object-contain drop-shadow"
           />
           <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-600 mt-1">
-            Female Intimate Wellness Indonesia
+            Female Mood & Wellness Indonesia
           </span>
         </div>
 
         <!-- 3 Gold Seal Rows -->
         <div class="space-y-4">
-          <!-- Seal 1: 100% Original -->
+          <!-- Seal 1: Produk Original -->
           <div class="flex items-center gap-3.5">
             <div class="w-20 h-20 shrink-0 rounded-full bg-gradient-to-br from-amber-300 via-yellow-500 to-amber-700 p-1.5 shadow-lg flex items-center justify-center">
               <div class="w-full h-full rounded-full bg-[#111827] border-2 border-amber-200 flex flex-col items-center justify-center text-center p-1">
@@ -1245,7 +1265,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             </p>
           </div>
 
-          <!-- Seal 3: Pengiriman Cepat, Bisa COD -->
+          <!-- Seal 3: Pengiriman Cepat, Pilihan pembayaran tersedia -->
           <div class="flex items-center gap-3.5">
             <div class="w-20 h-20 shrink-0 rounded-full bg-gradient-to-br from-amber-300 via-yellow-500 to-amber-700 p-1.5 shadow-lg flex items-center justify-center">
               <div class="w-full h-full rounded-full bg-amber-950 border-2 border-amber-200 flex flex-col items-center justify-center text-center p-1">
@@ -1340,9 +1360,18 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
       <!-- ===================================================================== -->
       <!-- FOOTER: SCALEV BADGE & LEGAL LINKS                                    -->
       <!-- ===================================================================== -->
+      <section class="mobile-viewport-lock bg-[#FFF4FA] px-4 py-5 text-center border-t border-pink-200" aria-label="Catatan edukasi">
+        <p class="text-[11px] leading-relaxed text-neutral-700">
+          <strong>Catatan penting:</strong> Pinck Smile tidak boleh dianggap sebagai obat atau jaminan peningkat libido.
+          Materi ini bersifat edukasi dan promosi. Mood serta gairah wanita dapat dipengaruhi stres, kelelahan,
+          perubahan hormon, kondisi kesehatan, hubungan, dan faktor lainnya. Gunakan produk hanya sesuai petunjuk
+          pada label. Bila keluhan menetap atau mengganggu, konsultasikan dengan tenaga kesehatan.
+        </p>
+      </section>
+
       <footer class="w-full bg-neutral-100 border-t border-neutral-200 py-5 px-3 text-center text-[11px] text-neutral-500 space-y-2">
         <p class="font-bold text-neutral-700">
-          © {new Date().getFullYear()} PINCK SMILE OFFICIAL STORE — Female Intimate Wellness Indonesia
+          © {new Date().getFullYear()} PINCK SMILE OFFICIAL STORE — Female Mood & Wellness Indonesia
         </p>
         <div class="flex flex-wrap justify-center gap-3 text-[10px] text-neutral-500">
           <a href="/" class="hover:text-neutral-800 underline">Beranda Website</a>
@@ -1358,10 +1387,10 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
       <div class="mobile-viewport-lock pointer-events-auto bg-white/95 backdrop-blur-md border-t-2 border-[#CC0000] py-2 px-3 shadow-[0_-4px_20px_rgba(0,0,0,0.25)] flex items-center justify-between gap-2">
         <div class="min-w-0">
           <span class="inline-block bg-[#CC0000] text-[#FFEA00] text-[9.5px] font-extrabold px-1.5 py-0.5 rounded uppercase">
-            PROMO DISKON 30%
+            PROMO PINCK SMILE
           </span>
           <p class="font-extrabold text-neutral-900 text-xs truncate mt-0.5">
-            Rp 195.000 <span class="line-through text-neutral-400 text-[10px] font-normal">Rp 278.000</span> • Bisa COD
+            Rp 195.000 <span class="line-through text-neutral-400 text-[10px] font-normal">Rp 278.000</span> • Pilihan pembayaran tersedia
           </p>
         </div>
         <a
@@ -1429,7 +1458,7 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
             const waRaw = waEl ? waEl.value.trim() : "";
             const alamat = alamatEl ? alamatEl.value.trim() : "";
             const metode = metodeEl ? metodeEl.value : "COD";
-            const paket = selectedPaket ? selectedPaket.value : "Paket Promo Diskon 30% - Rp 195.000";
+            const paket = selectedPaket ? selectedPaket.value : "Paket Promo Promo Spesial - Rp 195.000";
 
             if (!nama || !waRaw || !alamat) {
               if (errorBox) errorBox.classList.remove("hidden");
@@ -1442,10 +1471,10 @@ const ogImageUrl = new URL("/products/complete-comfort-set-og.jpg", siteUrl).toS
 
             const cleanWa = waRaw.replace(/^0+/, "");
             const utmSource = params.get("utm_source") || (params.has("fbclid") ? "Facebook Ads" : "Website LP");
-            const utmCampaign = params.get("utm_campaign") || "Promo Diskon 30%";
+            const utmCampaign = params.get("utm_campaign") || "Promo Promo Spesial";
 
             const message = [
-              "Halo CS Resmi *PINCK SMILE*, saya mau ambil *PROMO DISKON 30%* dari Halaman Promo:",
+              "Halo CS Resmi *PINCK SMILE*, saya mau ambil *PROMO PINCK SMILE* dari Halaman Promo:",
               "",
               "📦 *Paket:* " + paket,
               "👤 *Nama Penerima:* " + nama,

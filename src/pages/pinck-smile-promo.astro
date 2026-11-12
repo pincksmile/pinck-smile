@@ -1,0 +1,954 @@
+
+---
+const title = "Pinck Smile | Promo Spesial untuk Wanita Dewasa";
+const description =
+  "Kenali Pinck Smile, teman untuk menciptakan momen yang lebih berkesan. Lihat informasi produk dan pilihan pemesanan online.";
+
+const productImage = "/galery/pinck-smile-product.png";
+const logoProduct = "/pinck-smile-logo.png";
+
+// Ganti URL berikut dengan tautan resmi toko dan WhatsApp Anda.
+const shopeeUrl = "#pemesanan";
+const lazadaUrl = "#pemesanan";
+const whatsappUrl = "#pemesanan";
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#fff5fb" />
+    <title>{title}</title>
+    <link rel="canonical" href="https://pinck-smile.netlify.app/pinck-smile-promo" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a href="#beranda" class="brand" aria-label="Pinck Smile beranda">
+        <span class="brand-icon">P</span>
+        <span>Pinck <b>Smile</b></span>
+      </a>
+      <a class="nav-cta" href="#pemesanan">Lihat Promo <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" id="beranda">
+        <div class="hero-content">
+          <span class="eyebrow">
+            <span class="dot"></span>
+            YOUR MOMENT, YOUR CONFIDENCE
+          </span>
+
+          <h1>
+            Untuk momen yang
+            <span>lebih berkesan.</span>
+          </h1>
+
+          <p class="hero-description">
+            Kenali Pinck Smile, teman untuk wanita dewasa yang ingin
+            menghadirkan suasana lebih menyenangkan bersama pasangan.
+            Praktis, elegan, dan mudah digunakan.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="button button-primary" href="#pemesanan">
+              Lihat Penawaran <span>→</span>
+            </a>
+            <a class="button button-secondary" href="#tentang">
+              Kenali Produk
+            </a>
+          </div>
+
+          <div class="trust-row">
+            <span><span class="check">✓</span> Informasi produk</span>
+            <span><span class="check">✓</span> Pemesanan online</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="decor decor-one"></div>
+          <div class="decor decor-two"></div>
+          <div class="visual-label">A LITTLE TOUCH OF ELEGANCE</div>
+
+          <div class="product-frame">
+            <img
+              src={productImage}
+              alt="Produk Pinck Smile"
+              width="600"
+              height="700"
+              fetchpriority="high"
+            />
+          </div>
+
+          <div class="floating-note">
+            <span class="note-heart">♡</span>
+            <div>
+              <strong>Made for your moments</strong>
+              <small>Simple. Elegant. Personal.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" id="tentang">
+        <div class="section-heading">
+          <span class="eyebrow">WHY PINCK SMILE</span>
+          <h2>Keistimewaan dalam kesederhanaan.</h2>
+          <p>
+            Pengalaman yang terasa personal dimulai dari pilihan yang sesuai
+            dengan kebutuhan Anda.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <span class="benefit-icon">✧</span>
+            <h3>Praktis</h3>
+            <p>Format produk yang dirancang untuk penggunaan yang praktis.</p>
+          </article>
+
+          <article class="benefit-card">
+            <span class="benefit-icon">♡</span>
+            <h3>Elegan</h3>
+            <p>Tampilan feminin dengan pendekatan yang modern dan personal.</p>
+          </article>
+
+          <article class="benefit-card">
+            <span class="benefit-icon">❀</span>
+            <h3>Untuk Anda</h3>
+            <p>Temukan informasi produk dan cara penggunaan sebelum membeli.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="promo-section" id="promo">
+        <div class="promo-copy">
+          <span class="eyebrow">SPECIAL OFFER</span>
+          <h2>Saatnya mengenal Pinck Smile lebih dekat.</h2>
+          <p>
+            Temukan penawaran terbaru melalui kanal pemesanan resmi.
+            Periksa harga, informasi produk, dan ketentuan promo sebelum
+            melakukan pembelian.
+          </p>
+
+          <a class="button button-light" href="#pemesanan">
+            Temukan Penawaran <span>→</span>
+          </a>
+
+          <small>* Harga dan ketersediaan mengikuti toko resmi.</small>
+        </div>
+
+        <div class="promo-art" aria-hidden="true">
+          <div class="ring ring-one"></div>
+          <div class="ring ring-two"></div>
+            <img
+              src={logoProduct}
+              alt="Produk Pinck Smile"
+              width="600"
+              height="700"
+              fetchpriority="high"
+            />
+          <!--<div class="promo-monogram">P<span>S</span></div>
+          <span class="promo-caption">PINCK SMILE</span>-->
+        </div>
+      </section>
+
+      <section class="order-section" id="pemesanan">
+        <div class="section-heading">
+          <span class="eyebrow">HOW TO ORDER</span>
+          <h2>Pilih cara pemesanan Anda.</h2>
+          <p>
+            Kunjungi kanal pemesanan untuk melihat detail produk,
+            harga terbaru, dan pilihan transaksi yang tersedia.
+          </p>
+        </div>
+
+        <div class="order-grid">
+          <a class="order-card" href={shopeeUrl}>
+            <span class="store-icon shopee">S</span>
+            <span class="store-info">
+              <strong>Shopee</strong>
+              <small>Lihat produk dan penawaran</small>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="order-card" href={lazadaUrl}>
+            <span class="store-icon lazada">L</span>
+            <span class="store-info">
+              <strong>Lazada</strong>
+              <small>Lihat pilihan pemesanan</small>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+
+          <a class="order-card" href={whatsappUrl}>
+            <span class="store-icon whatsapp">W</span>
+            <span class="store-info">
+              <strong>WhatsApp</strong>
+              <small>Tanyakan informasi produk</small>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+
+        <p class="order-note">
+          Pastikan Anda memeriksa identitas toko, detail produk, dan
+          ketentuan transaksi sebelum melakukan pembayaran.
+        </p>
+      </section>
+
+      <section class="closing">
+        <span class="closing-heart">♡</span>
+        <h2>Make your moments meaningful.</h2>
+        <p>Pinck Smile — untuk momen yang ingin dibuat lebih berkesan.</p>
+        <a href="#pemesanan" class="button button-primary">
+          Lihat Pilihan Pemesanan <span>→</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="#beranda" class="brand">
+        <span class="brand-icon">P</span>
+        <span>Pinck <b>Smile</b></span>
+      </a>
+      <p>© {new Date().getFullYear()} Pinck Smile. All rights reserved.</p>
+      <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+    </footer>
+  </body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #38232f;
+    background: #fffdfd;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .navbar {
+    height: 76px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 253, 253, 0.96);
+    border-bottom: 1px solid #f4e8ef;
+  }
+
+  .brand {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+  }
+
+  .brand b {
+    color: #ce6da4;
+  }
+
+  .brand-icon {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border-radius: 50%;
+    color: white;
+    background: #ce6da4;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .nav-cta {
+    padding: 10px 19px;
+    border: 1px solid #ead3e1;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .nav-cta span {
+    margin-left: 8px;
+    color: #ce6da4;
+  }
+
+  .hero {
+    min-height: 620px;
+    padding: 72px 9% 85px;
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 48px;
+    align-items: center;
+    background: linear-gradient(115deg, #fffafc, #fff0f8);
+    overflow: hidden;
+  }
+
+  .hero-content {
+    max-width: 570px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #b45b8e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #d77bb0;
+  }
+
+  h1, h2, h3, p {
+    margin-top: 0;
+  }
+
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+  }
+
+  h1 {
+    margin: 25px 0 20px;
+    font-size: clamp(43px, 5vw, 66px);
+    line-height: 1.14;
+  }
+
+  h1 span {
+    display: block;
+    color: #c86c9f;
+    font-style: italic;
+  }
+
+  .hero-description {
+    max-width: 485px;
+    color: #776672;
+    font-size: 15px;
+    line-height: 1.95;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 29px;
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 49px;
+    padding: 12px 23px;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    color: white;
+    background: #c76b9d;
+    box-shadow: 0 9px 25px #c76b9d30;
+  }
+
+  .button-secondary {
+    border: 1px solid #ead6e2;
+    background: white;
+  }
+
+  .trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 28px;
+    color: #83727d;
+    font-size: 11px;
+  }
+
+  .check {
+    color: #bc6295;
+    margin-right: 5px;
+  }
+
+  .hero-visual {
+    position: relative;
+    min-height: 440px;
+    display: grid;
+    place-items: center;
+  }
+
+  .product-frame {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: min(100%, 380px);
+    height: 410px;
+    padding: 22px;
+    place-items: center;
+    border: 1px solid #ffffffc9;
+    border-radius: 190px 190px 30px 30px;
+    background: linear-gradient(145deg, #f9dce9, #fff9fc 65%, #edc8dd);
+    box-shadow: 0 30px 65px #a34d7d19;
+    overflow: hidden;
+  }
+
+  .product-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  .decor {
+    position: absolute;
+    border: 1px solid #df9fc4;
+    border-radius: 50%;
+  }
+
+  .decor-one {
+    width: 400px;
+    height: 400px;
+    right: -30px;
+    top: 5px;
+    opacity: 0.4;
+  }
+
+  .decor-two {
+    width: 320px;
+    height: 320px;
+    left: 0;
+    bottom: 0;
+    opacity: 0.25;
+  }
+
+  .visual-label {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    color: #b47b9c;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .floating-note {
+    position: absolute;
+    z-index: 3;
+    right: -10px;
+    bottom: 27px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 19px;
+    border: 1px solid #f5e5ef;
+    border-radius: 13px;
+    background: #fffdfd;
+    box-shadow: 0 12px 35px #74345312;
+  }
+
+  .note-heart {
+    color: #c76b9d;
+    font-size: 30px;
+  }
+
+  .floating-note strong,
+  .floating-note small {
+    display: block;
+  }
+
+  .floating-note strong {
+    font-size: 11px;
+  }
+
+  .floating-note small {
+    color: #988692;
+    font-size: 10px;
+  }
+
+  .benefits, .order-section {
+    padding: 95px 8%;
+  }
+
+  .section-heading {
+    max-width: 610px;
+    margin: 0 auto 45px;
+    text-align: center;
+  }
+
+  .section-heading h2,
+  .promo-copy h2,
+  .closing h2 {
+    margin: 13px 0;
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.25;
+  }
+
+  .section-heading p {
+    color: #82717c;
+    font-size: 14px;
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .benefit-card {
+    padding: 30px 25px;
+    border: 1px solid #f1e4ec;
+    border-radius: 17px;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px #71324b0b;
+  }
+
+  .benefit-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 21px;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff0f7;
+    color: #bf6497;
+    font-size: 25px;
+  }
+
+  .benefit-card h3 {
+    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .benefit-card p {
+    margin-bottom: 0;
+    color: #85747e;
+    font-size: 13px;
+  }
+
+  .promo-section {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 35px;
+    padding: 65px 9%;
+    background: #b96091;
+    color: white;
+    overflow: hidden;
+  }
+
+  .promo-copy {
+    max-width: 570px;
+  }
+
+  .promo-copy .eyebrow {
+    color: #ffe2f1;
+  }
+
+  .promo-copy h2 {
+    margin: 15px 0;
+    font-size: clamp(34px, 4vw, 49px);
+  }
+
+  .promo-copy p {
+    max-width: 480px;
+    color: #fff0f7;
+    font-size: 14px;
+  }
+
+  .button-light {
+    margin-top: 12px;
+    color: #9f4777;
+    background: white;
+  }
+
+  .promo-copy > small {
+    display: block;
+    margin-top: 18px;
+    color: #f9ddec;
+    font-size: 10px;
+  }
+
+  .promo-art {
+    position: relative;
+    display: grid;
+    min-height: 300px;
+    place-items: center;
+  }
+
+  .ring {
+    position: absolute;
+    border: 1px solid #ffffff4d;
+    border-radius: 50%;
+  }
+
+  .ring-one {
+    width: 290px;
+    height: 290px;
+  }
+
+  .ring-two {
+    width: 220px;
+    height: 220px;
+  }
+
+  .promo-monogram {
+    position: relative;
+    color: #ffe6f3;
+    font-family: 'Playfair Display', serif;
+    font-size: 115px;
+    font-style: italic;
+  }
+
+  .promo-monogram span {
+    position: relative;
+    left: -18px;
+    color: white;
+    font-size: 95px;
+  }
+
+  .promo-caption {
+    position: absolute;
+    bottom: 5px;
+    font-size: 10px;
+    letter-spacing: 5px;
+  }
+
+  .order-section {
+    background: #fffafc;
+  }
+
+  .order-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .order-card {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 13px;
+    padding: 19px 15px;
+    border: 1px solid #f0e0e9;
+    border-radius: 13px;
+    background: white;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .order-card:hover {
+    transform: translateY(-3px);
+    border-color: #d99cbd;
+  }
+
+  .store-icon {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .shopee {
+    color: #e9684b;
+    background: #fff0e9;
+  }
+
+  .lazada {
+    color: #7457cb;
+    background: #f0ecff;
+  }
+
+  .whatsapp {
+    color: #24865c;
+    background: #e8f8ef;
+  }
+
+  .store-info {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .store-info strong,
+  .store-info small {
+    display: block;
+  }
+
+  .store-info strong {
+    font-size: 13px;
+  }
+
+  .store-info small {
+    color: #8a7883;
+    font-size: 10px;
+  }
+
+  .arrow {
+    color: #c76b9d;
+  }
+
+  .order-note {
+    max-width: 620px;
+    margin: 25px auto 0;
+    color: #8b7b85;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .closing {
+    padding: 75px 7%;
+    text-align: center;
+  }
+
+  .closing-heart {
+    color: #c76b9d;
+    font-size: 32px;
+  }
+
+  .closing h2 {
+    margin-top: 10px;
+  }
+
+  .closing p {
+    color: #867580;
+    font-size: 13px;
+  }
+
+  .closing .button {
+    margin-top: 12px;
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 7%;
+    border-top: 1px solid #f1e5ed;
+    background: #fffafc;
+  }
+
+  .footer p,
+  .footer > a:last-child {
+    margin: 0;
+    color: #897782;
+    font-size: 11px;
+  }
+
+  .footer .brand {
+    font-size: 16px;
+  }
+
+  .footer .brand-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (max-width: 850px) {
+    .hero {
+      padding: 55px 6%;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 20px;
+    }
+
+    .hero-visual {
+      min-height: 360px;
+    }
+
+    .product-frame {
+      height: 340px;
+      padding: 15px;
+    }
+
+    .floating-note {
+      right: -5px;
+      bottom: 10px;
+      padding: 10px;
+    }
+
+    .benefits, .order-section {
+      padding: 70px 5%;
+    }
+
+    .order-grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+    }
+
+    .promo-section {
+      padding: 55px 6%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .navbar {
+      height: 66px;
+      padding: 0 5%;
+    }
+
+    .brand {
+      font-size: 18px;
+    }
+
+    .nav-cta {
+      padding: 8px 12px;
+      font-size: 11px;
+    }
+
+    .hero {
+      padding: 45px 6% 55px;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 11vw, 56px);
+    }
+
+    .hero-description {
+      font-size: 14px;
+    }
+
+    .hero-visual {
+      min-height: 360px;
+      margin: 0 5px;
+    }
+
+    .product-frame {
+      width: min(100%, 310px);
+      height: 350px;
+    }
+
+    .visual-label {
+      right: 0;
+      top: -8px;
+      font-size: 8px;
+    }
+
+    .floating-note {
+      right: -3px;
+      bottom: 5px;
+    }
+
+    .benefits, .order-section {
+      padding: 65px 6%;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .benefit-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .benefit-card {
+      padding: 23px;
+    }
+
+    .benefit-icon {
+      margin-bottom: 12px;
+    }
+
+    .promo-section {
+      grid-template-columns: 1fr;
+      padding: 50px 7% 35px;
+    }
+
+    .promo-art {
+      min-height: 220px;
+    }
+
+    .ring-one {
+      width: 210px;
+      height: 210px;
+    }
+
+    .ring-two {
+      width: 160px;
+      height: 160px;
+    }
+
+    .promo-monogram {
+      font-size: 85px;
+    }
+
+    .promo-monogram span {
+      font-size: 72px;
+    }
+
+    .promo-caption {
+      bottom: -2px;
+    }
+
+    .closing {
+      padding: 60px 6%;
+    }
+
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+
+    .button,
+    .benefit-card,
+    .order-card {
+      transition: none;
+    }
+  }
+</style>
